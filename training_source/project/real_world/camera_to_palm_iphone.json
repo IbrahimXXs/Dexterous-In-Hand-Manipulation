@@ -1,0 +1,7 @@
+{
+  "calibrated": false,
+  "frame_convention": "p_palm = R_palm_camera @ p_camera + translation_palm_camera_m",
+  "note": "Placeholder identity only. Fix the iPhone mount and replace this with a measured camera-to-palm transform before shadow or torque-enabled deployment.",
+  "translation_palm_camera_m": [0.0, 0.0, 0.0],
+  "quaternion_palm_camera_wxyz": [1.0, 0.0, 0.0, 0.0]
+}

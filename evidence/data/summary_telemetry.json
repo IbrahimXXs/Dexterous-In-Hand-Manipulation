@@ -1,0 +1,15 @@
+{
+  "total_steps": 300,
+  "total_duration_s": 15.0,
+  "control_frequency_hz": 20.0,
+  "mean_loop_period_ms": 49.9972,
+  "std_loop_period_ms": 0.6248553112521331,
+  "max_recorded_current_ma": 408.3,
+  "mean_recorded_current_ma": 75.312,
+  "max_temperature_c": 25.4,
+  "current_abort_threshold_ma": 800.0,
+  "temperature_abort_threshold_c": 55.0,
+  "abort_events": 0,
+  "cube_drops": 0,
+  "total_cube_rotation_deg": 385.45735667426135
+}

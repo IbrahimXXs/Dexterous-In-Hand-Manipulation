@@ -1,0 +1,24 @@
+[project]
+name = "class06-continuous-yaw"
+version = "1.0.0"
+description = "Portable simulation and guarded LEAP Hand deployment for continuous cube yaw rotation"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "mujoco>=3.3,<4",
+  "numpy>=2.0,<3",
+  "pyzmq>=25,<28",
+]
+
+[project.optional-dependencies]
+hardware = [
+  "dynamixel-sdk>=3.7,<4",
+  "torch>=2.5,<3",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+

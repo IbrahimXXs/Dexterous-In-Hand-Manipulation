@@ -1,0 +1,35 @@
+# Hardware values for Class 01 LEAP Hand Demos (final version)
+# Deployed values matching CONTINUOUS_Z_ROTATION_DEPLOYMENT_BUNDLE_20261014
+
+[retargeting]
+serial_port = "/dev/ttyUSB0"
+baud_rate_bps = 4000000
+motor_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+iphone_ip = "10.127.51.58"
+asmagic_port = 8000
+
+[yaw_continuous_rotation]
+# Primary hardware port (use persistent symlink when available)
+serial_port = "/dev/serial/by-id/usb-FTDI_USB__-__Serial_Converter_FTBIHRNS-if00-port0"
+fallback_serial_port = "/dev/ttyUSB0"
+baud_rate_bps = 4000000
+motor_ids = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+gain_profile = "H1"
+policy_hz = 20.0
+# Guarded trial durations
+shadow_max_steps = 600       # 30-second non-actuating shadow pass
+actuated_max_steps = 120     # 6-second physical actuation pass
+start_delay_s = 5.0          # Delay to position/center cube before motion
+init_duration_s = 5.0        # Smooth ramp from starting pose to policy grasp
+return_home_duration_s = 3.0 # Smooth return to zero pose upon completion
+# Safety limits
+current_limit_ma = 350
+current_abort_ma = 450.0
+velocity_abort_rad_s = 8.0
+temperature_abort_c = 60.0
+tracking_error_abort_rad = 0.8
+max_command_step_rad = 0.12
+# Policy server endpoint (if using ZMQ architecture, or "local" for embedded)
+server_endpoint = "tcp://127.0.0.1:5555"
+task_name = "Mjlab-Leap-Right-HandCube-MBZUAI-Rotate"
+checkpoint_file = "checkpoint/model_400.pt"

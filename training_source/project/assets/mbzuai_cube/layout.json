@@ -1,0 +1,70 @@
+{
+  "name": "MBZUAI six-face tracked cube",
+  "dictionary": "DICT_4X4_50",
+  "cube_size_m": 0.058,
+  "mass_kg": 0.085,
+  "marker_size_m": 0.01555,
+  "body_frame": "cube center; +X=B, +Y=Z, +Z=M",
+  "faces": [
+    {
+      "id": 0,
+      "name": "+Z",
+      "letter": "M",
+      "color": "yellow",
+      "rgb": [255, 215, 0],
+      "marker_x_in_cube": [1, 0, 0],
+      "marker_y_in_cube": [0, 1, 0],
+      "attachment": "M / yellow / +Z; marker top points toward cube +Y"
+    },
+    {
+      "id": 1,
+      "name": "+X",
+      "letter": "B",
+      "color": "red",
+      "rgb": [220, 40, 50],
+      "marker_x_in_cube": [0, 1, 0],
+      "marker_y_in_cube": [0, 0, 1],
+      "attachment": "B / red / +X; marker top points toward cube +Z"
+    },
+    {
+      "id": 2,
+      "name": "+Y",
+      "letter": "Z",
+      "color": "green",
+      "rgb": [25, 160, 85],
+      "marker_x_in_cube": [-1, 0, 0],
+      "marker_y_in_cube": [0, 0, 1],
+      "attachment": "Z / green / +Y; marker top points toward cube +Z"
+    },
+    {
+      "id": 3,
+      "name": "-X",
+      "letter": "U",
+      "color": "blue",
+      "rgb": [35, 95, 210],
+      "marker_x_in_cube": [0, -1, 0],
+      "marker_y_in_cube": [0, 0, 1],
+      "attachment": "U / blue / -X; marker top points toward cube +Z"
+    },
+    {
+      "id": 4,
+      "name": "-Y",
+      "letter": "A",
+      "color": "white",
+      "rgb": [245, 245, 240],
+      "marker_x_in_cube": [1, 0, 0],
+      "marker_y_in_cube": [0, 0, 1],
+      "attachment": "A / white / -Y; marker top points toward cube +Z"
+    },
+    {
+      "id": 5,
+      "name": "-Z",
+      "letter": "I",
+      "color": "orange",
+      "rgb": [245, 125, 30],
+      "marker_x_in_cube": [-1, 0, 0],
+      "marker_y_in_cube": [0, 1, 0],
+      "attachment": "I / orange / -Z; marker top points toward cube +Y"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "in-hand-rotation-mjlab"
+version = "0.1.0"
+description = "In-hand cube rotation task using LEAP hand in MuJoCo with mjlab"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+  "mjlab",
+  "pyzmq>=25",
+  "scipy",
+  "numpy==1.26.4",
+  "mediapy==1.2.6",
+  "mujoco>=3.7.0.dev0,<3.9.0",
+  "mujoco-warp",
+]
+
+[tool.uv]
+package = true
+# Force every requirement on mujoco (incl. mjlab / mujoco-warp, whose own sources point at the
+# pruned nightly index) to the stable PyPI release.
+override-dependencies = ["mujoco==3.8.1", "mujoco-warp==3.8.1", "warp-lang==1.13.0"]
+constraint-dependencies = [
+  "numpy==1.26.4",
+  "mediapy==1.2.6",
+  "mujoco>=3.7.0.dev0,<3.9.0",
+]
+
+[[tool.uv.index]]
+url = "https://pypi.org/simple"
+
+[[tool.uv.index]]
+name = "pypi-stable"
+url = "https://pypi.org/simple"
+explicit = true
+
+[[tool.uv.index]]
+name = "nvidia"
+url = "https://pypi.nvidia.com/"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[[tool.uv.index]]
+name = "mujoco"
+url = "https://py.mujoco.org/"
+explicit = true
+
+[tool.uv.sources]
+mjlab = { git = "https://github.com/mujocolab/mjlab", tag = "v1.1.1" }
+# mujoco now comes from PyPI (stable 3.8.1): the pinned nightly 3.8.1.dev913242127 was deleted from py.mujoco.org.
+mujoco = { index = "pypi-stable" }
+# mujoco-warp: stable PyPI release matching mujoco 3.8.1 (the pinned git commit needs the deleted nightly).
+mujoco-warp = { index = "pypi-stable" }
+warp-lang = { index = "nvidia", marker = "sys_platform != 'darwin'" }
+torch = { index = "pytorch-cu128", marker = "sys_platform != 'darwin'" }
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
