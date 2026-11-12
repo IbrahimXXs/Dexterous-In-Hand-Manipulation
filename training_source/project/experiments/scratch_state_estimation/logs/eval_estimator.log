@@ -1,0 +1,68 @@
+{
+  "test": {
+    "pos_rmse_mm": 10.217730695884288,
+    "rot_err_sym_mean_deg": 16.818489583333335,
+    "rot_err_sym_median_deg": 13.688538551330566,
+    "lin_vel_rmse_mps": 0.0204583703725082,
+    "ang_vel_rmse_radps": 0.6270397055352304,
+    "yaw_rate_rmse_radps": 0.3128147828650466,
+    "contact_micro_precision": 0.7670357336040121,
+    "contact_micro_recall": 0.8110734349976415,
+    "contact_micro_f1": 0.7884401403882574
+  },
+  "baselines": {
+    "prior": {
+      "pos_rmse_mm": 24.425953677612174,
+      "rot_err_sym_mean_deg": 38.644666666666666,
+      "yaw_rate_rmse_radps": 0.43434783338308863,
+      "contact_micro_f1": 0.6209110445811038
+    },
+    "init_hold_privileged": {
+      "pos_rmse_mm": 23.287144198577327,
+      "rot_err_sym_mean_deg": 29.750622395833332,
+      "yaw_rate_rmse_radps": 0.43434783338308863,
+      "contact_micro_f1": 0.21445515926389264
+    },
+    "ridge_linear": {
+      "pos_rmse_mm": 15.238539623712612,
+      "rot_err_sym_mean_deg": 39.183809895833335,
+      "yaw_rate_rmse_radps": 0.37438786029751425,
+      "contact_micro_f1": 0.7133112876025739
+    }
+  },
+  "phases": {
+    "rotating": {
+      "frac": 0.03966536372900009,
+      "pos_rmse_mm": 11.241852610592796,
+      "rot_deg": 18.630822637297705,
+      "yaw_rate_rmse": 0.38106223780098936,
+      "contact_f1": 0.7237538131090978
+    },
+    "holding": {
+      "frac": 0.8134049773216248,
+      "pos_rmse_mm": 10.031472248495469,
+      "rot_deg": 16.444485709026004,
+      "yaw_rate_rmse": 0.1934094548412883,
+      "contact_f1": 0.7978903761883096
+    },
+    "slipping": {
+      "frac": 0.08271028846502304,
+      "pos_rmse_mm": 9.636050292667578,
+      "rot_deg": 15.580022118495313,
+      "yaw_rate_rmse": 0.758484187504605,
+      "contact_f1": 0.7059085023977417
+    },
+    "pre_failure": {
+      "frac": 0.0642194002866745,
+      "pos_rmse_mm": 12.38839981091017,
+      "rot_deg": 22.031295303170083,
+      "yaw_rate_rmse": 0.4682903963133841,
+      "contact_f1": 0.7659126176273792
+    }
+  },
+  "leakage": {
+    "estimator_input_dim": 320,
+    "max_abs_input_label_correlation": 0.6299676597518266
+  }
+}
+[done] experiments/scratch_state_estimation/results/estimator/estimator_report.json

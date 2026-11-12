@@ -1,0 +1,19 @@
+Thu Nov 12 06:27:27 +04 2026 A/D seeds 2,3 done; starting stage 2 trainval
+collect train 11000 exit 0
+collect train 11001 exit 0
+collect train 11002 exit 0
+collect train 11003 exit 0
+collect train 11004 exit 0
+collect train 11005 exit 0
+collect train 11007 exit 0
+collect train 11006 exit 0
+collect train 11009 exit 0
+collect train 11008 exit 0
+collect val 12001 exit 0
+collect val 12000 exit 0
+collect val 12003 exit 0
+collect val 12002 exit 0
+Terminated
+cp: cannot stat 'experiments/scratch_state_estimation/runs/estimator/2026-11-12_06-36-42_estimator_B/best.pt': No such file or directory
+estimator -> experiments/scratch_state_estimation/models/estimator_B.pt
+Thu Nov 12 06:36:42 +04 2026 STAGE2_TRAINVAL_DONE

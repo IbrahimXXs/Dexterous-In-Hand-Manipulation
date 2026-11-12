@@ -18,3 +18,7 @@ training_source/project/videos/
 
 # MuJoCo runtime log
 MUJOCO_LOG.TXT
+
+# Estimator datasets and experiment outputs (large)
+training_source/project/data/
+training_source/project/experiments/scratch_state_estimation/data/

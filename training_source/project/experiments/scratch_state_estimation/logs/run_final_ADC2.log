@@ -1,0 +1,14 @@
+Thu Nov 12 15:18:52 +04 2026 final A_seed1 <- logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed1/model_1000.pt
+final A1 exit 0
+Thu Nov 12 15:32:33 +04 2026 final D_seed1 <- logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed1/model_1000.pt
+final D1 exit 0
+Thu Nov 12 15:45:25 +04 2026 final A_seed2 <- logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed2/model_1000.pt
+final A2 exit 0
+Thu Nov 12 15:58:24 +04 2026 final D_seed2 <- logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed2/model_1000.pt
+final D2 exit 0
+Thu Nov 12 16:11:19 +04 2026 final A_seed3 <- logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed3/model_900.pt
+final A3 exit 0
+Thu Nov 12 16:24:18 +04 2026 final D_seed3 <- logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed3/model_1000.pt
+final D3 exit 0
+Thu Nov 12 16:37:11 +04 2026 final C_seed2 <- logs/rsl_rl/scratch_C/2026-11-12_06-42-58_study_C_seed2/model_1000.pt
+final C2 exit 0

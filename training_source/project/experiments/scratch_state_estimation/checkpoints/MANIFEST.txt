@@ -1,0 +1,11 @@
+# Selected checkpoints (validation rule: max uninterrupted turns on seed 7001; ties -> later)
+# copy | sha256 | source run checkpoint
+A_seed1_model_1000.pt | ce214952234f405f6512e966620ab15b1449fcde714d839fa1796110cd21ae39 | logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed1/model_1000.pt
+A_seed2_model_1000.pt | 5c5faf5e6e541ec43407ff0f80c671dd46d4d4100de02113aecee9bee661ec0a | logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed2/model_1000.pt
+A_seed3_model_900.pt | f2d3b4c5823daca686054b8b9032a0560e4b94bbbf2cc52e85acf05cbbf0d97a | logs/rsl_rl/scratch_A/2026-11-12_00-48-01_study_A_seed3/model_900.pt
+C_seed1_model_1000.pt | 21895c2fe74aae30142f269e5c0ee77e756f6324c62e62be0f6de1a46e389107 | logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed1/model_1000.pt
+C_seed2_model_1000.pt | cc78027e6141c891fffd3cc455900c9367e07cde4f46251eea5bbd7b271acbf8 | logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed2/model_1000.pt
+C_seed3_model_1000.pt | 01939038cf5e80643b3e735d1f79c4fd4f180dbca820697c44cae7a007b1828c | logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed3/model_1000.pt
+D_seed1_model_1000.pt | dd4203674d9a3043f60843a46bfab3a7658721dd333306a88b93c4b275fa557f | logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed1/model_1000.pt
+D_seed2_model_1000.pt | 60db1f61930481dbfc823159186167f1a0005b4af7b8f42fd79fbdb12cad105e | logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed2/model_1000.pt
+D_seed3_model_1000.pt | b7e7885e138c61a53757344c55c0bb134ee7ff342afd0400ad5105d0724a8988 | logs/rsl_rl/scratch_D/2026-11-12_00-48-01_study_D_seed3/model_1000.pt

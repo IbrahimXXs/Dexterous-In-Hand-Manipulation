@@ -1,0 +1,31 @@
+{
+  "data_root": "experiments/scratch_state_estimation/data/estimator",
+  "log_root": "experiments/scratch_state_estimation/runs/estimator",
+  "run_name": "estimator_B",
+  "device": "cuda:0",
+  "hidden_dims": [
+    512,
+    512,
+    256
+  ],
+  "activation": "elu",
+  "no_layer_norm": false,
+  "dropout": 0.0,
+  "batch_size": 4096,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "max_steps": 60000,
+  "eval_every": 2000,
+  "patience": 8,
+  "w_pos": 1.0,
+  "w_rot": 1.0,
+  "w_vel": 1.0,
+  "w_contact": 0.5,
+  "huber_delta": 1.0,
+  "contact_pos_weight": null,
+  "max_train_rows": null,
+  "max_val_rows": 1000000,
+  "max_test_rows": null,
+  "seed": 0,
+  "skip_test": true
+}

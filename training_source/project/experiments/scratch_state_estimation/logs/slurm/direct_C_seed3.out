@@ -1,0 +1,14 @@
+Thu Nov 12 19:04:48 +04 2026 job ? host gpu-01 gpu 2
+0, 30193 MiB, 32760 MiB
+1, 5993 MiB, 32760 MiB
+2, 3120 MiB, 32760 MiB
+3, 3 MiB, 32760 MiB
+4, 27751 MiB, 32760 MiB
+5, 27750 MiB, 32760 MiB
+6, 27750 MiB, 32760 MiB
+7, 27750 MiB, 32760 MiB
+[train exit 0] study_C_seed3
+logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed3/model_1000.pt
+curve C3 exit 0
+Thu Nov 12 22:29:38 +04 2026 final C_seed3 <- logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed3/model_1000.pt
+final C3 exit 0

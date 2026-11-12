@@ -1,0 +1,10 @@
+[exit 0] study_C_seed2
+Thu Nov 12 14:09:13 +04 2026 resume after gpu-01 failure, host gpu-04 GPU 6
+Thu Nov 12 14:27:46 +04 2026 C seeds 1,3 interrupted runs archived (*_INTERRUPTED_gpu01_failure); will be retrained from scratch for consistency
+Thu Nov 12 14:55:04 +04 2026 fresh retrain of C seeds 1,3 on gpu-04 GPU 4 (uninterrupted, from scratch)
+Thu Nov 12 17:34:15 +04 2026 ALL C runs invalid: train.py --zero-actor-output zeroed estimator.head (last nn.Linear in actor.modules()); archived to scratch_C_INVALID_estimator_head_zeroed and results/_INVALID_C_estimator_head_zeroed
+Thu Nov 12 19:04:08 +04 2026 session on gpu-01: starting fresh C seeds 1,3 (GPU 2) and 2 (GPU 3) via sbatch_C_fresh.sh run directly (sbatch jobs 294974-6 never started)
+Thu Nov 12 19:04:08 +04 2026 job ? host gpu-01 gpu 2
+Thu Nov 12 19:04:28 +04 2026 job ? host gpu-01 gpu 3
+Thu Nov 12 19:04:48 +04 2026 job ? host gpu-01 gpu 2
+Thu Nov 12 22:14:51 +04 2026 JOB_DONE C seed 2
