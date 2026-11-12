@@ -12,3 +12,6 @@ logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed1/model_1000.pt
 curve C1 exit 0
 Thu Nov 12 22:28:53 +04 2026 final C_seed1 <- logs/rsl_rl/scratch_C/2026-11-12_19-06-10_study_C_seed1/model_1000.pt
 final C1 exit 0
+ablation C1 exit 0
+ablation D1 exit 0
+Thu Nov 12 23:40:40 +04 2026 JOB_DONE C seed 1

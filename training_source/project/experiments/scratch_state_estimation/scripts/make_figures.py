@@ -141,7 +141,7 @@ def plot_pilot(logroot: Path, figdir: Path) -> None:
 def plot_validation_curves(curvedir: Path, figdir: Path) -> dict:
   data: dict[str, dict[int, dict]] = defaultdict(dict)
   sel = {}
-  for f in glob.glob(str(curvedir / "*.json")):
+  for f in sorted(glob.glob(str(curvedir / "*.json"))):
     r = json.loads(Path(f).read_text())
     m = re.fullmatch(r"([ACD])_seed(\d+)", Path(f).stem)
     if not m:
@@ -181,7 +181,7 @@ FINAL_METRICS = [("turns", "turns (uninterrupted)"), ("turns_with_resets", "turn
 def load_final(finaldir: Path) -> dict:
   """-> res[cond][preset][seed_name] = per-env arrays (both test seeds pooled)."""
   res: dict = defaultdict(lambda: defaultdict(dict))
-  for f in glob.glob(str(finaldir / "*.json")):
+  for f in sorted(glob.glob(str(finaldir / "*.json"))):  # sorted: per-seed lists are in seed order
     r = json.loads(Path(f).read_text())
     name = Path(f).stem
     cond = r["cond"]
@@ -213,7 +213,8 @@ def final_tables(res: dict, figdir: Path) -> str:
         boots = [rng.choice(per_seed, len(per_seed)).mean() for _ in range(2000)]
         lo, hi = np.percentile(boots, [2.5, 97.5])
         sd = per_seed.std(ddof=1) if len(per_seed) > 1 else 0.0
-        table.setdefault(pr, {}).setdefault(c, {})[k] = {"mean": float(per_seed.mean()), "sd": float(sd), "ci": [float(lo), float(hi)], "per_seed": per_seed.tolist()}
+        table.setdefault(pr, {}).setdefault(c, {})[k] = {"mean": float(per_seed.mean()), "sd": float(sd), "ci": [float(lo), float(hi)],
+                                                        "per_seed": per_seed.tolist(), "runs": list(res[c][pr].keys())}
         row.append(f"{per_seed.mean():.3f} ± {sd:.3f} [{lo:.3f}, {hi:.3f}]")
       lines.append(f"| {lab} | " + " | ".join(row) + " |")
   # bar figure for the main metrics across presets
@@ -348,6 +349,70 @@ def closed_loop_estimator_table(finaldir: Path) -> str:
   return "\n".join(lines) + "\n"
 
 
+def plot_estimator_training(exp: Path, figdir: Path) -> None:
+  """Loss curves of the frozen estimator B (the run whose best.pt is models/estimator_B.pt)."""
+  runs = sorted(d for d in glob.glob(str(exp / "runs" / "estimator" / "*_estimator_B")) if (Path(d) / "best.pt").exists())
+  if not runs:
+    return
+  run = runs[-1]
+  sc = tb_scalars([str(Path(run) / "tb")], ["train/loss/total", "val/loss/total", "train/loss/pos", "val/loss/pos",
+                                             "train/loss/rot", "val/loss/rot", "train/loss/vel", "val/loss/vel",
+                                             "train/loss/contact", "val/loss/contact", "val/pos_rmse_mm",
+                                             "val/rot_err_sym_mean_deg", "val/yaw_rate_rmse_radps", "val/contact_micro_f1"])
+  panels = [("total", "loss: total"), ("pos", "loss: position"), ("rot", "loss: rotation (symmetric chordal)"),
+            ("vel", "loss: velocity"), ("contact", "loss: contact BCE")]
+  fig, axes = plt.subplots(2, 4, figsize=(20, 8))
+  for ax, (k, lab) in zip(axes.flat, panels):
+    for split, col in (("train", "#4C72B0"), ("val", "#DD8452")):
+      t = f"{split}/loss/{k}"
+      if t in sc:
+        x, y = sc[t]
+        ys = smooth(y, 9) if split == "train" else y
+        ax.plot(x[len(x) - len(ys):], ys, color=col, label=split)
+    ax.set_title(lab, fontsize=10)
+    ax.set_xlabel("optimizer step")
+    ax.set_yscale("log")
+    ax.legend(fontsize=8)
+  for ax, (t, lab) in zip(list(axes.flat)[5:], [("val/pos_rmse_mm", "val position RMSE [mm]"),
+                                                ("val/rot_err_sym_mean_deg", "val symmetric rotation error [deg]"),
+                                                ("val/contact_micro_f1", "val contact micro-F1")]):
+    if t in sc:
+      ax.plot(*sc[t], color="#55A868")
+    ax.set_title(lab, fontsize=10)
+    ax.set_xlabel("optimizer step")
+  fig.suptitle(f"Estimator B training ({Path(run).name}; validation split = A seeds 2/3, sim seeds 12000-12003)")
+  fig.tight_layout()
+  fig.savefig(figdir / "estimator_training.png", dpi=110)
+  plt.close(fig)
+
+
+def learning_speed_table(curvedir: Path) -> str:
+  """Sample-efficiency summaries of the validation curves (seed 7001, nominal, every 100 updates)."""
+  per: dict = defaultdict(dict)
+  for f in sorted(glob.glob(str(curvedir / "*.json"))):
+    m = re.fullmatch(r"([ACD])_seed(\d+)", Path(f).stem)
+    if not m:
+      continue
+    pts = json.loads(Path(f).read_text())["points"]
+    its = sorted(int(i) for i in pts)
+    tu = np.array([pts[str(i)]["turns"]["mean"] for i in its])
+    fa = np.array([pts[str(i)]["failure"]["mean"] for i in its])
+    first = lambda arr, ok: next((i for i, v in zip(its, arr) if ok(v)), None)  # noqa: E731
+    per[m.group(1)][int(m.group(2))] = {
+      "first_turns_ge_0.5": first(tu, lambda v: v >= 0.5), "first_turns_ge_0.75": first(tu, lambda v: v >= 0.75),
+      "first_failure_le_0.5": first(fa, lambda v: v <= 0.5),
+      "mean_turns_over_curve": float(np.trapz(tu, its) / (its[-1] - its[0])), "turns_at_last": float(tu[-1])}
+  keys = [("first_turns_ge_0.5", "first update with val turns >= 0.5"), ("first_turns_ge_0.75", "first update with val turns >= 0.75"),
+          ("first_failure_le_0.5", "first update with val failure <= 0.5"),
+          ("mean_turns_over_curve", "mean val turns over updates 100-1000 (area / width)"), ("turns_at_last", "val turns at update 1000")]
+  lines = ["## Learning speed (validation curves)\n", "Per-seed values (seed 1 / 2 / 3); `never` = not reached by update 1000.\n",
+           "| measure | A | C | D |", "|---|---|---|---|"]
+  fmt = lambda v: "never" if v is None else (f"{v:.3f}" if isinstance(v, float) else str(v))  # noqa: E731
+  for k, lab in keys:
+    lines.append(f"| {lab} | " + " | ".join(" / ".join(fmt(per[c][s][k]) for s in sorted(per[c])) for c in "ACD") + " |")
+  return "\n".join(lines) + "\n"
+
+
 def main():
   p = argparse.ArgumentParser()
   p.add_argument("--exp", default="experiments/scratch_state_estimation")
@@ -360,6 +425,7 @@ def main():
   logroot = Path(a.logroot)
   md = ["# Generated tables\n"]
   plot_pilot(logroot, figdir)
+  plot_estimator_training(exp, figdir)
   runs = runs_by_condition(logroot)
   if runs:
     s = plot_training(runs, figdir)
@@ -367,6 +433,7 @@ def main():
   if (exp / "results" / "curves").exists():
     sel = plot_validation_curves(exp / "results" / "curves", figdir)
     md.append("## Selected checkpoints (validation)\n\n" + "\n".join(f"- {k}: iteration {v}" for k, v in sorted(sel.items())) + "\n")
+    md.append(learning_speed_table(exp / "results" / "curves"))
   if (exp / "results" / "final").exists():
     res = load_final(exp / "results" / "final")
     md.append(final_tables(res, figdir))

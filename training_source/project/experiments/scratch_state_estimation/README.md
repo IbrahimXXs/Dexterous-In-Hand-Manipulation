@@ -2,7 +2,7 @@
 
 **Question.** Can explicit cube-state estimation from LEAP Hand proprioception alone improve continuous in-hand cube rotation, compared with proprioception-only reinforcement learning?
 
-**Status: this document is being filled in as stages complete.** Sections marked *(pending)* have not been executed yet. Nothing in them is a result.
+**Status: complete (2026-11-13).** Every stage ran to completion. Every number in this report comes from an executed experiment; the sources are in `results/` and `logs/`. The first C runs were invalid because of a bug; they were discarded and retrained (Section 1.8).
 
 ---
 
@@ -166,7 +166,7 @@ Figure: `figures/pilot_stage0.png`.
 
 **Consequence:**
 - All C runs trained before the fix are archived as invalid (`logs/rsl_rl/scratch_C_INVALID_estimator_head_zeroed/`, `results/_INVALID_C_estimator_head_zeroed/`) and are not used anywhere in this report.
-- C seeds 1–3 are retrained from scratch with the fix, using exactly the A/D settings and budget, uninterrupted (`scripts/sbatch_C_fresh.sh`).
+- C seeds 1–3 were then retrained from scratch with the fix (2026-11-12, 19:06 to about 22:10), using exactly the A/D settings and budget, uninterrupted (`scripts/sbatch_C_fresh.sh`). Their actor checkpoints contain no estimator weights, and their output layer starts at zero, as in A and D.
 
 **Interrupted runs policy:** a gpu-01 node failure at 08:47 interrupted two of the invalid C runs. Interrupted runs are never resumed, because RSL-RL's resume does not restore the adaptive learning rate, the reward-curriculum EMA or the RNG state. They are retrained from scratch, so every run in the comparison is uninterrupted.
 
@@ -366,3 +366,275 @@ The drop-within-0.5 s result rests on only 44 positive samples.
 **Robustness to dynamics:** errors barely change across cube mass, friction, actuator delay and damping quartiles (position 9.9–10.5 mm). They grow with time in episode: 4.7 mm in the first 10 steps (the cube is near its known start pose), against about 11 mm after 100 steps.
 
 Figures: `results/estimator/baselines.png`, `results/estimator/timeseries_*.png`, `results/estimator_events/lead_time_before_failure.png`.
+
+Loss curves: `figures/estimator_training.png`.
+
+### 3.2 Learning curves (A, C, D)
+
+Figures:
+- `figures/validation_curves.png`: validation turns, failure rate, survival and yaw rate against environment steps, every 100 updates, for each run and each condition mean.
+- `figures/training_curves.png`: training reward, genuine yaw rate, episode length, termination rates, saturation, exploration, learning rate, KL, policy std, entropy and gradient norm.
+
+All curves are cut at update 1000, the study budget. The training budget was identical: 1001 updates, or 131.2M environment steps, per run.
+
+**Learning speed** (validation seed 7001, nominal; per-seed values for seeds 1 / 2 / 3; from `results/tables.md`):
+
+| Measure | A | C | D |
+|---|---|---|---|
+| First update with validation turns ≥ 0.5 | 900 / 600 / 600 | 500 / 300 / 300 | 500 / 300 / 400 |
+| First update with validation failure ≤ 0.5 | never / 700 / 700 | 500 / 400 / 500 | 600 / 400 / 500 |
+| Mean validation turns over updates 100–1000 | 0.386 / 0.495 / 0.537 (mean 0.473) | 0.584 / 0.828 / 0.647 (mean 0.686) | 0.590 / 0.824 / 0.751 (mean 0.721) |
+| Validation turns at update 1000 | 0.67 / 0.84 / 0.86 | 0.88 / 1.15 / 0.82 | 0.96 / 1.11 / 1.08 |
+
+- **C and D learn faster than A.** Every C seed and every D seed has a larger mean-over-curve than every A seed. With 3 vs 3 seeds, complete separation has an exact one-sided permutation probability of 1/20 = 0.05 under "no difference", so this is the strongest separation n = 3 can show.
+- **C learns about as fast as D on this measure.** The means are 0.686 and 0.721, with strongly overlapping seeds.
+- **No run had converged.** Every run, in every condition, was still improving at update 1000, so all comparisons are at a fixed and limited budget. The ranking at convergence is unknown.
+
+**Selected checkpoints** (by validation): every run selected `model_1000` except A seed 3, which selected `model_900`. Copies, with their sha256, are in `checkpoints/` (`checkpoints/MANIFEST.txt`).
+
+### 3.3 Held-out test: final performance
+
+All 9 selected checkpoints were evaluated on test sim seeds 5001 and 5002 × 6 presets × 1024 environments × 30 s, with deterministic actions. Full tables with s.d. and bootstrap CIs for every metric and preset are in `results/tables.md`. Machine-readable versions are in `results/final_table.json` and `results/pairwise_differences.json`, and the figure is `figures/final_comparison.png`.
+
+**Uninterrupted turns in 30 s** (condition mean ± across-seed s.d.; per-seed values for seeds 1 / 2 / 3):
+
+| Preset | A | C | D |
+|---|---|---|---|
+| nominal | 0.785 ± 0.100 (0.671 / 0.823 / 0.859) | 0.927 ± 0.168 (0.864 / 1.117 / 0.799) | 1.041 ± 0.090 (0.937 / 1.099 / 1.086) |
+| heavy_slippery | 0.814 ± 0.075 | 0.972 ± 0.179 | 1.064 ± 0.108 |
+| light_grippy | 0.679 ± 0.094 | 0.836 ± 0.173 | 0.973 ± 0.084 |
+| high_delay | 0.707 ± 0.085 | 0.843 ± 0.158 | 0.961 ± 0.100 |
+| weak_motors | 0.778 ± 0.111 | 0.930 ± 0.174 | 1.036 ± 0.085 |
+| obs_noise_x3 | 0.773 ± 0.103 | 0.926 ± 0.162 | 1.036 ± 0.091 |
+| **Pooled** (per-seed mean over the 6 presets) | **0.756** (0.648 / 0.793 / 0.826) | **0.906** (0.849 / 1.095 / 0.773) | **1.018** (0.913 / 1.080 / 1.062) |
+
+**Other nominal-preset metrics:**
+
+| Metric | A | C | D |
+|---|---|---|---|
+| Tilt/drift failure rate | 0.425 ± 0.110 | 0.323 ± 0.075 | 0.285 ± 0.021 |
+| Survival [s] | 20.9 ± 3.0 | 23.0 ± 1.8 | 24.4 ± 0.1 |
+| Turns including after resets | 1.12 ± 0.03 | 1.21 ± 0.17 | 1.27 ± 0.11 |
+| Mean yaw rate [rad/s] | 0.235 | 0.245 | 0.255 |
+| Mean drift [mm] / mean tilt [°] | 18.3 / 17.0 | 17.6 / 17.3 | 17.7 / 17.5 |
+| Episode reward | 0.62 ± 0.23 | 0.97 ± 0.34 | 0.62 ± 0.25 |
+| Executed saturation | 0.055 | 0.071 | 0.080 |
+
+**Condition differences, pooled over presets** (difference of means, with a 95% bootstrap CI over training seeds; n = 3 per condition):
+
+| Metric | C − A | D − A | D − C |
+|---|---|---|---|
+| Turns | +0.150 [−0.006, +0.339] | **+0.263 [+0.148, +0.376]** | +0.113 [−0.075, +0.276] |
+| Failure rate | −0.107 [−0.229, +0.002] | **−0.147 [−0.267, −0.072]** | −0.040 [−0.132, +0.019] |
+| Survival [s] | +2.24 [−0.57, +5.13] | **+3.59 [+1.77, +7.00]** | **+1.35 [+0.16, +3.42]** |
+
+**Observations:**
+- **Rank order.** The order is the same in every preset: D > C > A for turns, failure and survival.
+- **C − A.** C − A is +0.14 to +0.16 turns in every preset, but every CI just includes 0. C seed 3 (pooled 0.773) is below A seeds 2 and 3 (0.793, 0.826).
+- **D − A.** D − A is positive in every preset, and every CI excludes 0. Every D seed beats every A seed.
+- **Share of the oracle gain.** In pooled turns, C recovers about 57% of the D − A gap (0.150 / 0.263).
+- **Spread across seeds.** C has the largest spread: C seed 2 is the best policy in the study (1.095 pooled), while C seed 3 is at A's level. D is the most consistent.
+- **Drops.** None of the 9 policies dropped the cube in any held-out evaluation. Every failure is a tilt or drift failure, with too-fast failures under 0.1%.
+- **Presets.** light_grippy and high_delay cost every condition about 0.07–0.11 turns relative to nominal. heavy_slippery is slightly *easier* than nominal for all three. Three-fold observation noise has almost no effect (≤ 0.012 turns), including for C, whose estimator sees the noisier joints.
+- **Test-seed noise reference.** Within a run, the two test seeds differ by 0.014 turns on average (maximum 0.039, over 54 run × preset pairs). That is far smaller than the across-training-seed s.d. (0.08–0.18), so the training seed dominates the uncertainty.
+- **Episode reward ranks C > A ≈ D, even though D rotates most.** The evaluation reward uses the final (post-curriculum) penalty weights. D's higher action saturation and faster rotation may cost more torque, work and linear-velocity penalty. This is a hypothesis; the reward terms were not decomposed at test time.
+
+### 3.4 Estimator B in closed loop (distribution shift)
+
+Estimator B was run on every policy's own held-out test rollouts (`estimator_closed_loop` in `results/final/*.json`). The table below lists the mean over the 6 presets and both test seeds.
+
+| Policy | Relation to B's data | Position RMSE [mm] | Symmetric rotation error [°] | Linear-velocity RMSE [m/s] | Yaw-rate RMSE [rad/s] |
+|---|---|---|---|---|---|
+| A seed 2 | produced training/val data | 5.6 | 6.8 | 0.018 | 0.26 |
+| A seed 3 | produced training/val data | 5.6 | 7.7 | 0.021 | 0.26 |
+| A seed 1 | produced offline *test* data | 8.8 | 15.7 | 0.020 | 0.33 |
+| C seed 1 / 2 / 3 | own policy, never seen | 10.1 / 9.7 / 9.3 | 14.4 / 15.3 / 18.9 | 0.020–0.022 | 0.30–0.37 |
+| D seed 1 / 2 / 3 | never seen | 9.2 / 11.1 / 16.4 | 12.3 / 18.7 / 20.3 | 0.020–0.022 | 0.30–0.34 |
+
+- **Training versus unseen policies.** On the two policies it was trained on, B is accurate to about 5.6 mm and 7°. On any policy it has not seen, the errors roughly double: 9–16 mm and 12–20°.
+- **C's own distribution.** The states C drives itself into are not harder for B than those of another unseen policy, such as A seed 1 or the D policies. C does not appear to push the estimator into a uniquely bad region.
+- **Velocities.** Velocity errors barely change across policies. They are poor everywhere (Section 3.1), so the velocity features carry little information for any policy.
+- **Not tested here.** Whether C would do better with an estimator trained on C's own rollouts (iterated data collection, as in DAgger) is a hypothesis this study did not test.
+
+### 3.5 Feature ablation: do C and D use the cube-state features?
+
+**Setup:**
+- Every C and D policy was rerun with its 19 cube features replaced, the rest of the input untouched. The replacements were:
+  - **zero:** all zeros;
+  - **mean:** the run's own mean feature vector, recorded on the normal run;
+  - **shuffle:** another environment's features, i.e. a plausible but wrong state (partner environment (i + n/2) mod n).
+- Same sim seeds, presets and randomization as the normal run, so every comparison is paired per environment.
+- Presets nominal and heavy_slippery × test seeds 5001 and 5002 × 1024 environments.
+- The action change is the mean absolute change in the executed action ([−1, 1] scale) on the states the normal policy visits.
+
+**Result** (averaged over the 2 presets × 2 test seeds; full per-cell table with paired 95% CIs in `results/tables.md`):
+
+| Run | Normal turns | Zero turns | Mean turns | Shuffle turns | Turns kept (zero / mean / shuffle) | Failure, normal → shuffle | Mean abs. action change (zero / mean / shuffle) |
+|---|---|---|---|---|---|---|---|
+| C seed 1 | 0.884 | 0.294 | 0.316 | 0.168 | 33% / 36% / 19% | 0.27 → 0.78 | 0.39 / 0.34 / 0.44 |
+| C seed 2 | 1.147 | 0.687 | 0.813 | 0.285 | 60% / 71% / 25% | 0.27 → 0.66 | 0.32 / 0.27 / 0.34 |
+| C seed 3 | 0.825 | 0.281 | 0.526 | 0.297 | 34% / 64% / 36% | 0.38 → 0.68 | 0.36 / 0.29 / 0.39 |
+| D seed 1 | 0.937 | 0.156 | 0.223 | 0.095 | 17% / 24% / 10% | 0.31 → 0.56 | 0.40 / 0.37 / 0.49 |
+| D seed 2 | 1.109 | 0.196 | 0.234 | 0.133 | 18% / 21% / 12% | 0.27 → 0.76 | 0.36 / 0.31 / 0.42 |
+| D seed 3 | 1.115 | 0.307 | 0.408 | 0.170 | 28% / 37% / 15% | 0.27 → 0.71 | 0.36 / 0.30 / 0.40 |
+
+Every ablation effect is far outside its paired CI (typically ±0.03 turns). No drops occurred in any ablation; failures are tilt or drift.
+
+**Observed:**
+- **C relies on the estimated features.**
+  - Replacing them changes 71–81% of executed action components by more than 0.05, with a mean change of 0.27–0.44.
+  - Turns fall to 19–71% of normal.
+  - With features zeroed, C seeds 1 and 3 (0.28–0.29 turns) fall far below every A policy, which was trained without features (A: 0.67–0.86 on nominal). C seed 2 (0.69) lands at the bottom of A's range. C did not learn "A plus an optional input": it built its control around the estimate.
+- **Wrong state is worse than no state.** Shuffled (plausible but wrong) features are the most damaging for every run. The policies therefore use the features as state-dependent information, not as a constant bias.
+- **D relies on its features even more** (10–37% of turns kept).
+- **C keeps more performance than D** under zero and mean replacement (33–71% vs. 17–37%).
+  - **Hypothesis:** because B's features are noisy, C learned to weight them less and to use the joint history more. Not tested.
+- **The fix worked.** Before the fix (Section 1.8), these same ablations changed C's actions by exactly 0.
+
+### 3.6 Action saturation and exploration diagnostics
+
+These panels are in `figures/training_curves.png`. The values are the mean of the last 20 updates (`results/training_last20_summary.json`).
+
+| Diagnostic | A | C | D |
+|---|---|---|---|
+| Executed saturation (|tanh(u)| > 0.99), end of training | 0.12–0.16 | 0.15–0.17 | 0.15–0.16 |
+| Policy std (pre-tanh), from 0.70 at the start | 1.16–1.19 | 1.16–1.19 | 1.14 |
+| Effective exploration share | 0.78–0.82 | 0.77–0.79 | 0.76–0.78 |
+| Adaptive learning rate, end | 3e-4 | 3e-4–4e-4 | 3e-4–4e-4 |
+| Approx. KL after update | 0.018 | 0.018–0.019 | 0.018–0.019 |
+| Executed saturation at test (deterministic), nominal | 0.055 | 0.071 | 0.080 |
+
+- **The Stage-0 corrections held for all conditions.** tanh squashing kept the executed saturation far below the original clipped action's, and the adaptive learning rate settled in a stable band without collapsing to its floor.
+- **Shared drift in all conditions.** Policy std grew steadily, from 0.70 to about 1.15–1.19, and executed saturation rose with it. It is nearly identical across A, C and D, so it does not confound the comparison. It is a limitation of the shared PPO setup, though: the entropy bonus (0.003), acting on the pre-squash std, may be stronger than needed with tanh actions. This is a hypothesis, not tested.
+
+## 4. Conclusions
+
+These conclusions use n = 3 training seeds per condition. **Observed** marks direct measurements; **Hypothesis** marks interpretation not tested here.
+
+1. **Can cube state be estimated from proprioception alone?**
+   - **Observed:** partly yes. On a held-out policy, B estimates cube position to 10.2 mm and symmetric orientation to 16.8° (median 13.7°). That clearly beats a linear model (15.2 mm, 39°) and the prior (24.4 mm, 39°).
+   - Contacts are estimated reasonably well (micro-F1 0.79).
+   - Velocities are estimated poorly (R² 0.33–0.41, and ≤ 0 when the cube is stable).
+
+2. **How accurate is it during difficult manipulation?**
+   - **Observed:** errors grow in difficult phases: 10.4–10.6 mm and 17° during slips, 12.4 mm when drift exceeds 20 mm, and 13.2 mm and 23° within 0.5 s of failure.
+   - The estimate still detects drift above 10 mm (AUROC 0.89) and imminent failure (0.81, comparable to the 0.79 from ground truth).
+   - In closed loop on unseen policies, including C itself, errors are 9–16 mm and 12–20°, about twice those on the policies that produced the training data.
+
+3. **Does estimator-augmented PPO learn faster than baseline PPO?**
+   - **Observed:** yes, at this budget. All 3 C seeds reach 0.5 validation turns at updates 300–500, against 600–900 for A. All 3 C seeds have a higher mean-over-curve than all 3 A seeds (0.686 vs. 0.473), the strongest separation n = 3 allows (one-sided permutation p = 0.05).
+
+4. **Does it achieve better final manipulation performance?**
+   - **Observed:** C is better than A on average in every held-out preset: +0.15 turns pooled, failure −0.11, survival +2.2 s.
+   - The 95% CIs over training seeds just include zero, and one C seed is no better than A.
+   - **Verdict:** a consistent but not statistically established improvement. Final-performance evidence is preliminary.
+
+5. **Does ground-truth cube-state information improve PPO?**
+   - **Observed:** yes. D beats A in every preset: +0.26 turns pooled [+0.15, +0.38], failure −0.15 [−0.27, −0.07], survival +3.6 s [+1.8, +7.0].
+   - D also learns faster, and its seeds are the most consistent.
+   - D is a simulation-only upper reference and is not deployable without external object sensing. It is not an upper bound for every seed: C seed 2 (1.095 pooled turns) beat all three D seeds.
+
+6. **How closely does estimator PPO approach oracle PPO?**
+   - **Observed:** C recovers about 57% of the D − A gain in pooled turns (0.150 of 0.263) and about 73% of the failure-rate gain.
+   - D − C is +0.11 turns [−0.08, +0.28], not resolved with n = 3. Survival is the exception: D − C is +1.35 s [+0.16, +3.42].
+   - C learns about as fast as D.
+   - C's across-seed standard deviation is about twice D's (nominal turns: 0.168 vs. 0.090).
+
+7. **Does estimator PPO actually use the predicted information?**
+   - **Observed:** yes, strongly. Replacing the estimated features changes most action components (mean absolute change 0.27–0.44) and cuts turns to 19–71% of normal.
+   - Shuffled (wrong-state) features are the most harmful, which shows state-dependent use.
+   - With features zeroed, C policies fall to or below the level of the feature-free A policies.
+   - C depends on its features somewhat less than D depends on true state.
+
+8. **Limitations and likely causes of the gap:**
+   - **Seeds:** n = 3 per condition; the CIs are wide and the bootstrap over 3 values is coarse.
+   - **Budget:** all runs were still improving at 131M steps, so the results describe sample efficiency at a fixed budget, not asymptotic performance.
+   - **Estimator–policy mismatch:**
+     - **Observed:** B was trained only on A rollouts and is about twice as inaccurate on unseen policies.
+     - **Hypothesis:** this distribution shift and the poor velocity estimates explain part of the D − C gap and C's larger seed variance. Retraining B on C's own rollouts was not tested.
+   - **Simulation only:** no hardware evaluation was run, and B's sim-to-real accuracy is unknown.
+   - **Shared PPO drift:** the policy std grows in all conditions (Section 3.6). This affects A, C and D equally. **Hypothesis:** it may limit every condition's final performance.
+   - **Bug:** the bug in the first C runs (Section 1.8) was found by the ablation and fixed. All reported C results come from the retrained runs.
+
+## 5. Compute
+
+Hardware: Slurm cluster, NVIDIA RTX 5000 Ada (32 GB) GPUs on node gpu-01, shared with other users' workloads.
+
+| Work | GPU time | Basis |
+|---|---|---|
+| PPO training, valid runs (A, C, D × 3 seeds) | 34.1 run-hours wall-clock (A 13.1, C 7.9, D 13.1) | `Time elapsed` at update 1000 in `logs/train_*.log` |
+| Same, as GPU-device hours | about 18 h | runs were co-located 2 per GPU (A_s and D_s on one GPU; C seeds 1 and 3 on one GPU), so per-run wall-clock overstates device use |
+| Invalid C runs (Section 1.8), discarded | about 7.5 run-hours | archived logs |
+| Pilot (Stage 0) | 3 runs × 200 updates | `logs/pilot_*.log` |
+| Estimator data collection and training | about 1 h, approximate | collection logs end 06:28–06:38; estimator training about 5 min (06:37–06:42) |
+| Evaluation: validation curves, held-out test, ablations | about 9 h, approximate | log timestamps (curves about 25 min per run, test about 15–25 min per run, ablations about 25–40 min per run) |
+
+Training wall-clock varies (1.9–5.5 h per run) with GPU sharing. Results do not depend on it: every run used the same settings, budget and seeds, and none was resumed.
+
+## 6. Reproduction
+
+All commands run from `training_source/project/`, in the conda environment `leap-estimator` (`conda/setup_conda_env.sh`, exact versions in `conda/requirements-leap-estimator.lock.txt`).
+
+**Stage 0 pilot:**
+```bash
+bash experiments/scratch_state_estimation/scripts/stage0_pilot.sh
+```
+
+**A and D, seeds 1–3** (4096 envs, `STUDY_ITERATIONS = 1001` in `leap_right_scratch_study/rl_cfg.py`, zero-initialized actor output):
+```bash
+GPU=<g> bash experiments/scratch_state_estimation/scripts/train_condition.sh A <seed>
+GPU=<g> bash experiments/scratch_state_estimation/scripts/train_condition.sh D <seed>
+```
+The script resumes if partial checkpoints exist. This study never resumed: no `[resume]` line appears in any training log.
+
+**B: data and estimator:**
+```bash
+MODE=trainval GPUS="2 3" A1=<A seed2 run> A2=<A seed3 run> bash experiments/scratch_state_estimation/scripts/stage2_estimator.sh
+MODE=test     GPUS="1"   A3=<A seed1 run>                  bash experiments/scratch_state_estimation/scripts/stage2_estimator.sh
+```
+- The collection plan, including sim seeds and checkpoints, is logged in `data/collection_plan.txt`.
+- Estimator hyperparameters are in `runs/estimator/*_estimator_B/args.json`.
+- Estimator B was frozen to `models/estimator_B.pt` (sha256 `6e333d60…e64`).
+
+**C, seeds 1–3** (identical settings; the estimator path comes from `LEAP_SCRATCH_ESTIMATOR`). The command trains, then runs the validation curve, held-out test and ablation for that seed:
+```bash
+CUDA_VISIBLE_DEVICES=<g> SEED=<seed> EXTRA_ABL=D<seed> bash experiments/scratch_state_estimation/scripts/sbatch_C_fresh.sh
+```
+
+**Evaluation and figures:**
+```bash
+GPU=<g> bash experiments/scratch_state_estimation/scripts/run_curves.sh A1 A2 A3 D1 D2 D3   # validation curves + checkpoint selection
+GPU=<g> bash experiments/scratch_state_estimation/scripts/run_final.sh  A1 A2 A3 D1 D2 D3   # held-out test (seeds 5001/5002, 6 presets)
+python experiments/scratch_state_estimation/scripts/study_eval.py ablation --policy D_seed1=D:<ckpt> --num-envs 1024 --out experiments/scratch_state_estimation/results/ablation
+python experiments/scratch_state_estimation/scripts/make_figures.py   # figures/ and results/tables.md
+pytest tests/test_scratch_study.py tests/test_estimation.py
+```
+
+**Seeds:**
+
+| Purpose | Seeds |
+|---|---|
+| Training | 1, 2, 3 |
+| Estimator data | 11000–11009 (train), 12000–12003 (val), 13000–13004 (test) |
+| Validation | 7001 |
+| Test | 5001, 5002 |
+
+**Output layout** (`experiments/scratch_state_estimation/`):
+
+| Path | Contents |
+|---|---|
+| `checkpoints/` | selected policies plus manifest |
+| `models/` | estimator B |
+| `results/curves/` | validation curves |
+| `results/final/` | held-out test: JSON plus per-environment `.npz` |
+| `results/ablation/` | ablation results |
+| `results/estimator*/` | estimator evaluation |
+| `results/tables.md` | generated tables |
+| `figures/` | figures |
+| `logs/` | all logs |
+| `runs/estimator/` | estimator training run |
+| `results/_INVALID_C_estimator_head_zeroed/` | archived invalid C results, not used |
+
+Full RSL-RL run directories, with every checkpoint and TensorBoard logs, are in `logs/rsl_rl/scratch_{A,C,D}/`, which git ignores because of their size. The estimator dataset (9.8 GB) is also gitignored.
+
+**Safety:** no hardware was used. Physical deployment remains disabled by default and requires the existing supervised safety workflow.
