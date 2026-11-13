@@ -1,0 +1,9 @@
+== tracked files (git HEAD 310ce80 at baseline): sha256
+OK: all 752 tracked files unchanged (.gitignore excluded: one line added for the force dataset)
+== RSL-RL checkpoints (logs/rsl_rl, incl. A/C/D runs): sha256
+OK: all 303 checkpoints unchanged
+== datasets (path size mtime)
+OK: training_source/project/experiments/scratch_state_estimation/data unchanged
+OK: training_source/project/data unchanged
+== git: modified tracked files (expected: only .gitignore)
+ M .gitignore

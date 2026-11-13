@@ -1,0 +1,7 @@
+{
+  "best_step": 40000,
+  "best_val_mae_N": 0.1176464632153511,
+  "head": "hurdle",
+  "seed": 0,
+  "elapsed_s": 67.23085331916809
+}

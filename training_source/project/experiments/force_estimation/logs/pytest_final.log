@@ -1,0 +1,34 @@
+..............................................                           [100%]
+=============================== warnings summary ===============================
+training_source/project/tests/test_force_estimation.py: 35 warnings
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+training_source/project/tests/test_estimation.py::test_loss_decreases_and_contact_mask
+  /home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/tests/test_estimation.py:213: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+  Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+    assert float(loss) < 0.5 * first
+
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/jit/_trace.py:1006: DeprecationWarning: `torch.jit.trace` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/jit/_trace.py:1145: DeprecationWarning: `torch.jit.trace_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+  /home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/src/in_hand_rotation_mjlab/estimation/model.py:97: TracerWarning: Converting a tensor to a Python boolean might cause the trace to be incorrect. We can't record the data flow of Python values, so this value will be treated as a constant in the future. This means that the trace might not generalize to other inputs!
+    if obs.shape[-1] != self.cfg.obs_dim:
+
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+training_source/project/tests/test_estimation.py::test_export_bundle_and_robot_runner
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/jit/_serialization.py:176: DeprecationWarning: `torch.jit.load` is deprecated. Please switch to `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+46 passed, 45 warnings in 104.74s (0:01:44)

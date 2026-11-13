@@ -1,0 +1,12 @@
+/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/src/in_hand_rotation_mjlab/force_estimation/inference.py:41: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /pytorch/torch/csrc/utils/tensor_numpy.cpp:213.)
+  x = torch.as_tensor(np.asarray(obs, dtype=np.float32), device=self.device)
+output order: ('thumb_force_N', 'index_force_N', 'middle_force_N', 'ring_force_N')
+env 0: estimate  0.631  0.000  0.087  0.000   true  0.040  0.000  0.000  0.054
+env 1: estimate  1.712  0.000  0.629  0.000   true  1.723  0.000  1.281  0.000
+env 2: estimate  1.845  0.000  0.305  0.000   true  2.300  0.000  1.238  0.000
+env 3: estimate  0.720  0.000  0.053  0.000   true  0.401  0.000  1.107  0.000
+env 4: estimate  0.860  0.019  0.280  0.000   true  0.818  0.111  0.507  0.000
+env 5: estimate  0.398  0.000  0.098  0.000   true  0.613  0.000  0.343  0.000
+env 6: estimate  1.885  0.000  0.000  0.000   true  2.496  0.000  0.000  0.000
+env 7: estimate  1.336  0.000  0.002  0.000   true  1.256  0.000  0.251  0.000
+CPU latency per single call (incl. numpy<->torch): 0.150 ms

@@ -1,0 +1,22 @@
+[train] train rows 1,836,483  val rows 306,198  load 2s
+[  2000] loss 0.0619 val MAE 0.1488 N RMSE 0.3425 N (6s) *
+[  4000] loss 0.0472 val MAE 0.1374 N RMSE 0.3234 N (8s) *
+[  6000] loss 0.0427 val MAE 0.1337 N RMSE 0.3238 N (11s) *
+[  8000] loss 0.0395 val MAE 0.1276 N RMSE 0.3150 N (14s) *
+[ 10000] loss 0.0370 val MAE 0.1263 N RMSE 0.3148 N (17s) *
+[ 12000] loss 0.0349 val MAE 0.1247 N RMSE 0.3093 N (19s) *
+[ 14000] loss 0.0329 val MAE 0.1244 N RMSE 0.3094 N (22s) *
+[ 16000] loss 0.0315 val MAE 0.1232 N RMSE 0.3090 N (25s) *
+[ 18000] loss 0.0299 val MAE 0.1226 N RMSE 0.3067 N (28s) *
+[ 20000] loss 0.0286 val MAE 0.1209 N RMSE 0.3067 N (31s) *
+[ 22000] loss 0.0274 val MAE 0.1214 N RMSE 0.3072 N (33s)
+[ 24000] loss 0.0263 val MAE 0.1218 N RMSE 0.3070 N (36s)
+[ 26000] loss 0.0254 val MAE 0.1214 N RMSE 0.3058 N (39s)
+[ 28000] loss 0.0245 val MAE 0.1200 N RMSE 0.3055 N (42s) *
+[ 30000] loss 0.0237 val MAE 0.1198 N RMSE 0.3061 N (45s) *
+[ 32000] loss 0.0229 val MAE 0.1196 N RMSE 0.3056 N (47s) *
+[ 34000] loss 0.0224 val MAE 0.1197 N RMSE 0.3056 N (50s)
+[ 36000] loss 0.0220 val MAE 0.1192 N RMSE 0.3053 N (53s) *
+[ 38000] loss 0.0217 val MAE 0.1192 N RMSE 0.3051 N (56s) *
+[ 40000] loss 0.0215 val MAE 0.1191 N RMSE 0.3051 N (59s) *
+[done] best step 40000 val MAE 0.1191 N

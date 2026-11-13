@@ -1,0 +1,7 @@
+{
+  "best_step": 32000,
+  "best_val_mae_N": 0.12023565173149109,
+  "head": "direct",
+  "seed": 0,
+  "elapsed_s": 63.978644609451294
+}

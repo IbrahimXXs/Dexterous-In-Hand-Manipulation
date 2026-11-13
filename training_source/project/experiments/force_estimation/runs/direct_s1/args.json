@@ -1,0 +1,15 @@
+{
+  "data": "experiments/force_estimation/data",
+  "runs": "experiments/force_estimation/runs",
+  "run_name": "direct_s1",
+  "head": "direct",
+  "seed": 1,
+  "steps": 40000,
+  "batch": 4096,
+  "lr": 0.001,
+  "wd": 0.0001,
+  "huber": 1.0,
+  "eval_every": 2000,
+  "max_val_rows": 600000,
+  "device": "cuda:0"
+}

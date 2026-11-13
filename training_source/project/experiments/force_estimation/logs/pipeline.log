@@ -1,0 +1,192 @@
+Fri Nov 13 19:34:11 +04 2026 pipeline start host gpu-04 gpu 6
+51 collection runs
+collect train 21003 A_seed2_it1000_std2.0 exit 0
+collect train 21002 A_seed2_it1000 exit 0
+collect train 21001 A_seed2_it600 exit 0
+collect train 21005 A_seed3_it600 exit 0
+collect train 21004 A_seed3_it300 exit 0
+collect train 21000 A_seed2_it300 exit 0
+collect train 21006 A_seed3_it1000 exit 0
+collect train 21007 A_seed3_it1000_std2.0 exit 0
+collect train 21009 C_seed2_it600 exit 0
+collect train 21010 C_seed2_it1000 exit 0
+collect train 21011 C_seed2_it1000_std2.0 exit 0
+collect train 21008 C_seed2_it300 exit 0
+collect val 22001 A_seed2_it1000 exit 0
+collect val 22000 A_seed2_it600 exit 0
+collect train 21013 D_seed2_it600 exit 0
+collect train 21012 D_seed2_it300 exit 0
+collect train 21014 D_seed2_it1000 exit 0
+collect train 21015 D_seed2_it1000_std2.0 exit 0
+collect val 22003 A_seed3_it1000 exit 0
+collect val 22002 A_seed3_it600 exit 0
+collect val 22004 C_seed2_it600 exit 0
+collect val 22005 C_seed2_it1000 exit 0
+collect val 22006 D_seed2_it600 exit 0
+collect val 22007 D_seed2_it1000 exit 0
+collect test 23001 A_seed1_it1000 exit 0
+collect test 23002 A_seed1_it1000_std2.0 exit 0
+collect test 23004 C_seed3_it1000 exit 0
+collect test 23005 C_seed3_it1000_std2.0 exit 0
+collect test 23000 A_seed1_it300 exit 0
+collect test 23003 C_seed3_it300 exit 0
+collect test 23007 D_seed1_it1000 exit 0
+collect test 23008 D_seed1_it1000_std2.0 exit 0
+collect test_seen 24000 A_seed2_it1000 exit 0
+collect test_seen 24002 D_seed2_it1000 exit 0
+collect test_seen 24001 C_seed2_it1000 exit 0
+collect test 23006 D_seed1_it300 exit 0
+collect robust_heavy_slippery 25000 A_seed1_it1000 exit 0
+collect robust_heavy_slippery 25002 D_seed1_it1000 exit 0
+collect robust_heavy_slippery 25001 C_seed3_it1000 exit 0
+collect robust_light_grippy 25005 D_seed1_it1000 exit 0
+collect robust_light_grippy 25004 C_seed3_it1000 exit 0
+collect robust_light_grippy 25003 A_seed1_it1000 exit 0
+collect robust_high_delay 25006 A_seed1_it1000 exit 0
+collect robust_high_delay 25008 D_seed1_it1000 exit 0
+collect robust_high_delay 25007 C_seed3_it1000 exit 0
+collect robust_weak_motors 25011 D_seed1_it1000 exit 0
+collect robust_weak_motors 25009 A_seed1_it1000 exit 0
+collect robust_weak_motors 25010 C_seed3_it1000 exit 0
+collect robust_obs_noise_x3 25012 A_seed1_it1000 exit 0
+collect robust_obs_noise_x3 25014 D_seed1_it1000 exit 0
+collect robust_obs_noise_x3 25013 C_seed3_it1000 exit 0
+Fri Nov 13 20:06:36 +04 2026 collection done
+train direct_s0 exit 0
+train direct_s1 exit 0
+train hurdle_s0 exit 0
+train hurdle_s1 exit 0
+{
+  "selected_run": "hurdle_s0",
+  "rule": "lowest validation MAE (N, mean over fingers)",
+  "candidates": [
+    {
+      "run": "hurdle_s0",
+      "val_mae_N": 0.1176464632153511,
+      "head": "hurdle",
+      "seed": 0,
+      "best_step": 40000
+    },
+    {
+      "run": "hurdle_s1",
+      "val_mae_N": 0.11769796907901764,
+      "head": "hurdle",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s1",
+      "val_mae_N": 0.11912593990564346,
+      "head": "direct",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s0",
+      "val_mae_N": 0.12023565173149109,
+      "head": "direct",
+      "seed": 0,
+      "best_step": 32000
+    }
+  ],
+  "sha256": "c6af02a416a7963ad87365f0d32b1c6cc70556d1e1195bc406bda912f3c14c21"
+}
+Fri Nov 13 20:13:14 +04 2026 pipeline start host gpu-04 gpu 0
+51 collection runs
+collect train 21000 A_seed2_it300 exit 0
+collect train 21002 A_seed2_it1000 exit 0
+collect train 21001 A_seed2_it600 exit 0
+collect train 21003 A_seed2_it1000_std2.0 exit 0
+collect train 21005 A_seed3_it600 exit 0
+collect train 21006 A_seed3_it1000 exit 0
+collect train 21004 A_seed3_it300 exit 0
+collect train 21007 A_seed3_it1000_std2.0 exit 0
+collect train 21009 C_seed2_it600 exit 0
+collect train 21011 C_seed2_it1000_std2.0 exit 0
+collect train 21010 C_seed2_it1000 exit 0
+collect train 21008 C_seed2_it300 exit 0
+collect train 21015 D_seed2_it1000_std2.0 exit 0
+collect train 21014 D_seed2_it1000 exit 0
+collect train 21013 D_seed2_it600 exit 0
+collect train 21012 D_seed2_it300 exit 0
+collect val 22001 A_seed2_it1000 exit 0
+collect val 22003 A_seed3_it1000 exit 0
+collect val 22000 A_seed2_it600 exit 0
+collect val 22002 A_seed3_it600 exit 0
+collect val 22004 C_seed2_it600 exit 0
+collect val 22007 D_seed2_it1000 exit 0
+collect val 22006 D_seed2_it600 exit 0
+collect val 22005 C_seed2_it1000 exit 0
+evaluate exit 0
+collect test 23000 A_seed1_it300 exit 0
+collect test 23003 C_seed3_it300 exit 0
+collect test 23002 A_seed1_it1000_std2.0 exit 0
+collect test 23001 A_seed1_it1000 exit 0
+inference example exit 0
+collect test 23007 D_seed1_it1000 exit 0
+collect test 23005 C_seed3_it1000_std2.0 exit 0
+collect test 23004 C_seed3_it1000 exit 0
+collect test 23006 D_seed1_it300 exit 0
+preservation check exit 0
+collect test 23008 D_seed1_it1000_std2.0 exit 0
+collect test_seen 24000 A_seed2_it1000 exit 0
+collect test_seen 24002 D_seed2_it1000 exit 0
+collect test_seen 24001 C_seed2_it1000 exit 0
+collect robust_heavy_slippery 25000 A_seed1_it1000 exit 0
+collect robust_heavy_slippery 25002 D_seed1_it1000 exit 0
+collect robust_heavy_slippery 25001 C_seed3_it1000 exit 0
+collect robust_light_grippy 25003 A_seed1_it1000 exit 0
+collect robust_light_grippy 25004 C_seed3_it1000 exit 0
+collect robust_light_grippy 25005 D_seed1_it1000 exit 0
+collect robust_high_delay 25007 C_seed3_it1000 exit 0
+collect robust_high_delay 25006 A_seed1_it1000 exit 0
+collect robust_weak_motors 25009 A_seed1_it1000 exit 0
+collect robust_high_delay 25008 D_seed1_it1000 exit 0
+collect robust_weak_motors 25010 C_seed3_it1000 exit 0
+collect robust_weak_motors 25011 D_seed1_it1000 exit 0
+collect robust_obs_noise_x3 25013 C_seed3_it1000 exit 0
+collect robust_obs_noise_x3 25012 A_seed1_it1000 exit 0
+collect robust_obs_noise_x3 25014 D_seed1_it1000 exit 0
+Fri Nov 13 20:14:02 +04 2026 collection done
+{
+  "selected_run": "hurdle_s0",
+  "rule": "lowest validation MAE (N, mean over fingers)",
+  "candidates": [
+    {
+      "run": "hurdle_s0",
+      "val_mae_N": 0.1176464632153511,
+      "head": "hurdle",
+      "seed": 0,
+      "best_step": 40000
+    },
+    {
+      "run": "hurdle_s1",
+      "val_mae_N": 0.11769796907901764,
+      "head": "hurdle",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s1",
+      "val_mae_N": 0.11912593990564346,
+      "head": "direct",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s0",
+      "val_mae_N": 0.12023565173149109,
+      "head": "direct",
+      "seed": 0,
+      "best_step": 32000
+    }
+  ],
+  "sha256": "c6af02a416a7963ad87365f0d32b1c6cc70556d1e1195bc406bda912f3c14c21"
+}
+evaluate exit 1
+inference example exit 0
+preservation check exit 0
+pytest exit 1
+Fri Nov 13 20:14:30 +04 2026 PIPELINE_DONE
+pytest exit 0
+Fri Nov 13 20:15:35 +04 2026 PIPELINE_DONE

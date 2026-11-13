@@ -1,0 +1,35 @@
+{
+  "selected_run": "hurdle_s0",
+  "rule": "lowest validation MAE (N, mean over fingers)",
+  "candidates": [
+    {
+      "run": "hurdle_s0",
+      "val_mae_N": 0.1176464632153511,
+      "head": "hurdle",
+      "seed": 0,
+      "best_step": 40000
+    },
+    {
+      "run": "hurdle_s1",
+      "val_mae_N": 0.11769796907901764,
+      "head": "hurdle",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s1",
+      "val_mae_N": 0.11912593990564346,
+      "head": "direct",
+      "seed": 1,
+      "best_step": 40000
+    },
+    {
+      "run": "direct_s0",
+      "val_mae_N": 0.12023565173149109,
+      "head": "direct",
+      "seed": 0,
+      "best_step": 32000
+    }
+  ],
+  "sha256": "c6af02a416a7963ad87365f0d32b1c6cc70556d1e1195bc406bda912f3c14c21"
+}
