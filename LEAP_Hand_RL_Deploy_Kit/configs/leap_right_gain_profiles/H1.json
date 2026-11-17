@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "context": "H1",
+  "description": "Uniform LEAP Hand test condition with supplied hardware PID, MuJoCo PD, and joint plant parameters.",
+  "application": "uniform_all_16_motors_and_joints",
+  "hardware": {
+    "operating_mode": 5,
+    "position_p_gain_raw": 600,
+    "position_i_gain_raw": 0,
+    "position_d_gain_raw": 150,
+    "mcp_side_gain_scale": 1.0
+  },
+  "mujoco": {
+    "actuator_model": "IdealPd",
+    "kp_Nm_per_rad": 1.579836,
+    "kv_Nm_s_per_rad": 0.202115,
+    "armature_kg_m2": 0.00632963,
+    "passive_damping_Nm_s_per_rad": 0.0425664,
+    "frictionloss_Nm": 0.00736304
+  },
+  "inherited_parameters": [
+    "effort_limit",
+    "action_delay"
+  ]
+}

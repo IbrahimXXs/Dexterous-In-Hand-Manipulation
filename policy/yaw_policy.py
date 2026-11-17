@@ -160,6 +160,14 @@ class ContinuousYawPolicy:
         out = h @ self._w6.T + self._b6
         return out.reshape(-1)
 
+    def _squash_action(self, raw_action: np.ndarray) -> np.ndarray:
+        """Map raw network output to the normalised command in [-1, 1].
+
+        model_400 was trained with clipping; subclasses for policies trained
+        with a different mapping (e.g. tanh) override this.
+        """
+        return np.clip(raw_action, -1.0, 1.0)
+
     def step(self, current_q_server: np.ndarray) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
         """Execute one policy step at 20 Hz.
 
@@ -182,7 +190,7 @@ class ContinuousYawPolicy:
 
         obs_320 = self._get_chronological_obs()
         raw_action = self._forward(obs_320)
-        clipped_action = np.clip(raw_action, -1.0, 1.0)
+        clipped_action = self._squash_action(raw_action)
 
         delta = clipped_action * self.delta_range
         new_target = np.clip(self._prev_command + delta, self.lower_limits, self.upper_limits)

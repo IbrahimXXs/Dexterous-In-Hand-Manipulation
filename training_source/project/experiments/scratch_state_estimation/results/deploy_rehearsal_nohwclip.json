@@ -1,0 +1,78 @@
+{
+  "A_seed2/nominal/seed5001/n64": {
+    "policy": "A_seed2",
+    "checkpoint": "model_1000.pt",
+    "seed": 5001,
+    "preset": "nominal",
+    "num_envs": 64,
+    "steps": 600,
+    "hw_clip": false,
+    "reference_training_actor": {
+      "turns": 0.741197943687439,
+      "failure": 0.421875,
+      "drop": 0.0,
+      "survival_s": 20.864843368530273,
+      "mean_yaw_rate": 0.3119492530822754,
+      "exec_saturation": 0.07086393237113953
+    },
+    "kit_reset_measured": {
+      "turns": 0.7168912887573242,
+      "failure": 0.515625,
+      "drop": 0.0,
+      "survival_s": 19.986717224121094,
+      "mean_yaw_rate": 0.3046354055404663,
+      "exec_saturation": 0.06083214282989502,
+      "turns_minus_reference": -0.02430662512779236,
+      "turns_diff_ci95": 0.09122630670666694,
+      "obs_max_abs_err_after_10_steps": 1.1920928955078125e-07,
+      "hw_limit_clip_fraction": 0.0,
+      "hw_clip_fraction_per_joint": {},
+      "hw_clip_max_excess_rad": {}
+    }
+  },
+  "C_seed2/nominal/seed5001/n64": {
+    "policy": "C_seed2",
+    "checkpoint": "model_1000.pt",
+    "seed": 5001,
+    "preset": "nominal",
+    "num_envs": 64,
+    "steps": 600,
+    "hw_clip": false,
+    "reference_training_actor": {
+      "turns": 1.094468355178833,
+      "failure": 0.296875,
+      "drop": 0.0,
+      "survival_s": 23.654687881469727,
+      "mean_yaw_rate": 0.3615500330924988,
+      "exec_saturation": 0.08960460126399994
+    },
+    "kit_reset_measured": {
+      "turns": 1.0107719898223877,
+      "failure": 0.328125,
+      "drop": 0.0,
+      "survival_s": 22.848438262939453,
+      "mean_yaw_rate": 0.3417279124259949,
+      "exec_saturation": 0.08751815557479858,
+      "turns_minus_reference": -0.08369636535644531,
+      "turns_diff_ci95": 0.08712578937411308,
+      "obs_max_abs_err_after_10_steps": 1.1920928955078125e-07,
+      "hw_limit_clip_fraction": 0.0,
+      "hw_clip_fraction_per_joint": {},
+      "hw_clip_max_excess_rad": {}
+    },
+    "kit_reset_target": {
+      "turns": 1.0288888216018677,
+      "failure": 0.34375,
+      "drop": 0.0,
+      "survival_s": 22.774219512939453,
+      "mean_yaw_rate": 0.3564537465572357,
+      "exec_saturation": 0.08764523267745972,
+      "turns_minus_reference": -0.06557957828044891,
+      "turns_diff_ci95": 0.07092156335711479,
+      "obs_max_abs_err_after_10_steps": 1.1920928955078125e-07,
+      "hw_limit_clip_fraction": 0.0,
+      "hw_clip_fraction_per_joint": {},
+      "hw_clip_max_excess_rad": {}
+    }
+  }
+}
