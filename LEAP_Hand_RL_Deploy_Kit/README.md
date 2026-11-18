@@ -86,6 +86,48 @@ Every other bridge flag can be passed after `--`. To list them all:
 * `policies/{A,C}_seed{1,2,3}/`: the from-scratch study policies, ready to run.
 * Session report: `../docs/hardware_session_2026-11-17.md`.
 
+## Live view: estimated cube + fingertip forces (added 18 Nov 2026)
+
+Every `shadow` / `run` now also logs, for **any** policy (A, C, model_400), two
+estimates computed from the same 320 joint numbers the policy reads: the cube
+state (estimator B) and the normal force at each fingertip (force estimator).
+They are display/log only and never reach the policy or the motors.
+`live` adds a 3D window next to the hand:
+
+```bash
+./leap.sh inspect policies/hwlim_C_seed1                 # new C (trained inside the kit limits)
+./leap.sh live shadow policies/hwlim_C_seed1             # torque off: move the cube/fingers by hand
+./leap.sh live run    policies/hwlim_C_seed1             # powered, 6 s; same safety flow as `run`
+./leap.sh live run    policies/hwlim_A_seed1 -- --max-steps 600   # baseline A, 30 s
+./leap.sh view                                           # replay the newest log in 3D
+./leap.sh analyze                                        # forces vs motor current, newest log
+```
+
+| In the window | Meaning |
+|---|---|
+| hand | measured encoder angles (mirrors the real hand) |
+| orange see-through cube | estimated palm-frame cube pose, kept continuous over the cube's 24 symmetries (face identity is not observable, so the cube is plain) |
+| arrows into the cube | estimated fingertip normal force, 3 cm per N, labelled `T/I/M/R x.xxN` |
+| spheres on fingertips | force estimator's contact probability (size and opacity) |
+| top-left text | policy, SHADOW/POWERED, time, **est. turns** (+ = the direction the policy was trained to turn), est. cube position (mm) |
+| top-right table | per finger: F_est [N], contact p (force est.), contact p (estimator B), finger motor current [mA], F(I) [N] |
+| bottom plots | last 10 s of estimated forces and of forces implied by motor current |
+
+`F(I)` is an independent physics cross-check: joint torque = Kt × current
+(`--kt`, default 0.5 N m/A, approximate), fingertip force from J^T F = τ
+(damped least squares). It also contains gravity, friction and tracking effort
+and saturates at the current limit, so use it for trends (correlation), not
+absolute newtons. `analyze` reports r(F_est, current), r(F_est, F(I)) and the
+current with vs without estimated contact, and writes `<log>_analysis.json/.png`.
+
+* Viewer and analysis need `mujoco` (the repo's `.venv`; `uv sync` at the repo
+  root). The control loop does not; it streams UDP packets to
+  `LEAP_LIVE_UDP` (configs/hand.env) and never waits for the viewer.
+* Older logs work too: `view` / `analyze` re-run the estimators on the logged
+  joints and commands.
+* `policies/hwlim_{A,C}_seed{1,2,3}` link to the study's deploy folders
+  (`training_source/project/experiments/hwlimit_ac/deploy/policies/`).
+
 ## What policies work
 
 The kit supports any rsl_rl MLP actor (any depth, width, or activation, with or

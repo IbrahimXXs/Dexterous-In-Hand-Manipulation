@@ -8,13 +8,18 @@
 #   ./leap.sh report  [log.npz]      summarise the newest (or given) run log
 #   ./leap.sh test                   offline self-test with the reference policy
 #   ./leap.sh functest [sim]         basic hardware function test, no policy (MOVES the hand)
+#   ./leap.sh live shadow|run [policy_dir]  same as shadow / run + live 3D viewer
+#                                    (estimated cube, fingertip forces, motor current)
+#   ./leap.sh live sim [policy_dir]  try the viewer with NO hand (simulated motor bus)
+#   ./leap.sh view    [log.npz]      replay a run log in the 3D viewer
+#   ./leap.sh analyze [log.npz]      estimated forces vs motor current for a run
 #
 # policy_dir defaults to PUT_YOUR_RL_FILES_HERE/. Extra flags for the hardware
 # bridge go after "--", e.g.  ./leap.sh run -- --max-steps 200 --gain-profile H2
 set -euo pipefail
 KIT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-die() { printf '\033[1;31m[error] %s\033[0m\n' "$*"; exit 1; }
+die() { printf '\033[1;31m[error] %s\033[0m\n' "$*" >&2; exit 1; }
 
 [[ -f "$KIT/.python" ]] || die "Run ./install.sh first."
 PY="$(cat "$KIT/.python")"
@@ -32,7 +37,7 @@ done
 policy_dir() {
   local d="${POS[0]:-$KIT/PUT_YOUR_RL_FILES_HERE}"
   [[ -e "$d" ]] || die "Policy path $d does not exist."
-  if [[ -d "$d" ]] && ! find "$d" -name '*.pt' | grep -q .; then
+  if [[ -d "$d" ]] && ! find -L "$d" -name '*.pt' | grep -q .; then
     die "No .pt checkpoint in $d - copy your model_XXXX.pt (and params/env.yaml, params/agent.yaml) there."
   fi
   echo "$d"
@@ -69,10 +74,37 @@ print(h.hexdigest()[:16])
 EOF
 }
 
+MONITOR_ARGS=()
+if [[ -f "$KIT/monitors/cube_estimator.npz" && -f "$KIT/monitors/force_estimator.npz" ]]; then
+  # cube-state + fingertip-force estimates are logged for every policy (never fed to it)
+  MONITOR_ARGS=(--monitor-dir "$KIT/monitors")
+fi
+LIVE_ARGS=()
+
+viewer_python() {
+  if [[ "${LEAP_VIEWER_PYTHON:-auto}" != "auto" ]]; then echo "$LEAP_VIEWER_PYTHON"; return; fi
+  if [[ -x "$KIT/../.venv/bin/python" ]] && "$KIT/../.venv/bin/python" -c "import mujoco" 2>/dev/null; then
+    echo "$KIT/../.venv/bin/python"; return
+  fi
+  command -v uv >/dev/null || die "The viewer needs mujoco: run 'uv sync' at the repo root or set LEAP_VIEWER_PYTHON."
+  echo "uv run --project $KIT/.. python"
+}
+
+newest_log() {
+  ls -t "$KIT"/logs/physical_*.npz "$KIT"/logs/shadow_*.npz 2>/dev/null | grep -v _part | head -n1
+}
+
 bridge() {
   local port; port="$(resolve_port)"
   echo "[leap] port=$port baud=$LEAP_BAUD gains=$LEAP_GAIN_PROFILE"
-  "$PY" "$KIT/kit/deploy_direct.py" \
+  # FTDI latency timer: 16 ms (Linux default after every replug) adds ~16 ms to each
+  # motor read and makes the 20 Hz loop jitter (18 Nov: 20% of steps > 60 ms).
+  local lt; lt="/sys/bus/usb-serial/devices/$(basename "$(readlink -f "$port")")/latency_timer"
+  if [[ -r "$lt" && "$(cat "$lt")" != "1" ]]; then
+    printf '\033[1;33m[warn] USB latency timer is %s ms, not 1 ms: the control loop will jitter.\n' "$(cat "$lt")" >&2
+    printf '       Fix: echo 1 | sudo tee %s   (or ./install.sh once)\033[0m\n' "$lt" >&2
+  fi
+  "$PY" "$KIT/kit/deploy_direct.py" "${MONITOR_ARGS[@]}" "${LIVE_ARGS[@]}" \
     --policy "$1" --server-endpoint local \
     --port "$port" --baudrate "$LEAP_BAUD" \
     --gain-profile "$LEAP_GAIN_PROFILE" \
@@ -84,6 +116,47 @@ bridge() {
     --log-chunk-steps 0 \
     "${@:2}"
 }
+
+if [[ "$CMD" == "live" ]]; then
+  SUB="${POS[0]:-}"
+  [[ "$SUB" == "shadow" || "$SUB" == "run" || "$SUB" == "sim" ]] \
+    || die "usage: ./leap.sh live shadow|run|sim [policy_dir] [-- bridge flags]"
+  [[ ${#MONITOR_ARGS[@]} -gt 0 ]] || die "monitors/ is missing cube_estimator.npz or force_estimator.npz"
+  POS=("${POS[@]:1}")
+  # check everything that can fail BEFORE opening the window
+  policy_dir >/dev/null
+  if [[ "$SUB" != "sim" ]]; then
+    LIVE_PORT="$(resolve_port)"
+    if [[ ! -r "$LIVE_PORT" || ! -w "$LIVE_PORT" ]]; then
+      die "No permission to open $LIVE_PORT. Run: sudo chmod 666 $LIVE_PORT  (or ./install.sh once, then log out/in)"
+    fi
+  fi
+  VPY="$(viewer_python)"
+  echo "[leap] starting live viewer ($VPY) on udp $LEAP_LIVE_UDP"
+  # shellcheck disable=SC2086
+  $VPY "$KIT/kit/live_viewer.py" --udp "$LEAP_LIVE_UDP" --monitor-dir "$KIT/monitors" &
+  VIEWER_PID=$!
+  trap 'kill $VIEWER_PID 2>/dev/null || true' EXIT
+  LIVE_ARGS=(--live-udp "$LEAP_LIVE_UDP")
+  sleep 2
+  CMD="$SUB"
+fi
+
+if [[ "$CMD" == "sim" ]]; then
+  # Live viewer on the SIMULATED motor bus (kit/fake_dynamixel): no hand, no cube.
+  P="$(policy_dir)"
+  echo "[leap] SIMULATED motor bus: no hardware is used; the estimates are not meaningful without a real cube"
+  PYTHONPATH="$KIT/kit/fake_dynamixel:$PYTHONPATH" "$PY" "$KIT/kit/deploy_direct.py" \
+    "${MONITOR_ARGS[@]}" "${LIVE_ARGS[@]}" --policy "$P" --server-endpoint local --port SIMULATED \
+    --gain-profile "$LEAP_GAIN_PROFILE" --no-shadow --max-steps 600 \
+    --start-delay-s 0 --init-duration-s 1 --return-home-duration-s 0.5 \
+    --current-limit-ma "$CURRENT_LIMIT_MA" --current-abort-ma "$CURRENT_ABORT_MA" \
+    --max-command-step-rad "$MAX_COMMAND_STEP_RAD" --log-chunk-steps 0 \
+    --log-file "$KIT/logs/sim_$(date +%Y%m%d_%H%M%S).npz" "${EXTRA[@]}"
+  echo "[leap] simulated run finished; close the viewer window to exit"
+  wait "$VIEWER_PID" 2>/dev/null || true
+  exit 0
+fi
 
 case "$CMD" in
   inspect)
@@ -141,7 +214,7 @@ case "$CMD" in
   *** REAL MOTION ***  policy: $P
   - clear the workspace, keep hands and cables away from the fingers
   - keep the hand's power cutoff within reach (Ctrl+C returns the hand home)
-  - $RUN_STEPS steps; place the object during the ${START_DELAY_S}s countdown
+  - $RUN_STEPS steps ($((RUN_STEPS / 20)) s at 20 Hz; 0 = until Ctrl+C); place the object during the ${START_DELAY_S}s countdown
 
 EOF
     read -r -p "Type YES to start: " ans
@@ -155,6 +228,24 @@ EOF
     ;;
   report)
     "$PY" "$KIT/kit/report.py" "${POS[@]}"
+    ;;
+  view)
+    LOG="${POS[0]:-$(newest_log)}"
+    [[ -n "$LOG" && -f "$LOG" ]] || die "no log to view"
+    VPY="$(viewer_python)"
+    # shellcheck disable=SC2086
+    $VPY "$KIT/kit/live_viewer.py" --replay "$LOG" --monitor-dir "$KIT/monitors" "${EXTRA[@]}"
+    ;;
+  analyze)
+    [[ ${#POS[@]} -gt 0 ]] || POS=("$(newest_log)")
+    VPY="$(viewer_python)"
+    # matplotlib (for the plot) is optional; uv can add it on the fly
+    # shellcheck disable=SC2086
+    if ! $VPY -c "import matplotlib" 2>/dev/null && command -v uv >/dev/null; then
+      VPY="uv run --project $KIT/.. --with matplotlib python"
+    fi
+    # shellcheck disable=SC2086
+    $VPY "$KIT/kit/analyze_run.py" "${POS[@]}" --monitor-dir "$KIT/monitors" "${EXTRA[@]}"
     ;;
   functest)
     # Basic hardware function test, no policy. Stage 1 is read-only; later stages MOVE the hand.
@@ -182,6 +273,6 @@ EOF
       --max-command-step-rad "$MAX_COMMAND_STEP_RAD" "${EXTRA[@]}"
     ;;
   *)
-    sed -n '2,13p' "$0" | sed 's/^# \{0,1\}//'
+    sed -n '2,/^set -euo/p' "$0" | grep '^#' | sed 's/^# \{0,1\}//'
     ;;
 esac

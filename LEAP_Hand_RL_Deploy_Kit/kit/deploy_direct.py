@@ -14,6 +14,13 @@ duration, run logging, and return-to-home on successful completion.
 
 from __future__ import annotations
 
+import os
+
+# The policy and monitor networks are tiny; multi-threaded BLAS only adds
+# thread wake-up jitter to the 20 Hz loop.  Must be set before numpy loads.
+for _var in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
+  os.environ.setdefault(_var, "1")
+
 import argparse
 import base64
 from datetime import datetime
@@ -120,6 +127,34 @@ def _load_gain_profile(context: str | None) -> dict[str, Any] | None:
 
 
 
+def _sha256(path: Path) -> str:
+  import hashlib
+
+  h = hashlib.sha256()
+  with open(path, "rb") as f:
+    for chunk in iter(lambda: f.read(1 << 20), b""):
+      h.update(chunk)
+  return h.hexdigest()
+
+
+class LiveStream:
+  """Non-blocking UDP datagrams to the live viewer; losing packets is fine."""
+
+  def __init__(self, target: str):
+    import socket
+
+    host, port = target.rsplit(":", 1)
+    self.addr = (host, int(port))
+    self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    self.sock.setblocking(False)
+
+  def send(self, payload: dict[str, Any]) -> None:
+    try:
+      self.sock.sendto(json.dumps(payload).encode("utf-8"), self.addr)
+    except OSError:
+      pass
+
+
 def _signed(value: int, size: int) -> int:
   sign_bit = 1 << (8 * size - 1)
   return value - (1 << (8 * size)) if value & sign_bit else value
@@ -205,8 +240,12 @@ def _observation(
 
 
 class PolicyClient:
-  def __init__(self, endpoint: str, timeout_ms: int, policy_path: Path | None = None):
+  def __init__(self, endpoint: str, timeout_ms: int, policy_path: Path | None = None,
+               monitor_dir: Path | None = None):
     self.endpoint = endpoint
+    self.monitor = None
+    self.last_monitor: dict[str, Any] | None = None
+    self.policy_info: dict[str, Any] = {}
     self._is_local = endpoint.lower() in ("local", "embedded", "none")
     if self._is_local:
       try:
@@ -217,6 +256,16 @@ class PolicyClient:
         raise ValueError("--policy is required with --server-endpoint local")
       self._policy = LeapPolicy(policy_path)
       info = self._policy.describe()
+      self.policy_info = {"checkpoint": str(info["checkpoint"]), "iteration": info["iteration"],
+                          "sha256": _sha256(Path(info["checkpoint"])),
+                          "cube_estimator_in_actor": info.get("cube_estimator")}
+      if monitor_dir is not None:
+        try:
+          from .monitor import HandMonitor
+        except ImportError:
+          from monitor import HandMonitor
+        self.monitor = HandMonitor(monitor_dir)
+        print(f"[direct] monitor: {self.monitor.describe()} (display/log only, never fed to the policy)")
       print(f"[direct] policy: {info['checkpoint']} (iter {info['iteration']})")
       print(f"[direct] network: {info['network']}; obs terms {info['obs_terms']} "
             f"x history {info['history_length']}; action {info['action_mode']}")
@@ -257,6 +306,8 @@ class PolicyClient:
           self._policy.reset(q_server)
         else:
           self._policy.reset()
+        if self.monitor is not None:
+          self.monitor.reset()
         return {"ok": True}
       elif msg_type == "infer":
         obs = payload.get("observation", {})
@@ -275,6 +326,12 @@ class PolicyClient:
           if "prev_commanded_joint_pos" in term_values else None
         )
         new_target, raw_action = self._policy.step(q_server, qd_server, applied)
+        if self.monitor is not None:
+          try:  # exactly the observation the policy just acted on
+            self.last_monitor = self.monitor.update(self._policy.observation())
+          except Exception as exc:  # a monitor failure must never stop the hand
+            print(f"[direct] WARNING: monitor disabled after error: {exc}")
+            self.monitor, self.last_monitor = None, None
         row_target = np.asarray(new_target[None, :], dtype=np.float32)
         row_raw = np.asarray(raw_action[None, :], dtype=np.float32)
         return {
@@ -673,6 +730,18 @@ def _parse_args() -> argparse.Namespace:
     default=True,
   )
   parser.add_argument("--log-file", type=Path, default=None)
+  parser.add_argument(
+    "--monitor-dir",
+    type=Path,
+    default=None,
+    help="Folder with cube_estimator.npz + force_estimator.npz: estimate cube state and "
+    "fingertip forces every step (logged and streamed; never fed to the policy)",
+  )
+  parser.add_argument(
+    "--live-udp",
+    default=None,
+    help="host:port of the live viewer (kit/live_viewer.py), e.g. 127.0.0.1:47800",
+  )
   return parser.parse_args()
 
 
@@ -683,10 +752,21 @@ def _save_records(
   started_at: datetime,
   completed: bool,
   stop_reason: str,
+  meta: dict[str, Any] | None = None,
 ) -> None:
   path.parent.mkdir(parents=True, exist_ok=True)
+  extra: dict[str, Any] = {}
+  if records and all("raw_action_server" in r for r in records):
+    extra["raw_action_server"] = np.stack([r["raw_action_server"] for r in records])
+  mon_keys = [k for k in records[0] if k.startswith("mon_")] if records else []
+  for k in mon_keys:
+    if all(k in r for r in records):
+      extra[k] = np.stack([np.asarray(r[k]) for r in records])
+  if meta:
+    extra["run_meta_json"] = np.array(json.dumps(meta))
   np.savez_compressed(
     path,
+    **extra,
     started_at=np.array(started_at.isoformat()),
     completed=np.array(completed),
     stop_reason=np.array(stop_reason),
@@ -774,7 +854,17 @@ def main() -> None:
     else JsonCubePoseSource(args.pose_input_file, args.max_pose_age_s)
   )
 
-  rpc = PolicyClient(args.server_endpoint, args.server_timeout_ms, args.policy)
+  rpc = PolicyClient(args.server_endpoint, args.server_timeout_ms, args.policy, args.monitor_dir)
+  live = LiveStream(args.live_udp) if args.live_udp else None
+  run_meta = {
+    "policy_dir": str(args.policy) if args.policy else None,
+    **{f"policy_{k}": v for k, v in rpc.policy_info.items()},
+    "monitor": rpc.monitor.describe() if rpc.monitor is not None else None,
+    "shadow": bool(args.shadow),
+    "port": str(args.port),
+    "gain_profile": args.gain_profile,
+    "current_limit_ma": args.current_limit_ma,
+  }
   bus = DynamixelBus(args.port, args.baudrate)
   completed = False
   stopped_cleanly = False
@@ -1121,6 +1211,23 @@ def main() -> None:
           ),
         }
       )
+      mon = rpc.last_monitor
+      if mon is not None:
+        records[-1].update({f"mon_{k}": np.asarray(v) for k, v in mon.items()})
+      if live is not None:
+        live.send({
+          "type": "step",
+          "step": step,
+          "t": records[-1]["elapsed_s"],
+          "shadow": bool(args.shadow),
+          "port": str(args.port),
+          "policy": run_meta["policy_dir"],
+          "q_server": _hw_to_server(q_hw).tolist(),
+          "cmd_server": _hw_to_server(command_hw).tolist(),
+          "current_ma_hw": current_ma.tolist(),
+          "temp_max_c": float(np.max(last_temperature_c)),
+          "monitor": None if mon is None else {k: np.asarray(v).tolist() for k, v in mon.items()},
+        })
       stall_recovery_joint = -1
       prev_cmd_hw = command_hw
       last_action_server = raw_action_server.copy()
@@ -1148,6 +1255,7 @@ def main() -> None:
           started_at=started_at,
           completed=False,
           stop_reason="running",
+          meta=run_meta,
         )
         saved_log_files.append(chunk_path)
         records.clear()
@@ -1221,6 +1329,7 @@ def main() -> None:
         started_at=started_at,
         completed=completed,
         stop_reason=stop_reason,
+        meta=run_meta,
       )
       saved_log_files.append(final_log_file)
 
