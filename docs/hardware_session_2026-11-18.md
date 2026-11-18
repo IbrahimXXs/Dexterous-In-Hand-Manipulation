@@ -1,6 +1,6 @@
 # LEAP Hand hardware session, 18 Nov 2026: HwLim A vs C with live cube/force monitor
 
-**Status:** first hardware runs of the policies retrained inside the kit's joint limits (`experiments/hwlimit_ac`), now with the live monitor. It logs the estimated cube state and fingertip forces every step, for both policies. This is a pilot: 2 full 30 s trials per policy, one seed each. **Cube rotation was not measured independently**; the team's visual observation still has to be added (Section 4).
+**Status:** first hardware runs of the policies retrained inside the kit's joint limits (`experiments/hwlimit_ac`), now with the live monitor. It logs the estimated cube state and fingertip forces every step, for both policies. This is a pilot: 2 full 30 s trials per policy, one seed each. **Cube rotation was not measured independently.** The team compared the live viewer with the real cube by eye (Section 2.1): the cube estimate is rough, and the force estimates look plausible but are not verified.
 
 ## 1. What was run (team-observed)
 
@@ -47,6 +47,13 @@ Only the team's observation or a video can separate the two.
 
 **A vs C:** with 2 full trials each and only estimated rotation, no comparison is possible yet. Both policies ran safely and similarly by every logged measure.
 
+### 2.1 Team visual check (live viewer vs real hand)
+
+During the runs the team watched the live viewer next to the real hand.
+- **Cube state:** the estimated cube agreed only roughly with the real cube, by eye.
+- **Forces:** the estimated fingertip forces looked plausible: arrows appeared on the fingers that were visibly pressing.
+- **Not verified:** there is no force sensor, camera or motion capture, so neither estimate is verified. The correlation with motor current above is the only quantitative support, and it is indirect.
+
 ## 3. Problem found: control-loop jitter (USB latency timer)
 
 | | 17 Nov (latency timer set to 1 ms) | 18 Nov (adapter replugged at 10:54) |
@@ -62,6 +69,8 @@ Only the team's observation or a video can separate the two.
 
 ## 4. Still missing
 
-- **Visual or video record of cube rotation** for each run: turns, and drops or interventions. This is the only ground truth for the "est. turns" column.
+- **Quantitative ground truth.** The team's check is qualitative ("rough" cube estimate, "plausible" forces). Still needed:
+  - video or camera tracking of the cube, for turns and pose error;
+  - a fingertip force sensor or a calibrated load test, for the force estimator.
 - **Repeat the comparison with the latency timer at 1 ms:** at least 5 × 30 s per policy, alternating A and C, the same cube placement, and video.
 - **Possibly retrain estimator B** on the HwLim policies' rollouts (proposed in `experiments/hwlimit_ac/README.md` §8.4).
