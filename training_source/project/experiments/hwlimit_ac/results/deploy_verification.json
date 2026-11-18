@@ -1,0 +1,750 @@
+{
+ "cube_estimator_npz_sha256": "bea4ff9cb28f817b6d3b124a63c344f1dfed9ba67bfcdc829ea25a27501ac160",
+ "kit_C_seed2_npz_sha256": "bea4ff9cb28f817b6d3b124a63c344f1dfed9ba67bfcdc829ea25a27501ac160",
+ "policies": {
+  "A_seed1": {
+   "checkpoint": "model_2600.pt",
+   "checkpoint_sha256": "bcee87328b9fbcb269588f11359001270fa27067256d4c02185fa80c56234060",
+   "selected_iteration": 2600,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed1/model_2600.pt",
+    "iteration": 2600,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed1/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 9.5367431640625e-06,
+   "max_abs_tanh_action_diff": 4.76837158203125e-06,
+   "max_abs_feature_diff": null,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166138282313403,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  },
+  "A_seed2": {
+   "checkpoint": "model_2900.pt",
+   "checkpoint_sha256": "7a27004f365c7f459b0aea5ead87d136e3fa6954b91adfc3ef05234120493bb8",
+   "selected_iteration": 2900,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed2/model_2900.pt",
+    "iteration": 2900,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed2/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 1.52587890625e-05,
+   "max_abs_tanh_action_diff": 7.68899917602539e-06,
+   "max_abs_feature_diff": null,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04165941158797404,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  },
+  "A_seed3": {
+   "checkpoint": "model_2600.pt",
+   "checkpoint_sha256": "38a2922b7d00ec77a646af5ef4b34172133f27612d6d8edecbda3f2e8ad4837f",
+   "selected_iteration": 2600,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed3/model_2600.pt",
+    "iteration": 2600,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/A_seed3/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 1.9073486328125e-05,
+   "max_abs_tanh_action_diff": 8.352100849151611e-06,
+   "max_abs_feature_diff": null,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166411569743467,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  },
+  "C_seed1": {
+   "checkpoint": "model_2600.pt",
+   "checkpoint_sha256": "1fb25e02eda626816e1262c79fed1415afc1213058f40f5a11dd6169438836d6",
+   "selected_iteration": 2600,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed1/model_2600.pt",
+    "iteration": 2600,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed1/params/env.yaml",
+    "network": "339 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": "cube_estimator.npz (estimator_B.pt, sha256 6e333d6067dc..., self-check err 1.3e-05)",
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 6.198883056640625e-05,
+   "max_abs_tanh_action_diff": 3.001093864440918e-05,
+   "max_abs_feature_diff": 1.0132789611816406e-05,
+   "estimator_present": true,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166138282313403,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  },
+  "C_seed2": {
+   "checkpoint": "model_2500.pt",
+   "checkpoint_sha256": "e147f8f75e0a6ae3effe030219604e9d6aca66dbb0ac740a50bec9e7a49a880e",
+   "selected_iteration": 2500,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed2/model_2500.pt",
+    "iteration": 2500,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed2/params/env.yaml",
+    "network": "339 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": "cube_estimator.npz (estimator_B.pt, sha256 6e333d6067dc..., self-check err 1.3e-05)",
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 5.269050598144531e-05,
+   "max_abs_tanh_action_diff": 3.0994415283203125e-05,
+   "max_abs_feature_diff": 1.049041748046875e-05,
+   "estimator_present": true,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04165941158797404,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  },
+  "C_seed3": {
+   "checkpoint": "model_2000.pt",
+   "checkpoint_sha256": "1a97679e3d3c39356a28079e17cd8e0ef6f90e58827f0f3897ea12d8c6b4fb5e",
+   "selected_iteration": 2000,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed3/model_2000.pt",
+    "iteration": 2000,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/deploy/policies/C_seed3/params/env.yaml",
+    "network": "339 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": "cube_estimator.npz (estimator_B.pt, sha256 6e333d6067dc..., self-check err 1.3e-05)",
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 4.0531158447265625e-05,
+   "max_abs_tanh_action_diff": 2.6941299438476562e-05,
+   "max_abs_feature_diff": 1.138448715209961e-05,
+   "estimator_present": true,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166411569743467,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_runtime_limits": {
+    "if_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "if_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "if_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "if_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "mf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "mf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "mf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "mf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "rf_mcp": [
+     -0.3140000104904175,
+     2.2300000190734863
+    ],
+    "rf_rot": [
+     -1.0470000505447388,
+     1.0470000505447388
+    ],
+    "rf_pip": [
+     -0.5059999823570251,
+     1.8849999904632568
+    ],
+    "rf_dip": [
+     -0.3659999966621399,
+     2.0420000553131104
+    ],
+    "th_cmc": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_axl": [
+     -0.3490000069141388,
+     2.0940001010894775
+    ],
+    "th_mcp": [
+     -0.4699999988079071,
+     2.443000078201294
+    ],
+    "th_ipl": [
+     -1.340000033378601,
+     1.8799999952316284
+    ]
+   }
+  }
+ }
+}

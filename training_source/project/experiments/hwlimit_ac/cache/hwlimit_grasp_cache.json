@@ -1,0 +1,129 @@
+{
+  "original_entries": 449,
+  "original_entries_fully_inside_limits_state": 8,
+  "original_entries_fully_inside_limits_command": 10,
+  "projection_command_shift_rad": {
+    "mean_of_max_per_grasp": 0.27602308988571167,
+    "max": 0.4810510277748108,
+    "per_joint_mean": {
+      "if_mcp": 0.0,
+      "if_rot": 0.17960000038146973,
+      "if_pip": 0.0,
+      "if_dip": 0.016599999740719795,
+      "mf_mcp": 0.0,
+      "mf_rot": 0.03709999844431877,
+      "mf_pip": 0.0,
+      "mf_dip": 0.002300000051036477,
+      "rf_mcp": 0.0,
+      "rf_rot": 0.1324000060558319,
+      "rf_pip": 0.0,
+      "rf_dip": 0.021299999207258224,
+      "th_cmc": 0.061400000005960464,
+      "th_axl": 0.004800000227987766,
+      "th_mcp": 0.0,
+      "th_ipl": 0.012299999594688416
+    }
+  },
+  "settle_envs": 4096,
+  "instances_per_entry_min_mean": [
+    2,
+    9.122494432071269
+  ],
+  "instance_pass_rate": 0.499267578125,
+  "instance_fail_breakdown (not exclusive)": {
+    "dropped_or_terminated": 0.04345703125,
+    "few_contacts_at_settle": 0.1298828125,
+    "penetration_at_settle": 0.0166015625,
+    "state_outside_limits": 0.38671875
+  },
+  "entry_pass_rate_mean": 0.5020681467576701,
+  "kept_entries": 239,
+  "kept_fraction": 0.532293986636971,
+  "settled_command_equals_projection_max_err": 0.0,
+  "new_cache_state_max_excess_rad": 0.01931690120697027,
+  "new_cache_mean_fingertip_contacts": 1.4769874476987448,
+  "new_cache_per_fingertip_contact_fraction": [
+    0.14225941422594143,
+    0.5271966527196653,
+    0.02092050209205021,
+    0.7866108786610879
+  ],
+  "approved_command_limits": {
+    "if_mcp": [
+      -0.2504,
+      1.90986
+    ],
+    "if_rot": [
+      -0.513599,
+      0.513599
+    ],
+    "if_pip": [
+      -0.251799,
+      1.825225
+    ],
+    "if_dip": [
+      -0.251799,
+      1.90986
+    ],
+    "mf_mcp": [
+      -0.2504,
+      1.90986
+    ],
+    "mf_rot": [
+      -0.513599,
+      0.513599
+    ],
+    "mf_pip": [
+      -0.251799,
+      1.825225
+    ],
+    "mf_dip": [
+      -0.251799,
+      1.90986
+    ],
+    "rf_mcp": [
+      -0.2504,
+      1.90986
+    ],
+    "rf_rot": [
+      -0.513599,
+      0.513599
+    ],
+    "rf_pip": [
+      -0.251799,
+      1.825225
+    ],
+    "rf_dip": [
+      -0.251799,
+      1.90986
+    ],
+    "th_cmc": [
+      0.01,
+      1.561
+    ],
+    "th_axl": [
+      0.01,
+      1.561
+    ],
+    "th_mcp": [
+      -0.339066,
+      1.73533
+    ],
+    "th_ipl": [
+      -0.339066,
+      1.73533
+    ]
+  },
+  "args": {
+    "num_envs": 4096,
+    "seed": 31,
+    "settle_s": 1.0,
+    "hold_s": 10.0,
+    "min_pass_rate": 0.5,
+    "state_tol": 0.02,
+    "penetration_mm": 2.0,
+    "min_contacts": 1,
+    "out": "experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz",
+    "device": "cuda:0"
+  }
+}

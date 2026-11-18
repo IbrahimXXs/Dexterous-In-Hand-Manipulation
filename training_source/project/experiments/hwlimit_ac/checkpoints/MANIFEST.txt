@@ -1,0 +1,14 @@
+# Selected (validation rule: max uninterrupted turns, seed 7001, nominal; ties -> later) and final checkpoints
+# copy | sha256 | source
+A_seed1_selected_model_2600.pt | bcee87328b9fbcb269588f11359001270fa27067256d4c02185fa80c56234060 | logs/rsl_rl/hwlim_A/2026-11-17_19-15-14_hwlim_A_seed1/model_2600.pt
+A_seed1_final_model_3000.pt | 81e4f2ed3061c209b05a2e76cca78824320eb27e3f0f660f6000a09b4b79bdb3 | logs/rsl_rl/hwlim_A/2026-11-17_19-15-14_hwlim_A_seed1/model_3000.pt
+A_seed2_selected_model_2900.pt | 7a27004f365c7f459b0aea5ead87d136e3fa6954b91adfc3ef05234120493bb8 | logs/rsl_rl/hwlim_A/2026-11-17_19-17-11_hwlim_A_seed2/model_2900.pt
+A_seed2_final_model_3000.pt | 0a7289a8d275b31ea499a55c0bc9729beb3702a9a3bd3bd7ef02ea57cd9d74b8 | logs/rsl_rl/hwlim_A/2026-11-17_19-17-11_hwlim_A_seed2/model_3000.pt
+A_seed3_selected_model_2600.pt | 38a2922b7d00ec77a646af5ef4b34172133f27612d6d8edecbda3f2e8ad4837f | logs/rsl_rl/hwlim_A/2026-11-17_19-16-11_hwlim_A_seed3/model_2600.pt
+A_seed3_final_model_3000.pt | 1e9f7d0ccc3874b6530d5f9f9756c5d9d9f1e14f7cf45fe97539d88092e8913a | logs/rsl_rl/hwlim_A/2026-11-17_19-16-11_hwlim_A_seed3/model_3000.pt
+C_seed1_selected_model_2600.pt | 1fb25e02eda626816e1262c79fed1415afc1213058f40f5a11dd6169438836d6 | logs/rsl_rl/hwlim_C/2026-11-17_19-16-11_hwlim_C_seed1/model_2600.pt
+C_seed1_final_model_3000.pt | 750341e5f642dcb0b0f2f5b4d9ff6d4f5a180e3176ae6c85378b5cebc2991caa | logs/rsl_rl/hwlim_C/2026-11-17_19-16-11_hwlim_C_seed1/model_3000.pt
+C_seed2_selected_model_2500.pt | e147f8f75e0a6ae3effe030219604e9d6aca66dbb0ac740a50bec9e7a49a880e | logs/rsl_rl/hwlim_C/2026-11-17_19-15-14_hwlim_C_seed2/model_2500.pt
+C_seed2_final_model_3000.pt | cebd7c5c7eb07bb39eaaf9d552bfcfde8ac78855e9562645a54c54b7fd23fa30 | logs/rsl_rl/hwlim_C/2026-11-17_19-15-14_hwlim_C_seed2/model_3000.pt
+C_seed3_selected_model_2000.pt | 1a97679e3d3c39356a28079e17cd8e0ef6f90e58827f0f3897ea12d8c6b4fb5e | logs/rsl_rl/hwlim_C/2026-11-17_19-17-11_hwlim_C_seed3/model_2000.pt
+C_seed3_final_model_3000.pt | 71626453a058a150abf8a7268dbc9b5e626e45da0795682d1454bb77051bde08 | logs/rsl_rl/hwlim_C/2026-11-17_19-17-11_hwlim_C_seed3/model_3000.pt

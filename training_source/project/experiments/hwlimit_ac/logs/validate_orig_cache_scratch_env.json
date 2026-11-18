@@ -1,0 +1,51 @@
+{
+  "cache": {
+    "cube_half_size_max_m": 0.028999999165534973,
+    "cube_half_size_min_m": 0.028999999165534973,
+    "mean_simultaneous_contacts": 2.020044543429844,
+    "minimum_simultaneous_contacts": 2,
+    "per_fingertip_contact_fraction": [
+      0.36302895322939865,
+      0.6770601336302895,
+      0.04899777282850779,
+      0.9309576837416481
+    ],
+    "samples": 449,
+    "source_checkpoint": "/home/oliver/Halwani/mujoco-journey/external/in-hand-rotation-mjlab/logs/rsl_rl/leap_right_hand_cube_playground_reorient/2026-08-13_10-25-49_playground_reorient_right_sysid_seed7_20260813/model_1999.pt"
+  },
+  "cache_file": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/src/in_hand_rotation_mjlab/tasks/hand_cube/cache/leap_right_mbzuai_58mm_policy_grasp_cache.npz",
+  "duration_s": 10.0,
+  "ever_drop_count": 47,
+  "ever_per_fingertip_contact_fraction": [
+    0.3037109375,
+    0.51953125,
+    0.060546875,
+    0.859375
+  ],
+  "hold_per_fingertip_contact_fraction": [
+    0.19781234860420227,
+    0.36611586809158325,
+    0.04601775482296944,
+    0.6710812449455261
+  ],
+  "immediate_drop_count": 0,
+  "immediate_drop_rate": 0.0,
+  "initial_max_cube_hand_penetration_mm": 4.910090923309326,
+  "initial_minimum_contact_fraction": 0.583984375,
+  "initial_per_fingertip_contact_fraction": [
+    0.2880859375,
+    0.4833984375,
+    0.0400390625,
+    0.7275390625
+  ],
+  "max_cube_hand_penetration_mm": 11.968649864196777,
+  "nan_environment_count": 0,
+  "num_envs": 1024,
+  "num_steps": 200,
+  "penetration_limit_mm": 2.0,
+  "penetration_over_limit_count": 349,
+  "retained_10s_count": 977,
+  "retention_rate": 0.9541015625,
+  "step_dt_s": 0.05,
+  "task": "Mjlab-Leap-Scratch-A"
+}

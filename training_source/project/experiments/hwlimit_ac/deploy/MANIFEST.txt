@@ -1,0 +1,23 @@
+# Deployment folders (kit format) for the selected checkpoints; built by scripts/build_deploy.py
+# folder | file | sha256
+A_seed1 | model_2600.pt | bcee87328b9fbcb269588f11359001270fa27067256d4c02185fa80c56234060
+A_seed1/params | agent.yaml | 672db6ce3a7c9c8634cdf50b1aba557368cc1914560cbf63c3bca555b1b6f733
+A_seed1/params | env.yaml | 7dc201f8ec43435080f8266ed0083c838e5ef7648628503a71964446bf0877ed
+A_seed2 | model_2900.pt | 7a27004f365c7f459b0aea5ead87d136e3fa6954b91adfc3ef05234120493bb8
+A_seed2/params | agent.yaml | 54c4fdc5062dba796137ff18b4a1297a9ca35e683eb8a41e7d0b72da4c47fce8
+A_seed2/params | env.yaml | 373ae99ec9dbe0d1cf221661cca199e2f40d561fa62c28d20fed9cfc3b2ba94b
+A_seed3 | model_2600.pt | 38a2922b7d00ec77a646af5ef4b34172133f27612d6d8edecbda3f2e8ad4837f
+A_seed3/params | agent.yaml | d23a245a0cc1ab759c81421b8efa25456e716a274d8304a2ede830cc4e09d0c7
+A_seed3/params | env.yaml | 2a56c9a20bbed1a10955723c1dd7cfa8c83ff4b69f86d217681df0d2216d2a55
+C_seed1 | cube_estimator.npz | bea4ff9cb28f817b6d3b124a63c344f1dfed9ba67bfcdc829ea25a27501ac160
+C_seed1 | model_2600.pt | 1fb25e02eda626816e1262c79fed1415afc1213058f40f5a11dd6169438836d6
+C_seed1/params | agent.yaml | 764583f8de4387b47b987365cb02ca8389950b42f6e1e21ac880164d51432598
+C_seed1/params | env.yaml | 7dc201f8ec43435080f8266ed0083c838e5ef7648628503a71964446bf0877ed
+C_seed2 | cube_estimator.npz | bea4ff9cb28f817b6d3b124a63c344f1dfed9ba67bfcdc829ea25a27501ac160
+C_seed2 | model_2500.pt | e147f8f75e0a6ae3effe030219604e9d6aca66dbb0ac740a50bec9e7a49a880e
+C_seed2/params | agent.yaml | 55e988abb7143e6c44dd86e7185dacfc836c2eab694e623bf3d1e43c2cad4fa6
+C_seed2/params | env.yaml | 373ae99ec9dbe0d1cf221661cca199e2f40d561fa62c28d20fed9cfc3b2ba94b
+C_seed3 | cube_estimator.npz | bea4ff9cb28f817b6d3b124a63c344f1dfed9ba67bfcdc829ea25a27501ac160
+C_seed3 | model_2000.pt | 1a97679e3d3c39356a28079e17cd8e0ef6f90e58827f0f3897ea12d8c6b4fb5e
+C_seed3/params | agent.yaml | f1ffe66470679a4fa99a66f3856f1bdb79d3292d82caa0e15b929a4df8b06d00
+C_seed3/params | env.yaml | 2a56c9a20bbed1a10955723c1dd7cfa8c83ff4b69f86d217681df0d2216d2a55

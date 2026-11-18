@@ -1,0 +1,51 @@
+{
+  "cache": {
+    "cube_half_size_max_m": 0.028999999165534973,
+    "cube_half_size_min_m": 0.028999999165534973,
+    "mean_simultaneous_contacts": 1.4769874476987448,
+    "minimum_simultaneous_contacts": 1,
+    "per_fingertip_contact_fraction": [
+      0.14225941422594143,
+      0.5271966527196653,
+      0.02092050209205021,
+      0.7866108786610879
+    ],
+    "samples": 239,
+    "source_checkpoint": "projected+settled from leap_right_mbzuai_58mm_policy_grasp_cache.npz (source: /home/oliver/Halwani/mujoco-journey/external/in-hand-rotation-mjlab/logs/rsl_rl/leap_right_hand_cube_playground_reorient/2026-08-13_10-25-49_playground_reorient_right_sysid_seed7_20260813/model_1999.pt)"
+  },
+  "cache_file": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz",
+  "duration_s": 10.0,
+  "ever_drop_count": 19,
+  "ever_per_fingertip_contact_fraction": [
+    0.2060546875,
+    0.5771484375,
+    0.0302734375,
+    0.849609375
+  ],
+  "hold_per_fingertip_contact_fraction": [
+    0.13862378895282745,
+    0.4184732437133789,
+    0.024335382506251335,
+    0.6481970548629761
+  ],
+  "immediate_drop_count": 0,
+  "immediate_drop_rate": 0.0,
+  "initial_max_cube_hand_penetration_mm": 1.7512195110321045,
+  "initial_minimum_contact_fraction": 0.4833984375,
+  "initial_per_fingertip_contact_fraction": [
+    0.1435546875,
+    0.5,
+    0.02734375,
+    0.7529296875
+  ],
+  "max_cube_hand_penetration_mm": 6.5446906089782715,
+  "nan_environment_count": 0,
+  "num_envs": 1024,
+  "num_steps": 200,
+  "penetration_limit_mm": 2.0,
+  "penetration_over_limit_count": 221,
+  "retained_10s_count": 1005,
+  "retention_rate": 0.9814453125,
+  "step_dt_s": 0.05,
+  "task": "Mjlab-Leap-HwLim-A"
+}
