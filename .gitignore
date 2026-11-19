@@ -24,6 +24,8 @@ training_source/project/data/
 training_source/project/experiments/scratch_state_estimation/data/
 training_source/project/experiments/force_estimation/data/
 training_source/project/experiments/force_estimation/runs/*/last.pt
+training_source/project/experiments/retention_v1/data/
+training_source/project/experiments/retention_v1/results/*/.claims/
 
 # LEAP deploy kit: per-machine install state (recreated by ./install.sh)
 LEAP_Hand_RL_Deploy_Kit/.python

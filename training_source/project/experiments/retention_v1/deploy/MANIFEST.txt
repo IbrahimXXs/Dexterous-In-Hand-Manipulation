@@ -1,0 +1,5 @@
+# Deployment folder (kit format) for the selected Retention-V1 checkpoint; scripts/build_deploy.py
+# folder | file | sha256
+R_seed1 | model_2600.pt | 3b8ad077ff4341577b572cca979b3140236c241ecfd42eacd5f4d3cd847c86d5
+R_seed1/params | agent.yaml | 5d4ef6d389f5a0fa216b67c9f67d259e8b34a72a599ad898c9d71cc0c27c52ff
+R_seed1/params | env.yaml | c4812a11da276faa0d0bf5e66ae918d76a81eae0ae34bc1013884974c2f15d1c

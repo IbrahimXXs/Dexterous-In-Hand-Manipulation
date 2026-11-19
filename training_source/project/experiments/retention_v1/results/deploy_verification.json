@@ -1,0 +1,61 @@
+{
+ "policies": {
+  "R_seed1": {
+   "checkpoint": "model_2600.pt",
+   "checkpoint_sha256": "3b8ad077ff4341577b572cca979b3140236c241ecfd42eacd5f4d3cd847c86d5",
+   "selected_iteration": 2600,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/retention_v1/deploy/policies/R_seed1/model_2600.pt",
+    "iteration": 2600,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/retention_v1/deploy/policies/R_seed1/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 2.288818359375e-05,
+   "max_abs_tanh_action_diff": 9.864568710327148e-06,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166138282313403,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ]
+  }
+ }
+}

@@ -1,0 +1,4 @@
+# Selected (max 30-s validation turns, seed 7001, nominal; ties -> later) and final checkpoints
+# copy | sha256 | source
+R1_selected_model_2600.pt | 3b8ad077ff4341577b572cca979b3140236c241ecfd42eacd5f4d3cd847c86d5 | logs/rsl_rl/retention_v1_A/2026-11-19_20-11-27_retv1_A_seed1/model_2600.pt
+R1_final_model_3000.pt | bf2ce40d9d46d0ce7fa0875519e214fca8be16e4884c379a7f20b4f07a6896fa | logs/rsl_rl/retention_v1_A/2026-11-19_20-11-27_retv1_A_seed1/model_3000.pt

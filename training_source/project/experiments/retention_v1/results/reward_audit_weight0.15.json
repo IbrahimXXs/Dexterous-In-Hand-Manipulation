@@ -1,0 +1,119 @@
+{
+ "curriculum_weights_used": {
+  "object_linvel_penalty": -0.095,
+  "pose_diff_penalty": -0.0317,
+  "torque_penalty": -0.317,
+  "work_penalty": -0.0317
+ },
+ "policies": {
+  "A1": {
+   "mean_per_step_by_term": {
+    "rotate_finite_diff": 0.007027999963611364,
+    "object_linvel_penalty": -0.0001320000010309741,
+    "pose_diff_penalty": -0.0007350000087171793,
+    "torque_penalty": -0.0009459999855607748,
+    "work_penalty": -0.00016599999798927456,
+    "object_fallen": 0.0,
+    "retention_penalty": -0.004482999909669161,
+    "grasp_loss": -0.0003000000142492354
+   },
+   "mean_total_per_step": 0.00027134132687933743,
+   "return_per_episode_proxy": 0.06968118314832729,
+   "retention_nonzero_step_share": 0.3435693359375,
+   "retention_mean_when_nonzero": -0.013047732412815094,
+   "events": {
+    "pose": 246,
+    "fell": 0,
+    "timeout": 837,
+    "grasp_loss_events": 246,
+    "grasp_loss_on_timeout": 0,
+    "grasp_loss_on_fell": 0,
+    "grasp_loss_without_pose": 0
+   }
+  },
+  "A2": {
+   "mean_per_step_by_term": {
+    "rotate_finite_diff": 0.007193000055849552,
+    "object_linvel_penalty": -0.0001230000052601099,
+    "pose_diff_penalty": -0.0007570000016130507,
+    "torque_penalty": -0.0010239999974146485,
+    "work_penalty": -0.00017299999308306724,
+    "object_fallen": 0.0,
+    "retention_penalty": -0.0050849998369812965,
+    "grasp_loss": -0.00038300000596791506
+   },
+   "mean_total_per_step": -0.0003465114568825811,
+   "return_per_episode_proxy": -0.08804664895788908,
+   "retention_nonzero_step_share": 0.32542724609375,
+   "retention_mean_when_nonzero": -0.015624825842678547,
+   "events": {
+    "pose": 314,
+    "fell": 0,
+    "timeout": 786,
+    "grasp_loss_events": 314,
+    "grasp_loss_on_timeout": 0,
+    "grasp_loss_on_fell": 0,
+    "grasp_loss_without_pose": 0
+   }
+  },
+  "A3": {
+   "mean_per_step_by_term": {
+    "rotate_finite_diff": 0.007660000119358301,
+    "object_linvel_penalty": -0.00012700000661425292,
+    "pose_diff_penalty": -0.0010450000409036875,
+    "torque_penalty": -0.0010140000376850367,
+    "work_penalty": -0.00016500000492669642,
+    "object_fallen": 0.0,
+    "retention_penalty": -0.005617000162601471,
+    "grasp_loss": -0.00034500000765547156
+   },
+   "mean_total_per_step": -0.0006460895529016852,
+   "return_per_episode_proxy": -0.1648837175696067,
+   "retention_nonzero_step_share": 0.309306640625,
+   "retention_mean_when_nonzero": -0.018162108957767487,
+   "events": {
+    "pose": 283,
+    "fell": 0,
+    "timeout": 810,
+    "grasp_loss_events": 283,
+    "grasp_loss_on_timeout": 0,
+    "grasp_loss_on_fell": 0,
+    "grasp_loss_without_pose": 0
+   }
+  },
+  "hold": {
+   "mean_per_step_by_term": {
+    "rotate_finite_diff": -0.00022000000171829015,
+    "object_linvel_penalty": -1.4000000192027073e-05,
+    "pose_diff_penalty": -0.0,
+    "torque_penalty": -0.0008140000281855464,
+    "work_penalty": -8.199999865610152e-05,
+    "object_fallen": 0.0,
+    "retention_penalty": -0.005714999977499247,
+    "grasp_loss": -1.4999999621068127e-05
+   },
+   "mean_total_per_step": -0.006860340945422649,
+   "return_per_episode_proxy": -1.8294239044189453,
+   "retention_nonzero_step_share": 0.43776123046875,
+   "retention_mean_when_nonzero": -0.013055521063506603,
+   "events": {
+    "pose": 12,
+    "fell": 0,
+    "timeout": 1012,
+    "grasp_loss_events": 12,
+    "grasp_loss_on_timeout": 0,
+    "grasp_loss_on_fell": 0,
+    "grasp_loss_without_pose": 0
+   }
+  }
+ },
+ "timeout_check_3s_episodes": {
+  "pose": 72,
+  "fell": 0,
+  "timeout": 1517,
+  "grasp_loss_events": 72,
+  "grasp_loss_on_timeout": 0,
+  "grasp_loss_on_fell": 0,
+  "grasp_loss_without_pose": 0
+ }
+}
