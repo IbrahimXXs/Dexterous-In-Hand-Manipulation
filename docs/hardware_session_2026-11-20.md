@@ -1,6 +1,8 @@
 # LEAP Hand hardware session, 20 Nov 2026: A3 vs C5 vs R1 vs P0 (+ model_400)
 
-**Status:** the planned 20 trials are done (5 per policy, balanced order), plus 4 reference trials of the professor's model_400 (M400). All runs used the live estimator monitor. The operator observed every recorded trial. 13 further attempts are in the logs but not in the trial record (Section 3); they are counted in the reliability results.
+**Status:** the planned 20 trials are done (5 per policy, balanced order), plus 4 reference trials of the professor's model_400 (M400). All runs used the live estimator monitor. The operator observed every recorded trial. 13 further runs are in the logs but not in the trial record (Section 3):
+- 10 were ended automatically by a safety guard and are counted as failures;
+- 3 were stopped and discarded by the operator and are excluded.
 
 ## Summary
 
@@ -52,15 +54,18 @@ From `LEAP_Hand_RL_Deploy_Kit/logs/trials.csv` and `logs/trial_comparison.md`. R
 | M400 | 4 | 2.0 ± 0.8 | 4/4 (at 7–25 s) | 0 | 100% | 13.5 |
 
 **Notes:**
+- **Recorded trials marked "interrupted"** (8 of them) were stopped by the operator after the cube had left the grasp. They are drops, and "time held" uses the drop time the operator gave.
 - **A3:** in 2 of its 5 trials the cube **tumbled about a horizontal axis** ("rotating down to top") instead of spinning about the vertical axis. These are counted as 0 or no vertical rotations.
 - **Speed measure changed after seeing the data.** The pre-specified rate (turns per minute while held) is not meaningful when the cube drops after a few seconds. It gave R1 an inflated 18/min from a few seconds of holding. Rotations per trial is used instead; the rate for trials held at least 20 s is in `trial_comparison.md`.
 - **Counting unit unknown.** C5's 11–17 per 60 s is about 4× the simulation's C5 speed (about 3.7 turns per 60 s). If the operator counted quarter turns (faces passing), the real speed is about 3.5 turns per 60 s, close to the simulation. Comparisons between policies are unaffected as long as the same unit was used throughout.
 
 ## 3. All attempts, including those not recorded as trials
 
-The logs contain 13 runs that were not entered in the trial record: 10 safety stops and 3 runs the operator interrupted. Leaving out failed attempts favours the policies that failed most, so the reliability picture must include them.
+The logs contain 13 runs that were not entered in the trial record:
+- **3 operator discards:** stopped by hand and discarded (A3 at 22.6 s, P0 at 18.1 s and 5.1 s). They are excluded from all results. The reason for discarding was not recorded.
+- **10 safety stops:** ended automatically by the current or tracking guard, not by the operator. They are counted as failures, because leaving them out would favour the policies that tripped the guards most.
 
-| Policy | Attempts | Completed 60 s without drop | Drops | Safety stops (all attempts) | Interrupted, not recorded |
+| Policy | Attempts | Completed 60 s without drop | Drops | Safety stops (all attempts) | Discarded by operator (excluded) |
 |---|---|---|---|---|---|
 | A3 | 7 | 3 | 2 | 1 (549 mA at 1.6 s) | 1 |
 | C5 | 11 | 4 | 1 | **6** (tracking error 0.68 rad at 4.7 s; current 453–747 mA at 3–16 s) | 0 |
@@ -104,7 +109,12 @@ The logs contain 13 runs that were not entered in the trial record: 10 safety st
   - **Hardware limits:** the hand's current limit (350 mA) and lag (about 100 ms, against 25–75 ms in training) are not modelled in the retention studies.
 - **C5's guard trips:** its 18% faster finger motion (simulation audit) meets the real current limit. The trips are evidence of that sim-to-real risk.
 - **Small samples:** n = 4–5 recorded trials per policy; p-values and CIs are indicative only.
-- **Operator effects:** counts are by eye with no video, and the unit is uncertain. Placement was by hand, and the operator also judged the drop times.
+- **Operator effects:**
+  - counts are by eye with no video, and the unit is uncertain;
+  - placement was by hand, and the operator also judged the drop times;
+  - 3 runs were discarded by hand without a recorded reason.
+
+  Recording the reason for any discard, and logging attempts that are not kept, would remove the selection risk.
 - **One seed per policy:** seed variance in simulation was larger than some of the policy differences.
 
 ## 6. Next steps
