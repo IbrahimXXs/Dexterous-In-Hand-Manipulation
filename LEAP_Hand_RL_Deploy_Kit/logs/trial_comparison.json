@@ -1,0 +1,254 @@
+{
+  "policies": {
+    "A3": {
+      "n": 5,
+      "n_with_turns": 2,
+      "n_counted": 4,
+      "count_per_trial_mean": 2.0,
+      "count_per_trial_sd": 1.4142135623730951,
+      "turns_per_min_mean": 1.4910536779324057,
+      "turns_per_min_sd": 2.108668333558293,
+      "drops": 2,
+      "drop_rate": 0.4,
+      "safety_stops": 0,
+      "failure_rate": 0.4,
+      "held_s_mean": 40.61,
+      "est_turns_per_min_mean": 0.3402957591971581,
+      "excluded_intervened": 0
+    },
+    "C5": {
+      "n": 5,
+      "n_with_turns": 5,
+      "n_counted": 5,
+      "count_per_trial_mean": 13.9,
+      "count_per_trial_sd": 2.247220505424423,
+      "turns_per_min_mean": 14.56997687797321,
+      "turns_per_min_sd": 1.549560999790361,
+      "drops": 1,
+      "drop_rate": 0.2,
+      "safety_stops": 0,
+      "failure_rate": 0.2,
+      "held_s_mean": 57.262,
+      "est_turns_per_min_mean": -1.7008703292423715,
+      "excluded_intervened": 0
+    },
+    "R1": {
+      "n": 5,
+      "n_with_turns": 0,
+      "n_counted": 5,
+      "count_per_trial_mean": 2.6,
+      "count_per_trial_sd": 1.3416407864998738,
+      "turns_per_min_mean": NaN,
+      "turns_per_min_sd": NaN,
+      "drops": 5,
+      "drop_rate": 1.0,
+      "safety_stops": 0,
+      "failure_rate": 1.0,
+      "held_s_mean": 9.2,
+      "est_turns_per_min_mean": 0.29594083409076444,
+      "excluded_intervened": 0
+    },
+    "P0": {
+      "n": 5,
+      "n_with_turns": 0,
+      "n_counted": 5,
+      "count_per_trial_mean": 0.0,
+      "count_per_trial_sd": 0.0,
+      "turns_per_min_mean": NaN,
+      "turns_per_min_sd": NaN,
+      "drops": 5,
+      "drop_rate": 1.0,
+      "safety_stops": 2,
+      "failure_rate": 1.0,
+      "held_s_mean": 10.8,
+      "est_turns_per_min_mean": 0.0777571450806569,
+      "excluded_intervened": 0
+    },
+    "M400": {
+      "n": 4,
+      "n_with_turns": 1,
+      "n_counted": 4,
+      "count_per_trial_mean": 2.0,
+      "count_per_trial_sd": 0.816496580927726,
+      "turns_per_min_mean": 4.8,
+      "turns_per_min_sd": NaN,
+      "drops": 4,
+      "drop_rate": 1.0,
+      "safety_stops": 0,
+      "failure_rate": 1.0,
+      "held_s_mean": 13.5,
+      "est_turns_per_min_mean": 1.5187189068607925,
+      "excluded_intervened": 0
+    }
+  },
+  "questions": {
+    "Q1": {
+      "rotations per trial": {
+        "first": "A3",
+        "second": "C5",
+        "mean_first": 2.0,
+        "mean_second": 13.9,
+        "diff": 11.9,
+        "ci95": [
+          9.85,
+          14.1
+        ],
+        "p_perm": 0.008749562521873906,
+        "n": [
+          4,
+          5
+        ]
+      }
+    },
+    "Q2": {
+      "failure rate": {
+        "first": "R1",
+        "second": "P0",
+        "mean_first": 1.0,
+        "mean_second": 1.0,
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p_perm": 1.0,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "drop rate": {
+        "first": "R1",
+        "second": "P0",
+        "mean_first": 1.0,
+        "mean_second": 1.0,
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "p_perm": 1.0,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "time held [s]": {
+        "first": "R1",
+        "second": "P0",
+        "mean_first": 9.2,
+        "mean_second": 10.8,
+        "diff": 1.6000000000000014,
+        "ci95": [
+          -6.000000000000001,
+          11.8
+        ],
+        "p_perm": 0.9028548572571371,
+        "n": [
+          5,
+          5
+        ]
+      }
+    },
+    "Q3": {
+      "failure rate": {
+        "first": "A3",
+        "second": "R1",
+        "mean_first": 0.4,
+        "mean_second": 1.0,
+        "diff": 0.6,
+        "ci95": [
+          0.19999999999999996,
+          1.0
+        ],
+        "p_perm": 0.16344182790860456,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "drop rate": {
+        "first": "A3",
+        "second": "R1",
+        "mean_first": 0.4,
+        "mean_second": 1.0,
+        "diff": 0.6,
+        "ci95": [
+          0.19999999999999996,
+          1.0
+        ],
+        "p_perm": 0.16344182790860456,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "time held [s]": {
+        "first": "A3",
+        "second": "R1",
+        "mean_first": 40.61,
+        "mean_second": 9.2,
+        "diff": -31.41,
+        "ci95": [
+          -51.758,
+          -9.664
+        ],
+        "p_perm": 0.06859657017149143,
+        "n": [
+          5,
+          5
+        ]
+      }
+    },
+    "Q4": {
+      "rotations per trial": {
+        "first": "C5",
+        "second": "P0",
+        "mean_first": 13.9,
+        "mean_second": 0.0,
+        "diff": -13.9,
+        "ci95": [
+          -15.8,
+          -12.2
+        ],
+        "p_perm": 0.006999650017499125,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "failure rate": {
+        "first": "C5",
+        "second": "P0",
+        "mean_first": 0.2,
+        "mean_second": 1.0,
+        "diff": 0.8,
+        "ci95": [
+          0.4,
+          1.0
+        ],
+        "p_perm": 0.047497625118744065,
+        "n": [
+          5,
+          5
+        ]
+      },
+      "time held [s]": {
+        "first": "C5",
+        "second": "P0",
+        "mean_first": 57.262,
+        "mean_second": 10.8,
+        "diff": -46.462,
+        "ci95": [
+          -55.303999999999995,
+          -35.306
+        ],
+        "p_perm": 0.006999650017499125,
+        "n": [
+          5,
+          5
+        ]
+      }
+    }
+  }
+}

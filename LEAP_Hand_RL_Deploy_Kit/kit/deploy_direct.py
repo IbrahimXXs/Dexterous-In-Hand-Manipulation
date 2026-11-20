@@ -1308,6 +1308,10 @@ def main() -> None:
     else:
       print("[direct] interrupted; disabling torque immediately")
       stopped_cleanly = True
+  except Exception as exc:
+    # keep the guard / error message in the run log (torque is disabled below)
+    stop_reason = f"error: {exc}"
+    raise
   finally:
     try:
       if bus.torque_enabled:

@@ -1,0 +1,83 @@
+{
+  "log": "logs/physical_20261120_102243.npz",
+  "steps": 293,
+  "duration_s": 14.627022518994636,
+  "policy": "/home/zephyr/Documents/AnyDesk/Dexterous-In-Hand-Manipulation/LEAP_Hand_RL_Deploy_Kit/policies/P0",
+  "monitor_source": "monitor values logged during the run",
+  "kt_N_m_per_A": 0.5,
+  "est_turns": 0.023164954167084827,
+  "est_cube_pos_palm_mean_mm": [
+    29.6,
+    3.1,
+    -56.1
+  ],
+  "est_cube_pos_palm_std_mm": [
+    12.3,
+    19.5,
+    3.3
+  ],
+  "fingers": {
+    "thumb": {
+      "F_est_mean_N": 0.8189085279225162,
+      "F_est_max_N": 3.217837333679199,
+      "contact_fraction_p_gt_0.5": 0.621160409556314,
+      "r_Fest_vs_current": 0.5038811415382234,
+      "r_Fest_vs_F_from_current": 0.20901747967467918,
+      "best_lag_steps_F_from_current": -4,
+      "r_at_best_lag": 0.2792323987870542,
+      "current_mA_when_contact": 221.94505494505495,
+      "current_mA_when_no_contact": 137.1,
+      "steps_contact": 182,
+      "steps_no_contact": 80,
+      "F_from_current_mean_N": 0.44550213496012403
+    },
+    "index": {
+      "F_est_mean_N": 0.4501008705452502,
+      "F_est_max_N": 2.436152696609497,
+      "contact_fraction_p_gt_0.5": 0.5187713310580204,
+      "r_Fest_vs_current": 0.5411808298237709,
+      "r_Fest_vs_F_from_current": 0.0428231700337715,
+      "best_lag_steps_F_from_current": -1,
+      "r_at_best_lag": 0.04333632756832585,
+      "current_mA_when_contact": 280.79605263157896,
+      "current_mA_when_no_contact": 159.72881355932202,
+      "steps_contact": 152,
+      "steps_no_contact": 118,
+      "F_from_current_mean_N": -0.002081408168457887
+    },
+    "middle": {
+      "F_est_mean_N": 0.0692108071799962,
+      "F_est_max_N": 1.0345611572265625,
+      "contact_fraction_p_gt_0.5": 0.11945392491467577,
+      "r_Fest_vs_current": 0.18039477900121473,
+      "r_Fest_vs_F_from_current": -0.09278741307792918,
+      "best_lag_steps_F_from_current": 5,
+      "r_at_best_lag": 0.15076108367730906,
+      "current_mA_when_contact": 187.54285714285714,
+      "current_mA_when_no_contact": 158.12083333333334,
+      "steps_contact": 35,
+      "steps_no_contact": 240,
+      "F_from_current_mean_N": -0.014220251626372258
+    },
+    "ring": {
+      "F_est_mean_N": 0.11882360421581839,
+      "F_est_max_N": 1.8197489976882935,
+      "contact_fraction_p_gt_0.5": 0.15017064846416384,
+      "r_Fest_vs_current": 0.15209566631911478,
+      "r_Fest_vs_F_from_current": 0.04675008565712831,
+      "best_lag_steps_F_from_current": -5,
+      "r_at_best_lag": 0.20798258779061263,
+      "current_mA_when_contact": 160.27272727272728,
+      "current_mA_when_no_contact": 127.41224489795918,
+      "steps_contact": 44,
+      "steps_no_contact": 245,
+      "F_from_current_mean_N": -0.15227532997708346
+    }
+  },
+  "notes": [
+    "F_est and contact probabilities are learned estimates from joint history (no force sensor).",
+    "F(I) assumes quasi-static contact and Kt; it also contains gravity, friction and tracking effort, and the motors are current-limited (350 mA), so it is a cross-check, not ground truth.",
+    "Positive est_turns = the direction the policy was trained to rotate (about the palm normal)."
+  ],
+  "figure": null
+}

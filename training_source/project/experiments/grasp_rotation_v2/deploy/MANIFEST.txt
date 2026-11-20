@@ -1,0 +1,8 @@
+# Deployment folders (kit format) for the selected Grasp-Rotation-V2 checkpoints (P0, C5); scripts/build_deploy.py
+# folder | file | sha256
+C5_seed1 | model_2400.pt | 2a932dfe37a5540d74a07081a8de62658b56341eca2efcb5af38a9790ef58492
+C5_seed1/params | agent.yaml | 333d72c95f9c09db5f9a7ef5c9029459dde78e8e4022ad7bfddfd9992b331975
+C5_seed1/params | env.yaml | 0616ebfa38a69b6062cf9081a027f5bd4ca7bcdc7d0a06067048868eef27f991
+P0_seed1 | model_1500.pt | 2bc2ce11d551e8bd9a7ae64758bb05260ad1993d18fde0b6a5e30f0968c5b8ba
+P0_seed1/params | agent.yaml | dd638f2de2f6cb413a0fcd41ab736dbebc0ddb2e5a6cb610b49cfcc1d5210d5b
+P0_seed1/params | env.yaml | 9ee8b9e5e0e675d7fb0217994f3bcff6cf6e73f2e3b30e1f91b72ece0aa047ce

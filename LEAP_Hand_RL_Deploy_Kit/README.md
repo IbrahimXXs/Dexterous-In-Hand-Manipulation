@@ -128,6 +128,19 @@ current with vs without estimated contact, and writes `<log>_analysis.json/.png`
 * `policies/hwlim_{A,C}_seed{1,2,3}` link to the study's deploy folders
   (`training_source/project/experiments/hwlimit_ac/deploy/policies/`).
 
+## Policy comparison trials: A3, C5, R1, P0 (added 20 Nov 2026)
+
+Protocol, questions and observer instructions are in `../docs/hardware_trials_A3_C5_R1_P0.md`.
+
+```bash
+./leap.sh trial-setup      # one shadow run per policy (unlocks them)
+./leap.sh trial next       # next policy in the counterbalanced schedule; 60 s live run; then asks what you saw
+./leap.sh trial-plan       # progress
+./leap.sh compare          # Q1-Q4 -> logs/trial_comparison.md
+```
+
+`TRIAL_STEPS` (default 1200 = 60 s) and `TRIAL_BLOCKS` (default 5) are in `configs/hand.env`.
+
 ## What policies work
 
 The kit supports any rsl_rl MLP actor (any depth, width, or activation, with or

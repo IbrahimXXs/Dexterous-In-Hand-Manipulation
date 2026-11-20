@@ -13,6 +13,11 @@
 #   ./leap.sh live sim [policy_dir]  try the viewer with NO hand (simulated motor bus)
 #   ./leap.sh view    [log.npz]      replay a run log in the 3D viewer
 #   ./leap.sh analyze [log.npz]      estimated forces vs motor current for a run
+#   ./leap.sh trial-setup            shadow runs (torque off) for A3, C5, R1, P0
+#   ./leap.sh trial-plan             the counterbalanced schedule (and progress)
+#   ./leap.sh trial [next|A3|C5|R1|P0]  one powered live trial + your observations
+#   ./leap.sh compare                answer Q1-Q4 from the recorded trials
+#   ./leap.sh trial-record NAME LOG  save observations for a run that was not recorded
 #
 # policy_dir defaults to PUT_YOUR_RL_FILES_HERE/. Extra flags for the hardware
 # bridge go after "--", e.g.  ./leap.sh run -- --max-steps 200 --gain-profile H2
@@ -246,6 +251,40 @@ EOF
     fi
     # shellcheck disable=SC2086
     $VPY "$KIT/kit/analyze_run.py" "${POS[@]}" --monitor-dir "$KIT/monitors" "${EXTRA[@]}"
+    ;;
+  trial-setup)
+    for n in A3 C5 R1 P0; do
+      echo; echo "[leap] ===== shadow run for $n (torque off) ====="
+      "$KIT/leap.sh" shadow "$KIT/policies/$n" -- "${EXTRA[@]}"
+    done
+    echo; echo "[leap] all four policies unlocked. Next: ./leap.sh trial next"
+    ;;
+  trial-plan)
+    "$PY" "$KIT/kit/trials.py" plan --blocks "$TRIAL_BLOCKS"
+    ;;
+  trial)
+    NAME="${POS[0]:-next}"
+    if [[ "$NAME" == "next" ]]; then NAME="$("$PY" "$KIT/kit/trials.py" next --blocks "$TRIAL_BLOCKS")"; fi
+    if [[ "$NAME" == "DONE" ]]; then echo "[leap] all scheduled trials are done. Run: ./leap.sh compare"; exit 0; fi
+    [[ "$NAME" =~ ^(A3|C5|R1|P0|M400)$ ]] || die "unknown trial policy '$NAME' (A3, C5, R1, P0, M400)"
+    echo; echo "[leap] ===== TRIAL: $NAME ($((TRIAL_STEPS / 20)) s) ====="
+    echo "[leap] place the cube the same way every time; count the turns you see"
+    MARK="$(mktemp)"
+    RUN_STEPS="$TRIAL_STEPS" "$KIT/leap.sh" live run "$KIT/policies/$NAME" -- "${EXTRA[@]}" || true
+    LOG="$(find "$KIT/logs" -maxdepth 1 -name 'physical_*.npz' -newer "$MARK" | grep -v _part | sort | tail -n1 || true)"
+    rm -f "$MARK"
+    [[ -n "$LOG" ]] || die "no new run log (run not started?) - nothing recorded; repeat: ./leap.sh trial $NAME"
+    "$PY" "$KIT/kit/trials.py" record --policy "$NAME" --log "$LOG"
+    echo "[leap] next scheduled: $("$PY" "$KIT/kit/trials.py" next --blocks "$TRIAL_BLOCKS")   (./leap.sh trial next)"
+    ;;
+  compare)
+    "$PY" "$KIT/kit/trials.py" compare
+    ;;
+  trial-record)
+    # record observations for a run that already happened: ./leap.sh trial-record C5 logs/physical_X.npz
+    [[ ${#POS[@]} -eq 2 ]] || die "usage: ./leap.sh trial-record A3|C5|R1|P0 logs/physical_X.npz"
+    "$PY" "$KIT/kit/trials.py" record --policy "${POS[0]}" --log "${POS[1]}"
+    echo "[leap] next scheduled: $("$PY" "$KIT/kit/trials.py" next --blocks "$TRIAL_BLOCKS")   (./leap.sh trial next)"
     ;;
   functest)
     # Basic hardware function test, no policy. Stage 1 is read-only; later stages MOVE the hand.
