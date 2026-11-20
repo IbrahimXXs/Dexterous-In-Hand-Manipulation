@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_A_R1_obs_noise_x3_s6201",
+  "policy": "R1",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "obs_noise_x3",
+  "assign": null,
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.1547323010691342,
+   "failure": 0.1923828125,
+   "pose_failure": 0.1923828125,
+   "survival_s": 27.110571693041493,
+   "yaw_rate": 0.26015802083169454
+  },
+  "60s": {
+   "turns": 2.2828334115709117,
+   "failure": 0.2412109375,
+   "pose_failure": 0.2412109375,
+   "survival_s": 50.43403395465066,
+   "yaw_rate": 0.2693065791141307
+  }
+ },
+ "host": "gpu-02",
+ "seconds": 148.3
+}

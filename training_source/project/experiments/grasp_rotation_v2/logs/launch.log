@@ -1,0 +1,3 @@
+Fri Nov 20 01:33:33 +04 2026 P1-dev workers launched (3x ws-ia + gpu-01:2)
+Fri Nov 20 01:52:10 +04 2026 launched P0_1, C5_1 training (ws-ia)
+Fri Nov 20 01:53:56 +04 2026 curve watchers via srun --overlap in 310013/310014

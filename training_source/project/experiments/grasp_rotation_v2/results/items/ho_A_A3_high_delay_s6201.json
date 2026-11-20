@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_A_A3_high_delay_s6201",
+  "policy": "A3",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "high_delay",
+  "assign": null,
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.173711537762498,
+   "failure": 0.28759765625,
+   "pose_failure": 0.28759765625,
+   "survival_s": 23.064062843681313,
+   "yaw_rate": 0.306083672192955
+  },
+  "60s": {
+   "turns": 2.398550559514466,
+   "failure": 0.29443359375,
+   "pose_failure": 0.29443359375,
+   "survival_s": 44.32058171511562,
+   "yaw_rate": 0.31764382462374785
+  }
+ },
+ "host": "gpu-02",
+ "seconds": 146.3
+}

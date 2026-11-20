@@ -1,0 +1,13 @@
+== files outside this study vs baseline commit a2c01e2
+OK: no file outside this study's folders differs from a2c01e2
+== RSL-RL checkpoints of the earlier studies (sha256)
+OK: 730 checkpoints unchanged
+== grasp cache
+OK: grasp cache unchanged
+== estimator B, kit symlinks, datasets (via Retention-V1's script)
+   OK: all 669 checkpoints unchanged
+   OK: estimator_B.pt unchanged
+   OK: 6 symlinks unchanged
+   OK: training_source/project/experiments/scratch_state_estimation/data unchanged
+   OK: training_source/project/data unchanged
+   OK: training_source/project/experiments/force_estimation/data unchanged

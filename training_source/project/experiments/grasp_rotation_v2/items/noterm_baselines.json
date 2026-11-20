@@ -1,0 +1,72 @@
+[
+ {
+  "key": "ho_N_A1_nominal_s6201",
+  "policy": "A1",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "ho_N_A2_nominal_s6201",
+  "policy": "A2",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "ho_N_A3_nominal_s6201",
+  "policy": "A3",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "ho_N_R1_nominal_s6201",
+  "policy": "R1",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "ho_N_R1final_nominal_s6201",
+  "policy": "R1final",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ }
+]

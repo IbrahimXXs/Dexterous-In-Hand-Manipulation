@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_hold_s6101",
+  "policy": "hold",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ "summary": {
+  "30s": {
+   "turns": -0.011292946482375662,
+   "failure": 0.027099609375,
+   "pose_failure": 0.027099609375,
+   "survival_s": 29.39171186375188,
+   "yaw_rate": 0.0005827459280752741
+  },
+  "60s": {
+   "turns": -0.014443732163707363,
+   "failure": 0.032470703125,
+   "pose_failure": 0.032470703125,
+   "survival_s": 58.48689051996007,
+   "yaw_rate": 0.0014472971683956507
+  }
+ },
+ "host": "ws-l4-004",
+ "seconds": 176.6
+}

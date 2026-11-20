@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_A3_s6101",
+  "policy": "A3",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.3271971434382146,
+   "failure": 0.238525390625,
+   "pose_failure": 0.238525390625,
+   "survival_s": 24.535522826545275,
+   "yaw_rate": 0.3196403049512574
+  },
+  "60s": {
+   "turns": 2.6798831239179,
+   "failure": 0.255126953125,
+   "pose_failure": 0.255126953125,
+   "survival_s": 47.097254119772515,
+   "yaw_rate": 0.3302645353986845
+  }
+ },
+ "host": "ws-l4-001",
+ "seconds": 223.9
+}

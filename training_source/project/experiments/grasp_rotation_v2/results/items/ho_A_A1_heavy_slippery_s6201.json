@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_A_A1_heavy_slippery_s6201",
+  "policy": "A1",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "heavy_slippery",
+  "assign": null,
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.0660763564666504,
+   "failure": 0.24072265625,
+   "pose_failure": 0.24072265625,
+   "survival_s": 24.995654669339274,
+   "yaw_rate": 0.26347561749221815
+  },
+  "60s": {
+   "turns": 2.0690690097793807,
+   "failure": 0.28125,
+   "pose_failure": 0.28125,
+   "survival_s": 47.14140695246169,
+   "yaw_rate": 0.26724895137959087
+  }
+ },
+ "host": "gpu-02",
+ "seconds": 149.5
+}

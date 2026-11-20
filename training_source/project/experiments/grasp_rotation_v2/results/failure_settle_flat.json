@@ -1,0 +1,46 @@
+{
+ "A1": {
+  "episodes": 1024,
+  "failures": 248,
+  "fail_rate": 0.2421875,
+  "settle_flat": 165,
+  "tip_away": 31,
+  "other": 52,
+  "fail_rate_excl_settle_flat": 0.0810546875,
+  "final_palm_tilt_flat_mean": 0.18993745744228363,
+  "final_palm_tilt_tip_mean": 0.671858012676239
+ },
+ "A2": {
+  "episodes": 1024,
+  "failures": 308,
+  "fail_rate": 0.30078125,
+  "settle_flat": 173,
+  "tip_away": 53,
+  "other": 82,
+  "fail_rate_excl_settle_flat": 0.1318359375,
+  "final_palm_tilt_flat_mean": 0.2200884073972702,
+  "final_palm_tilt_tip_mean": 0.6914817094802856
+ },
+ "A3": {
+  "episodes": 1024,
+  "failures": 267,
+  "fail_rate": 0.2607421875,
+  "settle_flat": 148,
+  "tip_away": 52,
+  "other": 67,
+  "fail_rate_excl_settle_flat": 0.1162109375,
+  "final_palm_tilt_flat_mean": 0.2005489021539688,
+  "final_palm_tilt_tip_mean": 0.7158501148223877
+ },
+ "pooled": {
+  "n": 3072,
+  "fail": 823,
+  "flat": 486,
+  "tip": 136,
+  "other": 201,
+  "share_flat": 0.5905224787363305,
+  "fail_rate": 0.2679036458333333,
+  "fail_rate_excl_flat": 0.10970052083333333
+ },
+ "definition": "diag rollouts retention_v1/data/diag_A*_nominal_seed9201.npz (60 s, 1024 envs each); palm-frame tilt = angle between palm normal and nearest cube face normal; settle_flat = palm-tilt at the last held step < initial - 0.2 rad; tip_away = > initial + 0.2 rad"
+}

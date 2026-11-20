@@ -1,0 +1,112 @@
+[
+ {
+  "key": "p1dev_A1_s6101",
+  "policy": "A1",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ {
+  "key": "p1dev_A2_s6101",
+  "policy": "A2",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ {
+  "key": "p1dev_A3_s6101",
+  "policy": "A3",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ {
+  "key": "p1dev_R1_s6101",
+  "policy": "R1",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ {
+  "key": "p1dev_hold_s6101",
+  "policy": "hold",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ {
+  "key": "p1dev_A1_s6102",
+  "policy": "A1",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ {
+  "key": "p1dev_A2_s6102",
+  "policy": "A2",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ {
+  "key": "p1dev_A3_s6102",
+  "policy": "A3",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ {
+  "key": "p1dev_R1_s6102",
+  "policy": "R1",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ {
+  "key": "p1dev_hold_s6102",
+  "policy": "hold",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ }
+]

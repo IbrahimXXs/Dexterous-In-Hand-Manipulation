@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_R1_s6102",
+  "policy": "R1",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.1615053863366667,
+   "failure": 0.182373046875,
+   "pose_failure": 0.182373046875,
+   "survival_s": 27.210620522657337,
+   "yaw_rate": 0.26302674874133714
+  },
+  "60s": {
+   "turns": 2.307983392754257,
+   "failure": 0.229248046875,
+   "pose_failure": 0.229248046875,
+   "survival_s": 50.83209304261345,
+   "yaw_rate": 0.2726699381570748
+  }
+ },
+ "host": "ws-l4-001",
+ "seconds": 187.0
+}

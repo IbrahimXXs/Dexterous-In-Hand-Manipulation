@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_B_R1_nominal_s6201",
+  "policy": "R1",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:49",
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.602986144827859,
+   "failure": 0.0009765625,
+   "pose_failure": 0.0009765625,
+   "survival_s": 29.995630329782216,
+   "yaw_rate": 0.33577395738747395
+  },
+  "60s": {
+   "turns": 3.1799150277986508,
+   "failure": 0.00390625,
+   "pose_failure": 0.00390625,
+   "survival_s": 59.92595304140377,
+   "yaw_rate": 0.3333322887250191
+  }
+ },
+ "host": "gpu-01",
+ "seconds": 216.4
+}

@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_A2_s6101",
+  "policy": "A2",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.1303210432919482,
+   "failure": 0.26904296875,
+   "pose_failure": 0.26904296875,
+   "survival_s": 24.27371862342534,
+   "yaw_rate": 0.27949157443399564
+  },
+  "60s": {
+   "turns": 2.222640034082219,
+   "failure": 0.2861328125,
+   "pose_failure": 0.2861328125,
+   "survival_s": 45.86765205066877,
+   "yaw_rate": 0.2857598990948499
+  }
+ },
+ "host": "ws-l4-004",
+ "seconds": 217.0
+}

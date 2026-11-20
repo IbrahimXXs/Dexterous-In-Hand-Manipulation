@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_R1_s6101",
+  "policy": "R1",
+  "seed": 6101,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": true
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.1565645167742253,
+   "failure": 0.17919921875,
+   "pose_failure": 0.17919921875,
+   "survival_s": 27.30018351227318,
+   "yaw_rate": 0.26229228458249176
+  },
+  "60s": {
+   "turns": 2.3011695183010694,
+   "failure": 0.229248046875,
+   "pose_failure": 0.229248046875,
+   "survival_s": 51.068616483637925,
+   "yaw_rate": 0.2722122515956019
+  }
+ },
+ "host": "gpu-01",
+ "seconds": 227.7
+}

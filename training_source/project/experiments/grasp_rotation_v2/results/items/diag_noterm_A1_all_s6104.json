@@ -1,0 +1,34 @@
+{
+ "item": {
+  "key": "diag_noterm_A1_all_s6104",
+  "policy": "A1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.320930648781171,
+   "failure": 0.04638671875,
+   "pose_failure": 0.0,
+   "survival_s": 28.797900819747156,
+   "yaw_rate": 0.28889498133182473
+  },
+  "60s": {
+   "turns": 2.7571587903347554,
+   "failure": 0.048828125,
+   "pose_failure": 0.0,
+   "survival_s": 57.38159265192735,
+   "yaw_rate": 0.3013934854188566
+  }
+ },
+ "host": "gpu-04",
+ "seconds": 139.6
+}

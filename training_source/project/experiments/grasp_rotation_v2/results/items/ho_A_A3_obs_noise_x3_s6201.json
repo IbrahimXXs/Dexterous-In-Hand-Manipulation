@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_A_A3_obs_noise_x3_s6201",
+  "policy": "A3",
+  "seed": 6201,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "obs_noise_x3",
+  "assign": null,
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.3145798781309672,
+   "failure": 0.24609375,
+   "pose_failure": 0.24609375,
+   "survival_s": 24.35556676917622,
+   "yaw_rate": 0.3170348233447205
+  },
+  "60s": {
+   "turns": 2.6432729465600233,
+   "failure": 0.263671875,
+   "pose_failure": 0.263671875,
+   "survival_s": 46.65502999208911,
+   "yaw_rate": 0.3267276649676221
+  }
+ },
+ "host": "gpu-02",
+ "seconds": 146.9
+}

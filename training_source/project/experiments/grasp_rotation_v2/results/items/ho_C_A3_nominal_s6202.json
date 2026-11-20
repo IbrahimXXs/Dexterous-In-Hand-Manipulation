@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "ho_C_A3_nominal_s6202",
+  "policy": "A3",
+  "seed": 6202,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:81,49,192,123,79,106,196,47,233,189",
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.7597793483168018,
+   "failure": 0.0146484375,
+   "pose_failure": 0.0146484375,
+   "survival_s": 29.772363724892784,
+   "yaw_rate": 0.370697169961771
+  },
+  "60s": {
+   "turns": 3.5260682227407525,
+   "failure": 0.025390625,
+   "pose_failure": 0.025390625,
+   "survival_s": 59.17910244433733,
+   "yaw_rate": 0.3733419928113819
+  }
+ },
+ "host": "gpu-02",
+ "seconds": 141.1
+}

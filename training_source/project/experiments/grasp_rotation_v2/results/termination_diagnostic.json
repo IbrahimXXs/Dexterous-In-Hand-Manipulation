@@ -1,0 +1,180 @@
+{
+ "diag_noterm_A1_bad_s6104": {
+  "episodes": 2048,
+  "pose_rule_would_fire": 0.96630859375,
+  "would_fire_settle_flat": 0.8650833754421425,
+  "would_fire_tip_away": 0.013643254168772108,
+  "dropped_or_too_fast_60s_all": 0.1298828125,
+  "turns60_without_pose_rule": 2.42778265544016,
+  "turns30_without_pose_rule": 1.1149717750129828,
+  "settle_flat": {
+   "n": 1712,
+   "still_in_hand_at_60s": 0.9094626168224299,
+   "turns_after_event_mean": 2.2346253277886063,
+   "yaw_rate_after_event": 0.3018659194427321,
+   "event_time_median_s": 6.25,
+   "palm_tilt_start": 0.6893208622932434,
+   "palm_tilt_at_event": 0.15554438531398773,
+   "drift_end_mm": 32.6349250972271,
+   "palm_tilt_end": 0.12291920185089111
+  },
+  "tip_away": {
+   "n": 27,
+   "still_in_hand_at_60s": 0.6666666666666667,
+   "turns_after_event_mean": 1.6018099459621509,
+   "yaw_rate_after_event": 0.268081345009436,
+   "event_time_median_s": 5.95,
+   "palm_tilt_start": 0.43286439776420593,
+   "palm_tilt_at_event": 0.8234701752662659,
+   "drift_end_mm": 61.8252232670784,
+   "palm_tilt_end": 0.24455970525741577
+  },
+  "other": {
+   "n": 240,
+   "still_in_hand_at_60s": 0.5833333333333333,
+   "turns_after_event_mean": 1.3948447180488868,
+   "yaw_rate_after_event": 0.2812902911600027,
+   "event_time_median_s": 5.0,
+   "palm_tilt_start": 0.522638201713562,
+   "palm_tilt_at_event": 0.4635791778564453,
+   "drift_end_mm": 54.90358546376228,
+   "palm_tilt_end": 0.28541532158851624
+  }
+ },
+ "diag_noterm_A1_all_s6104": {
+  "episodes": 2048,
+  "pose_rule_would_fire": 0.25048828125,
+  "would_fire_settle_flat": 0.6374269005847953,
+  "would_fire_tip_away": 0.15009746588693956,
+  "dropped_or_too_fast_60s_all": 0.048828125,
+  "turns60_without_pose_rule": 2.7571587903347554,
+  "turns30_without_pose_rule": 1.3209306487811707,
+  "settle_flat": {
+   "n": 327,
+   "still_in_hand_at_60s": 0.8501529051987767,
+   "turns_after_event_mean": 2.0649152456774145,
+   "yaw_rate_after_event": 0.29970493882268784,
+   "event_time_median_s": 6.15,
+   "palm_tilt_start": 0.6829135417938232,
+   "palm_tilt_at_event": 0.16687530279159546,
+   "drift_end_mm": 36.874521523714066,
+   "palm_tilt_end": 0.15692052245140076
+  },
+  "tip_away": {
+   "n": 77,
+   "still_in_hand_at_60s": 0.6753246753246753,
+   "turns_after_event_mean": 1.3927570364581698,
+   "yaw_rate_after_event": 0.2605204787224812,
+   "event_time_median_s": 6.95,
+   "palm_tilt_start": 0.2152409553527832,
+   "palm_tilt_at_event": 0.6585782170295715,
+   "drift_end_mm": 43.55454072356224,
+   "palm_tilt_end": 0.22006557881832123
+  },
+  "other": {
+   "n": 109,
+   "still_in_hand_at_60s": 0.7614678899082569,
+   "turns_after_event_mean": 1.6254895925565036,
+   "yaw_rate_after_event": 0.2693061997984287,
+   "event_time_median_s": 5.2,
+   "palm_tilt_start": 0.4550146758556366,
+   "palm_tilt_at_event": 0.43308761715888977,
+   "drift_end_mm": 41.382256895303726,
+   "palm_tilt_end": 0.18266576528549194
+  }
+ },
+ "diag_term_A1_bad_s6104": {
+  "turns60_with_pose_rule": 0.36585653246860994,
+  "turns30_with_pose_rule": 0.3123112577360984,
+  "failure60": 0.97216796875
+ },
+ "diag_noterm_R1_bad_s6104": {
+  "episodes": 2048,
+  "pose_rule_would_fire": 0.8544921875,
+  "would_fire_settle_flat": 0.9022857142857142,
+  "would_fire_tip_away": 0.006857142857142857,
+  "dropped_or_too_fast_60s_all": 0.03466796875,
+  "turns60_without_pose_rule": 2.0918240566609585,
+  "turns30_without_pose_rule": 0.8530904397521152,
+  "settle_flat": {
+   "n": 1579,
+   "still_in_hand_at_60s": 0.9613679544015199,
+   "turns_after_event_mean": 1.7508167326167927,
+   "yaw_rate_after_event": 0.28436811965546044,
+   "event_time_median_s": 17.2,
+   "palm_tilt_start": 0.6910808086395264,
+   "palm_tilt_at_event": 0.16670627892017365,
+   "drift_end_mm": 30.22935800254345,
+   "palm_tilt_end": 0.13079220056533813
+  },
+  "tip_away": {
+   "n": 12,
+   "still_in_hand_at_60s": 1.0,
+   "turns_after_event_mean": 1.9053665535340583,
+   "yaw_rate_after_event": 0.25104631473565614,
+   "event_time_median_s": 11.100000000000001,
+   "palm_tilt_start": 0.4936647117137909,
+   "palm_tilt_at_event": 0.753142774105072,
+   "drift_end_mm": 33.402759581804276,
+   "palm_tilt_end": 0.10465500503778458
+  },
+  "other": {
+   "n": 159,
+   "still_in_hand_at_60s": 0.9371069182389937,
+   "turns_after_event_mean": 1.6577898367544621,
+   "yaw_rate_after_event": 0.25614598745780115,
+   "event_time_median_s": 12.850000000000001,
+   "palm_tilt_start": 0.5146928429603577,
+   "palm_tilt_at_event": 0.43814191222190857,
+   "drift_end_mm": 33.56964886188507,
+   "palm_tilt_end": 0.16611473262310028
+  }
+ },
+ "diag_noterm_R1_all_s6104": {
+  "episodes": 2048,
+  "pose_rule_would_fire": 0.24169921875,
+  "would_fire_settle_flat": 0.6505050505050505,
+  "would_fire_tip_away": 0.08888888888888889,
+  "dropped_or_too_fast_60s_all": 0.015625,
+  "turns60_without_pose_rule": 2.644872616990108,
+  "turns30_without_pose_rule": 1.2431539671276297,
+  "settle_flat": {
+   "n": 322,
+   "still_in_hand_at_60s": 0.906832298136646,
+   "turns_after_event_mean": 1.6148981847783386,
+   "yaw_rate_after_event": 0.2827517482849861,
+   "event_time_median_s": 17.35,
+   "palm_tilt_start": 0.6797276735305786,
+   "palm_tilt_at_event": 0.18212831020355225,
+   "drift_end_mm": 32.9173319041729,
+   "palm_tilt_end": 0.16633181273937225
+  },
+  "tip_away": {
+   "n": 44,
+   "still_in_hand_at_60s": 1.0,
+   "turns_after_event_mean": 1.1832604510693852,
+   "yaw_rate_after_event": 0.23590983013156705,
+   "event_time_median_s": 27.525000000000002,
+   "palm_tilt_start": 0.17907437682151794,
+   "palm_tilt_at_event": 0.6229588389396667,
+   "drift_end_mm": 21.544283255934715,
+   "palm_tilt_end": 0.2151101678609848
+  },
+  "other": {
+   "n": 129,
+   "still_in_hand_at_60s": 0.9844961240310077,
+   "turns_after_event_mean": 1.4776820980431555,
+   "yaw_rate_after_event": 0.24957168766251872,
+   "event_time_median_s": 19.8,
+   "palm_tilt_start": 0.4425498843193054,
+   "palm_tilt_at_event": 0.41775649785995483,
+   "drift_end_mm": 21.503766998648643,
+   "palm_tilt_end": 0.17353327572345734
+  }
+ },
+ "diag_term_R1_bad_s6104": {
+  "turns60_with_pose_rule": 0.5947647761562886,
+  "turns30_with_pose_rule": 0.4493654100693255,
+  "failure60": 0.86181640625
+ }
+}

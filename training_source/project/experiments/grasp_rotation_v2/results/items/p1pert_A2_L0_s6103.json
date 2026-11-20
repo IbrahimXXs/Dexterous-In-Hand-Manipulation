@@ -1,0 +1,30 @@
+{
+ "item": {
+  "key": "p1pert_A2_L0_s6103",
+  "policy": "A2",
+  "seed": 6103,
+  "num_envs": 2050,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:81,49,192,123,79",
+  "pose_range": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.5349036794180808,
+   "failure": 0.012682926829268294,
+   "pose_failure": 0.012682926829268294,
+   "survival_s": 29.768244346020424,
+   "yaw_rate": 0.3231276074432305
+  },
+  "60s": {
+   "turns": 3.0554589510340042,
+   "failure": 0.015609756097560976,
+   "pose_failure": 0.015609756097560976,
+   "survival_s": 59.33346429877165,
+   "yaw_rate": 0.32240013926885486
+  }
+ },
+ "host": "gpu-01",
+ "seconds": 139.1
+}

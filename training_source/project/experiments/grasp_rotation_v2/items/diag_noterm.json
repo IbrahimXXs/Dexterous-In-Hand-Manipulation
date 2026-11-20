@@ -1,0 +1,80 @@
+[
+ {
+  "key": "diag_noterm_A1_bad_s6104",
+  "policy": "A1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:11,25,39,42,67,70,71,74,75,104,109,110,111,112,114,125,127,129,135,136,139,141,142,143,161,162,163,172,182,184,186,188,210,211,218,220,221,223,225",
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "diag_term_A1_bad_s6104",
+  "policy": "A1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:11,25,39,42,67,70,71,74,75,104,109,110,111,112,114,125,127,129,135,136,139,141,142,143,161,162,163,172,182,184,186,188,210,211,218,220,221,223,225",
+  "pose_range": null,
+  "record_quat": true
+ },
+ {
+  "key": "diag_noterm_A1_all_s6104",
+  "policy": "A1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "diag_noterm_R1_bad_s6104",
+  "policy": "R1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:11,25,39,42,67,70,71,74,75,104,109,110,111,112,114,125,127,129,135,136,139,141,142,143,161,162,163,172,182,184,186,188,210,211,218,220,221,223,225",
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ },
+ {
+  "key": "diag_term_R1_bad_s6104",
+  "policy": "R1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "grasps:11,25,39,42,67,70,71,74,75,104,109,110,111,112,114,125,127,129,135,136,139,141,142,143,161,162,163,172,182,184,186,188,210,211,218,220,221,223,225",
+  "pose_range": null,
+  "record_quat": true
+ },
+ {
+  "key": "diag_noterm_R1_all_s6104",
+  "policy": "R1",
+  "seed": 6104,
+  "num_envs": 2048,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": null,
+  "pose_range": null,
+  "terminations_off": [
+   "cube_pose_deviation"
+  ],
+  "record_quat": true
+ }
+]

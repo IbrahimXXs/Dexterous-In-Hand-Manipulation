@@ -1,0 +1,31 @@
+{
+ "item": {
+  "key": "p1dev_A3_s6102",
+  "policy": "A3",
+  "seed": 6102,
+  "num_envs": 4096,
+  "steps": 1200,
+  "preset": "nominal",
+  "assign": "all",
+  "pose_range": null,
+  "record_actions": false
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.3282426091055755,
+   "failure": 0.240478515625,
+   "pose_failure": 0.240478515625,
+   "survival_s": 24.42177770766284,
+   "yaw_rate": 0.31844888500543456
+  },
+  "60s": {
+   "turns": 2.679459959948812,
+   "failure": 0.255126953125,
+   "pose_failure": 0.255126953125,
+   "survival_s": 47.00007394254317,
+   "yaw_rate": 0.32816973254976006
+  }
+ },
+ "host": "gpu-01",
+ "seconds": 215.8
+}
