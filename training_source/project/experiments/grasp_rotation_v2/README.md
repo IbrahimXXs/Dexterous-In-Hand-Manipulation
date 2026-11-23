@@ -4,7 +4,7 @@ Simulation only (MJLab / MuJoCo-Warp, RSL-RL PPO), 20 Hz, under the deploy kit's
 
 ## Summary
 
-**Outcome C: both improvements help, and they are reported separately below.** One training seed per candidate, so every PPO result here is exploratory.
+**Outcome C: both improvements help, and they are reported separately below.** The candidates were first trained with one seed each. **C5 was then confirmed with three independent training seeds (2026-11-20/21, section "C5 three-seed confirmation")**: all three seeds pass every pre-registered threshold, and C5 beats A at the training-seed level (+0.59 turns, p = 0.003). The P0 result remains a single seed.
 
 | Held-out, 30 s (seeds 6201+6202, 4096 envs per cell) | turns | failure | yaw rate held (rad/s) | P(held 60 s) |
 |---|---|---|---|---|
@@ -193,6 +193,36 @@ From a good grasp, every policy almost never fails. The policies are then separa
 - The pose-deviation rule causes most of the remaining failures on the full distribution. With the rule switched off (supplementary, not pre-registered; seed 6201), real drops within 60 s are A 3.8–6.6%, R1 0.6%, P0 1.9%, C5 0.8%, and C5 makes 4.62 turns in 60 s (R1: 2.68).
 - **Movement cost of C5** (full distribution, seed 6201, while held): mean joint speed 0.295 rad/s vs 0.24–0.25 for A1/A3/R1/P0 (+18%), and mean |action| 0.875 vs 0.73–0.80. Joints at a limit: 4.4 vs 4.8–5.1, so it presses the kit limits less often. The actions stay within the same kit limits, but faster finger motion is a sim-to-real risk to check before any hardware run.
 
+## C5 three-seed confirmation (`results/c5_seeds.{json,md}`, `figures/c5_seeds.png`)
+
+Seeds 2 and 3 were trained exactly like seed 1: same task `Mjlab-Leap-GRV2-C5`, from scratch, 3001 updates, jobs 310406 and 310407. Checkpoints were selected by the same rule (max validation turns, seed 7001): seed 2 at update 1500, seed 3 at update 3000. Seed 1's selection did not change. Both are copied with sha256 into `checkpoints/MANIFEST.txt`. The held-out evaluation used the same seeds 6201+6202 and the same items as Phase 4 (`items/phase4_c5_seeds23.json`; policies labelled `C5s2`, `C5s3`).
+
+Setting A (full original grasp distribution), 30 s:
+
+| Policy | turns30 | failure30 | yaw held | turns60 | P(held 60 s) |
+|---|---|---|---|---|---|
+| A1 / A2 / A3 | 1.148 / 1.123 / 1.329 | 24.0 / 27.6 / 24.0% | 0.281 / 0.281 / 0.322 | 2.29 / 2.20 / 2.68 | 0.75 / 0.71 / 0.75 |
+| R1 | 1.158 | 19.0% | 0.263 | 2.30 | 0.76 |
+| C5 seed 1 / 2 / 3 | 1.869 / 1.826 / 1.685 | 19.9 / 15.4 / 20.0% | 0.432 / 0.411 / 0.393 | 3.85 / 3.77 / 3.36 | 0.79 / 0.84 / 0.78 |
+| **C5 3-seed mean** | **1.793** | **18.4%** | **0.412** | **3.66** | **0.80** |
+
+The seed-to-seed SD of turns30 is 0.096 for C5, similar to A's 0.112.
+
+Seed-level inference (unit = training seed; Welch t for C5 vs A1–A3; one-sample t for C5 vs R1's single seed):
+
+| Metric | C5 − A [95% CI] | p | C5 − R1 [95% CI] | p |
+|---|---|---|---|---|
+| turns30 | +0.593 [+0.354, +0.833] | 0.003 | +0.635 [+0.396, +0.875] | 0.008 |
+| failure30 | −0.068 [−0.122, −0.013] | 0.027 | −0.005 [−0.070, +0.060] | 0.75 |
+| yaw rate held | +0.117 [+0.067, +0.167] | 0.003 | +0.149 [+0.099, +0.198] | 0.006 |
+| turns60 | +1.271 [+0.688, +1.854] | 0.004 | +1.359 [+0.714, +2.004] | 0.012 |
+| P(held 60 s) | +0.070 [+0.009, +0.131] | 0.034 | +0.039 [−0.034, +0.113] | 0.15 |
+
+- **Pre-registered Phase 4 thresholds:** all five pass for each of the three seeds and for the 3-seed mean.
+- **Robustness presets:** every seed stays ≥ 1.56 turns under heavy/slippery, high delay and observation noise ×3, against an A mean of 1.08–1.20.
+- **Setting B (grasp 49):** C5 3-seed mean 2.361 turns and 0.3% failure, vs A mean 1.597 (seed level +0.764 [+0.407, +1.120], p = 0.005). On the robust subset: 2.264 vs 1.590 (p = 0.004).
+- **Conclusion:** the yaw-clip change gives a reliable rotation improvement: about +50% turns and +40% yaw rate vs A, +55% vs R1, across training seeds, held-out seeds, presets and both grasp settings. Failure is lower than A's and equal to R1's (no significant difference). Most of the retention gain therefore comes from the Retention-V1 reward that C5 keeps. Raising the clip does not trade it away.
+
 ## Phase 5: outcome and recommendation
 
 **Outcome C (both help)**, with individual and combined effects reported separately:
@@ -205,11 +235,11 @@ From a good grasp, every policy almost never fails. The policies are then separa
 
 Recommended next milestone:
 
-1. **Three-seed confirmation of C5** (seeds 2 and 3 plus the existing seed 1). Same protocol, held-out seeds 6201/6202 kept for the final comparison. About 4 h per run on a ws-ia GPU, two at a time. **Not launched**: this needs your approval. P0 is a retention result; confirm it in the same batch only if a lower failure rate at equal speed is a goal.
+1. **Three-seed confirmation of C5: done** (approved and run 2026-11-20; section above). C5 is confirmed as a simulation improvement in rotation, with retention at least as good as R1. The next step is hardware readiness (items 2–3), plus a check of C5's 18% higher joint speed against the kit's current/thermal margins before any physical run.
 2. **Standardised start grasp for repeatable hardware evaluation:** grasp 49 (with the robust subset as alternates), keeping the full-distribution results as the main benchmark. This needs a separately approved kit change (a start-pose ramp to grasp 49's joint command); nothing in the kit was changed here.
 3. **Then, per Outcome C:** RealSense + ArUco cube tracking to validate on the real hand. Any physical run must be separately approved and supervised, and should check C5's higher joint speed first.
 
-Limitations: one training seed per candidate (CIs cover environment variance only); the dev ranking used ~17 environments per grasp and policy (reliability is nevertheless r = 0.99); the grasp result depends on the cube settling as in simulation; the 0.029 m cube only.
+Limitations: P0 is one training seed (CIs cover environment variance only); C5 has three seeds, but its comparison with R1 is against R1's single seed; the dev ranking used ~17 environments per grasp and policy (reliability is nevertheless r = 0.99); the grasp result depends on the cube settling as in simulation; the 0.029 m cube only.
 
 ## Deliverables
 
@@ -227,6 +257,7 @@ Limitations: one training seed per candidate (CIs cover environment variance onl
 | 10 | Rotation and retention assessment | Phase 4 |
 | 11 | Preservation and regression tests | `logs/preservation_check.txt`, `logs/pytest_full.log` |
 | 12 | Recommendation | Phase 5 |
+| — | C5 three-seed confirmation | `results/c5_seeds.{json,md}`, `figures/c5_seeds.png`, `checkpoints/C5_{2,3}_*` |
 
 ## Reproduce
 
@@ -243,6 +274,9 @@ CAND=C5 SEED=1 sbatch experiments/grasp_rotation_v2/scripts/sbatch_train.sh
 python experiments/grasp_rotation_v2/scripts/curves.py assess
 python experiments/grasp_rotation_v2/scripts/freeze_and_items.py   # -> items/phase4.json
 python experiments/grasp_rotation_v2/scripts/compare_v2.py
+# C5 confirmation: CAND=C5 SEED=2|3 sbatch ...sbatch_train.sh; curves.py assess
+python experiments/grasp_rotation_v2/scripts/freeze_and_items.py --runs C5_2,C5_3 --out items/phase4_c5_seeds23.json
+python experiments/grasp_rotation_v2/scripts/compare_seeds.py
 bash experiments/grasp_rotation_v2/scripts/check_preservation.sh
 ```
 

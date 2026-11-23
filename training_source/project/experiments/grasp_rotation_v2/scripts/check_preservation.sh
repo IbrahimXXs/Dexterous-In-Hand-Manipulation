@@ -15,11 +15,14 @@ if git merge-base --is-ancestor "$B" HEAD && git diff --quiet "$B" -- . \
     ':!training_source/project/experiments/grasp_rotation_v2' \
     ':!training_source/project/src/in_hand_rotation_mjlab/grasp_rotation_v2' \
     ':!training_source/project/src/in_hand_rotation_mjlab/tasks/hand_cube/config/leap_right_grasp_rotation_v2' \
-    ':!training_source/project/tests/test_grasp_rotation_v2.py'; then
-  echo "OK: no file outside this study's folders differs from $B"
+    ':!training_source/project/tests/test_grasp_rotation_v2.py' ':!.gitignore'; then
+  echo "OK: no file outside this study's folders differs from $B (.gitignore checked below)"
 else
   echo "FAIL: files outside this study changed"; git diff --stat "$B" | tail -5; fail=1
 fi
+echo "== .gitignore: only appended lines allowed (this study's data/ and claim folders)"
+if git diff -U0 "$B" -- .gitignore | grep -q '^-[^-]'; then echo "FAIL: .gitignore lines removed"; fail=1
+else echo "OK: .gitignore has only added lines: $(git diff -U0 "$B" -- .gitignore | grep -c '^+[^+]')"; fi
 echo "== RSL-RL checkpoints of the earlier studies (sha256)"
 R=training_source/project/experiments/retention_v1/preservation/rsl_rl_pt.sha256
 if sha256sum --quiet -c $R && sha256sum --quiet -c $P/rsl_rl_pt_retention_v1.sha256; then

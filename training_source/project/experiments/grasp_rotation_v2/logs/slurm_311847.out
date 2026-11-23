@@ -1,0 +1,42 @@
+Fri Nov 20 23:50:20 +04 2026 worker job 311847 host ws-l1-010 items experiments/grasp_rotation_v2/items/phase4_c5_seeds23.json
+Setting seed: 6202
+Warp CUDA error 2: out of memory (in function wp_cuda_device_get_memory_info, /builds/omniverse/warp/warp/native/warp.cu:2179)
+Warp CUDA error 201: invalid device context (in function wp_cuda_device_get_memory_info, /builds/omniverse/warp/warp/native/warp.cu:2182)
+Warp CUDA error 201: invalid device context (in function wp_cuda_device_get_memory_info, /builds/omniverse/warp/warp/native/warp.cu:2184)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation" (0 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/ibrahim.alsarraj/.cache/warp/1.13.0
+Traceback (most recent call last):
+  File "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/scripts/run_items.py", line 85, in <module>
+    main()
+  File "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/scripts/run_items.py", line 68, in main
+    tr = rollout(task, ck, it["seed"], it["num_envs"], it["steps"], a.device, preset=it.get("preset", "nominal"),
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/src/in_hand_rotation_mjlab/grasp_rotation_v2/rollout.py", line 114, in rollout
+    env, raw, agent_cfg = make_env(task, num_envs, seed, device, preset=preset, num_steps=num_steps,
+  File "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/src/in_hand_rotation_mjlab/grasp_rotation_v2/rollout.py", line 97, in make_env
+    raw = ManagerBasedRlEnv(cfg=cfg, device=device)
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/envs/manager_based_rl_env.py", line 171, in __init__
+    self.scene = Scene(self.cfg.scene, device=device)
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/scene/scene.py", line 47, in __init__
+    self._add_terrain()
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/scene/scene.py", line 215, in _add_terrain
+    self._terrain = TerrainImporter(self._cfg.terrain, self._device)
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/terrains/terrain_importer.py", line 101, in __init__
+    self.configure_env_origins()
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/terrains/terrain_importer.py", line 222, in configure_env_origins
+    self.env_origins = self._compute_env_origins_grid(
+  File "/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/terrains/terrain_importer.py", line 322, in _compute_env_origins_grid
+    env_origins = torch.zeros(num_envs, 3, device=self.device)
+torch.AcceleratorError: CUDA error: out of memory
+Search for `cudaErrorMemoryAllocation' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+Fri Nov 20 23:51:55 +04 2026 exit 0

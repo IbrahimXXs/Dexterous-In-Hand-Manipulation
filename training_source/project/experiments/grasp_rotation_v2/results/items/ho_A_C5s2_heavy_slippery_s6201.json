@@ -1,0 +1,30 @@
+{
+ "item": {
+  "policy": "experiments/grasp_rotation_v2/checkpoints/C5_2_selected_model_1500.pt",
+  "num_envs": 2048,
+  "steps": 1200,
+  "pose_range": null,
+  "key": "ho_A_C5s2_heavy_slippery_s6201",
+  "seed": 6201,
+  "preset": "heavy_slippery",
+  "assign": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.7896110592321166,
+   "failure": 0.16748046875,
+   "pose_failure": 0.16748046875,
+   "survival_s": 26.15620156163277,
+   "yaw_rate": 0.41014494555020153
+  },
+  "60s": {
+   "turns": 3.7258508424100034,
+   "failure": 0.17431640625,
+   "pose_failure": 0.17431640625,
+   "survival_s": 51.01396560391731,
+   "yaw_rate": 0.43157023361809765
+  }
+ },
+ "host": "ws-l4-004",
+ "seconds": 125.6
+}

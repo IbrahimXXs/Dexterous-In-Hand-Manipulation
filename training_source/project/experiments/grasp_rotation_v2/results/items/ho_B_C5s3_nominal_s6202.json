@@ -1,0 +1,30 @@
+{
+ "item": {
+  "policy": "experiments/grasp_rotation_v2/checkpoints/C5_3_selected_model_3000.pt",
+  "num_envs": 2048,
+  "steps": 1200,
+  "pose_range": null,
+  "key": "ho_B_C5s3_nominal_s6202",
+  "seed": 6202,
+  "preset": "nominal",
+  "assign": "grasps:49"
+ },
+ "summary": {
+  "30s": {
+   "turns": 2.2237792898096673,
+   "failure": 0.00244140625,
+   "pose_failure": 0.00244140625,
+   "survival_s": 29.957886188594784,
+   "yaw_rate": 0.4662680748186767
+  },
+  "60s": {
+   "turns": 4.391084485007099,
+   "failure": 0.00341796875,
+   "pose_failure": 0.00341796875,
+   "survival_s": 59.874414954698295,
+   "yaw_rate": 0.4606032569474835
+  }
+ },
+ "host": "ws-l4-004",
+ "seconds": 113.3
+}

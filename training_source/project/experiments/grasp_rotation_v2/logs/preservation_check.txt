@@ -1,5 +1,7 @@
 == files outside this study vs baseline commit a2c01e2
-OK: no file outside this study's folders differs from a2c01e2
+OK: no file outside this study's folders differs from a2c01e2 (.gitignore checked below)
+== .gitignore: only appended lines allowed (this study's data/ and claim folders)
+OK: .gitignore has only added lines: 2
 == RSL-RL checkpoints of the earlier studies (sha256)
 OK: 730 checkpoints unchanged
 == grasp cache

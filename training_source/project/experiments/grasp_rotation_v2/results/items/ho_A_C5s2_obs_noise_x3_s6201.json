@@ -1,0 +1,30 @@
+{
+ "item": {
+  "policy": "experiments/grasp_rotation_v2/checkpoints/C5_2_selected_model_1500.pt",
+  "num_envs": 2048,
+  "steps": 1200,
+  "pose_range": null,
+  "key": "ho_A_C5s2_obs_noise_x3_s6201",
+  "seed": 6201,
+  "preset": "obs_noise_x3",
+  "assign": null
+ },
+ "summary": {
+  "30s": {
+   "turns": 1.8329268999809343,
+   "failure": 0.146484375,
+   "pose_failure": 0.146484375,
+   "survival_s": 26.710693757395347,
+   "yaw_rate": 0.4091785456703242
+  },
+  "60s": {
+   "turns": 3.7824664110014705,
+   "failure": 0.1572265625,
+   "pose_failure": 0.1572265625,
+   "survival_s": 52.13667069877192,
+   "yaw_rate": 0.4276189252313147
+  }
+ },
+ "host": "ws-l4-004",
+ "seconds": 122.7
+}
