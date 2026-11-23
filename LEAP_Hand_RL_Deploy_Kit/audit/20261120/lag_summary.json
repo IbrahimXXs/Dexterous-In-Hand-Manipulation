@@ -1,0 +1,2157 @@
+{
+ "A3": {
+  "per_joint": {
+   "if_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.07875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_mcp": {
+    "pos_s": {
+     "median": 0.0725,
+     "iqr": [
+      0.0425,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.1225
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_pip": {
+    "pos_s": {
+     "median": 0.0625,
+     "iqr": [
+      0.06,
+      0.065
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.075,
+     "iqr": [
+      0.0575,
+      0.11125
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.055,
+     "iqr": [
+      0.03625,
+      0.10375
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_dip": {
+    "pos_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.11375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_rot": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_mcp": {
+    "pos_s": {
+     "median": 0.0775,
+     "iqr": [
+      0.0675,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.11375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_pip": {
+    "pos_s": {
+     "median": 0.0875,
+     "iqr": [
+      0.085,
+      0.09
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_dip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.07875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_mcp": {
+    "pos_s": {
+     "median": 0.09,
+     "iqr": [
+      0.08125,
+      0.095
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.115
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_pip": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_cmc": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_axl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.05375,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_mcp": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.09625
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_ipl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.09875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.11375
+     ],
+     "n_runs": 6
+    }
+   }
+  },
+  "pos_s_median_all": 0.08,
+  "pos_s_iqr_all": [
+   0.075,
+   0.085
+  ],
+  "vel_qd_s_median_all": 0.08,
+  "vel_qd_s_iqr_all": [
+   0.08,
+   0.085
+  ],
+  "n_runs": 6
+ },
+ "C5": {
+  "per_joint": {
+   "if_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_mcp": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "if_pip": {
+    "pos_s": {
+     "median": 0.0675,
+     "iqr": [
+      0.065,
+      0.07
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.0775,
+     "iqr": [
+      0.075,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_rot": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_mcp": {
+    "pos_s": {
+     "median": 0.065,
+     "iqr": [
+      0.065,
+      0.065
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.1075,
+     "iqr": [
+      0.08125,
+      0.13
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_pip": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_dip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.07875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_mcp": {
+    "pos_s": {
+     "median": 0.0625,
+     "iqr": [
+      0.06,
+      0.065
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.13,
+     "iqr": [
+      0.12625,
+      0.13
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_pip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_cmc": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.07875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_axl": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_mcp": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_ipl": {
+    "pos_s": {
+     "median": 0.0775,
+     "iqr": [
+      0.075,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   }
+  },
+  "pos_s_median_all": 0.08,
+  "pos_s_iqr_all": [
+   0.075,
+   0.085
+  ],
+  "vel_qd_s_median_all": 0.08,
+  "vel_qd_s_iqr_all": [
+   0.08,
+   0.085
+  ],
+  "n_runs": 6
+ },
+ "M400": {
+  "per_joint": {
+   "if_rot": {
+    "pos_s": {
+     "median": 0.07,
+     "iqr": [
+      0.07,
+      0.07
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.07875,
+      0.08
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08125
+     ],
+     "n_runs": 4
+    }
+   },
+   "if_mcp": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.0725,
+      0.08625
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "if_pip": {
+    "pos_s": {
+     "median": 0.065,
+     "iqr": [
+      0.065,
+      0.065
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.06875,
+      0.08
+     ],
+     "n_runs": 4
+    }
+   },
+   "if_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 4
+    }
+   },
+   "mf_rot": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08125
+     ],
+     "n_runs": 4
+    }
+   },
+   "mf_mcp": {
+    "pos_s": {
+     "median": 0.0675,
+     "iqr": [
+      0.065,
+      0.07125
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "mf_pip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.0825,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.0875
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.0875
+     ],
+     "n_runs": 4
+    }
+   },
+   "mf_dip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08125
+     ],
+     "n_runs": 4
+    }
+   },
+   "rf_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08125
+     ],
+     "n_runs": 4
+    }
+   },
+   "rf_mcp": {
+    "pos_s": {
+     "median": 0.0575,
+     "iqr": [
+      0.055,
+      0.06375
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.09625
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "rf_pip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.07375,
+      0.075
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "rf_dip": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08125
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "th_cmc": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "th_axl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.07875,
+      0.08
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "th_mcp": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 4
+    }
+   },
+   "th_ipl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.07875,
+      0.08
+     ],
+     "n_runs": 4
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08375,
+      0.085
+     ],
+     "n_runs": 4
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 4
+    }
+   }
+  },
+  "pos_s_median_all": 0.075,
+  "pos_s_iqr_all": [
+   0.07375,
+   0.08
+  ],
+  "vel_qd_s_median_all": 0.085,
+  "vel_qd_s_iqr_all": [
+   0.085,
+   0.085
+  ],
+  "n_runs": 4
+ },
+ "P0": {
+  "per_joint": {
+   "if_rot": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.07625,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.07625,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_mcp": {
+    "pos_s": {
+     "median": 0.0575,
+     "iqr": [
+      0.04375,
+      0.06375
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.11875
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_pip": {
+    "pos_s": {
+     "median": 0.06,
+     "iqr": [
+      0.05625,
+      0.06375
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "if_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_rot": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_mcp": {
+    "pos_s": {
+     "median": 0.1,
+     "iqr": [
+      0.08875,
+      0.1
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.125,
+     "iqr": [
+      0.125,
+      0.12875
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_pip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08125,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "mf_dip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_mcp": {
+    "pos_s": {
+     "median": 0.0975,
+     "iqr": [
+      0.09125,
+      0.1
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.105,
+     "iqr": [
+      0.085,
+      0.12875
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_pip": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "rf_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_cmc": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.0825,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_axl": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.07875
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.1175
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_mcp": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   },
+   "th_ipl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08375
+     ],
+     "n_runs": 6
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 6
+    }
+   }
+  },
+  "pos_s_median_all": 0.08,
+  "pos_s_iqr_all": [
+   0.075,
+   0.085
+  ],
+  "vel_qd_s_median_all": 0.08,
+  "vel_qd_s_iqr_all": [
+   0.08,
+   0.085
+  ],
+  "n_runs": 6
+ },
+ "R1": {
+  "per_joint": {
+   "if_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "if_mcp": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "if_pip": {
+    "pos_s": {
+     "median": 0.065,
+     "iqr": [
+      0.065,
+      0.065
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.075,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "if_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "mf_rot": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "mf_mcp": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.09
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08,
+      0.13
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "mf_pip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "mf_dip": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "rf_rot": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "rf_mcp": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.075,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.13,
+     "iqr": [
+      0.125,
+      0.13
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "rf_pip": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "rf_dip": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "th_cmc": {
+    "pos_s": {
+     "median": 0.075,
+     "iqr": [
+      0.075,
+      0.075
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "th_axl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "th_mcp": {
+    "pos_s": {
+     "median": 0.085,
+     "iqr": [
+      0.085,
+      0.085
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   },
+   "th_ipl": {
+    "pos_s": {
+     "median": 0.08,
+     "iqr": [
+      0.075,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_qd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    },
+    "vel_fd_s": {
+     "median": 0.08,
+     "iqr": [
+      0.08,
+      0.08
+     ],
+     "n_runs": 5
+    }
+   }
+  },
+  "pos_s_median_all": 0.08,
+  "pos_s_iqr_all": [
+   0.075,
+   0.085
+  ],
+  "vel_qd_s_median_all": 0.08,
+  "vel_qd_s_iqr_all": [
+   0.08,
+   0.085
+  ],
+  "n_runs": 5
+ }
+}

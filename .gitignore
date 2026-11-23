@@ -35,3 +35,7 @@ LEAP_Hand_RL_Deploy_Kit/.venv/
 LEAP_Hand_RL_Deploy_Kit/kit/_deps/
 # shadow-run unlock markers are per-station; a new station must redo its shadow runs
 LEAP_Hand_RL_Deploy_Kit/logs/.shadow_passed_*
+
+# C5-HW-V1 simulation rollouts (~200 MB, regenerate with
+# experiments/c5_hw_v1/scripts/sim_actuator_reference.py; settings in sim_reference/README.txt)
+training_source/project/experiments/c5_hw_v1/sim_reference/*.npz

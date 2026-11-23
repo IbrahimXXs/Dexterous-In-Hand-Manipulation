@@ -1,0 +1,21 @@
+{
+ "n_files": 37,
+ "n_attempts": 37,
+ "n_csv_rows": 24,
+ "n_files_with_csv_row": 24,
+ "n_files_without_csv_row": 13,
+ "csv_rows_without_file": [],
+ "duplicate_csv_rows": [],
+ "part_files_ignored": [],
+ "category_totals": {
+  "completed_60s": 7,
+  "dropped": 16,
+  "guard_stop": 11,
+  "operator_stop_documented": 0,
+  "operator_stop_unknown_reason": 3,
+  "invalid_or_incomplete": 0
+ },
+ "categories_sum": 37,
+ "sums_to_files": true,
+ "guard_events_total": 12
+}

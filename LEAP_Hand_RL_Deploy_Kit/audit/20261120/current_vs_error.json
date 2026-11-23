@@ -1,0 +1,482 @@
+{
+ "if_rot": {
+  "slope_ma_per_rad": 1470.591872,
+  "corr": 0.969189,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   11.0,
+   37.0,
+   96.0,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 12285
+ },
+ "if_mcp": {
+  "slope_ma_per_rad": 1492.806625,
+  "corr": 0.987135,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   21.0,
+   49.0,
+   91.0,
+   147.0,
+   200.0,
+   266.0,
+   340.0,
+   350.0,
+   350.0,
+   350.0
+  ],
+  "n_quasi_static": 8564
+ },
+ "if_pip": {
+  "slope_ma_per_rad": 1522.296388,
+  "corr": 0.996954,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   3.0,
+   50.0,
+   107.0,
+   139.0,
+   191.0,
+   255.0,
+   338.5,
+   350.0,
+   350.0,
+   null
+  ],
+  "n_quasi_static": 19090
+ },
+ "if_dip": {
+  "slope_ma_per_rad": 1476.935651,
+  "corr": 0.982896,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   9.0,
+   42.5,
+   96.0,
+   142.0,
+   196.0,
+   247.0,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 5470
+ },
+ "mf_rot": {
+  "slope_ma_per_rad": 1357.487018,
+  "corr": 0.951896,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   10.0,
+   35.0,
+   51.0,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 11427
+ },
+ "mf_mcp": {
+  "slope_ma_per_rad": 1401.639296,
+  "corr": 0.968885,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   23.0,
+   45.0,
+   91.0,
+   139.5,
+   188.5,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 4071
+ },
+ "mf_pip": {
+  "slope_ma_per_rad": 1390.62344,
+  "corr": 0.97013,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   22.0,
+   38.0,
+   84.0,
+   129.0,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 5838
+ },
+ "mf_dip": {
+  "slope_ma_per_rad": 1308.201919,
+  "corr": 0.93406,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   3.0,
+   32.0,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 11415
+ },
+ "rf_rot": {
+  "slope_ma_per_rad": 1338.576832,
+  "corr": 0.952932,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   9.0,
+   32.0,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 11697
+ },
+ "rf_mcp": {
+  "slope_ma_per_rad": 1375.682892,
+  "corr": 0.964508,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   23.0,
+   47.0,
+   84.0,
+   140.0,
+   189.0,
+   259.5,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 3124
+ },
+ "rf_pip": {
+  "slope_ma_per_rad": 1443.587205,
+  "corr": 0.977225,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   21.0,
+   37.0,
+   85.5,
+   146.5,
+   199.0,
+   263.0,
+   337.0,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 7246
+ },
+ "rf_dip": {
+  "slope_ma_per_rad": 1298.378659,
+  "corr": 0.943309,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   6.0,
+   35.0,
+   50.5,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 8389
+ },
+ "th_cmc": {
+  "slope_ma_per_rad": 1460.202556,
+  "corr": 0.986615,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   9.0,
+   42.0,
+   94.0,
+   143.0,
+   189.0,
+   253.0,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 4800
+ },
+ "th_axl": {
+  "slope_ma_per_rad": 1505.52056,
+  "corr": 0.990247,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   11.0,
+   48.0,
+   97.0,
+   143.0,
+   193.0,
+   259.0,
+   340.0,
+   348.0,
+   350.5,
+   null
+  ],
+  "n_quasi_static": 5179
+ },
+ "th_mcp": {
+  "slope_ma_per_rad": 1472.578037,
+  "corr": 0.987744,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   15.0,
+   41.0,
+   94.0,
+   141.0,
+   192.5,
+   255.0,
+   333.0,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 5264
+ },
+ "th_ipl": {
+  "slope_ma_per_rad": 1490.009156,
+  "corr": 0.990163,
+  "bins_rad": [
+   0.0,
+   0.02,
+   0.05,
+   0.08,
+   0.11,
+   0.15,
+   0.2,
+   0.25,
+   0.3,
+   0.4,
+   0.6
+  ],
+  "median_current_along_error_ma": [
+   4.0,
+   43.0,
+   94.0,
+   149.0,
+   195.0,
+   254.0,
+   null,
+   null,
+   null,
+   null
+  ],
+  "n_quasi_static": 9609
+ }
+}
