@@ -1,0 +1,68 @@
+{
+ "policies": {
+  "C5HW_EFFORT_V1_seed1": {
+   "checkpoint": "model_2900.pt",
+   "checkpoint_sha256": "d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469",
+   "source_checkpoint_sha256": "d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469",
+   "selected_iteration": 2900,
+   "kit_describe": {
+    "checkpoint": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v1/deploy/policies/C5HW_EFFORT_V1_seed1/model_2900.pt",
+    "iteration": 2900,
+    "config_source": "/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v1/deploy/policies/C5HW_EFFORT_V1_seed1/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 2.288818359375e-05,
+   "max_abs_tanh_action_diff": 8.52346420288086e-06,
+   "estimator_present": false,
+   "obs_dim": 320,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.04166662477993999,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ],
+   "kit_describe_fields_differing_from_C5_seed1": [
+    "checkpoint",
+    "config_source",
+    "iteration"
+   ]
+  }
+ }
+}

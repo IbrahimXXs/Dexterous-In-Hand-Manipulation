@@ -1,0 +1,6 @@
+# C5-HW-EFFORT-V1, single training seed (PPO seed 1). Selected (max 30-s validation turns, seed 7001; ties -> later) and final.
+# copy | sha256 | source
+EFFORT_1_selected_model_2900.pt | d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469 | logs/rsl_rl/c5_hw_v1_EFFORT/2026-11-24_00-27-03_c5hw_effort_v1_seed1/model_2900.pt
+EFFORT_1_final_model_3000.pt | 6c71bfab054efc02ae511f35d6e4af4668c1c0adae969b0608fc803da2a89821 | logs/rsl_rl/c5_hw_v1_EFFORT/2026-11-24_00-27-03_c5hw_effort_v1_seed1/model_3000.pt
+EFFORT_1_params/env.yaml | 14cd28d04d323eeda3f74fda2b6935e55c1ac2de666b6f5084644997a1627b41 | logs/rsl_rl/c5_hw_v1_EFFORT/2026-11-24_00-27-03_c5hw_effort_v1_seed1/params/env.yaml
+EFFORT_1_params/agent.yaml | 3f1fe0d598efdd7635625f17fc06fef1291a51c5ee937fd66dd9fb1a55d247f3 | logs/rsl_rl/c5_hw_v1_EFFORT/2026-11-24_00-27-03_c5hw_effort_v1_seed1/params/agent.yaml

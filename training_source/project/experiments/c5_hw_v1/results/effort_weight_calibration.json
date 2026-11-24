@@ -1,0 +1,22 @@
+{
+ "rule": "w * mean(p) = 0.10 * mean(rotation reward per step), frozen C5 under the capped actuator",
+ "checkpoint": "experiments/grasp_rotation_v2/checkpoints/C5_1_selected_model_2400.pt",
+ "sha256": "2a932dfe37a5540d74a07081a8de62658b56341eca2efcb5af38a9790ef58492",
+ "task_env": "c5hw_effort_env_cfg(weight=1)",
+ "grasp": 49,
+ "seed": 8301,
+ "num_envs": 256,
+ "steps": 600,
+ "alive_env_steps": 153600,
+ "effort_limit_range_nm": [
+  0.16695107519626617,
+  0.20404735207557678
+ ],
+ "rotation_reward_per_step_mean": 0.5025762993835354,
+ "rotation_reward_weight": 1.25,
+ "penalty_p_per_step_mean": 0.2283846318910922,
+ "share": 0.1,
+ "w": 0.22005696934248828,
+ "w_rounded_frozen": 0.2201,
+ "cross_check_sim_effort_diagnostic_hinge": 0.228
+}

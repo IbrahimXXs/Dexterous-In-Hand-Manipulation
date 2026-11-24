@@ -1,0 +1,12 @@
+{
+ "run": "EFFORT_1 (PPO seed 1), Mjlab-Leap-C5HW-EFFORT",
+ "checked": "2026-11-24 01:20 +04, from results/curves/EFFORT_1.json point 500 and the run's TensorBoard scalars",
+ "validation_500": {"turns30": 1.0621, "yaw_rate_held": 0.2531, "failure30": 0.2344, "survival_s": 25.55, "turns60": 2.043},
+ "C5_validation_500": {"C5_1": {"turns30": 0.977, "yaw_rate_held": 0.239}, "C5_2": {"turns30": 1.371, "yaw_rate_held": 0.316},
+                       "C5_3": {"turns30": 0.942, "yaw_rate_held": 0.237}, "mean_yaw_rate_held": 0.264},
+ "rule_yaw_rate_ge_50pct_C5": {"threshold": 0.132, "value": 0.2531, "pass": true},
+ "reward_exploit": {"validation_turns_gt_0.1": true, "episode_reward_rotate_at_500": 0.123, "episode_reward_effort_penalty_at_500": -0.0148,
+                    "note": "penalty ~12% of the rotation term (calibrated 10%); the hand rotates the cube; no exploit seen", "pass": true},
+ "numerical": {"nan_terminations_max": 0.0, "all_logged_scalars_finite": true, "mean_noise_std_at_500": 1.087, "pass": true},
+ "decision": "continue to 3001 updates"
+}
