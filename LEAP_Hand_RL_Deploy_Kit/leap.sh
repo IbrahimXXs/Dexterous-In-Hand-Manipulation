@@ -266,7 +266,7 @@ EOF
     NAME="${POS[0]:-next}"
     if [[ "$NAME" == "next" ]]; then NAME="$("$PY" "$KIT/kit/trials.py" next --blocks "$TRIAL_BLOCKS")"; fi
     if [[ "$NAME" == "DONE" ]]; then echo "[leap] all scheduled trials are done. Run: ./leap.sh compare"; exit 0; fi
-    [[ "$NAME" =~ ^(A3|C5|R1|P0|M400)$ ]] || die "unknown trial policy '$NAME' (A3, C5, R1, P0, M400)"
+    [[ "$NAME" =~ ^(A3|C5|R1|P0|M400|C5s2|C5s3)$ ]] || die "unknown trial policy '$NAME' (A3, C5, R1, P0, M400, C5s2, C5s3)"
     echo; echo "[leap] ===== TRIAL: $NAME ($((TRIAL_STEPS / 20)) s) ====="
     echo "[leap] place the cube the same way every time; count the turns you see"
     MARK="$(mktemp)"

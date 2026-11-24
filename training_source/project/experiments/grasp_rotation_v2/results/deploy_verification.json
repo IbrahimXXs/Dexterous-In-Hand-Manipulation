@@ -113,6 +113,120 @@
     "rf_mcp",
     "rf_pip"
    ]
+  },
+  "C5_seed2": {
+   "checkpoint": "model_1500.pt",
+   "checkpoint_sha256": "49579bdf1f598d8c8c637817589d2993ba10639c065a9d5d4596a77249d75102",
+   "selected_iteration": 1500,
+   "kit_describe": {
+    "checkpoint": "/home/zephyr/Documents/AnyDesk/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/deploy/policies/C5_seed2/model_1500.pt",
+    "iteration": 1500,
+    "config_source": "/home/zephyr/Documents/AnyDesk/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/deploy/policies/C5_seed2/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 7.62939453125e-06,
+   "max_abs_tanh_action_diff": 4.626810550689697e-06,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.041666453777996715,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ]
+  },
+  "C5_seed3": {
+   "checkpoint": "model_3000.pt",
+   "checkpoint_sha256": "c221af89199cdeab2559cbdf7f3db0abc78fd41702f35615f838ae50aca2b4bc",
+   "selected_iteration": 3000,
+   "kit_describe": {
+    "checkpoint": "/home/zephyr/Documents/AnyDesk/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/deploy/policies/C5_seed3/model_3000.pt",
+    "iteration": 3000,
+    "config_source": "/home/zephyr/Documents/AnyDesk/Dexterous-In-Hand-Manipulation/training_source/project/experiments/grasp_rotation_v2/deploy/policies/C5_seed3/params/env.yaml",
+    "network": "320 -> [512, 512, 256] -> 16 (elu)",
+    "obs_normalizer": true,
+    "obs_terms": [
+     "joint_pos",
+     "prev_commanded_joint_pos"
+    ],
+    "history_length": 10,
+    "action_mode": "delta",
+    "action_squash": "tanh",
+    "cube_estimator": null,
+    "delta_range_rad": [
+     -0.041666666666666664,
+     0.041666666666666664
+    ],
+    "policy_hz": 20.0,
+    "default_joint_pos": [
+     0.1,
+     -0.4,
+     1.3,
+     0.0,
+     0.1,
+     0.0,
+     1.3,
+     0.0,
+     0.1,
+     0.4,
+     1.3,
+     0.0,
+     1.45,
+     1.5,
+     0.579,
+     1.37
+    ],
+    "notes": []
+   },
+   "max_abs_raw_action_diff": 1.9073486328125e-05,
+   "max_abs_tanh_action_diff": 1.1563301086425781e-05,
+   "estimator_present": false,
+   "default_pose_matches_training": true,
+   "integration_max_diff_vs_training_rad": 0.041661641901202806,
+   "integration_joints_differing": [
+    "if_mcp",
+    "if_pip",
+    "mf_mcp",
+    "mf_pip",
+    "rf_mcp",
+    "rf_pip"
+   ]
   }
  }
 }

@@ -22,6 +22,11 @@ favour one policy.  Every trial is one powered run of the same length.
     trials.py next  [--blocks 5]          name of the next scheduled policy
     trials.py record --policy C5 --log logs/physical_X.npz   (asks the observer)
     trials.py compare                      tables for Q1-Q4 -> logs/trial_comparison.md/.json
+
+Plans (environment variable LEAP_TRIAL_PLAN; use a separate LEAP_TRIALS_CSV per session):
+  nov20    (default) the 20 Nov design above
+  c5seeds  24 Nov: C5 (seed 1, tested 20 Nov) vs C5s3, blocks C5s3 C5 C5 C5s3 (ABBA), 10 attempts each;
+           C5s2 optional extra.  Q5: C5 vs C5s3, Q6: C5 vs C5s2 - safety stops, failures, rotations.
 """
 
 from __future__ import annotations
@@ -40,7 +45,7 @@ import numpy as np
 KIT = Path(__file__).resolve().parents[1]
 CSV = Path(os.environ.get("LEAP_TRIALS_CSV", KIT / "logs" / "trials.csv"))  # override for tests
 POLICIES = ("A3", "C5", "R1", "P0")
-EXTRA_POLICIES = ("M400",)  # reference runs outside the schedule (professor's original model_400)
+EXTRA_POLICIES = ("M400", "C5s2", "C5s3")  # outside the 20 Nov schedule: model_400 reference; C5 seeds 2 and 3
 # balanced (Williams) Latin square for 4 conditions
 SQUARE = (("A3", "C5", "R1", "P0"), ("C5", "P0", "A3", "R1"), ("R1", "A3", "P0", "C5"), ("P0", "R1", "C5", "A3"))
 QUESTIONS = (
@@ -49,17 +54,28 @@ QUESTIONS = (
     ("Q3", "A3", "R1", "did the retention reward improve real-world stability?", "retention"),
     ("Q4", "C5", "P0", "speed vs retention trade-off", "both"),
 )
+QUESTIONS_C5 = (
+    ("Q5", "C5", "C5s3", "does C5 seed 3 trip the guards less, at what speed?", "guard"),
+    ("Q6", "C5", "C5s2", "does C5 seed 2 trip the guards less, at what speed?", "guard"),
+)
+PLAN = os.environ.get("LEAP_TRIAL_PLAN", "nov20")
+if PLAN not in ("nov20", "c5seeds"):
+    sys.exit(f"unknown LEAP_TRIAL_PLAN {PLAN!r} (nov20, c5seeds)")
+PLAN_POLICIES = POLICIES if PLAN == "nov20" else ("C5", "C5s3")
+PLAN_BLOCKS = SQUARE if PLAN == "nov20" else (("C5s3", "C5", "C5", "C5s3"),)
+PLAN_QUESTIONS = QUESTIONS if PLAN == "nov20" else QUESTIONS_C5
 # Simulation reference (held-out, 30 s, full grasp distribution; READMEs of hwlimit_ac / grasp_rotation_v2).
 # Sim "failure" includes the tilt/drift termination rule, not only real drops.
 SIM_REF = {"A3": (1.329, 0.240), "R1": (1.158, 0.190), "P0": (1.273, 0.115), "C5": (1.869, 0.199),
-           "M400": (float("nan"), float("nan"))}  # model_400 was trained with wider limits; no comparable sim number
+           "M400": (float("nan"), float("nan")),
+           "C5s2": (1.826, 0.154), "C5s3": (1.685, 0.200)}  # grasp_rotation_v2/results/c5_seeds.md  # model_400 was trained with wider limits; no comparable sim number
 FIELDS = ("trial", "time", "policy", "policy_dir", "checkpoint_sha256", "log", "run_s", "completed", "stop_reason",
           "observed_turns", "dropped", "drop_time_s", "intervened", "notes",
           "est_turns", "max_current_ma", "max_temp_c", "jitter_frac_gt_60ms")
 
 
 def schedule(blocks: int) -> list[str]:
-    return [p for b in range(blocks) for p in SQUARE[b % 4]]
+    return [p for b in range(blocks) for p in PLAN_BLOCKS[b % len(PLAN_BLOCKS)]]
 
 
 def read_rows() -> list[dict]:
@@ -70,7 +86,7 @@ def read_rows() -> list[dict]:
 
 
 def scheduled_done() -> int:
-    return sum(r["policy"] in POLICIES for r in read_rows())
+    return sum(r["policy"] in PLAN_POLICIES for r in read_rows())
 
 
 def cmd_plan(a) -> None:
@@ -232,6 +248,7 @@ def summarize(tr: list[dict]) -> dict:
             "excluded_intervened": int(sum(t["intervened"] for t in tr if t["policy"] == p)),
             "_cnt": cnt, "_tpm": tpm, "_drop": np.array([float(t["dropped"]) for t in v]), "_held": held,
             "_fail": np.array([float(t["failed"]) for t in v]),
+            "_stop": np.array([float(t["safety_stop"]) for t in v]),
         }
     return s
 
@@ -249,7 +266,7 @@ def cmd_compare(a) -> None:
          "Speed: rotations counted per trial (counting ends at a drop); rate per minute only for trials held >= 20 s.", "",
          "| Policy | trials | rotations per trial | rate while held (>= 20 s) /min | drops | safety stops | failures | mean time held [s] | est. turns/min (monitor) | sim ref: turns/30 s, failure |",
          "|---|---|---|---|---|---|---|---|---|---|"]
-    for p in POLICIES + tuple(x for x in EXTRA_POLICIES if s[x]["n"]):
+    for p in tuple(x for x in POLICIES + EXTRA_POLICIES if s[x]["n"]):
         v = s[p]
         sd = "" if math.isnan(v["count_per_trial_sd"]) else f" ± {v['count_per_trial_sd']:.1f}"
         L.append(f"| {p} | {v['n']} | {v['count_per_trial_mean']:.1f}{sd} (n={v['n_counted']}) | "
@@ -258,8 +275,12 @@ def cmd_compare(a) -> None:
                  f"{v['held_s_mean']:.1f} | {v['est_turns_per_min_mean']:+.2f} | {SIM_REF[p][0]:.2f}, {100 * SIM_REF[p][1]:.0f}% |")
     L += ["", "| Question | Comparison | Measure | First | Second | Second − first [95% CI] | p (permutation) |", "|---|---|---|---|---|---|---|"]
     out_q = {}
-    for q, x, y, text, kind in QUESTIONS:
-        measures = [("rotations per trial", "_cnt")] if kind == "speed" else (
+    for q, x, y, text, kind in PLAN_QUESTIONS:
+        if kind == "guard":
+            measures = [("safety-stop rate", "_stop"), ("failure rate", "_fail"), ("rotations per trial", "_cnt"),
+                        ("time held [s]", "_held")]
+        else:
+          measures = [("rotations per trial", "_cnt")] if kind == "speed" else (
             [("failure rate", "_fail"), ("drop rate", "_drop"), ("time held [s]", "_held")] if kind == "retention" else
             [("rotations per trial", "_cnt"), ("failure rate", "_fail"), ("time held [s]", "_held")])
         out_q[q] = {}
@@ -276,13 +297,14 @@ def cmd_compare(a) -> None:
     if np.nanmax(jit) > 0.1:
         L += ["", f"Note: {int(np.sum(jit > 0.1))} trial(s) had > 10% of control steps over 60 ms (USB latency timer)."]
     md = "\n".join(L) + "\n"
-    (CSV.parent / "trial_comparison.md").write_text(md)
-    (CSV.parent / "trial_comparison.json").write_text(json.dumps(
+    base = "trial_comparison" if CSV.name == "trials.csv" else CSV.stem + "_comparison"  # one file per session
+    (CSV.parent / f"{base}.md").write_text(md)
+    (CSV.parent / f"{base}.json").write_text(json.dumps(
         {"policies": {p: {k: v for k, v in s[p].items() if not k.startswith("_")} for p in POLICIES + EXTRA_POLICIES},
          "questions": out_q},
         indent=2) + "\n")
     print(md)
-    print(f"-> {CSV.parent / 'trial_comparison.md'}, {CSV.parent / 'trial_comparison.json'}")
+    print(f"-> {CSV.parent / (base + '.md')}, {CSV.parent / (base + '.json')}")
 
 
 def main() -> int:
