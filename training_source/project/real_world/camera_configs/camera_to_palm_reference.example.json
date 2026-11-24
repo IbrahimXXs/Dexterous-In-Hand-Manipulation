@@ -1,0 +1,27 @@
+{
+  "is_example": true,
+  "reference": "TEMPLATE - describe the physical reference, e.g. '3D-printed palm jig v1 (CAD file ..., printed ..., checked with calipers)'",
+  "frame": "LEAP palm frame of kit/hand_scene.py (MJLab palm_center_pose_w): origin = mean of the 10 palm_collision_* geoms, axes = palm body",
+  "units": "metres; quaternions wxyz, rotating cube-frame vectors into the palm frame (cube frame from the layout file in use)",
+  "placements": [
+    {
+      "name": "jig_pose_A",
+      "cube_position_palm_m": [null, null, null],
+      "cube_quaternion_palm_wxyz": [null, null, null, null],
+      "how_measured": "REPLACE with the jig/CAD derivation of this pose"
+    },
+    {
+      "name": "jig_pose_B (rotated 90 deg in the jig)",
+      "cube_position_palm_m": [null, null, null],
+      "cube_quaternion_palm_wxyz": [null, null, null, null],
+      "how_measured": "REPLACE"
+    },
+    {
+      "name": "jig_pose_C (other face up)",
+      "cube_position_palm_m": [null, null, null],
+      "cube_quaternion_palm_wxyz": [null, null, null, null],
+      "how_measured": "REPLACE"
+    }
+  ],
+  "notes": "scripts/cube_vision.py camera-to-palm refuses this file while is_example is true. Values must come from a physical jig/CAD, never from guessing; at least 2 (better 3+) distinct placements are required for calibrated=true."
+}

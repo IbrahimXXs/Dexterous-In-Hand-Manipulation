@@ -1,0 +1,60 @@
+{
+  "format": "leap_cube_vision_intrinsics/v1",
+  "camera_id": "unknown camera of rgb.mp4",
+  "status": "estimated_from_cube_markers",
+  "image_size_wh": [
+    640,
+    480
+  ],
+  "camera_matrix": [
+    [
+      417.06927010310613,
+      0.0,
+      321.6747308303111
+    ],
+    [
+      0.0,
+      417.06927010310613,
+      315.34889802954916
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "dist_coeffs": [
+    -0.14068909539953645,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rms_reprojection_px": 0.5644157650405018,
+  "estimated_from": "evidence/videos/rgb.mp4",
+  "method": "cube_vision.layout_check bundle adjustment (recording axes, one shared marker offset)",
+  "formal_std": {
+    "f": 0.2596752622232418,
+    "cx": 0.034016340383595065,
+    "cy": 0.035826155107775336,
+    "k1": 0.003700120337660765,
+    "off_all_x": 1.4128387346561734e-05,
+    "off_all_y": 1.660732506695612e-05
+  },
+  "principal_point_spread_px": {
+    "f": [
+      360.40991168624316,
+      446.80463201764076
+    ],
+    "cx": [
+      184.6703116957336,
+      360.7690579257995
+    ],
+    "cy": [
+      208.44954438011538,
+      366.9394715922415
+    ]
+  },
+  "warning": "Approximate self-calibration from the cube markers of one recording; NOT a board calibration. The principal point is poorly constrained (see principal_point_spread_px across fits); formal std underestimates the error. Valid only for this recording's resolution.",
+  "created": "2026-11-24T19:07:57+04:00"
+}

@@ -14,6 +14,16 @@ hardware = [
   "dynamixel-sdk>=3.7,<4",
   "torch>=2.5,<3",
 ]
+# Read-only cube vision + digital-twin dashboard (docs/live_vision_digital_twin.md).
+# Exactly ONE OpenCV wheel: the contrib build provides cv2.aruco and the GUI; never
+# install opencv-python / opencv-python-headless next to it.
+vision = [
+  "opencv-contrib-python>=4.10,<5",
+]
+# Intel RealSense RGB-D source (optional; wheels exist for Linux/Windows x86_64 only).
+realsense = [
+  "pyrealsense2>=2.55,<3; (sys_platform == 'linux' or sys_platform == 'win32') and platform_machine == 'x86_64'",
+]
 
 [dependency-groups]
 dev = ["pytest>=8,<9"]

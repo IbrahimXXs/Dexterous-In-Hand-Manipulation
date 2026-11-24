@@ -1,0 +1,10 @@
+{
+  "format": "leap_cube_vision_intrinsics/v1",
+  "camera_id": "REPLACE: e.g. logitech-c920:SN123 or realsense:D435I:<serial>",
+  "status": "uncalibrated",
+  "image_size_wh": [1280, 720],
+  "camera_matrix": null,
+  "dist_coeffs": null,
+  "rms_reprojection_px": null,
+  "notes": "TEMPLATE ONLY - no calibration values. The tracker refuses this file. Produce a real one with: uv run --extra vision python scripts/cube_vision.py calibrate-intrinsics --camera 0 --width 1280 --height 720 --out training_source/project/real_world/camera_configs/<camera>.intrinsics.json (status becomes checkerboard_calibrated only if the RMS and view-count thresholds pass). RealSense: the SDK intrinsics are used automatically and labelled device_factory_unverified until checked with verify-device-intrinsics."
+}

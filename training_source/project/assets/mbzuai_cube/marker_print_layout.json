@@ -1,0 +1,15 @@
+{
+  "description": "Where the 15.55 mm ArUco square sits inside each 58 mm face. Complements layout.json (face axes, sizes, IDs), which does not specify the in-face position.",
+  "marker_center_offset_in_marker_axes_m": [0.0159, -0.0138],
+  "offset_convention": "marker_centre_cube = face_centre + offset[0] * marker_x_in_cube + offset[1] * marker_y_in_cube (layout.json axes); the same offset applies to all six faces",
+  "status": "preview_derived_unverified",
+  "allowed_status_values": [
+    "preview_derived_unverified",
+    "consistent_with_recording",
+    "caliper_measured"
+  ],
+  "source": "Pixel measurement of the six face labels in mbzuai_cube_with_aruco_preview.png (2026-11-24): cv2.aruco corners vs the face square, scale from the 58 mm face and from the 15.55 mm marker. All six faces: x +15.85..+16.04 mm, y -13.72..-13.88 mm; marker printed upright (OpenCV corner 0 = label top-left). The marker is NOT centred: it sits in the lower-right corner next to the letter, as also seen in the physical photos (evidence/hardware_frames).",
+  "physical_check": "See docs/live_vision_digital_twin.md, 'Marker print layout'. Measure the marker-centre offset from the face centre on the real cube with calipers and set status to caliper_measured; until then poses carry this provenance.",
+  "uncertainty_m": 0.0005,
+  "recording_check": "2026-11-24, measured/layout_check_rgb.json (evidence/videos/rgb.mp4, 391 multi-face frames): the physical cube does NOT follow layout.json - blue U (ID 3) and white A (ID 4) are interchanged (B is opposite A, Z opposite U) and the M (ID 0) and I (ID 5) markers are rotated 180 deg. With the recording's axes, one shared offset of (+17.0, -12.2) mm fits at 0.56 px RMS (this preview value: 1.17 px). Candidate files: measured/layout.measured_rgb.json + measured/marker_print_layout.measured_rgb.json (unconfirmed; select explicitly)."
+}

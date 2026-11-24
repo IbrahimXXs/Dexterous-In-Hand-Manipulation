@@ -67,6 +67,12 @@ hardware = [
     { name = "dynamixel-sdk" },
     { name = "torch" },
 ]
+realsense = [
+    { name = "pyrealsense2", marker = "platform_machine == 'x86_64' and (sys_platform == 'linux' or sys_platform == 'win32')" },
+]
+vision = [
+    { name = "opencv-contrib-python" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -78,10 +84,12 @@ requires-dist = [
     { name = "dynamixel-sdk", marker = "extra == 'hardware'", specifier = ">=3.7,<4" },
     { name = "mujoco", specifier = ">=3.3,<4" },
     { name = "numpy", specifier = ">=2.0,<3" },
+    { name = "opencv-contrib-python", marker = "extra == 'vision'", specifier = ">=4.10,<5" },
+    { name = "pyrealsense2", marker = "platform_machine == 'x86_64' and ((sys_platform == 'linux' and extra == 'realsense') or (sys_platform == 'win32' and extra == 'realsense'))", specifier = ">=2.55,<3" },
     { name = "pyzmq", specifier = ">=25,<28" },
     { name = "torch", marker = "extra == 'hardware'", specifier = ">=2.5,<3" },
 ]
-provides-extras = ["hardware"]
+provides-extras = ["hardware", "vision", "realsense"]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=8,<9" }]
@@ -561,6 +569,26 @@ wheels = [
 ]
 
 [[package]]
+name = "opencv-contrib-python"
+version = "4.14.0.94"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy", version = "2.4.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.5.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/eb/59/bc43b7d900de515f614fac9de8088be420a4d96fb019c9d49b53f637606e/opencv_contrib_python-4.14.0.94.tar.gz", hash = "sha256:f2e58020b9f54d68b49553a161327ae1bbc47da68e147231d444c915ee4cab4c", size = 151859592, upload-time = "2026-07-28T19:21:29.204Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/cf/62/c2d21d9ff3cc0489dc3567fb8645506e3d1daf4d052c1d329498b73ee73b/opencv_contrib_python-4.14.0.94-cp37-abi3-macosx_13_0_arm64.whl", hash = "sha256:ac2e796be65ee8eee56f4f0a6514183f193264f4dc22f9e3a648a261e37f7ebe", size = 52286667, upload-time = "2026-07-29T03:52:07.062Z" },
+    { url = "https://files.pythonhosted.org/packages/01/fb/ad8ab805989440d5defc1f00401c066b6e12054fb40c10c8fc5c16d05b82/opencv_contrib_python-4.14.0.94-cp37-abi3-macosx_14_0_x86_64.whl", hash = "sha256:8171c172e412721d5e53347cfbd393bcfbd1441d88b8c0cea50cfde0a60cf8e8", size = 39342495, upload-time = "2026-07-28T20:05:56.129Z" },
+    { url = "https://files.pythonhosted.org/packages/2d/10/cc7683fab3ce87d0f6960bc866bbb9052e51e9c49efb5a72d2268a4afdcd/opencv_contrib_python-4.14.0.94-cp37-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:9fb4deb9bcb93d41fb2a31c938f47b0d24a8e2b8418f566f939be309e3becb2f", size = 55169518, upload-time = "2026-07-28T19:12:52.617Z" },
+    { url = "https://files.pythonhosted.org/packages/db/96/0c156cac3e65b6b53eb3ba8b193aa28847f79b0d30b269293de621ba0bd0/opencv_contrib_python-4.14.0.94-cp37-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:b36cd24d7e2bd5159bc9f6572c3ccfe333640ab28e123017f366ef286cae7514", size = 78185083, upload-time = "2026-07-28T19:13:24.408Z" },
+    { url = "https://files.pythonhosted.org/packages/5c/b0/593f335083489b48e92c04527bb883e9b4ab0bdb1db5e334bf77ce1d04f8/opencv_contrib_python-4.14.0.94-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:20f1fc01919fd2116d4fc19d9656c9137d735acdccd64207ba302a17289e5d01", size = 57172315, upload-time = "2026-07-28T19:13:47.982Z" },
+    { url = "https://files.pythonhosted.org/packages/5d/30/af0d0868eb274ca1229e68394c15628a210720619f5aaa7f0a4ffc6b53a5/opencv_contrib_python-4.14.0.94-cp37-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:6fc25b60cc0fcc6ce9c82d14cf45921b68b9ca15b9458a708bda7874cd486527", size = 83617726, upload-time = "2026-07-28T19:14:47.445Z" },
+    { url = "https://files.pythonhosted.org/packages/6a/d0/e8ddb8db403bad729f6d214680adb81dbb2067d0f1b84b5a706fe3c69dd4/opencv_contrib_python-4.14.0.94-cp37-abi3-win32.whl", hash = "sha256:5388c5915a759a543bd7979211c79045cd713de35d6baad5a6fdd2f4c3b359af", size = 39055135, upload-time = "2026-07-28T18:32:31.891Z" },
+    { url = "https://files.pythonhosted.org/packages/57/88/a576ae448e28f75caba8eb27ea5f0ae0f69001bfd4179ba54e8824835da8/opencv_contrib_python-4.14.0.94-cp37-abi3-win_amd64.whl", hash = "sha256:626617c1e66b2537d075e00adba62bd7566df37f7878d185e047bfd49a6d50c7", size = 47438168, upload-time = "2026-07-28T18:32:28.453Z" },
+]
+
+[[package]]
 name = "packaging"
 version = "26.3"
 source = { registry = "https://pypi.org/simple" }
@@ -603,6 +631,17 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/6f/16/912b7225d56284859cd9a672827f18be43f8012f8b7b932bc4bd959a298e/pyopengl-3.1.10.tar.gz", hash = "sha256:c4a02d6866b54eb119c8e9b3fb04fa835a95ab802dd96607ab4cdb0012df8335", size = 1915580, upload-time = "2025-08-18T02:33:01.76Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/de/e4/1ba6f44e491c4eece978685230dde56b14d51a0365bc1b774ddaa94d14cd/pyopengl-3.1.10-py3-none-any.whl", hash = "sha256:794a943daced39300879e4e47bd94525280685f42dbb5a998d336cfff151d74f", size = 3194996, upload-time = "2025-08-18T02:32:59.902Z" },
+]
+
+[[package]]
+name = "pyrealsense2"
+version = "2.59.2.11152"
+source = { registry = "https://pypi.org/simple" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/d2/de/25c97112f58d7948a8719372106e538f642990ee2b13ea073cbe8d3ebfad/pyrealsense2-2.59.2.11152-cp311-cp311-manylinux1_x86_64.whl", hash = "sha256:26fda8dac66ba838916e4457b2a639199c494ac876a9748008ca18668f0adf78", size = 13591723, upload-time = "2026-11-15T10:43:31.625Z" },
+    { url = "https://files.pythonhosted.org/packages/be/f7/2bcddfac2974a50747210030709a254c183644aef4f0cfa61518a16771ac/pyrealsense2-2.59.2.11152-cp311-cp311-win_amd64.whl", hash = "sha256:68a4d7694ef2551f1869e676ccd95c5e04a75f31c2dd5ce3da4a50f0a65513e5", size = 9433284, upload-time = "2026-11-15T10:43:37.117Z" },
+    { url = "https://files.pythonhosted.org/packages/61/7b/e3db3b332285be200af5471e403d972c5e6b4025624d0fc24accde795761/pyrealsense2-2.59.2.11152-cp312-cp312-manylinux1_x86_64.whl", hash = "sha256:d857fac9394976f2153a2267112ed37cb025e979c62e7ac24bd0bfe753bc4b01", size = 13592712, upload-time = "2026-11-15T10:43:44.656Z" },
+    { url = "https://files.pythonhosted.org/packages/4a/e8/9c79c5894ad955146eec545c6eb800bead77778f324734524050bd465826/pyrealsense2-2.59.2.11152-cp312-cp312-win_amd64.whl", hash = "sha256:a70f9ba2482d2fe8cda29909573bbd242a4c0e55f4bd6db2ec776bbbbb7ba07f", size = 9433797, upload-time = "2026-11-15T10:43:59.123Z" },
 ]
 
 [[package]]
