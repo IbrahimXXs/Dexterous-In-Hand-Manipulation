@@ -97,19 +97,19 @@
       "excluded_intervened": 0
     },
     "C5s3": {
-      "n": 4,
-      "n_with_turns": 1,
-      "n_counted": 4,
-      "count_per_trial_mean": 7.0,
-      "count_per_trial_sd": 8.717797887081348,
-      "turns_per_min_mean": 19.867549668874172,
-      "turns_per_min_sd": NaN,
-      "drops": 3,
-      "drop_rate": 0.75,
+      "n": 12,
+      "n_with_turns": 5,
+      "n_counted": 12,
+      "count_per_trial_mean": 6.833333333333333,
+      "count_per_trial_sd": 6.161955612441311,
+      "turns_per_min_mean": 17.613509933774832,
+      "turns_per_min_sd": 2.745035013859494,
+      "drops": 11,
+      "drop_rate": 0.9166666666666666,
       "safety_stops": 0,
-      "failure_rate": 0.75,
-      "held_s_mean": 22.35,
-      "est_turns_per_min_mean": -0.4883211407426832,
+      "failure_rate": 0.9166666666666666,
+      "held_s_mean": 23.03333333333333,
+      "est_turns_per_min_mean": 0.02011858526631889,
       "excluded_intervened": 1
     }
   },
@@ -125,58 +125,58 @@
           -1.0,
           -0.2
         ],
-        "p_perm": 0.1671416429178541,
+        "p_perm": 0.014099295035248238,
         "n": [
           5,
-          4
+          12
         ]
       },
       "failure rate": {
         "first": "C5",
         "second": "C5s3",
         "mean_first": 0.8,
-        "mean_second": 0.75,
-        "diff": -0.050000000000000044,
+        "mean_second": 0.9166666666666666,
+        "diff": 0.11666666666666659,
         "ci95": [
-          -0.55,
-          0.4
+          -0.16666666666666663,
+          0.6
         ],
         "p_perm": 1.0,
         "n": [
           5,
-          4
+          12
         ]
       },
       "rotations per trial": {
         "first": "C5",
         "second": "C5s3",
         "mean_first": 5.25,
-        "mean_second": 7.0,
-        "diff": 1.75,
+        "mean_second": 6.833333333333333,
+        "diff": 1.583333333333333,
         "ci95": [
-          -6.0,
-          11.0
+          -4.083333333333334,
+          7.083333333333334
         ],
-        "p_perm": 0.7414129293535323,
+        "p_perm": 0.6632168391580421,
         "n": [
           4,
-          4
+          12
         ]
       },
       "time held [s]": {
         "first": "C5",
         "second": "C5s3",
         "mean_first": 21.826,
-        "mean_second": 22.35,
-        "diff": 0.5240000000000009,
+        "mean_second": 23.03333333333333,
+        "diff": 1.207333333333331,
         "ci95": [
-          -27.546,
-          30.250000000000004
+          -22.007333333333335,
+          21.87933333333333
         ],
-        "p_perm": 0.992000399980001,
+        "p_perm": 0.9312034398280086,
         "n": [
           5,
-          4
+          12
         ]
       }
     },
