@@ -1,0 +1,40 @@
+{
+  "format": "leap_cube_vision_intrinsics/v1",
+  "camera_id": "realsense:RealSense D435:137322071897",
+  "status": "device_factory_unverified",
+  "image_size_wh": [
+    1280,
+    720
+  ],
+  "camera_matrix": [
+    [
+      908.8019409179688,
+      0.0,
+      644.3834228515625
+    ],
+    [
+      0.0,
+      908.2933959960938,
+      372.114501953125
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "dist_coeffs": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rms_reprojection_px": null,
+  "depth": {
+    "depth_scale_m_per_unit": 0.0010000000474974513,
+    "aligned_to_color": true
+  },
+  "rs_distortion_model": "distortion.inverse_brown_conrady",
+  "created": "2026-11-25T10:41:05+04:00"
+}

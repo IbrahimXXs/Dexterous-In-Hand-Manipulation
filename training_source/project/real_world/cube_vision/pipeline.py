@@ -49,6 +49,11 @@ class PipelineConfig:
   telemetry_offset_s: float = 0.0       # added to frame host time before lookup (sync of recordings)
   history_s: float = 30.0
   camera_yaw_axis: tuple[float, float, float] | None = None   # camera-frame axis when uncalibrated
+  # optional guards (off by default): markers are only detected inside roi_xyxy (pixels; e.g. the hand
+  # region, so a second cube elsewhere in view cannot be tracked), and a pose whose camera Z is not in
+  # (0.05 m, max_range_m] is dropped (behind the camera / far away = not the cube in the hand)
+  roi_xyxy: tuple[int, int, int, int] | None = None
+  max_range_m: float | None = None
 
 
 class VisionPipeline:
@@ -99,7 +104,18 @@ class VisionPipeline:
     if self.t_first is None:
       self.t_first = frame.host_time_s
     t_exp = frame.host_time_s - self.t_first
-    tr = self.tracker.process(frame.bgr, frame.host_time_s, frame.camera_time_s)
+    img = frame.bgr
+    if self.cfg.roi_xyxy is not None:
+      x0, y0, x1, y1 = self.cfg.roi_xyxy
+      img = np.zeros_like(frame.bgr)
+      img[y0:y1, x0:x1] = frame.bgr[y0:y1, x0:x1]
+    tr = self.tracker.process(img, frame.host_time_s, frame.camera_time_s)
+    if self.cfg.max_range_m is not None and tr.pose is not None and not 0.05 < float(tr.pose.t[2]) <= self.cfg.max_range_m:
+      self.events.add(t_exp, "region", f"pose dropped: camera Z {float(tr.pose.t[2]):.3g} m outside (0.05, "
+                      f"{self.cfg.max_range_m:g}] m", "warn", tr.frame)
+      if self.tracker.prev is not None and self.tracker.prev[0] == frame.host_time_s:
+        self.tracker.prev = None
+      tr.pose, tr.state = None, TrackState.LOST
     ev = self.events
     ev.visibility(t_exp, tr.frame, tr.visible_ids)
     ev.tracking_state(t_exp, tr.frame, tr.state.value)

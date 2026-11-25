@@ -181,7 +181,7 @@ def plot(panel: np.ndarray, x0, y0, w, h, title, series, t_range, unit="", y_ran
       continue
     u = px0 + (t - t0) / max(t1 - t0, 1e-6) * pw
     v = py0 + (1 - (y - lo) / max(hi - lo, 1e-9)) * ph
-    ok = np.isfinite(u) & np.isfinite(v)
+    ok = np.isfinite(u) & np.isfinite(v) & (u >= px0) & (u <= px0 + pw)  # only the plotted window (off-window samples overflow int32)
     # break the line at gaps
     seg = []
     for k in range(len(u)):

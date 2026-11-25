@@ -39,6 +39,12 @@ def _axis(args):
   return None if not getattr(args, "camera_yaw_axis", None) else tuple(float(v) for v in args.camera_yaw_axis)
 
 
+def _guards(args) -> dict:
+  roi = getattr(args, "roi", None)
+  return {"roi_xyxy": None if not roi else tuple(int(v) for v in str(roi).split(",")),
+          "max_range_m": getattr(args, "max_range_m", None)}
+
+
 # ----------------------------------------------------------------------------- replay
 def analyse_recording(args, *, progress: bool = True):
   model = build_model(args)
@@ -63,7 +69,8 @@ def analyse_recording(args, *, progress: bool = True):
   else:
     time_mode = "video"
     sync = "no telemetry: camera-only replay"
-  cfg = PipelineConfig(telemetry_offset_s=offset if time_mode == "absolute" else 0.0, camera_yaw_axis=_axis(args))
+  cfg = PipelineConfig(telemetry_offset_s=offset if time_mode == "absolute" else 0.0, camera_yaw_axis=_axis(args),
+                       **_guards(args))
   pipe = VisionPipeline(model, intr, extr, cfg=cfg, telemetry=buf)
   out = Path(args.out) if getattr(args, "out", None) else None
   writers = []
@@ -235,7 +242,8 @@ def run_live(args) -> int:
   extr = load_camera_to_palm(Path(args.camera_to_palm) if args.camera_to_palm else None)
   buf = TelemetryBuffer()
   udp = UdpTelemetry(args.udp, args.forward_udp) if args.udp else None
-  pipe = VisionPipeline(model, intr, extr, cfg=PipelineConfig(camera_yaw_axis=_axis(args)), telemetry=buf)
+  pipe = VisionPipeline(model, intr, extr, cfg=PipelineConfig(camera_yaw_axis=_axis(args), **_guards(args)),
+                        telemetry=buf)
   out = Path(args.out) if args.out else Path("outputs") / "cube_vision" / time.strftime("live_%Y%m%d_%H%M%S")
   out.mkdir(parents=True, exist_ok=True)
   if not getattr(args, "intrinsics", None) and src.device_intrinsics() is not None:
@@ -252,6 +260,8 @@ def run_live(args) -> int:
     cv2.namedWindow(WINDOW, cv2.WINDOW_NORMAL)
     cv2.resizeWindow(WINDOW, 1680, 1000)
   t_end = time.time() + args.max_seconds if args.max_seconds else None
+  draw_every = 1.0 / args.display_hz if getattr(args, "display_hz", None) else 0.0
+  t_drawn = -1e9
   try:
     while True:
       if udp is not None:
@@ -270,7 +280,9 @@ def run_live(args) -> int:
       csvw.write(r)
       if rec is not None:
         rec.write(f)
-      if dash is not None:
+      now = time.monotonic()
+      if dash is not None and now - t_drawn >= draw_every:  # drawing the panel costs ~35 ms: throttled so tracking+recording keep the camera rate
+        t_drawn = now
         hist = list(pipe.hist)
         img = dash.compose(st, f.bgr, f.depth_m, hist, buf, pipe.events.events, info, extr.calibrated)
         cv2.imshow(WINDOW, img)

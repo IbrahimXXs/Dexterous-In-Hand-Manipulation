@@ -12,6 +12,7 @@
 #                                    (estimated cube, fingertip forces, motor current)
 #   ./leap.sh live sim [policy_dir]  try the viewer with NO hand (simulated motor bus)
 #   ./leap.sh view    [log.npz]      replay a run log in the 3D viewer
+#   ./leap.sh vision                 RealSense cube tracking dashboard (records; read-only, never moves the hand)
 #   ./leap.sh analyze [log.npz]      estimated forces vs motor current for a run
 #   ./leap.sh trial-setup            shadow runs (torque off) for A3, C5, R1, P0
 #   ./leap.sh trial-plan             the counterbalanced schedule (and progress)
@@ -142,7 +143,13 @@ if [[ "$CMD" == "live" ]]; then
   $VPY "$KIT/kit/live_viewer.py" --udp "$LEAP_LIVE_UDP" --monitor-dir "$KIT/monitors" &
   VIEWER_PID=$!
   trap 'kill $VIEWER_PID 2>/dev/null || true' EXIT
-  LIVE_ARGS=(--live-udp "$LEAP_LIVE_UDP")
+  if [[ "${LEAP_USE_VISION:-0}" == "1" ]]; then
+    # telemetry goes to the camera dashboard (./leap.sh vision), which relays it to this viewer
+    LIVE_ARGS=(--live-udp "$LEAP_VISION_UDP")
+    echo "[leap] telemetry -> camera dashboard on $LEAP_VISION_UDP (relayed to the viewer on $LEAP_LIVE_UDP)"
+  else
+    LIVE_ARGS=(--live-udp "$LEAP_LIVE_UDP")
+  fi
   sleep 2
   CMD="$SUB"
 fi
@@ -252,6 +259,14 @@ EOF
     # shellcheck disable=SC2086
     $VPY "$KIT/kit/analyze_run.py" "${POS[@]}" --monitor-dir "$KIT/monitors" "${EXTRA[@]}"
     ;;
+  vision)
+    OUT="$KIT/../outputs/cube_vision/live_$(date +%Y%m%d_%H%M%S)"
+    echo "[leap] camera dashboard: udp $LEAP_VISION_UDP -> relay $LEAP_LIVE_UDP; recording to $OUT"
+    echo "[leap] keep ONLY ONE cube in view (all cubes carry the same marker IDs). q in the window to stop."
+    # shellcheck disable=SC2086
+    (cd "$KIT/.." && uv run --extra hardware --extra vision --extra realsense python scripts/cube_vision.py live \
+      $LEAP_VISION_ARGS --udp "$LEAP_VISION_UDP" --forward-udp "$LEAP_LIVE_UDP" --record --out "$OUT" "${EXTRA[@]}")
+    ;;
   trial-setup)
     for n in A3 C5 R1 P0; do
       echo; echo "[leap] ===== shadow run for $n (torque off) ====="
@@ -269,12 +284,68 @@ EOF
     [[ "$NAME" =~ ^(A3|C5|R1|P0|M400|C5s2|C5s3)$ ]] || die "unknown trial policy '$NAME' (A3, C5, R1, P0, M400, C5s2, C5s3)"
     echo; echo "[leap] ===== TRIAL: $NAME ($((TRIAL_STEPS / 20)) s) ====="
     echo "[leap] place the cube the same way every time; count the turns you see"
+    CSVF="${LEAP_TRIALS_CSV:-$KIT/logs/trials.csv}"
+    VIS_PID=""
+    if [[ "${LEAP_USE_VISION:-0}" == "1" ]]; then
+      # camera panel + recording for THIS trial only (started now, stopped when the run ends)
+      NTR=$(( $( { tail -n +2 "$CSVF" 2>/dev/null || true; } | grep -c . || true ) + 1 ))
+      VOUT="$(cd "$KIT/.." && pwd)/outputs/cube_vision/trial_$(date +%Y%m%d_%H%M%S)_n${NTR}_${NAME}"
+      VPYX="$KIT/../.venv/bin/python"
+      [[ -x "$VPYX" ]] || die "camera needs the repo environment: cd .. && uv sync --extra hardware --extra vision --extra realsense"
+      echo "[leap] camera: recording this trial to $VOUT (keep ONE cube in view)"
+      # shellcheck disable=SC2086
+      ( cd "$KIT/.." && exec "$VPYX" -c 'import runpy, signal, sys
+signal.signal(signal.SIGINT, signal.default_int_handler)  # background jobs start with SIGINT ignored
+sys.argv = ["scripts/cube_vision.py"] + sys.argv[1:]
+runpy.run_path("scripts/cube_vision.py", run_name="__main__")' \
+        live $LEAP_VISION_ARGS --udp "$LEAP_VISION_UDP" --forward-udp "$LEAP_LIVE_UDP" --record --out "$VOUT" ) \
+        > "/tmp/leap_vision_$$.log" 2>&1 &
+      VIS_PID=$!
+      for _ in $(seq 1 60); do
+        [[ -f "$VOUT/device.intrinsics.json" ]] && break
+        kill -0 "$VIS_PID" 2>/dev/null || break
+        sleep 0.5
+      done
+      if [[ ! -f "$VOUT/device.intrinsics.json" ]]; then
+        kill "$VIS_PID" 2>/dev/null || true
+        tail -5 "/tmp/leap_vision_$$.log" >&2
+        die "camera did not start (is ./leap.sh vision or another camera program still running?) - trial not started"
+      fi
+      sleep 1
+      export LEAP_USE_VISION=1
+    fi
     MARK="$(mktemp)"
     RUN_STEPS="$TRIAL_STEPS" "$KIT/leap.sh" live run "$KIT/policies/$NAME" -- "${EXTRA[@]}" || true
     LOG="$(find "$KIT/logs" -maxdepth 1 -name 'physical_*.npz' -newer "$MARK" | grep -v _part | sort | tail -n1 || true)"
     rm -f "$MARK"
-    [[ -n "$LOG" ]] || die "no new run log (run not started?) - nothing recorded; repeat: ./leap.sh trial $NAME"
+    if [[ -n "$VIS_PID" ]]; then
+      sleep 1
+      kill -INT "$VIS_PID" 2>/dev/null || true   # stop the camera cleanly (writes summary + closes the video)
+      for _ in $(seq 1 40); do kill -0 "$VIS_PID" 2>/dev/null || break; sleep 0.5; done
+      kill "$VIS_PID" 2>/dev/null || true
+      echo "[leap] camera stopped; recording in $VOUT"
+    fi
+    if [[ -z "$LOG" ]]; then
+      [[ -n "$VIS_PID" ]] && echo "[leap] (camera recording kept: $VOUT)"
+      die "no new run log (run not started?) - nothing recorded; repeat: ./leap.sh trial $NAME"
+    fi
     "$PY" "$KIT/kit/trials.py" record --policy "$NAME" --log "$LOG"
+    if [[ -n "$VIS_PID" ]]; then
+      # shellcheck disable=SC2086
+      ( cd "$KIT/.." && "$VPYX" scripts/trial_video.py "$VOUT" --log "$LOG" $LEAP_VISION_LAYOUT_ARGS $LEAP_VISION_GUARD_ARGS 2>&1 \
+          | tail -n 1 ) || echo "[leap] (camera re-tracking failed; rerun scripts/trial_video.py $VOUT --log $LOG)"
+      echo "[leap] camera result for this trial (gap-aware rotation; all trials of this file recomputed):"
+      ( cd "$KIT/.." && uv run --extra hardware --extra vision --extra realsense --with matplotlib python scripts/vision_trials.py \
+          --trials "$CSVF" --vision "outputs/cube_vision/trial_*" "outputs/cube_vision/live_*" \
+          --axis-sign-from-trial "$LEAP_VISION_SIGN_TRIAL" --series 2>/dev/null | tail -n 3 ) || echo "[leap] (camera analysis failed; rerun scripts/vision_trials.py)"
+      if [[ "$LEAP_VISION_DASHBOARD_VIDEO" == "1" ]]; then
+        # the panel video with the hidden stretches filled in (orange dashed cube = estimated), in real time
+        # shellcheck disable=SC2086
+        ( cd "$KIT/.." && nohup "$VPYX" scripts/trial_video.py "$VOUT" --log "$LOG" $LEAP_VISION_LAYOUT_ARGS $LEAP_VISION_GUARD_ARGS \
+            --axis-json "${CSVF%.csv}_vision_axis.json" --render > "$VOUT/render.log" 2>&1 & )
+        echo "[leap] rendering the trial video in the background -> $VOUT/dashboard_estimated.mp4 (about 1 min)"
+      fi
+    fi
     echo "[leap] next scheduled: $("$PY" "$KIT/kit/trials.py" next --blocks "$TRIAL_BLOCKS")   (./leap.sh trial next)"
     ;;
   compare)

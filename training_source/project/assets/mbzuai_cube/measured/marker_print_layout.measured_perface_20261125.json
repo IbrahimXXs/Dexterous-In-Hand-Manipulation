@@ -1,0 +1,76 @@
+{
+  "description": "Per-face marker-centre offsets fitted on 25 Nov 2026 (RealSense D435, factory intrinsics) by bundle adjustment in verify-layout: faces 0,1,3 from outputs/cube_vision/live_20261125_104741 (static), faces 0,2,4,5 from live_20261125_110023 (manipulation); face 0 = mean of both. Face 5 (I) rests on only 64 co-visible frames. Faces 3 (U, seen only obliquely) and 5 (I, 64 frames) gave physically impossible free fits (marker past the face edge) and use the shared mean of faces 0, 1, 2, 4 instead.",
+  "marker_center_offset_in_marker_axes_m": [
+    0.01739,
+    -0.01334
+  ],
+  "per_face_offset_in_marker_axes_m": {
+    "0": [
+      0.01853,
+      -0.01407
+    ],
+    "1": [
+      0.0173,
+      -0.01272
+    ],
+    "2": [
+      0.01732,
+      -0.01609
+    ],
+    "3": [
+      0.01739,
+      -0.01334
+    ],
+    "4": [
+      0.01642,
+      -0.01049
+    ],
+    "5": [
+      0.01739,
+      -0.01334
+    ]
+  },
+  "offset_convention": "marker_centre_cube = face_centre + offset[0] * marker_x + offset[1] * marker_y",
+  "status": "consistent_with_recording",
+  "allowed_status_values": [
+    "preview_derived_unverified",
+    "consistent_with_recording",
+    "caliper_measured"
+  ],
+  "source": "docs/realsense_setup_2026-11-25.md section 3d",
+  "fit_formal_std": {
+    "f": 0.2596752622232418,
+    "cx": 0.034016340383595065,
+    "cy": 0.035826155107775336,
+    "k1": 0.003700120337660765,
+    "off_all_x": 1.4128387346561734e-05,
+    "off_all_y": 1.660732506695612e-05
+  },
+  "per_face_fit_m": {
+    "0": [
+      0.016550287822618994,
+      -0.012566681654621667
+    ],
+    "1": [
+      0.016333086934006195,
+      -0.013682978146504902
+    ],
+    "2": [
+      0.018404407903137784,
+      -0.013836978527105713
+    ],
+    "3": [
+      0.01675368616566155,
+      -0.010133286222239565
+    ],
+    "4": [
+      0.01704676758577027,
+      -0.013064743261981506
+    ],
+    "5": [
+      0.008060546363436182,
+      -0.009036858561016475
+    ]
+  },
+  "uncertainty_m": 0.002
+}

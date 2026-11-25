@@ -277,15 +277,33 @@ class Recorder:
       (self.dir / "depth" / "depth_meta.json").write_text(json.dumps({"depth_scale_m_per_unit": depth_scale,
                                                                       "aligned_to_color": True}))
     self.k = 0
+    # encoding (mp4 ~2 ms, depth PNG ~10 ms per frame) runs in a writer thread so the capture loop keeps the
+    # camera rate; frames are written in order and close() drains the queue
+    import queue
+    import threading
+
+    self._q: queue.Queue = queue.Queue(maxsize=240)
+    self._t = threading.Thread(target=self._drain, name="recorder", daemon=True)
+    self._t.start()
 
   def write(self, f: Frame) -> None:
-    self.vw.write(f.bgr)
-    self.w.writerow([self.k, f"{f.host_time_s:.6f}", "" if f.camera_time_s is None else f"{f.camera_time_s:.6f}"])
-    if self.depth_scale is not None and f.depth_raw is not None:
-      self.cv2.imwrite(str(self.dir / "depth" / f"depth_{self.k:06d}.png"), f.depth_raw.astype(np.uint16))
+    self._q.put((self.k, f.bgr, f.host_time_s, f.camera_time_s, f.depth_raw))
     self.k += 1
 
+  def _drain(self) -> None:
+    while True:
+      item = self._q.get()
+      if item is None:
+        return
+      k, bgr, th, tc, draw = item
+      self.vw.write(bgr)
+      self.w.writerow([k, f"{th:.6f}", "" if tc is None else f"{tc:.6f}"])
+      if self.depth_scale is not None and draw is not None:
+        self.cv2.imwrite(str(self.dir / "depth" / f"depth_{k:06d}.png"), draw.astype(np.uint16))
+
   def close(self) -> None:
+    self._q.put(None)
+    self._t.join()
     self.vw.release()
     self.csv.close()
 

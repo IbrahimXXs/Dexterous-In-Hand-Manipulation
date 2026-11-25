@@ -37,6 +37,9 @@ def _common(p):
   p.add_argument("--camera-yaw-axis", nargs=3, type=float, help="camera-frame yaw axis when camera->palm is not calibrated "
                  "(default: estimated from the motion, sign arbitrary)")
   p.add_argument("--no-twin", action="store_true", help="do not render the 3D MuJoCo twin")
+  p.add_argument("--roi", help="x0,y0,x1,y1: detect markers only inside this image rectangle (pixels), e.g. the hand "
+                 "region, so another cube in view is never tracked")
+  p.add_argument("--max-range-m", type=float, help="drop poses whose camera Z is <= 0.05 m or above this (not the cube in the hand)")
 
 
 def _replay_args(p):
@@ -81,6 +84,8 @@ def main() -> int:
   p.add_argument("--record", action="store_true", help="record rgb.mp4 + frames.csv (+ depth PNGs) for replay")
   p.add_argument("--headless", action="store_true")
   p.add_argument("--max-seconds", type=float)
+  p.add_argument("--display-hz", type=float, help="redraw the dashboard at most this often (tracking and recording "
+                 "still run on every camera frame); default: every frame")
 
   sub.add_parser("inventory")
   sub.add_parser("list-cameras")

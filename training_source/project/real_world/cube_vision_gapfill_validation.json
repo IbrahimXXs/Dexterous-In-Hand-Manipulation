@@ -1,0 +1,90 @@
+{
+ "synthetic": {
+  "n": 200,
+  "hidden_frac": 0.26611388888888887,
+  "legacy_abs_err_qt": {
+   "median": 5.938920399693259,
+   "p90": 13.867867397696426,
+   "max": 24.979670285005852,
+   "ge1": 0.925
+  },
+  "gapfill_abs_err_qt": {
+   "median": 0.048511719800019004,
+   "p90": 3.9495110189892553,
+   "max": 4.096483607399885,
+   "ge1": 0.145
+  },
+  "ambiguous_per_seq": 1.63,
+  "bounds_cover_truth": 0.79
+ },
+ "real_rgb_mp4": {
+  "0.5": {
+   "windows": 9,
+   "legacy_wrong_frac": 0.0,
+   "gapfill_wrong_frac": 0.0,
+   "gapfill_ambiguous_frac": 0.0,
+   "gapfill_wrong_when_resolved": 0.0,
+   "legacy_median_abs_err_deg": 0.6534996080379684,
+   "gapfill_median_abs_err_deg": 0.0058674548505219006
+  },
+  "1.0": {
+   "windows": 7,
+   "legacy_wrong_frac": 0.0,
+   "gapfill_wrong_frac": 0.0,
+   "gapfill_ambiguous_frac": 0.0,
+   "gapfill_wrong_when_resolved": 0.0,
+   "legacy_median_abs_err_deg": 0.5333771727231261,
+   "gapfill_median_abs_err_deg": 0.0016016171368724449
+  },
+  "1.5": {
+   "windows": 7,
+   "legacy_wrong_frac": 0.0,
+   "gapfill_wrong_frac": 0.0,
+   "gapfill_ambiguous_frac": 1.0,
+   "gapfill_wrong_when_resolved": 0.0,
+   "legacy_median_abs_err_deg": 1.2349551711038318,
+   "gapfill_median_abs_err_deg": 0.010931078917860765
+  },
+  "2.0": {
+   "windows": 5,
+   "legacy_wrong_frac": 0.0,
+   "gapfill_wrong_frac": 0.0,
+   "gapfill_ambiguous_frac": 1.0,
+   "gapfill_wrong_when_resolved": 0.0,
+   "legacy_median_abs_err_deg": 0.8817197664029489,
+   "gapfill_median_abs_err_deg": 0.011342646273651832
+  },
+  "3.0": {
+   "windows": 3,
+   "legacy_wrong_frac": 0.0,
+   "gapfill_wrong_frac": 0.0,
+   "gapfill_ambiguous_frac": 1.0,
+   "gapfill_wrong_when_resolved": 0.0,
+   "legacy_median_abs_err_deg": 0.6412119406720028,
+   "gapfill_median_abs_err_deg": 0.0030802148656841398
+  },
+  "whole_recording": {
+   "legacy_qt": 0.7095536205647944,
+   "total_rad": 2.2278717474165144,
+   "quarter_turns": 1.4183072047044671,
+   "quarter_turns_lo": 1.4183072047044671,
+   "quarter_turns_hi": 1.4183072047044671,
+   "revolutions": 0.3545768011761168,
+   "axis": [
+    0.973608117694139,
+    0.08800606913852042,
+    -0.21057579384834704
+   ],
+   "segments": 19,
+   "gaps": 18,
+   "gaps_resolved": 16,
+   "gaps_ambiguous": 0,
+   "gaps_shortest_no_speed": 2,
+   "gap_time_s": 17.30115341022735,
+   "tracked_time_s": 60.53736915794385,
+   "accel_sd": 0.5179414430161591,
+   "accel_sd_calibration_windows": 91,
+   "dropped_frames": 0
+  }
+ }
+}
