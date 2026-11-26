@@ -1,0 +1,12 @@
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+training_source/project/tests/test_c5_hw_v2.py: 35 warnings
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/torch/jit/_script.py:1488: DeprecationWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+training_source/project/tests/test_c5_hw_v2.py::test_episodes_start_from_the_kit_cache_with_the_measured_pose_as_command
+  /home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/sim/sim_data.py:71: UserWarning: Use of index_put_ on expanded tensors is deprecated. Please clone() the tensor before performing this operation. This also applies to advanced indexing e.g. tensor[indices] = tensor (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:967.)
+    self._tensor[idx] = value
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+5 passed, 36 warnings in 12.34s
