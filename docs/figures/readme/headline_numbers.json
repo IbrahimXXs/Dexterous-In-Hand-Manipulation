@@ -1,0 +1,395 @@
+{
+ "real_hand": [
+  {
+   "label": "model_400 (course)",
+   "policy": "M400",
+   "session": "20 Nov",
+   "family": "REF",
+   "attempts": 4,
+   "held": 0,
+   "dropped": 4,
+   "safety_stops": 0,
+   "counted_trials": 4,
+   "rev_per_trial_mean": 0.5,
+   "rev_per_trial_values": [
+    0.75,
+    0.25,
+    0.5,
+    0.5
+   ],
+   "time_held_s": [
+    12.0,
+    7.0,
+    25.0,
+    10.0
+   ],
+   "outcomes": [
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped"
+   ]
+  },
+  {
+   "label": "A3: PPO, real joint limits",
+   "policy": "A3",
+   "session": "20 Nov",
+   "family": "A",
+   "attempts": 6,
+   "held": 3,
+   "dropped": 2,
+   "safety_stops": 1,
+   "counted_trials": 4,
+   "rev_per_trial_mean": 0.5,
+   "rev_per_trial_values": [
+    0.5,
+    0.0,
+    0.75,
+    0.75
+   ],
+   "time_held_s": [
+    60.0,
+    15.0,
+    60.0,
+    7.0,
+    1.6,
+    60.0
+   ],
+   "outcomes": [
+    "held",
+    "dropped",
+    "held",
+    "dropped",
+    "safety stop",
+    "held"
+   ]
+  },
+  {
+   "label": "R1: + retention reward",
+   "policy": "R1",
+   "session": "20 Nov",
+   "family": "RET",
+   "attempts": 6,
+   "held": 0,
+   "dropped": 5,
+   "safety_stops": 1,
+   "counted_trials": 5,
+   "rev_per_trial_mean": 0.65,
+   "rev_per_trial_values": [
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    1.25
+   ],
+   "time_held_s": [
+    5.0,
+    0.95,
+    15.0,
+    7.0,
+    7.0,
+    12.0
+   ],
+   "outcomes": [
+    "dropped",
+    "safety stop",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped"
+   ]
+  },
+  {
+   "label": "P0: R1 without position term",
+   "policy": "P0",
+   "session": "20 Nov",
+   "family": "RET",
+   "attempts": 7,
+   "held": 0,
+   "dropped": 3,
+   "safety_stops": 4,
+   "counted_trials": 5,
+   "rev_per_trial_mean": 0.0,
+   "rev_per_trial_values": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "time_held_s": [
+    5.0,
+    2.86,
+    5.0,
+    30.0,
+    4.0,
+    0.7,
+    10.0
+   ],
+   "outcomes": [
+    "safety stop",
+    "safety stop",
+    "dropped",
+    "safety stop",
+    "dropped",
+    "safety stop",
+    "dropped"
+   ]
+  },
+  {
+   "label": "C5 seed 1",
+   "policy": "C5",
+   "session": "20 Nov",
+   "family": "C5",
+   "attempts": 11,
+   "held": 4,
+   "dropped": 1,
+   "safety_stops": 6,
+   "counted_trials": 5,
+   "rev_per_trial_mean": 3.475,
+   "rev_per_trial_values": [
+    4.25,
+    3.25,
+    2.75,
+    3.375,
+    3.75
+   ],
+   "time_held_s": [
+    4.68,
+    60.0,
+    6.48,
+    15.5,
+    60.0,
+    3.06,
+    45.0,
+    8.04,
+    7.53,
+    60.0,
+    60.0
+   ],
+   "outcomes": [
+    "safety stop",
+    "held",
+    "safety stop",
+    "safety stop",
+    "held",
+    "safety stop",
+    "dropped",
+    "safety stop",
+    "safety stop",
+    "held",
+    "held"
+   ]
+  },
+  {
+   "label": "C5 seed 1",
+   "policy": "C5",
+   "session": "24 Nov",
+   "family": "C5",
+   "attempts": 5,
+   "held": 1,
+   "dropped": 1,
+   "safety_stops": 3,
+   "counted_trials": 4,
+   "rev_per_trial_mean": 1.3125,
+   "rev_per_trial_values": [
+    0.25,
+    0.25,
+    1.75,
+    3.0
+   ],
+   "time_held_s": [
+    8.0,
+    8.0,
+    2.76,
+    30.0,
+    60.0
+   ],
+   "outcomes": [
+    "safety stop",
+    "safety stop",
+    "safety stop",
+    "dropped",
+    "held"
+   ]
+  },
+  {
+   "label": "C5 seed 3",
+   "policy": "C5s3",
+   "session": "24 Nov",
+   "family": "C5",
+   "attempts": 12,
+   "held": 1,
+   "dropped": 11,
+   "safety_stops": 0,
+   "counted_trials": 12,
+   "rev_per_trial_mean": 1.7083333333333333,
+   "rev_per_trial_values": [
+    1.0,
+    5.0,
+    0.5,
+    0.5,
+    3.0,
+    0.75,
+    1.75,
+    0.5,
+    3.5,
+    0.5,
+    3.0,
+    0.5
+   ],
+   "time_held_s": [
+    15.0,
+    60.0,
+    7.0,
+    7.0,
+    45.0,
+    7.0,
+    20.0,
+    5.0,
+    50.0,
+    5.0,
+    50.0,
+    5.0
+   ],
+   "outcomes": [
+    "dropped",
+    "held",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped"
+   ]
+  },
+  {
+   "label": "C5 seed 3",
+   "policy": "C5s3",
+   "session": "25 Nov",
+   "family": "C5",
+   "attempts": 5,
+   "held": 1,
+   "dropped": 4,
+   "safety_stops": 0,
+   "counted_trials": 5,
+   "rev_per_trial_mean": 1.5,
+   "rev_per_trial_values": [
+    4.0,
+    0.5,
+    0.5,
+    0.5,
+    2.0
+   ],
+   "time_held_s": [
+    60.0,
+    7.0,
+    5.0,
+    5.0,
+    30.0
+   ],
+   "outcomes": [
+    "held",
+    "dropped",
+    "dropped",
+    "dropped",
+    "dropped"
+   ]
+  }
+ ],
+ "simulation": {
+  "policies": [
+   {
+    "name": "A",
+    "family": "A",
+    "full": [
+     1.1480343166672768,
+     1.1228773122548181,
+     1.3289705250679602
+    ],
+    "grasp49": [
+     1.453708350158768,
+     1.5487642543014333,
+     1.7899581503296587
+    ],
+    "note": ""
+   },
+   {
+    "name": "R1",
+    "family": "RET",
+    "full": [
+     1.157984404438111
+    ],
+    "grasp49": [
+     1.602826437636213
+    ],
+    "note": ""
+   },
+   {
+    "name": "P0",
+    "family": "RET",
+    "full": [
+     1.272700831471771
+    ],
+    "grasp49": [
+     1.6791173110007858
+    ],
+    "note": ""
+   },
+   {
+    "name": "C5",
+    "family": "C5",
+    "full": [
+     1.869054529942005,
+     1.8259000492784176,
+     1.6847654232202327
+    ],
+    "grasp49": [
+     2.465882513062043,
+     2.395356245295665,
+     2.222848237006006
+    ],
+    "note": ""
+   },
+   {
+    "name": "C5-EFFORT",
+    "family": "C5",
+    "full": [
+     1.6173387334160623
+    ],
+    "grasp49": [
+     2.1636892528349083
+    ],
+    "note": "2048 envs per eval seed, default actuator (effort_v1_comparison.json)"
+   }
+  ],
+  "sim_vs_real": {
+   "turns60": {
+    "A3": 2.67659133415837,
+    "R1": 2.2993213333228226,
+    "P0": 2.6256973113337407,
+    "C5": 3.8461608426064164
+   },
+   "held60": {
+    "A3": 0.745849609375,
+    "R1": 0.76318359375,
+    "P0": 0.86181640625,
+    "C5": 0.787841796875
+   }
+  },
+  "inference": {
+   "diff": 0.5932792828168669,
+   "ci95": [
+    0.35368845316837083,
+    0.832870112465363
+   ],
+   "t": 6.938821242663621,
+   "df": 3.9087869353331106,
+   "p_two_sided": 0.002465861715426069
+  }
+ }
+}

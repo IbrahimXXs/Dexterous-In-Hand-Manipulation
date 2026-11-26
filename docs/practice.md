@@ -12,7 +12,7 @@ This is the continuous **positive-Z/yaw rotation** task. It is not a one-shot or
 
 ## Practice files
 
-The [Class 06 continuous-yaw package](../README.md) is the root of this folder.
+The [Class 06 continuous-yaw package](course_package.md) is the root of this folder.
 
 It is already extracted at the folder root (originally `Class06_Continuous_Yaw_Standalone`), containing the policy, complete MuJoCo model and assets, hardware bridge, safety configuration, checkpoint, tests, and original MJLab task/training source. No course-repository checkout is needed.
 

@@ -1,5 +1,9 @@
 # LEAP Hand hardware session, 20 Nov 2026: A3 vs C5 vs R1 vs P0 (+ model_400)
 
+> **Corrections (from the [actuator audit](hardware_policy_actuator_audit_2026-11-20.md), 24 Nov). The text below is left as written on 20 Nov.**
+> 1. **Counting unit.** The operator counted **quarter turns** (90°), not full rotations. "Rotations per trial" below are quarter turns: C5's 13.9 is **3.48 full revolutions** per 60-s trial; A3 and M400 (2.0) are 0.50, R1 (2.6) is 0.65. With the unit fixed, C5's real speed (3.6 rev/min while held) matches simulation (3.7 rev/min), so the "about 4×" discrepancy in Section 2 disappears.
+> 2. **P0 attempts.** The P0 row in Section 3 ("9 attempts, 5 drops, 4 safety stops, 2 discarded") sums to 11. Trials 4 and 11 were counted both as a drop and as a stop. Mutually exclusive counts: 4 drops, 3 guard stops, 2 discarded, 0 completed. Over all 37 attempts: 7 completed, 16 drops, 11 guard stops, 3 operator stops without a recorded reason. No other policy changes.
+
 **Status:** the planned 20 trials are done (5 per policy, balanced order), plus 4 reference trials of the professor's model_400 (M400). All runs used the live estimator monitor. The operator observed every recorded trial. 13 further runs are in the logs but not in the trial record (Section 3):
 - 10 were ended automatically by a safety guard and are counted as failures;
 - 3 were stopped and discarded by the operator and are excluded.
