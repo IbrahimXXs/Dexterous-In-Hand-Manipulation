@@ -4,7 +4,7 @@
 
 ## Abstract
 
-A right LEAP Hand rotates a 58 mm cube about the vertical axis using only its joint readings and its own previous commands: no camera, tactile sensor or cube pose enters the policy. Starting from a course baseline (`model_400`), this report covers six simulation studies with PPO in MJLab on MuJoCo Warp and five supervised real-hand sessions. Four bugs in the course training environment were fixed first. Cube state estimated from proprioception helped PPO under the course's wide joint limits, but not under the hand's real limits (C − A = −0.041 turns [−0.150, +0.055]). Raising the clip on the yaw reward (policy C5) gave +0.593 turns per 30 s over the baseline [+0.354, +0.833] across three training seeds. On the hand, C5 made 3.48 full revolutions per 60-s trial against 0.50 for `model_400` (operator counts, n = 5 and 4). Rotation speed transferred. A retention reward and the proprioceptive cube-yaw estimate did not. An offline actuator audit traced C5's safety stops to index-finger jams at the hand's 350 mA current limit, which training (550 mA) never saw.
+A right LEAP Hand rotates a 58 mm cube about the vertical axis using only its joint readings and its own previous commands: no camera, tactile sensor or cube pose enters the policy. Starting from a course baseline (`model_400`), this report covers six simulation studies with PPO in MJLab on MuJoCo Warp and five supervised real-hand sessions. Four bugs in the course training environment were fixed first. Cube state estimated from proprioception gave a gain under the course's wide joint limits that was not statistically established (+0.150 turns [−0.006, +0.339]), and none under the hand's real limits (C − A = −0.041 [−0.150, +0.055]). Raising the clip on the yaw reward (policy C5) gave +0.593 turns per 30 s over the baseline [+0.354, +0.833] across three training seeds. On the hand, C5 made 3.48 full revolutions per 60-s trial against 0.50 for `model_400` (operator counts, n = 5 and 4). Rotation speed transferred. A retention reward and the proprioceptive cube-yaw estimate did not. An offline actuator audit traced C5's safety stops to index-finger jams at the hand's 350 mA current limit, which training (550 mA) never saw.
 
 ## 1. Introduction and contributions
 
@@ -48,7 +48,7 @@ Training used MJLab [11] on MuJoCo Warp (MuJoCo [9]); the course's pinned nightl
 
 The penalty weights follow a progress curriculum during training. Episodes start from grasp-cache states with random yaw and end on a 20 s time-out, the cube falling below 0.2 m, the cube moving faster than 1 m/s, or a pose failure (tilt above 0.8 rad or drift above 0.08 m). Domain randomisation [7] covers cube mass (×0.7–1.4), friction (0.6–1.4), cube centre of mass (±2 mm), link mass, joint friction, damping, armature, PD gains, actuator delay (5–15 physics steps) and effort limit (×0.9–1.1).
 
-PPO [8] ran through rsl_rl with massively parallel simulation [10]: 4096 environments, 32 steps per environment, 5 epochs × 4 minibatches, γ 0.99, λ 0.95, clip 0.2, entropy coefficient 0.003, and an adaptive learning rate starting at 1e-3 with a desired KL of 0.01. Actor and critic are 512-512-256 ELU networks; the critic receives an 83-D privileged state, and the actor's last layer starts at zero. The budget was 1001 updates (131.2M environment steps) in the first study and 3001 updates (393 M environment steps) from 17 Nov onward. Runs used NVIDIA RTX 5000 Ada GPUs on a Slurm cluster.
+PPO [8] ran through rsl_rl with massively parallel simulation [10] (4096 environments, 32 steps each, adaptive learning rate from 1e-3, desired KL 0.01). Actor and critic are 512-512-256 ELU networks; the critic receives an 83-D privileged state, and the actor's last layer starts at zero. The budget was 1001 updates (131.2M environment steps) in the first study and 3001 updates (393 M environment steps) from 17 Nov onward. Runs used NVIDIA RTX 5000 Ada GPUs on a Slurm cluster.
 
 ### 2.3 Evaluation protocol
 
@@ -112,10 +112,6 @@ All conditions were trained from scratch with three seeds and 1001 updates, and 
 | D (oracle state) | 1.018 | D − A **+0.263 [+0.148, +0.376]** |
 | | | D − C +0.113 [−0.075, +0.276] |
 
-![Held-out test of conditions A, C and D: bars per physics preset for uninterrupted turns, drop rate, tilt/drift failure rate and survival, with training-seed spread](../../training_source/project/experiments/scratch_state_estimation/figures/final_comparison.png)
-
-*Figure 1: Held-out test of A (proprioception), C (estimated state) and D (oracle state) across six physics presets, under the course's original joint limits (bars: mean over 3 training seeds; error bars: seed s.d.; dots: seeds). No policy dropped the cube; all failures are tilt or drift failures. Source: `training_source/project/experiments/scratch_state_estimation/figures/final_comparison.png`.*
-
 The ranking D > C > A holds in every preset. Estimated state recovers about 57% of the oracle gain, but its CI just includes zero and one C seed is no better than A. Learning speed is the clearest effect: every C and D seed has a higher mean validation curve than every A seed (C 0.686 vs A 0.473; one-sided permutation p = 0.05). No run had converged at 1001 updates.
 
 C uses its features: replacing them with zeros, their mean or another environment's features cut its turns to 19–71% of normal, and shuffled (plausible but wrong) features were the most damaging.
@@ -126,7 +122,7 @@ A second estimator predicts the normal force on each fingertip from the same 320
 
 On those unseen policies it reaches MAE 0.187 N, RMSE 0.450 N and R² 0.78, against 0.301 N for ridge regression and 0.413 N for the best constant; contact AUROC is 0.94–0.98. The main generalisation gap is the policy, not the physics: MAE rises 61% from seen to unseen policies (0.116 → 0.187 N), while the five robustness presets add only 0–12%. Forces above about 2 N are increasingly underestimated, and impacts above 4 N are essentially missed.
 
-On the hand there is no force sensor, so only indirect checks are possible. On 18 Nov the estimated thumb force correlated with the thumb's summed motor current in all 5 runs (r +0.23 to +0.44), while the index estimate did not track current (r −0.18 to +0.17). On 20 Nov the median correlation was +0.39 for the thumb (positive in 83% of trials), +0.18 for the ring finger, +0.17 for the index and +0.11 for the middle finger. Current also reflects gravity, friction and tracking effort, so this supports contact information, not newton values.
+On the hand there is no force sensor. The estimated thumb force correlated with the thumb's summed motor current (18 Nov: r +0.23 to +0.44 in all 5 runs; 20 Nov median +0.39), while the index estimate did not track current (18 Nov: r −0.18 to +0.17). Current also reflects gravity, friction and tracking effort, so this supports contact information, not newton values.
 
 ## 5. Hardware constraints: joint limits and A vs C
 
@@ -146,7 +142,7 @@ A possible contributor is that estimator B no longer matched the new gaits: its 
 
 Rehearsal also found that the kit lets finger PIP joints go to 1.885 rad while training clamped them at 1.825 rad (cost to C seed 2: −0.19 ± 0.08 turns; a narrowing-only fix awaits approval).
 
-**Second session (18 Nov).** The hardware-limited A and C (seed 1 each) ran two full 30-s trials each with a live monitor of the estimates. The estimated cube rotation was near zero in every run (−0.25 to +0.04 turns), against about 1.1–1.2 turns in simulation; no A vs C comparison was possible. Control-loop jitter rose to 19–22% of steps longer than 60 ms, most likely because replugging the USB adapter reset its latency timer to 16 ms (not directly confirmed). With the timer set to 1 ms, the 20 Nov session had a mean of 4.9% late steps.
+**Second session (18 Nov).** The hardware-limited A and C (seed 1 each) ran two full 30-s trials each with a live monitor; the estimated cube rotation was near zero in every run (−0.25 to +0.04 turns) against about 1.1–1.2 turns in simulation, so no A vs C comparison was possible. Control-loop jitter (19–22% of steps over 60 ms) was most likely a reset USB latency timer; with it set to 1 ms, 20 Nov had 4.9% late steps.
 
 ## 6. Start grasp and reward balance
 
@@ -191,17 +187,13 @@ All three seeds pass all five thresholds. C5's failure rate does not differ from
 
 ![Bar charts of held-out turns per 30 s for A, R1, P0, C5 and C5-EFFORT, from the random start grasp and from fixed grasp 49](../figures/readme/sim_progress.png)
 
-*Figure 2: Held-out turns per 30 s in simulation under the real joint limits (seeds 6201+6202). Left: random start grasp from the 239-grasp cache. Right: every episode starts from grasp 49, without retraining. Dots are training seeds (A and C5: 3 seeds; R1, P0 and C5-EFFORT: 1 seed each). The C5-EFFORT bars are a single-seed exploratory result evaluated under the default (550 mA) actuator; its decision-setting value under the 350 mA-equivalent actuator is 1.625 (Section 8.2). Source: `docs/figures/readme/sim_progress.png`, generated from `docs/figures/readme/headline_numbers.json`.*
+*Figure 1: Held-out turns per 30 s in simulation under the real joint limits (seeds 6201+6202). Left: random start grasp from the 239-grasp cache. Right: every episode starts from grasp 49, without retraining. Dots are training seeds (A and C5: 3 seeds; R1, P0 and C5-EFFORT: 1 seed each). The C5-EFFORT bars are a single-seed exploratory result evaluated under the default (550 mA) actuator; its decision-setting value under the 350 mA-equivalent actuator is 1.625 (Section 8.2). Source: `docs/figures/readme/sim_progress.png`, generated from `docs/figures/readme/headline_numbers.json`.*
 
 ## 7. Real-hand results: what transferred and what did not
 
 ### 7.1 Protocol
 
-The 20 Nov session compared A3 (hardware-limited A, seed 3), R1, P0 and C5 seed 1, five 60-s trials each in a balanced Latin-square order, plus four trials of `model_400`, with gains H1 and a 1 ms USB latency timer. The cube was placed at the same spot each time (Figure 3).
-
-![Three panels: where to place the cube on the open hand, the hand after the fingers close, and a side view](../figures/cube_placement.png)
-
-*Figure 3: Cube placement used in every real-hand trial, rendered in simulation: cube centre over the knuckle line, in line with the middle finger; expected rotation counter-clockwise seen from above. The placement follows training grasp 49, but the kit closes the fingers to its own default pose. Source: `docs/figures/cube_placement.png`.*
+The 20 Nov session compared A3 (hardware-limited A, seed 3), R1, P0 and C5 seed 1, five 60-s trials each in a balanced Latin-square order, plus four trials of `model_400`, with gains H1 and a 1 ms USB latency timer. The cube was placed at the same spot each time: centre over the knuckle line, in line with the middle finger, the position of training grasp 49 (`docs/figures/cube_placement.png`); the kit then closes the fingers to its own default pose, not to grasp 49.
 
 **Counting unit.** The operator counted quarter turns (90°); the 20 Nov session report predates this confirmation, so the audit's corrected full revolutions (quarter turns / 4) are used here.
 
@@ -220,9 +212,9 @@ The logs contain 37 attempts. The audit classified each into mutually exclusive 
 
 ![Left: full revolutions per 60-s trial for each policy and session. Right: every attempt placed at the time the cube was lost or the run stopped, marked as held, dropped or safety stop](../figures/readme/real_hand_attempts.png)
 
-*Figure 4: Real-hand attempts in the 20, 24 and 25 Nov sessions. Left: full revolutions per 60-s trial (operator counts; bar = mean). Right: time until the cube was lost or the run stopped. Operator stops with no recorded reason, the 24 Nov trial with operator intervention and the unrecorded 25 Nov run are excluded; a run ended by a guard counts as a safety stop even if the cube had dropped first, so P0 shows 3 drops and 4 stops here against 4 and 3 in the audit table above. Source: `docs/figures/readme/real_hand_attempts.png`, from `docs/figures/readme/headline_numbers.json`.*
+*Figure 2: Real-hand attempts in the 20, 24 and 25 Nov sessions. Left: full revolutions per 60-s trial (operator counts; bar = mean). Right: time until the cube was lost or the run stopped. Operator stops with no recorded reason, the 24 Nov trial with operator intervention and the unrecorded 25 Nov run are excluded; a run ended by a guard counts as a safety stop even if the cube had dropped first, so P0 shows 3 drops and 4 stops here against 4 and 3 in the audit table above. Source: `docs/figures/readme/real_hand_attempts.png`, from `docs/figures/readme/headline_numbers.json`.*
 
-**Speed transferred.** C5 rotated far faster than A3 (difference +11.90 quarter turns per trial [+9.85, +14.10], permutation p = 0.009, n = 5 and 4). While holding the cube, C5 turned at 3.64 full revolutions per minute on the hand, against about 3.7 rev/min in simulation; the policy that was fastest in simulation was also fastest on the hand. The other policies lost most of their simulated speed (Figure 5).
+**Speed transferred.** C5 rotated far faster than A3 (difference +11.90 quarter turns per trial [+9.85, +14.10], permutation p = 0.009, n = 5 and 4). While holding the cube, C5 turned at 3.64 full revolutions per minute on the hand, against about 3.7 rev/min in simulation; the policy that was fastest in simulation was also fastest on the hand. The other policies lost most of their simulated speed (Figure 3).
 
 **Retention did not transfer.** R1 and P0 had the lowest simulated 30-s failure rates of the four (19.0% and 11.5%) and dropped the cube in all 5 recorded trials each, after about 10 s. R1 held the cube for 9.2 s on average against 40.6 s for A3 (−31.41 s [−51.76, −9.66], p = 0.069). The simulated ranking reversed: A3 held for the full minute in 3 of 6 attempts and C5 in 4 of 11, while R1 and P0 never did.
 
@@ -230,7 +222,7 @@ The logs contain 37 attempts. The audit classified each into mutually exclusive 
 
 ![Slope charts from simulation to the real hand for A3, R1, P0 and C5: full revolutions per 60 s and share of trials that held the cube for 60 s](../figures/readme/sim_vs_real.png)
 
-*Figure 5: Simulation vs real hand for the four policies of 20 Nov. Left: full revolutions in a 60-s trial (simulation: held-out 60-s turns, random start grasp). Right: share of trials that held the cube for 60 s (on the hand: no drop and no safety stop, operator stops with no recorded reason excluded). Simulation values are A seed 3 (A3) and seed 1 of R1, P0 and C5. Source: `docs/figures/readme/sim_vs_real.png`, from `docs/figures/readme/headline_numbers.json`.*
+*Figure 3: Simulation vs real hand for the four policies of 20 Nov. Left: full revolutions in a 60-s trial (simulation: held-out 60-s turns, random start grasp). Right: share of trials that held the cube for 60 s (on the hand: no drop and no safety stop, operator stops with no recorded reason excluded). Simulation values are A seed 3 (A3) and seed 1 of R1, P0 and C5. Source: `docs/figures/readme/sim_vs_real.png`, from `docs/figures/readme/headline_numbers.json`.*
 
 ### 7.3 24–25 Nov: C5 seed 1 vs seed 3, and placement
 
@@ -272,7 +264,7 @@ The decision setting is the full grasp distribution under the 350 mA-equivalent 
 
 ![Four bar charts for A1–A3, R1, C5 seeds 1–3 and EFFORT_1 under the 350 mA-equivalent actuator: turns per 30 s, failure, index jam proxy and index MCP saturation](../../training_source/project/experiments/c5_hw_v1/figures/effort_v1_summary.png)
 
-*Figure 6: Simulation under the 350 mA-equivalent actuator, full grasp distribution, seeds 6201+6202. EFFORT_1 (C5-EFFORT) is a single-seed exploratory run; C5_1–C5_3 are the three C5 training seeds. Source: `training_source/project/experiments/c5_hw_v1/figures/effort_v1_summary.png`.*
+*Figure 4: Simulation under the 350 mA-equivalent actuator, full grasp distribution, seeds 6201+6202. EFFORT_1 (C5-EFFORT) is a single-seed exploratory run; C5_1–C5_3 are the three C5 training seeds. Source: `training_source/project/experiments/c5_hw_v1/figures/effort_v1_summary.png`.*
 
 The pre-registered verdict is **SINGLE-SEED PASS (exploratory; not confirmed)**, with a small margin on rotation. On evaluation seed 6202 alone the rotation ratio is 0.899, and against the two faster C5 seeds it is 0.878 and 0.894. The reduction is effort avoidance, not a threshold artefact: joint samples above 80% utilisation fall to 0.83% (C5 seeds: 3.0–4.1%). Failure is unchanged; the cost is about 9% of rotation speed.
 
@@ -280,7 +272,25 @@ Caveats: the jam proxy does not separate A from C5 in simulation (13.9% vs 14.6%
 
 ### 8.3 C5-HW-V2 (single-seed exploratory)
 
-> **[PLACEHOLDER: C5-HW-V2 — filled in when Task 2 finishes. Experiment folder: training_source/project/experiments/c5_hw_v2/ (FIT_PLAN.md: response fit + kit-start resets; PROTOCOL.md; REPORT.md). Single-seed exploratory.]**
+C5-HW-V2 was meant to target all three hardware failure modes at once: the 350 mA jams, the slow simulated actuator, and placement-caused early drops. It builds on C5-EFFORT. Two evaluation-only steps on frozen policies came first, both pre-registered (`experiments/c5_hw_v2/FIT_PLAN.md`, hashed before they ran).
+
+**Response fit: failed.**
+
+- **Method:** frozen C5 seed 1 was run on SPEC §4's 24-point grid (action delay 0–25 to 25–75 ms × damping ×0.5–1.0 × friction loss ×0.5–1.0) and scored with the audit's own lag estimator against the 20 Nov hardware.
+- **Tracking constraint:** no setting brought the simulated tracking error within ±30% of the hand's. The best was 2.81× the hardware's 0.0287 rad.
+- **Lag:** the best-lag setting reached a median lag of 218 ms against 79 ms, with 0 of 16 joints within 30 ms.
+- **Free air:** the function-test sinusoid replayed without a cube gives 95 ms on the hand and 364 ms in simulation (275 ms at the best-lag setting). The mismatch is in the simulated actuator, not in the contact, and no randomisation range can remove it.
+- **Consequence (pre-registered):** the response change was dropped.
+
+**Kit-start resets: built.**
+
+- **What was simulated:** the kit's start at the 350 mA-equivalent limit: the cube placed per `docs/figures/cube_placement.png` with ±4 mm / ±15° noise and settled on the open hand, the 5-s closing ramp, and the measured pose kept as the first command, as the kit does. This gave 4,035 starts.
+- **Survival:** frozen C5 survived 30 s from 95.3–95.8% of them (C5-EFFORT 93.0%), against 98.7–100% from grasp 49.
+- **Comparison with the hand:** this is far milder than on the hand, where C5 seed 3 dropped early in 6 of 12 trials. The simulated post-ramp pose also differs from the measured one by up to 0.154 rad. The simulated kit start therefore tests the start procedure, not the real placement error.
+
+Sources: `results/response_fit.md`, `results/kit_start_survival.md`, `cache/kit_start_cache.json`.
+
+> **[PLACEHOLDER: C5-HW-V2 training and held-out result. Filled in when Task 2 finishes (`experiments/c5_hw_v2/PROTOCOL.md`, `REPORT.md`). C5-HW-V2 = C5-EFFORT + kit-start resets, one PPO seed, single-seed exploratory.]**
 
 ## 9. Camera measurement
 
@@ -290,11 +300,11 @@ Because the operator counts by eye and the proprioceptive estimate is not usable
 
 **Measured marker layout.** The real cube does not match the course's `layout.json`. A rotation vote over co-visible marker pairs and a bundle adjustment showed that faces U and A are swapped and that the markers on M and I are rotated by 180°; the markers also sit off-centre on each face. The measured layout was confirmed on all six faces by two independent recordings. Re-tracking the same static recording with it raised the share of frames in the TRACKING state from 46.5% to 100% and removed all 1,402 layout conflicts.
 
-**Gap filling.** The fingers often hide every marker. Because each face has its own marker ID, the orientation after a gap is known exactly and the rotation during it up to whole turns, chosen from the rotation speed on both sides of the gap. A gap is flagged, and the range widened by one turn either way, when the wrong branch has more than a 1% chance. In a synthetic stress test (200 sequences of 60 s, 27% hidden, gaps up to 4 s), the median error was 0.05 quarter turns, against 5.9 for the earlier bridging rule, and every sequence that was off contained a flagged gap. On a real recording with artificially hidden 0.5–3 s windows, no turn was counted wrongly. Estimated frames are labelled as such in the trial video (Figure 7).
+**Gap filling.** The fingers often hide every marker. Because each face has its own marker ID, the orientation after a gap is known exactly and the rotation during it up to whole turns, chosen from the rotation speed on both sides of the gap. A gap is flagged, and the range widened by one turn either way, when the wrong branch has more than a 1% chance. In a synthetic stress test (200 sequences of 60 s, 27% hidden, gaps up to 4 s), the median error was 0.05 quarter turns, against 5.9 for the earlier bridging rule, and every sequence that was off contained a flagged gap. On a real recording with artificially hidden 0.5–3 s windows, no turn was counted wrongly. Estimated frames are labelled as such in the trial video (Figure 5).
 
-![Trial video frame: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second](../figures/trial_video_2026-11-25_estimated.jpg)
+![(column) Trial video frame: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second](../figures/trial_video_2026-11-25_estimated.jpg)
 
-*Figure 7: Replay of trial 5 on 25 Nov (C5 seed 3) at 11.1 s of policy time. The fingers hide the markers (tracker LOST), so the cube is drawn as an estimate (orange dashed box: 2.0 quarter turns, 50°/s). The panel also states that camera-to-palm is not calibrated. Source: `docs/figures/trial_video_2026-11-25_estimated.jpg`.*
+*Figure 5: Replay of trial 5 on 25 Nov (C5 seed 3) at 11.1 s of policy time. The fingers hide the markers (tracker LOST), so the cube is drawn as an estimate (orange dashed box: 2.0 quarter turns, 50°/s). The panel also states that camera-to-palm is not calibrated. Source: `docs/figures/trial_video_2026-11-25_estimated.jpg`.*
 
 **Agreement with the operator (25 Nov).** Three of the five trials have camera recordings:
 
@@ -306,33 +316,24 @@ Because the operator counts by eye and the proprioceptive estimate is not usable
 
 The camera matches the operator within 1 quarter turn in trials 1 and 5. Trial 4 differs (0.8 vs 2) and is not explained.
 
-**Limits.** One session, three recorded trials. Live recording ran at about 11 fps; a threaded fix is not yet confirmed with the camera connected. A second cube with the same marker IDs was sometimes tracked. Per-face marker offsets were fitted on the recordings they were tested on. The camera-to-palm transform is not calibrated, so rotation is measured about the motion's own axis (sign fixed by naming one trial), no palm-frame position is reported, and vision cannot yet be compared quantitatively with the proprioceptive estimate (in the dashboard they disagree in sign).
+**Limits.** One session and three recorded trials. Live recording ran at about 11 fps (a threaded fix is not yet confirmed on the camera), and the per-face marker offsets were fitted on the recordings they were tested on. Without a camera-to-palm calibration, rotation is measured about the motion's own axis (sign fixed by one trial) and cannot yet be compared with the proprioceptive estimate.
 
 ## 10. Negative results and limitations
 
 These carry the same weight as the positive results.
 
-**Negative results**
+**Negative results.**
+- The retention reward did not transfer: R1 and P0, with the lowest simulated failure rates, dropped the cube in every recorded real trial (5 of 5 each); the cause (start condition, current limit or policy) is not resolved.
+- C5 seed 1 tripped a guard in 9 of 16 attempts over two sessions; seed 3 removed the stops but dropped the cube in 11 of 12 valid trials, 6 of them at 5–7 s.
+- Estimated cube state gave no gain under the real joint limits (−0.041 [−0.150, +0.055]), and the earlier gain had a CI including zero; on the new gaits the estimator's errors grew 1.36–1.53×. The proprioceptive cube-yaw estimate is not valid on the hand (Spearman −0.42; wrong sign for C5).
+- Retention-V1 and P0 missed their pre-registered rotation targets; the C5-HW-V2 response fit failed its pre-registered rule (Section 8.3).
 
-- **The retention reward did not transfer.** R1 and P0 had the lowest simulated failure rates and dropped the cube in every recorded real trial (5 of 5 each). The cause (start condition, current limit or policy) is not resolved.
-- **C5 tripped the current guard** in 6 of 11 attempts on 20 Nov; seed 1 did so in 9 of 16 over two sessions.
-- **Estimated cube state stopped helping under the real joint limits** (−0.041 [−0.150, +0.055]); even the earlier gain had a CI including zero. On the new gaits the estimator's position error was 1.36–1.45× and its rotation error 1.48–1.53× the reference; a retrained estimator was not tested.
-- **The proprioceptive cube-yaw estimate is not valid on the hand** (Spearman −0.42 against the operator's counts; wrong sign for C5).
-- **Retention on the hand did not improve with seed 3.** Seed 3 removed the guard stops but dropped the cube in 11 of 12 valid trials, with early drops at 5–7 s in 6 of them.
-- **Retention-V1 and P0 missed their pre-registered rotation targets.**
-- **The force estimate is only indirectly supported on the hand**; the index estimate did not track motor current.
-
-**Limitations**
-
-- **Small hardware samples.** There are 4–13 attempts per policy and session, from one operator in one lab. The p-values and CIs for the hand are indicative only.
-- **Operator counts.** Quarter turns were counted by eye, the unit was confirmed after the 20 Nov report, and drop times are approximate (±1–2 s). Three 20 Nov runs were stopped by the operator without a recorded reason.
-- **Placement dominates drops and is not measured.** Simulation starts from settled grasps; the hand starts from the kit's default closing pose with a hand-placed cube, and neither the logs nor (yet) the camera record placement. Grasp 49 has not been reproduced on the hand.
-- **Actuator mismatch.** Training assumed 550 mA (hand: 350 mA), and the simulated response is slower (effective lag about 280 ms vs 80 ms). C5-EFFORT (single-seed exploratory) addresses only the first, in simulation.
-- **Single-seed studies.** R1 and P0 were each trained once; C5-EFFORT and C5-HW-V2 are single-seed exploratory (Sections 8.2–8.3). C5 is the only new recipe confirmed over three seeds.
-- **Few seeds in simulation.** With three seeds, differences smaller than about 0.1 turns cannot be resolved; no run in the first study had converged.
-- **Simulation-only components.** The jam proxy is not validated against hardware; the force labels depend on MuJoCo's soft-contact model.
-- **Known deployment gap.** All policies ran with the kit's PIP limit above training's.
-- **No camera-to-palm calibration** (Section 9).
+**Limitations.**
+- Small hardware samples (4–13 attempts per policy and session, one operator, one lab); hardware p-values and CIs are indicative only. Quarter turns were counted by eye and drop times are approximate (±1–2 s).
+- Placement dominates real drops and is not measured; grasp 49 has not been reproduced on the hand, and the simulated kit start (Section 8.3) is much milder than the real one.
+- The simulated actuator responds about 3.5× more slowly than the hand, and range tuning cannot fix it (Section 8.3).
+- C5 is the only new recipe confirmed over three seeds; R1, P0, C5-EFFORT and C5-HW-V2 were trained once. With three seeds, differences below about 0.1 turns cannot be resolved.
+- The jam proxy is not validated against hardware; force labels depend on MuJoCo's soft-contact model; all policies ran with the kit's PIP limit above training's; the camera-to-palm transform is not calibrated.
 
 ## 11. Conclusion
 
