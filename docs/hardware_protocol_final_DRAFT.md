@@ -69,6 +69,10 @@
 - **Template (to be made; design decision for the supervisor):** a thin removable guide that registers on the palm (on the palm edge or the finger bases) and has an L-shaped stop. The stop puts the cube centre over the knuckle line, in line with the middle finger, edges parallel to the knuckle line, logo / taped face up: exactly as `docs/figures/cube_placement.png`.
   - It must be **out of the fingers' path** before the closing ramp starts, or flat enough that the fingers cannot touch it.
   - Until the template exists, place by eye as on 24/25 Nov, and say so in the notes of every attempt.
+- **Alternative, only with the supervisor's approval: grasp-49 start pose.**
+  - **What it is:** the kit's closing ramp ends at its default pose, not at the training grasp. A start that closes the fingers to the joint pose of training grasp 49 (`hwlimit_ac/cache/hwlimit_grasp_cache.npz`, entry 49) would match the start C5 was selected on.
+  - **Why it needs approval:** this changes what the kit commands before the policy starts. It is a kit runtime change, not a placement aid, and is **not** prepared on any branch.
+  - **Design rule if approved:** it is a separate arm or a separate session. It is never mixed with the default-start attempts above.
 - **Photo before each run:**
   - The trial recording starts before the countdown, so the frame at the **end of the closing ramp** (policy start) is the placement photo. Extract it after the session with `scripts/retime_recording.py`: it prints the policy start inside the re-timed video.
   - **[BENCH]** Additionally, take a phone photo from the operator's side after placing and before the ramp. Name it with the trial number.
