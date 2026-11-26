@@ -9,7 +9,7 @@ A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its ow
   <img alt="Real-hand results. Left: full revolutions per 60-second trial for each policy and session; C5 seed 1 averages 3.48 on 20 Nov against 0.50 for model_400 and A3. Right: every attempt, placed at the time the cube was lost or the run stopped, marked as held, dropped or safety stop." src="docs/figures/readme/real_hand_attempts.png">
 </picture>
 
-*Every logged real-hand attempt in the three comparison sessions. Left: rotation per trial. Right: how long each attempt kept the cube and how it ended. C5 seed 1 rotates fastest but trips the current guard often. C5 seed 3 never tripped it (0 of 13 on 24 Nov). Its drops in the first 5–7 s come from where the cube was placed at the start (see [24 Nov](docs/hardware_session_2026-11-24.md)).*
+*Every logged real-hand attempt in the three comparison sessions. Left: rotation per trial. Right: how long each attempt kept the cube and how it ended. C5 seed 1 rotates fastest but trips a safety guard often. C5 seed 3 never tripped one (0 of 13 on 24 Nov). Its drops in the first 5–7 s come from where the cube was placed at the start (see [24 Nov](docs/hardware_session_2026-11-24.md)).*
 
 ---
 
@@ -35,18 +35,18 @@ Simulation numbers are on held-out evaluation seeds that were used once. From th
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/readme/sim_vs_real_dark.png">
-  <img alt="Slope charts from simulation to the real hand for A3, R1, P0 and C5. Left, revolutions per 60 s: C5 is fastest in both (3.85 in simulation, 3.48 on the hand); the others fall to 0 to 0.65. Right, share of trials that held the cube for 60 s: P0 and R1 led in simulation (86% and 76%) but held 0% on the hand, while A3 held 50% and C5 36%." src="docs/figures/readme/sim_vs_real.png">
+  <img alt="Slope charts from simulation to the real hand for A3, R1, P0 and C5. Left, revolutions per 60 s: C5 is fastest in both (3.85 in simulation, 3.48 on the hand); the others fall to 0 to 0.65. Right, share of trials that held the cube for 60 s: in simulation P0 held 86% of trials and R1 76% (C5 79%, A3 75%); on the hand both held 0%, while A3 held 50% and C5 36%." src="docs/figures/readme/sim_vs_real.png">
 </picture>
 
 - **C5's speed transferred.** The policy that rotated fastest in simulation is also the fastest on the hand; the others lost most of their speed. Its real rotation rate while holding the cube (about 3.6–4.4 rev/min) is the same order as in simulation (3.7 rev/min).
-- **Retention did not.** The two policies trained with a retention reward (R1, P0) kept the cube best in simulation and dropped it in every real trial, after about 10 s. The likely cause is the start: the hand closes to its own default pose, not to a training grasp (see the gap table below).
+- **Retention did not.** The two policies trained with a retention reward (R1, P0) had the lowest 30-s failure rates in simulation and dropped it in every real trial, after about 10 s. The likely cause is the start: the hand closes to its own default pose, not to a training grasp (see the gap table below).
 - **The estimator's cube rotation was not grounded on the hand.** Its integrated yaw was anti-correlated with what the operator saw (Spearman −0.42). That is why camera tracking was built (below).
 
 ## How C5 was found (simulation)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/readme/sim_progress_dark.png">
-  <img alt="Bar charts of held-out turns per 30 s under the real joint limits. Random start grasp: A 1.20, R1 1.16, P0 1.27, C5 1.79, C5-EFFORT 1.62 (1 seed), C5-HW-V2 0.92 (1 seed). Fixed start grasp 49: A 1.60, R1 1.60, P0 1.68, C5 2.36, C5-EFFORT 2.16, C5-HW-V2 1.75." src="docs/figures/readme/sim_progress.png">
+  <img alt="Bar charts of held-out turns per 30 s under the real joint limits and the default (550 mA) actuator. Random start grasp: A 1.20, R1 1.16, P0 1.27, C5 1.79, C5-EFFORT 1.62 (1 seed), C5-HW-V2 0.92 (1 seed). Fixed start grasp 49: A 1.60, R1 1.60, P0 1.68, C5 2.36, C5-EFFORT 2.16, C5-HW-V2 1.75." src="docs/figures/readme/sim_progress.png">
 </picture>
 
 Two separate improvements, each isolated by a pre-registered test:
@@ -76,14 +76,14 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 | Date | Study | Question | Outcome |
 |---|---|---|---|
 | 11 Nov | [Course package](docs/course_package.md) | Run `model_400` faithfully | Portable scene fixed (the hand sat 10 cm too low); full MJLab playback on macOS |
-| 12–13 Nov | [State estimation A/B/C/D](training_source/project/experiments/scratch_state_estimation/README.md) | Does cube state estimated from joint readings help PPO? | **Fixed 4 bugs in the course environment** (stale reset anchor; Euler tilt singular near 90° pitch, terminating 98–100% of tilted starts; Euler-yaw rotation measure; 95% of `model_400`'s actions saturated). Oracle state +0.26 turns [+0.15, +0.38]; estimated state +0.15 [−0.01, +0.34], 57% of the oracle gain, and faster learning in every seed |
+| 12–13 Nov | [State estimation A/B/C/D](training_source/project/experiments/scratch_state_estimation/README.md) | Does cube state estimated from joint readings help PPO? | **Fixed 4 bugs in the course environment** (stale reset anchor; Euler tilt singular near 90° pitch, terminating 98–100% of tilted starts; Euler-yaw rotation measure; 95% of `model_400`'s actions saturated). Oracle state +0.263 turns [+0.148, +0.376]; estimated state +0.150 [−0.006, +0.339], 57% of the oracle gain, and faster learning in every seed |
 | 13 Nov | [Fingertip force estimation](training_source/project/experiments/force_estimation/README.md) | Can contact force be estimated without a sensor? | 0.19 N mean error, R² 0.78 on unseen policies; contact AUROC 0.94–0.98 |
 | 17 Nov | [Hardware session 1](docs/hardware_session_2026-11-17.md) | Do the study policies run on the hand? | Guarded function test passes; the hand's sideways joint limits are half the training range |
-| 17–18 Nov | [A vs C under real limits](training_source/project/experiments/hwlimit_ac/README.md) | Does the estimated state still help? | **No:** C − A = −0.04 [−0.15, +0.06]; the estimator is 1.4–1.5× worse on the new gaits |
+| 17–18 Nov | [A vs C under real limits](training_source/project/experiments/hwlimit_ac/README.md) | Does the estimated state still help? | **No:** C − A = −0.041 [−0.150, +0.055]; the estimator's errors are 1.36–1.53× larger on the new gaits |
 | 18 Nov | [Hardware session 2](docs/hardware_session_2026-11-18.md) | Live cube and force monitor on the hand | Thumb force estimate tracks motor current; loop jitter traced to the USB latency timer (fixed by 20 Nov: 20% → 5% of steps late) |
 | 19–20 Nov | [Retention-V1](training_source/project/experiments/retention_v1/README.md) | Does a retention reward reduce drops? | In simulation, pose failures −23 to −30%, but turns not improved (1.16 vs 1.21) |
 | 20 Nov | [Grasp-Rotation-V2](training_source/project/experiments/grasp_rotation_v2/README.md) | Start grasp vs reward balance | Grasp 49: failure 24% → 0.7%; C5: +56% turns |
-| 20 Nov | [Hardware session 3](docs/hardware_session_2026-11-20.md) | A3 vs C5 vs R1 vs P0 (+ `model_400`), 37 logged attempts | C5 7× faster; R1 and P0 drop every time; C5 trips the current guard in 6 of 11 attempts |
+| 20 Nov | [Hardware session 3](docs/hardware_session_2026-11-20.md) | A3 vs C5 vs R1 vs P0 (+ `model_400`), 37 logged attempts | C5 7× faster; R1 and P0 drop every time; C5 trips a safety guard in 6 of 11 attempts (5 of them the current guard) |
 | 21–24 Nov | [C5 three seeds](training_source/project/experiments/grasp_rotation_v2/results/c5_seeds.md) | Is C5 reproducible? | +0.59 turns [+0.35, +0.83], p = 0.0025; every seed passes every threshold |
 | 24 Nov | [Actuator audit](docs/hardware_policy_actuator_audit_2026-11-20.md) | Why does C5 trip the guard? | Index-finger jams at 350 mA, a limit training never saw (550 mA); real lag 80 ms vs ~280 ms in simulation |
 | 24 Nov | [Hardware session 4](docs/hardware_session_2026-11-24.md) | C5 seed 1 vs seed 3 | Seed 3 (chosen beforehand by a 350 mA simulation screen): 0 of 13 safety stops vs 9 of 16; retention set by placement |
@@ -102,10 +102,10 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 
 These are reported with the same weight as the positive results:
 
-- **The retention reward did not transfer.** R1 and P0 held the cube best in simulation and worst on the hand.
+- **The retention reward did not transfer.** R1 and P0 had the lowest 30-s failure rates in simulation and held the cube worst on the hand.
 - **Estimated cube state stopped helping under the real joint limits.** The early A/B/C/D advantage (with the course's wider limits and a shorter budget) did not survive retraining under the hand's limits.
 - **The proprioceptive cube-rotation estimate is not valid on the hand** (Spearman −0.42 against the operator's counts).
-- **The hardware samples are small.** There are 4–13 attempts per policy and session, counted by eye by one operator. The camera pipeline now exists to replace the counts, but has been used in only one session.
+- **The hardware samples are small.** There are 4–12 valid attempts per policy and session, counted by eye by one operator. The camera pipeline now exists to replace the counts, but has been used in only one session.
 - **Cube placement is not controlled.** It decides retention more than the policy does, and the logs cannot detect it (the start pose is identical to within 0.008 rad in early-drop and long-hold trials).
 - **C5-HW-V2 failed** (1 seed, simulation). Trained only from simulated kit starts, it did not reduce kit-start failures (4.5% vs C5's 4.6%) and from random grasps rotated at 0.536 × C5's speed; its actuator refit also failed. A post-hoc check found its first criterion was set below a failure floor shared by every policy.
 - **Single seeds:** R1, P0, C5-EFFORT and C5-HW-V2 were trained once. C5 is the only new recipe confirmed over three seeds.

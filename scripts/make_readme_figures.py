@@ -197,7 +197,7 @@ def sim_tables() -> dict:
 OUTCOME_STYLE = {  # status colour + marker shape + label: never colour alone
     "held": ("good", "o", "Held the cube for the whole run"),
     "dropped": ("serious", "s", "Cube dropped"),
-    "safety stop": ("critical", "D", "Safety stop (current guard)"),
+    "safety stop": ("critical", "D", "Safety stop (guard)"),
 }
 
 
@@ -279,7 +279,7 @@ def fig_sim_progress(sim: dict, th: dict, path: Path) -> None:
     axes[0].axhline(a_mean, color=th["muted"], lw=1, ls=(0, (3, 3)), zorder=1)
     axes[0].set_ylabel("held-out turns per 30 s")
     axes[0].set_ylim(0, 2.8)
-    fig.text(0.01, 0.01, "Held-out seeds 6201+6202, under the real hand's joint limits. "
+    fig.text(0.01, 0.01, "Held-out seeds 6201+6202, real hand's joint limits, default (550 mA) actuator. "
              "Dots = independent training seeds (A, C5: 3 seeds; others: 1). Dashed line = A mean.",
              fontsize=7.5, color=th["muted"])
     fig.subplots_adjust(left=0.07, right=0.99, top=0.88, bottom=0.2)

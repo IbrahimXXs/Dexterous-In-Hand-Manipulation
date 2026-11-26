@@ -199,7 +199,7 @@ The logs contain 37 attempts. The audit classified each into mutually exclusive 
 
 **Retention did not transfer.** R1 and P0 had the lowest simulated 30-s failure rates of the four (19.0% and 11.5%) and dropped the cube in all 5 recorded trials each, after about 10 s. R1 held the cube for 9.2 s on average against 40.6 s for A3 (−31.41 s [−51.76, −9.66], p = 0.069). The simulated ranking reversed: A3 held for the full minute in 3 of 6 attempts and C5 in 4 of 11, while R1 and P0 never did.
 
-**C5 tripped the current guard often:** 6 of 11 attempts (Section 8).
+**C5 tripped a safety guard often:** 6 of 11 attempts, 5 of them the current guard (Section 8).
 
 ![Slope charts from simulation to the real hand for A3, R1, P0 and C5: full revolutions per 60 s and share of trials that held the cube for 60 s](../figures/readme/sim_vs_real.png)
 
@@ -306,7 +306,7 @@ These carry the same weight as the positive results.
 
 **Limitations.**
 
-- Small hardware samples (4–13 attempts per policy and session, one operator, one lab); hardware p-values and CIs are indicative only. Quarter turns were counted by eye and drop times are approximate (±1–2 s).
+- Small hardware samples (4–12 valid attempts per policy and session, one operator, one lab); hardware p-values and CIs are indicative only. Quarter turns were counted by eye and drop times are approximate (±1–2 s).
 - Placement dominates real drops and is not measured; grasp 49 has not been reproduced on the hand, and the simulated kit start (Section 8.3) is much milder than the real one.
 - The simulated actuator responds about 3.5× more slowly than the hand, and range tuning cannot fix it (Section 8.3).
 - C5 is the only new recipe confirmed over three seeds; R1, P0, C5-EFFORT and C5-HW-V2 were trained once. With three seeds, differences below about 0.1 turns cannot be resolved.
