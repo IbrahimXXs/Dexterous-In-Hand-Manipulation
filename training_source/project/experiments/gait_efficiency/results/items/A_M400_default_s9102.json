@@ -1,0 +1,16 @@
+{
+ "key": "A_M400_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "M400",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "checkpoint/model_400.pt",
+ "sha256": "2f39f1c6be7d6a5be1e50ad5c3588f95a91409ae0318b6824d20d5d745a094a7",
+ "squash": "clip",
+ "seconds": 85.8,
+ "survival_60s": 0.6796875,
+ "held_s_mean": 44.904297544126166
+}

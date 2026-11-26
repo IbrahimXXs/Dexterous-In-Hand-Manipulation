@@ -1,0 +1,16 @@
+{
+ "key": "A_A3_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "A3",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/hwlimit_ac/checkpoints/A_seed3_selected_model_2600.pt",
+ "sha256": "38a2922b7d00ec77a646af5ef4b34172133f27612d6d8edecbda3f2e8ad4837f",
+ "squash": "tanh",
+ "seconds": 85.3,
+ "survival_60s": 0.7265625,
+ "held_s_mean": 45.74277411912044
+}

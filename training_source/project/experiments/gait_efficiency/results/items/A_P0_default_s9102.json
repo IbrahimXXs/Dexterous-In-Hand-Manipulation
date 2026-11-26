@@ -1,0 +1,16 @@
+{
+ "key": "A_P0_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "P0",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/P0_1_selected_model_1500.pt",
+ "sha256": "2bc2ce11d551e8bd9a7ae64758bb05260ad1993d18fde0b6a5e30f0968c5b8ba",
+ "squash": "tanh",
+ "seconds": 84.3,
+ "survival_60s": 0.85546875,
+ "held_s_mean": 53.8023445517174
+}

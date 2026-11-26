@@ -186,6 +186,19 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | five (trials, 25 Nov); 16 quarter turns; four drops at 5–30 s | [§7.3] 25 Nov outcomes | docs/hardware_session_2026-11-25.md; LEAP_Hand_RL_Deploy_Kit/logs/trials_20261125.csv | Runs table; CSV `drop_time_s` and `notes` |
 | 23 counted trials; Spearman −0.42 | [§7.4, §10] estimated yaw vs operator counts | docs/hardware_session_2026-11-20.md | §4 "Cube rotation" |
 | 11–17; −1.1 to −2.9 | [§7.4] C5 operator counts vs estimated turns | docs/hardware_session_2026-11-20.md | §4 table, C5 row |
+| 0.12–1.2 Hz; 3 s | [§7.5] cycle-counter band; dropped start | training_source/project/experiments/gait_efficiency/scripts/gait.py; training_source/project/experiments/gait_efficiency/ANALYSIS_PLAN.md | BAND_HZ, T_START_S; §2 |
+| held ≥ 20 s | [§7.5, Figure 4] real-hand and simulated inclusion | training_source/project/experiments/gait_efficiency/results/real_hand.json; training_source/project/experiments/gait_efficiency/ANALYSIS_PLAN.md | variants.held.desc; §5 Inclusion |
+| 512; 9101+9102 | [§7.5] simulated episodes per policy (2 seeds × 256); seeds | training_source/project/experiments/gait_efficiency/ANALYSIS_PLAN.md; training_source/project/experiments/gait_efficiency/items/sim_items.json | §4 Seeds |
+| 0.34 and 0.30 Hz; 1.012 and 0.981 | [§7.5] rhythm of C5 seeds 1 and 3 (real); real/sim | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.C5s1/C5s3: real_held.rhythm_hz_median (0.341, 0.297), r_rhythm |
+| within 9% | [§7.5] model_400 rhythm, real/sim 0.910 | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.M400.r_rhythm |
+| 0.24 → 0.35 Hz | [§7.5] A3 rhythm, sim → real | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.A3: sim_K_effort / real_held rhythm_hz_median (0.239, 0.353) |
+| 0.73; 1.03; 0.703; 0.746 | [§7.5] C5 seed 1 quarter turns per cycle real, sim; ratio; speed ratio | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.C5s1: real_held / sim_K_effort qturns_per_cycle, r_tpc, r_speed |
+| 0.06 against 1.05 | [§7.5] A3 quarter turns per cycle, real vs sim | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.A3 qturns_per_cycle (0.060, 1.046) |
+| 0.53 rad; 1.72 | [§7.5] P0 median stroke amplitude, real vs sim | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.P0 stroke_amplitude_median_rad (0.534, 1.718) |
+| 0.99 → 1.08; 0.297 → 0.302 | [§7.5] C5 seed 3 quarter turns per cycle; quarter turns per held second, sim → real | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.C5s3 qturns_per_cycle (0.989, 1.077), qturns_per_s |
+| 0.88; r = 0.994 | [§7.5, Figure 4] 25 Nov trial 1 camera check, slope and correlation | training_source/project/experiments/gait_efficiency/results/real_hand.json | camera_check_25nov.trial1 (0.880, 0.9938) |
+| 2 A3 runs, one each for model_400 and P0 | [§7.5] real runs in the comparison window | training_source/project/experiments/gait_efficiency/results/decomposition.json | policies.*.real_held.n_runs |
+| 1–7 runs per policy | [§10] runs per policy in the gait comparison window | training_source/project/experiments/gait_efficiency/results/decomposition.json | real_held.n_runs: P0 1, M400 1, A3 2, C5s1 7, C5s3 7 |
 | 5 of C5's 6 guard stops | [§8.1] stops that were sustained index jams | training_source/project/experiments/c5_hw_v1/SPEC.md | §1 table, E1 |
 | 0.2–0.6 rad | [§8.1] index shortfall from command during jams | docs/hardware_policy_actuator_audit_2026-11-20.md | Executive summary |
 | 453–747 mA | [§8.1] trip transients | docs/hardware_policy_actuator_audit_2026-11-20.md | Executive summary |
@@ -210,7 +223,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | ≥ 0.90; 0.911 (CI 0.903–0.919) | [§8.2] criterion 2a and result | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.2 table, 2a |
 | ≥ 1.20; 1.362 | [§8.2] criterion 2b and result | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.2 table, 2b |
 | 0.178; 0.180; + 0.03 | [§8.2] failure30 EFFORT vs C5 mean; criterion 3 margin | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.1 table; §3.2 table, 3 |
-| three C5 training seeds (Figure 4) | [§8.2] C5_1–C5_3 | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.1 table |
+| three C5 training seeds (Figure 5) | [§8.2] C5_1–C5_3 | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.1 table |
 | 0.899 (seed 6202) | [§8.2] rotation ratio on evaluation seed 6202 | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.3 table |
 | 0.878; 0.894 | [§8.2] rotation ratio vs C5_1 and C5_2 | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §3.4 table |
 | 80%; 0.83%; 3.0–4.1% | [§8.2] share of joint samples with u ≥ 0.8, EFFORT vs C5 seeds | training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md | §4.2 finding 1, band table |
@@ -227,7 +240,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | 95.3–95.8%; 93.0% | [§8.3] 30-s survival from kit starts, C5 seeds 1–3 and C5-EFFORT (effort actuator) | training_source/project/experiments/c5_hw_v2/results/kit_start_survival.md | K survival column, effort rows |
 | 99.9–100%; 98.7% | [§8.3] 30-s survival from grasp 49, C5 seeds and C5-EFFORT (effort actuator) | training_source/project/experiments/c5_hw_v2/results/kit_start_survival.md | B survival column, effort rows |
 | 0.154 rad | [§8.3] max simulated vs hardware post-ramp joint difference (if_pip) | training_source/project/experiments/c5_hw_v2/cache/kit_start_cache.json | "sim_minus_hw_abs_max_rad" |
-| 3001 updates; FAIL (single-seed exploratory) | [Abstract, §1, §8.3, §10] C5-HW-V2 training length and pre-registered verdict | training_source/project/experiments/c5_hw_v2/REPORT.md; training_source/project/experiments/c5_hw_v2/results/v2_comparison.md | §2 table; verdict line |
+| 3001 updates; FAILED all three criteria (single-seed exploratory) | [Abstract, §1, §8.3, §10] C5-HW-V2 training length and pre-registered verdict | training_source/project/experiments/c5_hw_v2/REPORT.md; training_source/project/experiments/c5_hw_v2/results/v2_comparison.md | §2 table; verdict line |
 | 0.5 × both; ≤ C5-EFFORT; ≥ 0.85 × C5 | [§8.3] C5-HW-V2 criteria 1–3 | training_source/project/experiments/c5_hw_v2/PROTOCOL.md | "Decision" |
 | 0.045; 0.046; 0.061 | [§8.3] kit-start 30-s failure, C5-HW-V2 / C5 3-seed mean / C5-EFFORT | training_source/project/experiments/c5_hw_v2/results/v2_comparison.json | criteria.1: failure_new 0.0454, failure_C5_mean 0.0461, failure_EFFORT_1 0.0613 |
 | 4.39%; 14.6%; 0.51% | [§8.3] jam proxy 60 s, random grasps (setting A), C5-HW-V2 / C5 mean / C5-EFFORT | training_source/project/experiments/c5_hw_v2/results/v2_comparison.json; training_source/project/experiments/c5_hw_v2/results/v2_per_eval_seed.json | criteria.2 (0.0439, 0.0051); settings.A.pooled.jam60.C5_mean 0.146 |
@@ -245,7 +258,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | one turn either way | [§9] widening of ambiguous ranges | docs/realsense_setup_2026-11-25.md | §3c "Resolved or ambiguous" |
 | 200 sequences of 60 s; 27% hidden; up to 4 s | [§9] synthetic stress test design | docs/realsense_setup_2026-11-25.md | §3c Validation table, synthetic row |
 | 0.05; 5.9 | [§9] median error (quarter turns per 60 s), gap-aware vs old rule | docs/realsense_setup_2026-11-25.md | §3c Validation table, synthetic row |
-| trial 5; 11.1 s; 2.0 quarter turns; 50°/s | [§9, Figure 5] video frame | docs/hardware_session_2026-11-25.md | Caption under the "estimated frame" image |
+| trial 5; 11.1 s; 2.0 quarter turns; 50°/s | [§9, Figure 6] video frame | docs/hardware_session_2026-11-25.md | Caption under the "estimated frame" image |
 | Three of the five trials | [§9] trials with camera video | docs/hardware_session_2026-11-25.md | Runs table, "camera video" column |
 | 40%, 26%, 31% | [§9] estimated (hidden) share of the policy window, trials 1/4/5 | docs/hardware_session_2026-11-25.md | "Camera results" table |
 | 16.2 [8.2, 24.2]; 0.8; 7.0 [3.0, 11.0] | [§9] camera quarter turns, trials 1/4/5 | docs/hardware_session_2026-11-25.md; LEAP_Hand_RL_Deploy_Kit/logs/trials_20261125_vision.csv | "Camera results" table; CSV `vision_quarter_turns`, `vision_qt_lo/hi` |
@@ -286,4 +299,4 @@ Uncertainties:
 - **C5-HW-V2** (§8.3) sources are in `training_source/project/experiments/c5_hw_v2/`, committed on branch `task2-c5-hw-v2`. They are not in this worktree until that branch is merged; every §8.3 number was checked against those files.
 - **Related work** descriptions are one-line characterisations based on the citation details supplied; check that the descriptions of [3], [4] and [6] match the papers.
 - **Software URLs and versions** are taken from the installed packages' metadata (`importlib.metadata`, project URLs of mujoco-warp 3.8.1 and rsl-rl-lib 4.0.1 in the training environment).
-- **Word count** of the body (abstract to conclusion, excluding tables, figure captions and references) is about 5,300 words; the PDF (`docs/report/build_pdf.py`) is 8 pages.
+- **Word count** of the body (abstract to conclusion, excluding tables, figure captions and references) is about 5,600 words; the PDF (`docs/report/build_pdf.py`, 8.5 pt body, 7.6 pt references) is 8 pages.

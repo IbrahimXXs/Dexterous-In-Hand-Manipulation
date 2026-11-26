@@ -1,0 +1,16 @@
+{
+ "key": "A_R1_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "R1",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/retention_v1/checkpoints/R1_selected_model_2600.pt",
+ "sha256": "3b8ad077ff4341577b572cca979b3140236c241ecfd42eacd5f4d3cd847c86d5",
+ "squash": "tanh",
+ "seconds": 86.6,
+ "survival_60s": 0.7421875,
+ "held_s_mean": 49.91523511879495
+}

@@ -1,0 +1,16 @@
+{
+ "key": "A_C5s3_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "C5s3",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/C5_3_selected_model_3000.pt",
+ "sha256": "c221af89199cdeab2559cbdf7f3db0abc78fd41702f35615f838ae50aca2b4bc",
+ "squash": "tanh",
+ "seconds": 85.0,
+ "survival_60s": 0.78125,
+ "held_s_mean": 48.66777416270634
+}

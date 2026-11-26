@@ -1,0 +1,339 @@
+{
+ "plan": "ANALYSIS_PLAN.md (sections 6-7)",
+ "band": [
+  0.75,
+  1.25
+ ],
+ "policies": {
+  "C5s3": {
+   "sim_K_effort": {
+    "n_envs": 482,
+    "qturns_per_cycle": 0.9891310774890615,
+    "qturns_per_cycle_ci95": [
+     0.9668444781173707,
+     1.0075196964592135
+    ],
+    "rhythm_hz_median": 0.30273437048890633,
+    "cycle_rate_hz": 0.3005257535800623,
+    "qturns_per_s": 0.2972593624518592,
+    "stroke_amplitude_median_rad": 1.7718680072921598
+   },
+   "sim_K_effort_survival_60s": 0.935546875,
+   "sim_K_effort_held_ge_20s_share": 0.94140625,
+   "sim_A_default": {
+    "n_envs": 414,
+    "qturns_per_cycle": 0.9451489397513283,
+    "rhythm_hz_median": 0.30273437048890633,
+    "cycle_rate_hz": 0.3042501511224994,
+    "qturns_per_s": 0.28756170775261175,
+    "stroke_amplitude_median_rad": 1.7635789072946515
+   },
+   "real_held": {
+    "n_runs": 7,
+    "qturns_per_cycle": 1.077348742116379,
+    "qturns_per_cycle_ci95": [
+     0.9701200662001682,
+     1.2489898965124677
+    ],
+    "rhythm_hz_median": 0.29713320731466814,
+    "cycle_rate_hz": 0.28051935887853396,
+    "qturns_per_s": 0.3022171784270817,
+    "stroke_amplitude_median_rad": 2.126392770994037,
+    "qturns_total": 89.0
+   },
+   "real_run": {
+    "n_runs": 8,
+    "qturns_per_cycle": 0.8738586192637401,
+    "rhythm_hz_median": 0.2946923130054047,
+    "cycle_rate_hz": 0.2756589709090897,
+    "stroke_amplitude_median_rad": 2.072077286253262
+   },
+   "real_run_r_tpc": 0.8834608871880318,
+   "real_run_r_rhythm": 0.9734352677876847,
+   "r_rhythm": 0.9814980929810101,
+   "r_rate": 0.9334286846860914,
+   "r_tpc": 1.0891870315623493,
+   "r_speed": 1.0166784182483921,
+   "r_speed_check": 1.0166784182483921,
+   "rhythm_label": "rhythm transferred",
+   "tpc_label": "turns per cycle transferred",
+   "speed_label": "speed transferred",
+   "stroke_ratio": 1.2000853123612047,
+   "stroke_label": "finger strokes"
+  },
+  "C5s1": {
+   "sim_K_effort": {
+    "n_envs": 481,
+    "qturns_per_cycle": 1.0343007205108354,
+    "qturns_per_cycle_ci95": [
+     1.031856978198091,
+     1.0366795214848958
+    ],
+    "rhythm_hz_median": 0.3369140574795893,
+    "cycle_rate_hz": 0.3226797966334837,
+    "qturns_per_s": 0.333747946152302,
+    "stroke_amplitude_median_rad": 1.1795669054289144
+   },
+   "sim_K_effort_survival_60s": 0.9375,
+   "sim_K_effort_held_ge_20s_share": 0.939453125,
+   "sim_A_default": {
+    "n_envs": 403,
+    "qturns_per_cycle": 1.0288622151921547,
+    "rhythm_hz_median": 0.3369140574795893,
+    "cycle_rate_hz": 0.32187660707568916,
+    "qturns_per_s": 0.3311666789744283,
+    "stroke_amplitude_median_rad": 1.1491691901498313
+   },
+   "real_held": {
+    "n_runs": 7,
+    "qturns_per_cycle": 0.7274034147043887,
+    "qturns_per_cycle_ci95": [
+     0.6688276041452498,
+     0.8025426083333789
+    ],
+    "rhythm_hz_median": 0.34094663591810676,
+    "cycle_rate_hz": 0.3424396056221755,
+    "qturns_per_s": 0.24909173845959465,
+    "stroke_amplitude_median_rad": 1.7347632240332476,
+    "qturns_total": 88.5
+   },
+   "real_run": {
+    "n_runs": 7,
+    "qturns_per_cycle": 0.6931026364406269,
+    "rhythm_hz_median": 0.340946629114662,
+    "cycle_rate_hz": 0.3404817037434837,
+    "stroke_amplitude_median_rad": 1.7353135031338318
+   },
+   "real_run_r_tpc": 0.6701171358541714,
+   "real_run_r_rhythm": 1.0119691403357873,
+   "r_rhythm": 1.0119691605292005,
+   "r_rate": 1.0612365856023396,
+   "r_tpc": 0.7032803905861423,
+   "r_speed": 0.7463468804267173,
+   "r_speed_check": 0.7463468804267175,
+   "rhythm_label": "rhythm transferred",
+   "tpc_label": "turns per cycle changed",
+   "speed_label": "speed changed",
+   "share_rhythm": -0.20315095473354713,
+   "share_tpc": 1.2031509547335462,
+   "stroke_ratio": 1.4706781074045585,
+   "stroke_label": "finger strokes"
+  },
+  "M400": {
+   "sim_K_effort": {
+    "n_envs": 478,
+    "qturns_per_cycle": 0.20387951908670268,
+    "qturns_per_cycle_ci95": [
+     0.19504300349337014,
+     0.21289810870680762
+    ],
+    "rhythm_hz_median": 0.2783203083527042,
+    "cycle_rate_hz": 0.28305853454437785,
+    "qturns_per_s": 0.05770983789629457,
+    "stroke_amplitude_median_rad": 1.067221665374308
+   },
+   "sim_K_effort_survival_60s": 0.892578125,
+   "sim_K_effort_held_ge_20s_share": 0.93359375,
+   "sim_A_default": {
+    "n_envs": 391,
+    "qturns_per_cycle": 0.18586551269145146,
+    "rhythm_hz_median": 0.28320312077994464,
+    "cycle_rate_hz": 0.29297553633676515,
+    "qturns_per_s": 0.05445404826728582,
+    "stroke_amplitude_median_rad": 1.0620284338572443
+   },
+   "real_held": {
+    "n_runs": 1,
+    "qturns_per_cycle": 0.2882980866938699,
+    "qturns_per_cycle_ci95": [
+     0.2882980866938699,
+     0.2882980866938699
+    ],
+    "rhythm_hz_median": 0.25328693813913306,
+    "cycle_rate_hz": 0.31623213331705674,
+    "qturns_per_s": 0.09116911898642827,
+    "stroke_amplitude_median_rad": 0.7165852094011452,
+    "qturns_total": 2.0
+   },
+   "real_run": {
+    "n_runs": 2,
+    "qturns_per_cycle": 0.1928885090866242,
+    "rhythm_hz_median": 0.28008220054781496,
+    "cycle_rate_hz": 0.3261475428932524,
+    "stroke_amplitude_median_rad": 1.4199254994885098
+   },
+   "real_run_r_tpc": 0.9460906615371973,
+   "real_run_r_rhythm": 1.0063304478409745,
+   "r_rhythm": 0.9100555386642954,
+   "r_rate": 1.1171969565449649,
+   "r_tpc": 1.4140610493164203,
+   "r_speed": 1.5797847006650845,
+   "r_speed_check": 1.5797847006650843,
+   "rhythm_label": "rhythm transferred",
+   "tpc_label": "turns per cycle changed",
+   "speed_label": "speed changed",
+   "share_rhythm": 0.2423476937858711,
+   "share_tpc": 0.7576523062141285,
+   "stroke_ratio": 0.6714492711781824,
+   "stroke_label": "finger strokes"
+  },
+  "A3": {
+   "sim_K_effort": {
+    "n_envs": 485,
+    "qturns_per_cycle": 1.0455627868964068,
+    "qturns_per_cycle_ci95": [
+     1.0413109300403511,
+     1.0496459658960926
+    ],
+    "rhythm_hz_median": 0.23925780893478082,
+    "cycle_rate_hz": 0.23416747695044868,
+    "qturns_per_s": 0.24483679980081124,
+    "stroke_amplitude_median_rad": 1.2820866882410402
+   },
+   "sim_K_effort_survival_60s": 0.923828125,
+   "sim_K_effort_held_ge_20s_share": 0.947265625,
+   "sim_A_default": {
+    "n_envs": 389,
+    "qturns_per_cycle": 1.016353219184807,
+    "rhythm_hz_median": 0.23925780893478082,
+    "cycle_rate_hz": 0.23723335724421935,
+    "qturns_per_s": 0.2411128863331817,
+    "stroke_amplitude_median_rad": 1.2735392930915492
+   },
+   "real_held": {
+    "n_runs": 2,
+    "qturns_per_cycle": 0.06022701427061998,
+    "qturns_per_cycle_ci95": [
+     0.0,
+     0.10353899774667824
+    ],
+    "rhythm_hz_median": 0.35313229338553664,
+    "cycle_rate_hz": 0.4342607048999175,
+    "qturns_per_s": 0.026154225671176822,
+    "stroke_amplitude_median_rad": 1.0280044362106517,
+    "qturns_total": 3.0
+   },
+   "real_run": {
+    "n_runs": 3,
+    "qturns_per_cycle": 0.07160591975710102,
+    "rhythm_hz_median": 0.38479876101865673,
+    "cycle_rate_hz": 0.406115133452067,
+    "stroke_amplitude_median_rad": 0.8780861790476113
+   },
+   "real_run_r_tpc": 0.06848552822891894,
+   "real_run_r_rhythm": 1.6083017843047658,
+   "r_rhythm": 1.4759488727149417,
+   "r_rate": 1.8544876963926542,
+   "r_tpc": 0.05760248454269749,
+   "r_speed": 0.10682309886608052,
+   "r_speed_check": 0.10682309886608053,
+   "rhythm_label": "rhythm changed",
+   "tpc_label": "turns per cycle changed",
+   "speed_label": "speed changed",
+   "share_rhythm": -0.27613954398175194,
+   "share_tpc": 1.276139543981752,
+   "stroke_ratio": 0.8018213164829152,
+   "stroke_label": "finger strokes"
+  },
+  "P0": {
+   "sim_K_effort": {
+    "n_envs": 482,
+    "qturns_per_cycle": 1.0399661523524326,
+    "qturns_per_cycle_ci95": [
+     1.0359357033159202,
+     1.0437517195882995
+    ],
+    "rhythm_hz_median": 0.22460937165305953,
+    "cycle_rate_hz": 0.2211597274779551,
+    "qturns_per_s": 0.22999863084056152,
+    "stroke_amplitude_median_rad": 1.7180917615104092
+   },
+   "sim_K_effort_survival_60s": 0.939453125,
+   "sim_K_effort_held_ge_20s_share": 0.94140625,
+   "sim_A_default": {
+    "n_envs": 463,
+    "qturns_per_cycle": 0.9134250512414359,
+    "rhythm_hz_median": 0.22460937165305953,
+    "cycle_rate_hz": 0.22381111113181132,
+    "qturns_per_s": 0.20443467565397747,
+    "stroke_amplitude_median_rad": 1.6738652185559468
+   },
+   "real_held": {
+    "n_runs": 1,
+    "qturns_per_cycle": 0.0,
+    "qturns_per_cycle_ci95": [
+     0.0,
+     0.0
+    ],
+    "rhythm_hz_median": 0.20455561016571686,
+    "cycle_rate_hz": 0.29484263578312525,
+    "qturns_per_s": 0.0,
+    "stroke_amplitude_median_rad": 0.5335405588281946,
+    "qturns_total": 0.0
+   },
+   "real_run": {
+    "n_runs": 2,
+    "qturns_per_cycle": 0.0,
+    "rhythm_hz_median": 0.2459658815207728,
+    "cycle_rate_hz": 0.28295670534648987,
+    "stroke_amplitude_median_rad": 2.1299314420182927
+   },
+   "real_run_r_tpc": 0.0,
+   "real_run_r_rhythm": 1.0950828975235343,
+   "r_rhythm": 0.9107171649172391,
+   "r_rate": 1.333166029572517,
+   "r_tpc": 0.0,
+   "r_speed": 0.0,
+   "r_speed_check": 0.0,
+   "rhythm_label": "no label: FFT rhythm and cycle rate fall on different sides of a bound",
+   "tpc_label": "turns per cycle changed",
+   "speed_label": "no rotation on the hand",
+   "stroke_ratio": 0.31054252792595216,
+   "stroke_label": "small/twitching motion"
+  },
+  "R1": {
+   "sim_K_effort": {
+    "n_envs": 491,
+    "qturns_per_cycle": 0.9301842293654976,
+    "qturns_per_cycle_ci95": [
+     0.9127399425828081,
+     0.9458548326495935
+    ],
+    "rhythm_hz_median": 0.20507812194409783,
+    "cycle_rate_hz": 0.20901282347181016,
+    "qturns_per_s": 0.19442043212863253,
+    "stroke_amplitude_median_rad": 1.1860414381773694
+   },
+   "sim_K_effort_survival_60s": 0.943359375,
+   "sim_K_effort_held_ge_20s_share": 0.958984375,
+   "sim_A_default": {
+    "n_envs": 443,
+    "qturns_per_cycle": 0.8844907187460228,
+    "rhythm_hz_median": 0.20996093437133825,
+    "cycle_rate_hz": 0.2181814409193191,
+    "qturns_per_s": 0.19297945949577144,
+    "stroke_amplitude_median_rad": 1.3878623009939866
+   },
+   "real_held": {
+    "n_runs": 0,
+    "qturns_per_cycle": null,
+    "qturns_per_cycle_ci95": null,
+    "rhythm_hz_median": null,
+    "cycle_rate_hz": null,
+    "qturns_per_s": null,
+    "stroke_amplitude_median_rad": null,
+    "qturns_total": null
+   },
+   "real_run": {
+    "n_runs": 5,
+    "qturns_per_cycle": 0.14340659498195968,
+    "rhythm_hz_median": 0.428645907563569,
+    "cycle_rate_hz": 0.41381389986606604,
+    "stroke_amplitude_median_rad": 1.4538487581209756
+   },
+   "real_run_r_tpc": 0.15417009927138947,
+   "real_run_r_rhythm": 2.090159123265296,
+   "comparison": "no real run held >= 20 s: no primary comparison (descriptive values only)"
+  }
+ }
+}

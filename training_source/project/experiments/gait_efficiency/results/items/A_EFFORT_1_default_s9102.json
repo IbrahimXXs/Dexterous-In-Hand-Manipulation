@@ -1,0 +1,16 @@
+{
+ "key": "A_EFFORT_1_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "EFFORT_1",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/c5_hw_v1/checkpoints/EFFORT_1_selected_model_2900.pt",
+ "sha256": "d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469",
+ "squash": "tanh",
+ "seconds": 84.8,
+ "survival_60s": 0.7578125,
+ "held_s_mean": 48.99609448009869
+}

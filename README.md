@@ -23,6 +23,7 @@ A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its ow
 | Simulation: same, starting from grasp 49 | A 1.60 | **C5 2.36** | [GRV2](training_source/project/experiments/grasp_rotation_v2/README.md) |
 | Simulation: failure rate, random start grasp vs grasp 49 (no retraining) | 23.6% | **0.7%** | [GRV2 Phase 1](training_source/project/experiments/grasp_rotation_v2/README.md#phase-1-grasp-initialisation-no-ppo-training) |
 | Simulation: index-finger jam rate at the hand's 350 mA limit | C5 14.6% | **C5-EFFORT 0.5%** at 0.91 × C5 speed (1 seed) | [report](training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md) |
+| Real hand vs simulation: quarter turns per finger cycle (speed while held = finger rhythm × turns per cycle) | A3 1.05 → 0.06 | **C5 seed 3 0.99 → 1.08**, rhythm 0.30 → 0.30 Hz (exploratory, small n) | [gait efficiency](training_source/project/experiments/gait_efficiency/README.md) |
 | Simulation: training from simulated kit starts (C5-HW-V2), 350 mA-equivalent actuator | C5: kit-start failure 4.6%; 1.784 turns per 30 s from random grasps | **Failed, 1 seed:** kit-start failure 4.5% (no gain); 0.956 turns from random grasps; pre-registered verdict FAIL | [report](training_source/project/experiments/c5_hw_v2/REPORT.md) |
 | Cube state from joint readings alone (held-out policy) | linear model: 15.2 mm, 39° | **MLP: 10.2 mm, 16.8°** | [state estimation](training_source/project/experiments/scratch_state_estimation/README.md#31-estimator-b-held-out-policy-test-split-stage-2) |
 | Fingertip contact force from joint readings alone (unseen policies) | linear model: 0.30 N | **0.19 N mean error, R² 0.78** | [force estimation](training_source/project/experiments/force_estimation/README.md) |
@@ -40,6 +41,13 @@ Simulation numbers are on held-out evaluation seeds that were used once. From th
 
 - **C5's speed transferred.** The policy that rotated fastest in simulation is also the fastest on the hand; the others lost most of their speed. Its real rotation rate while holding the cube (about 3.6–4.4 rev/min) is the same order as in simulation (3.7 rev/min).
 - **Retention did not.** The two policies trained with a retention reward (R1, P0) had the lowest 30-s failure rates in simulation and dropped it in every real trial, after about 10 s. The likely cause is the start: the hand closes to its own default pose, not to a training grasp (see the gap table below).
+- **Where the speed went: turns per finger cycle, not finger rhythm.** Speed while held = finger rhythm × quarter turns per finger cycle, and the joint encoders give the cycles. The policies that lost speed on the hand kept their finger rhythm (both C5 seeds within 2% of simulation) but turned the cube less per cycle: C5 seed 1 0.73 against 1.03 in simulation, A3 0.06 against 1.05. C5 seed 3 kept both factors. This is exploratory with small n, and the cycle count is camera-checked only for C5 seed 3 ([gait efficiency](training_source/project/experiments/gait_efficiency/README.md)).
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="training_source/project/experiments/gait_efficiency/figures/gait_efficiency_dark.png">
+  <img alt="Left: finger rhythm in simulation and on the real hand; C5 seed 1 0.34 to 0.34 Hz, C5 seed 3 0.30 to 0.30, model_400 0.28 to 0.25, A3 0.24 to 0.35, P0 0.22 to 0.20. Middle: quarter turns per finger cycle; C5 seed 3 0.99 to 1.08, C5 seed 1 1.03 to 0.73, model_400 0.20 to 0.29, A3 1.05 to 0.06, P0 1.04 to 0. Right: 25 Nov trial 1, cumulative finger cycles (17.5) and camera quarter turns (16.2) rise together over 60 s." src="training_source/project/experiments/gait_efficiency/figures/gait_efficiency.png">
+</picture>
+
 - **The estimator's cube rotation was not grounded on the hand.** Its integrated yaw was anti-correlated with what the operator saw (Spearman −0.42). That is why camera tracking was built (below).
 
 ## How C5 was found (simulation)
@@ -91,6 +99,7 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 | 24–25 Nov | [Cube vision](docs/live_vision_digital_twin.md), [hardware session 5](docs/hardware_session_2026-11-25.md) | Measure the cube on the real hand | Multi-face ArUco + RealSense tracking, recorded per trial; turns while hidden estimated from both sides of each gap; turn counts match the operator within 1 quarter turn in 2 of 3 trials |
 | 26 Nov | [C5-HW-V2](training_source/project/experiments/c5_hw_v2/REPORT.md) | Train under the hand's conditions (350 mA, actuator response, kit start) | Actuator refit **failed** its pre-registered rule; training only from simulated kit starts **failed** all three pre-registered criteria (1 seed, simulation only): no kit-start gain, 0.536 × C5's turns from random grasps |
 | 26 Nov | [Final protocol (draft)](docs/hardware_protocol_final_DRAFT.md), [report](docs/report/REPORT.md) | Plan the final real-hand comparison; write up | Protocol is a DRAFT, not approved; report with every number traced to a file ([NUMBERS.md](docs/report/NUMBERS.md)) |
+| 27 Nov | [Gait efficiency](training_source/project/experiments/gait_efficiency/README.md) | Where did the speed go on the real hand? | Finger rhythm transferred (both C5 seeds within 2%); quarter turns per finger cycle did not (C5 seed 1 0.703×, A3 0.058× of simulation), except for C5 seed 3. Simulation half pre-registered, hardware half post hoc |
 
 <img alt="Trial video frame from 25 November: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second." src="docs/figures/trial_video_2026-11-25_estimated.jpg">
 
@@ -140,6 +149,7 @@ training_source/project/
     grasp_rotation_v2/             grasp initialisation + C5, P0 (20–24 Nov)
     c5_hw_v1/                      actuator audit follow-up, C5-EFFORT (24 Nov)
     c5_hw_v2/                      actuator refit, kit-start training, C5-HW-V2 (26 Nov)
+    gait_efficiency/               finger rhythm vs turns per finger cycle, sim vs real hand (27 Nov)
   real_world/cube_vision/          ArUco + RealSense cube tracker, gap filling, dashboard
 LEAP_Hand_RL_Deploy_Kit/           guarded hardware runtime, trial scheduler, monitors, logs, audit
 checkpoint/  policy/  simulation/  course model_400 package (viewer, policy, replay)

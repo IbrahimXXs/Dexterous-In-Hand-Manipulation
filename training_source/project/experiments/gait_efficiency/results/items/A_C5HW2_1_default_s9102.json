@@ -1,0 +1,16 @@
+{
+ "key": "A_C5HW2_1_default_s9102",
+ "setting": "A",
+ "actuator": "default",
+ "policy": "C5HW2_1",
+ "seed": 9102,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-RetV1-A",
+ "checkpoint": "training_source/project/experiments/c5_hw_v2/checkpoints/C5HW2_1_selected_model_3000.pt",
+ "sha256": "ee30cac61798e97cf8a06aba47e2b93b54d02345a3cf2c1d38bf0e00e734ac92",
+ "squash": "tanh",
+ "seconds": 85.7,
+ "survival_60s": 0.5546875,
+ "held_s_mean": 37.41972712009738
+}

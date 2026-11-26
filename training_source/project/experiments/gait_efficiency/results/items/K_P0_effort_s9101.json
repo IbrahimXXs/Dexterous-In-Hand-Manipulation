@@ -1,0 +1,16 @@
+{
+ "key": "K_P0_effort_s9101",
+ "setting": "K",
+ "actuator": "effort",
+ "policy": "P0",
+ "seed": 9101,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-C5HW-EFFORT",
+ "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/P0_1_selected_model_1500.pt",
+ "sha256": "2bc2ce11d551e8bd9a7ae64758bb05260ad1993d18fde0b6a5e30f0968c5b8ba",
+ "squash": "tanh",
+ "seconds": 85.1,
+ "survival_60s": 0.9375,
+ "held_s_mean": 56.64316490654892
+}

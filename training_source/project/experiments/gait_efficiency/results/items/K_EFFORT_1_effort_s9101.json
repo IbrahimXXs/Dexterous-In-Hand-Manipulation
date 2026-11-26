@@ -1,0 +1,16 @@
+{
+ "key": "K_EFFORT_1_effort_s9101",
+ "setting": "K",
+ "actuator": "effort",
+ "policy": "EFFORT_1",
+ "seed": 9101,
+ "num_envs": 256,
+ "steps": 1200,
+ "task": "Mjlab-Leap-C5HW-EFFORT",
+ "checkpoint": "training_source/project/experiments/c5_hw_v1/checkpoints/EFFORT_1_selected_model_2900.pt",
+ "sha256": "d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469",
+ "squash": "tanh",
+ "seconds": 87.3,
+ "survival_60s": 0.90625,
+ "held_s_mean": 54.89082113043696
+}

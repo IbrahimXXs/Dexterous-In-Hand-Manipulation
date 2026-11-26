@@ -1,0 +1,707 @@
+{
+ "plan": "ANALYSIS_PLAN.md",
+ "settings": {
+  "K/effort": {
+   "M400": {
+    "n_envs_total": 512,
+    "survival_60s": 0.892578125,
+    "held_ge_20s_share": 0.93359375,
+    "primary": {
+     "n_envs": 478,
+     "qturns_per_cycle": 0.20387951908670268,
+     "qturns_per_cycle_ci95": [
+      0.19504300349337014,
+      0.21289810870680762
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.28305853454437785,
+     "qturns_per_s": 0.05770983789629457,
+     "stroke_amplitude_median_rad": 1.067221665374308
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 490,
+     "qturns_per_cycle": 0.20441183592426007,
+     "qturns_per_cycle_ci95": [
+      0.19533135648152516,
+      0.21359266297484372
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.28291474994944854,
+     "qturns_per_s": 0.057831123447219746,
+     "stroke_amplitude_median_rad": 1.0671612074546246
+    },
+    "qturns_window_only": {
+     "n_envs": 478,
+     "qturns_per_cycle": 0.1859504297426546,
+     "qturns_per_cycle_ci95": [
+      0.17711540659848846,
+      0.1946230397587943
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.28305853454437785,
+     "qturns_per_s": 0.05263485614085311,
+     "stroke_amplitude_median_rad": 1.067221665374308
+    }
+   },
+   "A3": {
+    "n_envs_total": 512,
+    "survival_60s": 0.923828125,
+    "held_ge_20s_share": 0.947265625,
+    "primary": {
+     "n_envs": 485,
+     "qturns_per_cycle": 1.0455627868964068,
+     "qturns_per_cycle_ci95": [
+      1.0413109300403511,
+      1.0496459658960926
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.23416747695044868,
+     "qturns_per_s": 0.24483679980081124,
+     "stroke_amplitude_median_rad": 1.2820866882410402
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 497,
+     "qturns_per_cycle": 1.043814398211973,
+     "qturns_per_cycle_ci95": [
+      1.0393423033744091,
+      1.0480176626062419
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.23396704117079578,
+     "qturns_per_s": 0.2442181662811301,
+     "stroke_amplitude_median_rad": 1.2820542092675014
+    },
+    "qturns_window_only": {
+     "n_envs": 485,
+     "qturns_per_cycle": 1.0137598904303415,
+     "qturns_per_cycle_ci95": [
+      1.009901487116178,
+      1.0174368643974885
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.23416747695044868,
+     "qturns_per_s": 0.2373895957756364,
+     "stroke_amplitude_median_rad": 1.2820866882410402
+    }
+   },
+   "R1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.943359375,
+    "held_ge_20s_share": 0.958984375,
+    "primary": {
+     "n_envs": 491,
+     "qturns_per_cycle": 0.9301842293654976,
+     "qturns_per_cycle_ci95": [
+      0.9127399425828081,
+      0.9458548326495935
+     ],
+     "rhythm_hz_median": 0.20507812194409783,
+     "cycle_rate_hz": 0.20901282347181016,
+     "qturns_per_s": 0.19442043212863253,
+     "stroke_amplitude_median_rad": 1.1860414381773694
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 502,
+     "qturns_per_cycle": 0.927841216450845,
+     "qturns_per_cycle_ci95": [
+      0.9100786961743299,
+      0.943332488125043
+     ],
+     "rhythm_hz_median": 0.20507812194409783,
+     "cycle_rate_hz": 0.20900243940264163,
+     "qturns_per_s": 0.19392107761654107,
+     "stroke_amplitude_median_rad": 1.1846514588313193
+    },
+    "qturns_window_only": {
+     "n_envs": 491,
+     "qturns_per_cycle": 0.8990983779493507,
+     "qturns_per_cycle_ci95": [
+      0.8821556875999002,
+      0.9141117480962833
+     ],
+     "rhythm_hz_median": 0.20507812194409783,
+     "cycle_rate_hz": 0.20901282347181016,
+     "qturns_per_s": 0.1879230905541185,
+     "stroke_amplitude_median_rad": 1.1860414381773694
+    }
+   },
+   "P0": {
+    "n_envs_total": 512,
+    "survival_60s": 0.939453125,
+    "held_ge_20s_share": 0.94140625,
+    "primary": {
+     "n_envs": 482,
+     "qturns_per_cycle": 1.0399661523524326,
+     "qturns_per_cycle_ci95": [
+      1.0359357033159202,
+      1.0437517195882995
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.2211597274779551,
+     "qturns_per_s": 0.22999863084056152,
+     "stroke_amplitude_median_rad": 1.7180917615104092
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 486,
+     "qturns_per_cycle": 1.0400626672294588,
+     "qturns_per_cycle_ci95": [
+      1.036092077478402,
+      1.04394284739494
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.22113803140387656,
+     "qturns_per_s": 0.22999741076778768,
+     "stroke_amplitude_median_rad": 1.7181082677398205
+    },
+    "qturns_window_only": {
+     "n_envs": 482,
+     "qturns_per_cycle": 1.0018537444180378,
+     "qturns_per_cycle_ci95": [
+      0.9980173630834729,
+      1.0055848260688918
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.2211597274779551,
+     "qturns_per_s": 0.22156970108826207,
+     "stroke_amplitude_median_rad": 1.7180917615104092
+    }
+   },
+   "C5s1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.9375,
+    "held_ge_20s_share": 0.939453125,
+    "primary": {
+     "n_envs": 481,
+     "qturns_per_cycle": 1.0343007205108354,
+     "qturns_per_cycle_ci95": [
+      1.031856978198091,
+      1.0366795214848958
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.3226797966334837,
+     "qturns_per_s": 0.333747946152302,
+     "stroke_amplitude_median_rad": 1.1795669054289144
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 485,
+     "qturns_per_cycle": 1.0342565905818677,
+     "qturns_per_cycle_ci95": [
+      1.0317644706114621,
+      1.0366687629113511
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.32257836950660745,
+     "qturns_per_s": 0.33362880464136174,
+     "stroke_amplitude_median_rad": 1.1795551984857742
+    },
+    "qturns_window_only": {
+     "n_envs": 481,
+     "qturns_per_cycle": 1.0079181169665954,
+     "qturns_per_cycle_ci95": [
+      1.0053658082419947,
+      1.0103868511972913
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.3226797966334837,
+     "qturns_per_s": 0.32523481300598484,
+     "stroke_amplitude_median_rad": 1.1795669054289144
+    }
+   },
+   "C5s3": {
+    "n_envs_total": 512,
+    "survival_60s": 0.935546875,
+    "held_ge_20s_share": 0.94140625,
+    "primary": {
+     "n_envs": 482,
+     "qturns_per_cycle": 0.9891310774890615,
+     "qturns_per_cycle_ci95": [
+      0.9668444781173707,
+      1.0075196964592135
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.3005257535800623,
+     "qturns_per_s": 0.2972593624518592,
+     "stroke_amplitude_median_rad": 1.7718680072921598
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 493,
+     "qturns_per_cycle": 0.9879485010512662,
+     "qturns_per_cycle_ci95": [
+      0.9662561918307752,
+      1.0060623613007131
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.3002025523184212,
+     "qturns_per_s": 0.29658466157474855,
+     "stroke_amplitude_median_rad": 1.7716658572787005
+    },
+    "qturns_window_only": {
+     "n_envs": 482,
+     "qturns_per_cycle": 0.9554574593428566,
+     "qturns_per_cycle_ci95": [
+      0.9341120703585418,
+      0.9735788773709765
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.3005257535800623,
+     "qturns_per_s": 0.2871395729827037,
+     "stroke_amplitude_median_rad": 1.7718680072921598
+    }
+   },
+   "EFFORT_1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.900390625,
+    "held_ge_20s_share": 0.90625,
+    "primary": {
+     "n_envs": 464,
+     "qturns_per_cycle": 1.0383188845243416,
+     "qturns_per_cycle_ci95": [
+      1.0343215957721434,
+      1.042015218416257
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.271431131134515,
+     "qturns_per_s": 0.28183206930476995,
+     "stroke_amplitude_median_rad": 1.7136950423557833
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 472,
+     "qturns_per_cycle": 1.0383372047168806,
+     "qturns_per_cycle_ci95": [
+      1.034344407391714,
+      1.0421522541805133
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.2711883824733514,
+     "qturns_per_s": 0.28158498700907203,
+     "stroke_amplitude_median_rad": 1.7136751219314226
+    },
+    "qturns_window_only": {
+     "n_envs": 464,
+     "qturns_per_cycle": 0.9971814656912235,
+     "qturns_per_cycle_ci95": [
+      0.9932559806708293,
+      1.0008433683471476
+     ],
+     "rhythm_hz_median": 0.2783203083527042,
+     "cycle_rate_hz": 0.271431131134515,
+     "qturns_per_s": 0.27066609317894236,
+     "stroke_amplitude_median_rad": 1.7136950423557833
+    }
+   },
+   "C5HW2_1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.9375,
+    "held_ge_20s_share": 0.9375,
+    "primary": {
+     "n_envs": 480,
+     "qturns_per_cycle": 1.0369264998182968,
+     "qturns_per_cycle_ci95": [
+      1.032185253936992,
+      1.0411612807734345
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.28079586744497614,
+     "qturns_per_s": 0.2911646759931615,
+     "stroke_amplitude_median_rad": 1.3272162428933945
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 480,
+     "qturns_per_cycle": 1.0369264998182968,
+     "qturns_per_cycle_ci95": [
+      1.0322711487176488,
+      1.041182304275741
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.28079586744497614,
+     "qturns_per_s": 0.2911646759931615,
+     "stroke_amplitude_median_rad": 1.3272162428933945
+    },
+    "qturns_window_only": {
+     "n_envs": 480,
+     "qturns_per_cycle": 1.0039426951375514,
+     "qturns_per_cycle_ci95": [
+      0.999478533007406,
+      1.0079363444725709
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.28079586744497614,
+     "qturns_per_s": 0.2819029599461959,
+     "stroke_amplitude_median_rad": 1.3272162428933945
+    }
+   }
+  },
+  "A/default": {
+   "M400": {
+    "n_envs_total": 512,
+    "survival_60s": 0.68359375,
+    "held_ge_20s_share": 0.763671875,
+    "primary": {
+     "n_envs": 391,
+     "qturns_per_cycle": 0.18586551269145146,
+     "qturns_per_cycle_ci95": [
+      0.17416794199911287,
+      0.19772004178053468
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.29297553633676515,
+     "qturns_per_s": 0.05445404826728582,
+     "stroke_amplitude_median_rad": 1.0620284338572443
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 409,
+     "qturns_per_cycle": 0.1862877337250028,
+     "qturns_per_cycle_ci95": [
+      0.1747505809673331,
+      0.1977646113233348
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.2928131621915121,
+     "qturns_per_s": 0.054547500389508466,
+     "stroke_amplitude_median_rad": 1.0621021875626846
+    },
+    "qturns_window_only": {
+     "n_envs": 391,
+     "qturns_per_cycle": 0.1744277301228376,
+     "qturns_per_cycle_ci95": [
+      0.16295970362984036,
+      0.18617289561735129
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.29297553633676515,
+     "qturns_per_s": 0.05110305778474287,
+     "stroke_amplitude_median_rad": 1.0620284338572443
+    }
+   },
+   "A3": {
+    "n_envs_total": 512,
+    "survival_60s": 0.7421875,
+    "held_ge_20s_share": 0.759765625,
+    "primary": {
+     "n_envs": 389,
+     "qturns_per_cycle": 1.016353219184807,
+     "qturns_per_cycle_ci95": [
+      1.0012579487016504,
+      1.0281473027674273
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.23723335724421935,
+     "qturns_per_s": 0.2411128863331817,
+     "stroke_amplitude_median_rad": 1.2735392930915492
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 406,
+     "qturns_per_cycle": 1.0145397972453056,
+     "qturns_per_cycle_ci95": [
+      0.9992249365860169,
+      1.0264218495392745
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.2371645635790281,
+     "qturns_per_s": 0.2406128882472386,
+     "stroke_amplitude_median_rad": 1.273200515592329
+    },
+    "qturns_window_only": {
+     "n_envs": 389,
+     "qturns_per_cycle": 0.9811041246746259,
+     "qturns_per_cycle_ci95": [
+      0.9667749430994597,
+      0.9923048167287238
+     ],
+     "rhythm_hz_median": 0.23925780893478082,
+     "cycle_rate_hz": 0.23723335724421935,
+     "qturns_per_s": 0.23275062530271265,
+     "stroke_amplitude_median_rad": 1.2735392930915492
+    }
+   },
+   "R1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.755859375,
+    "held_ge_20s_share": 0.865234375,
+    "primary": {
+     "n_envs": 443,
+     "qturns_per_cycle": 0.8844907187460228,
+     "qturns_per_cycle_ci95": [
+      0.8386697215699611,
+      0.9240626628076685
+     ],
+     "rhythm_hz_median": 0.20996093437133825,
+     "cycle_rate_hz": 0.2181814409193191,
+     "qturns_per_s": 0.19297945949577144,
+     "stroke_amplitude_median_rad": 1.3878623009939866
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 482,
+     "qturns_per_cycle": 0.8803543741130807,
+     "qturns_per_cycle_ci95": [
+      0.8360187764011199,
+      0.9204401666638097
+     ],
+     "rhythm_hz_median": 0.20507812194409783,
+     "cycle_rate_hz": 0.21820269749638152,
+     "qturns_per_s": 0.19209569918421282,
+     "stroke_amplitude_median_rad": 1.3753358842973493
+    },
+    "qturns_window_only": {
+     "n_envs": 443,
+     "qturns_per_cycle": 0.8442060359761416,
+     "qturns_per_cycle_ci95": [
+      0.7995213515378801,
+      0.8824804162072327
+     ],
+     "rhythm_hz_median": 0.20996093437133825,
+     "cycle_rate_hz": 0.2181814409193191,
+     "qturns_per_s": 0.18419008936206113,
+     "stroke_amplitude_median_rad": 1.3878623009939866
+    }
+   },
+   "P0": {
+    "n_envs_total": 512,
+    "survival_60s": 0.853515625,
+    "held_ge_20s_share": 0.904296875,
+    "primary": {
+     "n_envs": 463,
+     "qturns_per_cycle": 0.9134250512414359,
+     "qturns_per_cycle_ci95": [
+      0.8822410589119021,
+      0.9427357888696747
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.22381111113181132,
+     "qturns_per_s": 0.20443467565397747,
+     "stroke_amplitude_median_rad": 1.6738652185559468
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 478,
+     "qturns_per_cycle": 0.9126249603213613,
+     "qturns_per_cycle_ci95": [
+      0.8813318036347804,
+      0.9420795324205534
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.2234728504487898,
+     "qturns_per_s": 0.2039469012737283,
+     "stroke_amplitude_median_rad": 1.6732604632903834
+    },
+    "qturns_window_only": {
+     "n_envs": 463,
+     "qturns_per_cycle": 0.8769109736910811,
+     "qturns_per_cycle_ci95": [
+      0.846107161752814,
+      0.9060661549179019
+     ],
+     "rhythm_hz_median": 0.22460937165305953,
+     "cycle_rate_hz": 0.22381111113181132,
+     "qturns_per_s": 0.19626241938547942,
+     "stroke_amplitude_median_rad": 1.6738652185559468
+    }
+   },
+   "C5s1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.755859375,
+    "held_ge_20s_share": 0.787109375,
+    "primary": {
+     "n_envs": 403,
+     "qturns_per_cycle": 1.0288622151921547,
+     "qturns_per_cycle_ci95": [
+      1.0197311541722471,
+      1.0365930065321312
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.32187660707568916,
+     "qturns_per_s": 0.3311666789744283,
+     "stroke_amplitude_median_rad": 1.1491691901498313
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 426,
+     "qturns_per_cycle": 1.0292648609203388,
+     "qturns_per_cycle_ci95": [
+      1.020048591897261,
+      1.037004206747018
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.32105543578561196,
+     "qturns_per_s": 0.33045107846159666,
+     "stroke_amplitude_median_rad": 1.1492272990971357
+    },
+    "qturns_window_only": {
+     "n_envs": 403,
+     "qturns_per_cycle": 0.993664070897776,
+     "qturns_per_cycle_ci95": [
+      0.9848658276532484,
+      1.0009101569010719
+     ],
+     "rhythm_hz_median": 0.3369140574795893,
+     "cycle_rate_hz": 0.32187660707568916,
+     "qturns_per_s": 0.3198372197135932,
+     "stroke_amplitude_median_rad": 1.1491691901498313
+    }
+   },
+   "C5s3": {
+    "n_envs_total": 512,
+    "survival_60s": 0.791015625,
+    "held_ge_20s_share": 0.80859375,
+    "primary": {
+     "n_envs": 414,
+     "qturns_per_cycle": 0.9451489397513283,
+     "qturns_per_cycle_ci95": [
+      0.9034191783396419,
+      0.9828383753246347
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.3042501511224994,
+     "qturns_per_s": 0.28756170775261175,
+     "stroke_amplitude_median_rad": 1.7635789072946515
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 431,
+     "qturns_per_cycle": 0.9452084741312887,
+     "qturns_per_cycle_ci95": [
+      0.9033217885225737,
+      0.9828905933066788
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.30383197676942114,
+     "qturns_per_s": 0.28718455915451774,
+     "stroke_amplitude_median_rad": 1.763398501588093
+    },
+    "qturns_window_only": {
+     "n_envs": 414,
+     "qturns_per_cycle": 0.9041965104085096,
+     "qturns_per_cycle_ci95": [
+      0.863698510959072,
+      0.941230202944601
+     ],
+     "rhythm_hz_median": 0.30273437048890633,
+     "cycle_rate_hz": 0.3042501511224994,
+     "qturns_per_s": 0.27510192493622565,
+     "stroke_amplitude_median_rad": 1.7635789072946515
+    }
+   },
+   "EFFORT_1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.77734375,
+    "held_ge_20s_share": 0.81640625,
+    "primary": {
+     "n_envs": 418,
+     "qturns_per_cycle": 0.9724904063236942,
+     "qturns_per_cycle_ci95": [
+      0.9451504008465255,
+      0.9966553372843441
+     ],
+     "rhythm_hz_median": 0.28808593320718506,
+     "cycle_rate_hz": 0.2800532620733355,
+     "qturns_per_s": 0.272349110625974,
+     "stroke_amplitude_median_rad": 1.7047134491466105
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 443,
+     "qturns_per_cycle": 0.9715136580160613,
+     "qturns_per_cycle_ci95": [
+      0.9449436018536426,
+      0.9951711613385796
+     ],
+     "rhythm_hz_median": 0.28808593320718506,
+     "cycle_rate_hz": 0.27935602810095655,
+     "qturns_per_s": 0.27139819674919796,
+     "stroke_amplitude_median_rad": 1.7043273005937087
+    },
+    "qturns_window_only": {
+     "n_envs": 418,
+     "qturns_per_cycle": 0.9322925819352311,
+     "qturns_per_cycle_ci95": [
+      0.9062754831175577,
+      0.9556061419234969
+     ],
+     "rhythm_hz_median": 0.28808593320718506,
+     "cycle_rate_hz": 0.2800532620733355,
+     "qturns_per_s": 0.2610915787777338,
+     "stroke_amplitude_median_rad": 1.7047134491466105
+    }
+   },
+   "C5HW2_1": {
+    "n_envs_total": 512,
+    "survival_60s": 0.583984375,
+    "held_ge_20s_share": 0.650390625,
+    "primary": {
+     "n_envs": 333,
+     "qturns_per_cycle": 0.6947075318663315,
+     "qturns_per_cycle_ci95": [
+      0.6424872269393467,
+      0.7453548738660163
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.3117428248234363,
+     "qturns_per_s": 0.21657008841012756,
+     "stroke_amplitude_median_rad": 1.2870635129218955
+    },
+    "all_envs_ge_10s": {
+     "n_envs": 358,
+     "qturns_per_cycle": 0.6855459676603419,
+     "qturns_per_cycle_ci95": [
+      0.6359618536877851,
+      0.7363412476603529
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.3129415789550071,
+     "qturns_per_s": 0.21453583756586567,
+     "stroke_amplitude_median_rad": 1.2844970877556858
+    },
+    "qturns_window_only": {
+     "n_envs": 333,
+     "qturns_per_cycle": 0.6853966551778548,
+     "qturns_per_cycle_ci95": [
+      0.6347855977689465,
+      0.7355584030657811
+     ],
+     "rhythm_hz_median": 0.28320312077994464,
+     "cycle_rate_hz": 0.3117428248234363,
+     "qturns_per_s": 0.2136674894096791,
+     "stroke_amplitude_median_rad": 1.2870635129218955
+    }
+   }
+  }
+ },
+ "checkpoints": {
+  "M400": {
+   "checkpoint": "checkpoint/model_400.pt",
+   "sha256": "2f39f1c6be7d6a5be1e50ad5c3588f95a91409ae0318b6824d20d5d745a094a7",
+   "kit_policy": "M400"
+  },
+  "A3": {
+   "checkpoint": "training_source/project/experiments/hwlimit_ac/checkpoints/A_seed3_selected_model_2600.pt",
+   "sha256": "38a2922b7d00ec77a646af5ef4b34172133f27612d6d8edecbda3f2e8ad4837f",
+   "kit_policy": "A3"
+  },
+  "R1": {
+   "checkpoint": "training_source/project/experiments/retention_v1/checkpoints/R1_selected_model_2600.pt",
+   "sha256": "3b8ad077ff4341577b572cca979b3140236c241ecfd42eacd5f4d3cd847c86d5",
+   "kit_policy": "R1"
+  },
+  "P0": {
+   "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/P0_1_selected_model_1500.pt",
+   "sha256": "2bc2ce11d551e8bd9a7ae64758bb05260ad1993d18fde0b6a5e30f0968c5b8ba",
+   "kit_policy": "P0"
+  },
+  "C5s1": {
+   "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/C5_1_selected_model_2400.pt",
+   "sha256": "2a932dfe37a5540d74a07081a8de62658b56341eca2efcb5af38a9790ef58492",
+   "kit_policy": "C5"
+  },
+  "C5s3": {
+   "checkpoint": "training_source/project/experiments/grasp_rotation_v2/checkpoints/C5_3_selected_model_3000.pt",
+   "sha256": "c221af89199cdeab2559cbdf7f3db0abc78fd41702f35615f838ae50aca2b4bc",
+   "kit_policy": "C5s3"
+  },
+  "EFFORT_1": {
+   "checkpoint": "training_source/project/experiments/c5_hw_v1/checkpoints/EFFORT_1_selected_model_2900.pt",
+   "sha256": "d1d46f0558eb958d78bfb3e84e9a0575659d7550df1feb3fe7aeb4c3c41a4469",
+   "kit_policy": null
+  },
+  "C5HW2_1": {
+   "checkpoint": "training_source/project/experiments/c5_hw_v2/checkpoints/C5HW2_1_selected_model_3000.pt",
+   "sha256": "ee30cac61798e97cf8a06aba47e2b93b54d02345a3cf2c1d38bf0e00e734ac92",
+   "kit_policy": null
+  }
+ }
+}
