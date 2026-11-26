@@ -1,0 +1,318 @@
+Thu Nov 26 17:26:42 +04 2026 job 329988 host ws-l4-021 gpu 0: experiments/c5_hw_v2/scripts/make_kit_start_cache.py --num-envs 4096 --seed 8501
+Setting seed: 8501
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation" (31 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/ibrahim.alsarraj/.cache/warp/1.13.0
+Module mujoco_warp._src.smooth 976a5d7 load on device 'cuda:0' took 1.62 ms  (cached)
+Module mujoco_warp._src.collision_driver fbb0ee0 load on device 'cuda:0' took 1.17 ms  (cached)
+Module _nxn_broadphase__locals__kernel_f0d52073 f0d5207 load on device 'cuda:0' took 1.09 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_6e17b813 6e17b81 load on device 'cuda:0' took 1.30 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_e4012e76 e4012e7 load on device 'cuda:0' took 1.18 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_c6be8452 c6be845 load on device 'cuda:0' took 1.28 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_2e1ffd01 2e1ffd0 load on device 'cuda:0' took 1.22 ms  (cached)
+Module mujoco_warp._src.constraint eb0e24d load on device 'cuda:0' took 1.32 ms  (cached)
+Module _efc_contact_init__locals__kernel_318b5c61 318b5c6 load on device 'cuda:0' took 1.10 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_80736b5f 416564c load on device 'cuda:0' took 1.16 ms  (cached)
+Module _efc_contact_update__locals__kernel_9b1e9723 9b1e972 load on device 'cuda:0' took 1.09 ms  (cached)
+Module mujoco_warp._src.sensor bee2d80 load on device 'cuda:0' took 1.31 ms  (cached)
+Module mujoco_warp._src.forward a76b6a3 load on device 'cuda:0' took 1.31 ms  (cached)
+Module mujoco_warp._src.passive 616927b load on device 'cuda:0' took 1.16 ms  (cached)
+Module mujoco_warp._src.forward 398750d load on device 'cuda:0' took 1.24 ms  (cached)
+Module mujoco_warp._src.support f32a4f8 load on device 'cuda:0' took 1.17 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_e0539067 63ff5df load on device 'cuda:0' took 20.12 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_2f60cdde 11a4bf6 load on device 'cuda:0' took 21.90 ms  (cached)
+Module mujoco_warp._src.solver 7df28c9 load on device 'cuda:0' took 1.35 ms  (cached)
+Module solve_init_jaref__locals__kernel_25ff1b7c 25ff1b7 load on device 'cuda:0' took 1.17 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_7ed132ec 7ed132e load on device 'cuda:0' took 1.20 ms  (cached)
+Module update_constraint_efc__locals__kernel_0760efd0 0760efd load on device 'cuda:0' took 1.24 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_9e13f241 9e13f24 load on device 'cuda:0' took 1.14 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_cea82d7a 9efb876 load on device 'cuda:0' took 1.62 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_ea20c59c 4a0130a load on device 'cuda:0' took 24.71 ms  (cached)
+Module linesearch_jv_fused__locals__kernel_b4aea1d9 b4aea1d load on device 'cuda:0' took 1.04 ms  (cached)
+Module linesearch_prepare_gauss__locals__kernel_710d51d7 710d51d load on device 'cuda:0' took 1.05 ms  (cached)
+Module _contact_sort__locals__contact_sort_5db6d00c a3dbca1 load on device 'cuda:0' took 1.22 ms  (cached)
+Module mujoco_warp._src.derivative f06cf21 load on device 'cuda:0' took 1.10 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_710d4b78 710d4b7 load on device 'cuda:0' took 1.42 ms  (cached)
+Module reset_data__locals__reset_qM_6daef3df 6daef3d load on device 'cuda:0' took 1.01 ms  (cached)
+Module reset_data__locals__reset_mocap_d10cb5d9 d10cb5d load on device 'cuda:0' took 0.99 ms  (cached)
+Module reset_data__locals__reset_contact_d9b9dbe6 d9b9dbe load on device 'cuda:0' took 0.97 ms  (cached)
+Module reset_data__locals__reset_nworld_f10c11a2 f10c11a load on device 'cuda:0' took 1.04 ms  (cached)
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 4096   |
+| Environment device     | cuda:0 |
+| Environment seed       | 8501   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+Module repeat_array_kernel_6bf8ef65 b2fc6f5 load on device 'cuda:0' took 0.99 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 192d60e load on device 'cuda:0' took 1.03 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 3cd9fa4 load on device 'cuda:0' took 1.10 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 c24051e load on device 'cuda:0' took 1.04 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 dc82881 load on device 'cuda:0' took 1.05 ms  (cached)
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 0 active terms.
++--------------------------+
+| Active Termination Terms |
++-------+------+-----------+
+| Index | Name |  Time Out |
++-------+------+-----------+
++-------+------+-----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++------------------------------------------------+
+|              Active Reward Terms               |
++-------+------------------------------+---------+
+| Index | Name                         |  Weight |
++-------+------------------------------+---------+
+|   0   | rotate_finite_diff           |    1.25 |
+|   1   | object_linvel_penalty        |  -0.095 |
+|   2   | pose_diff_penalty            | -0.0317 |
+|   3   | torque_penalty               |  -0.317 |
+|   4   | work_penalty                 | -0.0317 |
+|   5   | object_fallen                |   -10.0 |
+|   6   | retention_penalty            |   -0.05 |
+|   7   | actuator_utilisation_penalty | -0.2201 |
++-------+------------------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/sim/sim_data.py:71: UserWarning: Use of index_put_ on expanded tensors is deprecated. Please clone() the tensor before performing this operation. This also applies to advanced indexing e.g. tensor[indices] = tensor (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:967.)
+  self._tensor[idx] = value
+{
+ "plan_sha256": "2b4161aaa2316f7b34d34eea25bc7173b3d159f28590deea25ea4e209b5747ad",
+ "task": "Mjlab-Leap-C5HW-EFFORT",
+ "seed": 8501,
+ "num_envs": 4096,
+ "dt_s": 0.05,
+ "settle_steps": 20,
+ "ramp_steps": 100,
+ "grasp": 49,
+ "grasp49_pos": [
+  -0.005763053894042969,
+  0.03537726402282715,
+  0.2602394223213196
+ ],
+ "grasp49_yaw_deg": -170.1901448014603,
+ "cube_size": 0.028999999165534973,
+ "kept": 4035,
+ "kept_fraction": 0.985107421875,
+ "reject_breakdown_not_exclusive": {
+  "cube_low": 0.00146484375,
+  "cube_off_xy": 0.014892578125,
+  "fewer_than_2_tip_contacts": 1.0,
+  "non_finite": 0.0
+ },
+ "settled_cube_z_minus_grasp49_mm": {
+  "median": -2.112060785293579,
+  "p5": -3.9924681186676025,
+  "p95": -0.6145834922790527
+ },
+ "post_ramp_cube_offset_mm_all_starts": {
+  "xy_median": 4.171789169311523,
+  "z_median": -0.864177942276001,
+  "z_p10": -2.3522377014160156,
+  "tip_contacts_mean": 0.000732421875
+ },
+ "deviation_from_plan": "B.6 '>= 2 fingertip contacts' not applied (reference grasp 49 shows 0-1 fingertip-sensor contacts while held; the filter rejected 100% in the smoke test); position filters kept. Recorded before any policy evaluation.",
+ "info_fingertip_contacts_ge2_fraction_all": 0.0,
+ "info_hand_contact_pairs_kept": {
+  "median": 5.0,
+  "zero_fraction": 0.0
+ },
+ "mean_fingertip_contacts_kept": 0.0,
+ "per_fingertip_contact_fraction_kept": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "actuator_saturation_frac_at_ramp_end_per_joint": {
+  "if_mcp": 0.0,
+  "if_rot": 0.0,
+  "if_pip": 0.0,
+  "if_dip": 0.0,
+  "mf_mcp": 0.00019999999494757503,
+  "mf_rot": 0.0,
+  "mf_pip": 0.0012000000569969416,
+  "mf_dip": 0.0,
+  "rf_mcp": 0.0,
+  "rf_rot": 0.0,
+  "rf_pip": 0.0,
+  "rf_dip": 0.0,
+  "th_cmc": 0.0,
+  "th_axl": 0.0,
+  "th_mcp": 0.0,
+  "th_ipl": 0.0
+ },
+ "target_clamped_max_rad": 0.0,
+ "sim_post_ramp_median": {
+  "if_mcp": -0.031199999153614044,
+  "if_rot": -0.28049999475479126,
+  "if_pip": 1.1328999996185303,
+  "if_dip": -0.004999999888241291,
+  "mf_mcp": -0.035100001841783524,
+  "mf_rot": 0.0019000000320374966,
+  "mf_pip": 1.1895999908447266,
+  "mf_dip": -0.0020000000949949026,
+  "rf_mcp": -0.039400000125169754,
+  "rf_rot": 0.3675000071525574,
+  "rf_pip": 1.1897000074386597,
+  "rf_dip": -0.003599999938160181,
+  "th_cmc": 1.3960000276565552,
+  "th_axl": 1.4407999515533447,
+  "th_mcp": 0.5626000165939331,
+  "th_ipl": 1.2695000171661377
+ },
+ "sim_minus_hw_post_ramp_rad": {
+  "if_mcp": -0.0972,
+  "if_rot": 0.1076,
+  "if_pip": -0.1541,
+  "if_dip": -0.0004,
+  "mf_mcp": -0.0919,
+  "mf_rot": 0.0065,
+  "mf_pip": -0.0866,
+  "mf_dip": 0.0042,
+  "rf_mcp": -0.0884,
+  "rf_rot": -0.0221,
+  "rf_pip": -0.0881,
+  "rf_dip": 0.0026,
+  "th_cmc": -0.0398,
+  "th_axl": -0.0487,
+  "th_mcp": -0.0096,
+  "th_ipl": -0.0881
+ },
+ "sim_minus_hw_abs_median_rad": 0.06768441200256348,
+ "sim_minus_hw_abs_max_rad": 0.15410780906677246,
+ "cache_sha256": "10b198029f50b780f6f58f0cc1d23446350c46c40d8217c731da29192d3620e8"
+}
+Thu Nov 26 17:27:09 +04 2026 exit 0

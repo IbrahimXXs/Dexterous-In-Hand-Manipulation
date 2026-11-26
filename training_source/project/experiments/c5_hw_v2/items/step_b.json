@@ -1,0 +1,162 @@
+[
+ {
+  "key": "stepB_K_C5_1_default_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_1_default_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_1",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_C5_1_effort_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_1_effort_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_1",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_C5_2_default_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_2_default_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_2",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_C5_2_effort_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_2_effort_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_2",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_C5_3_default_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_3_default_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_3",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_C5_3_effort_nominal_s7001",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_C5_3_effort_nominal_s7001",
+  "setting": "B",
+  "policy": "C5_3",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_EFFORT_1_default_nominal_s7001",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_EFFORT_1_default_nominal_s7001",
+  "setting": "B",
+  "policy": "EFFORT_1",
+  "actuator": "default",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_K_EFFORT_1_effort_nominal_s7001",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ },
+ {
+  "key": "stepB_B_EFFORT_1_effort_nominal_s7001",
+  "setting": "B",
+  "policy": "EFFORT_1",
+  "actuator": "effort",
+  "seed": 7001,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 600
+ }
+]

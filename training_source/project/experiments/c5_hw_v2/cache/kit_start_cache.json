@@ -1,0 +1,249 @@
+{
+ "plan_sha256": "2b4161aaa2316f7b34d34eea25bc7173b3d159f28590deea25ea4e209b5747ad",
+ "task": "Mjlab-Leap-C5HW-EFFORT",
+ "seed": 8501,
+ "num_envs": 4096,
+ "dt_s": 0.05,
+ "settle_steps": 20,
+ "ramp_steps": 100,
+ "grasp": 49,
+ "grasp49_pos": [
+  -0.005763053894042969,
+  0.03537726402282715,
+  0.2602394223213196
+ ],
+ "grasp49_yaw_deg": -170.1901448014603,
+ "cube_size": 0.028999999165534973,
+ "kept": 4035,
+ "kept_fraction": 0.985107421875,
+ "reject_breakdown_not_exclusive": {
+  "cube_low": 0.00146484375,
+  "cube_off_xy": 0.014892578125,
+  "fewer_than_2_tip_contacts": 1.0,
+  "non_finite": 0.0
+ },
+ "settled_cube_z_minus_grasp49_mm": {
+  "median": -2.112060785293579,
+  "p5": -3.9924681186676025,
+  "p95": -0.6145834922790527
+ },
+ "post_ramp_cube_offset_mm_all_starts": {
+  "xy_median": 4.171789169311523,
+  "z_median": -0.864177942276001,
+  "z_p10": -2.3522377014160156,
+  "tip_contacts_mean": 0.000732421875
+ },
+ "deviation_from_plan": "B.6 '>= 2 fingertip contacts' not applied (reference grasp 49 shows 0-1 fingertip-sensor contacts while held; the filter rejected 100% in the smoke test); position filters kept. Recorded before any policy evaluation.",
+ "info_fingertip_contacts_ge2_fraction_all": 0.0,
+ "info_hand_contact_pairs_kept": {
+  "median": 5.0,
+  "zero_fraction": 0.0
+ },
+ "mean_fingertip_contacts_kept": 0.0,
+ "per_fingertip_contact_fraction_kept": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "actuator_saturation_frac_at_ramp_end_per_joint": {
+  "if_mcp": 0.0,
+  "if_rot": 0.0,
+  "if_pip": 0.0,
+  "if_dip": 0.0,
+  "mf_mcp": 0.00019999999494757503,
+  "mf_rot": 0.0,
+  "mf_pip": 0.0012000000569969416,
+  "mf_dip": 0.0,
+  "rf_mcp": 0.0,
+  "rf_rot": 0.0,
+  "rf_pip": 0.0,
+  "rf_dip": 0.0,
+  "th_cmc": 0.0,
+  "th_axl": 0.0,
+  "th_mcp": 0.0,
+  "th_ipl": 0.0
+ },
+ "target_clamped_max_rad": 0.0,
+ "hardware_post_ramp": {
+  "n_logs": 35,
+  "files": [
+   "physical_20261120_094641.npz",
+   "physical_20261120_095049.npz",
+   "physical_20261120_095913.npz",
+   "physical_20261120_100007.npz",
+   "physical_20261120_100206.npz",
+   "physical_20261120_102011.npz",
+   "physical_20261120_102036.npz",
+   "physical_20261120_102433.npz",
+   "physical_20261120_102505.npz",
+   "physical_20261120_102556.npz",
+   "physical_20261120_103039.npz",
+   "physical_20261124_092848.npz",
+   "physical_20261124_093057.npz",
+   "physical_20261124_093217.npz",
+   "physical_20261124_094010.npz",
+   "physical_20261124_094216.npz",
+   "physical_20261124_094305.npz",
+   "physical_20261124_094421.npz",
+   "physical_20261124_094657.npz",
+   "physical_20261124_094751.npz",
+   "physical_20261124_094909.npz",
+   "physical_20261124_100017.npz",
+   "physical_20261124_100200.npz",
+   "physical_20261124_100249.npz",
+   "physical_20261124_100351.npz",
+   "physical_20261124_100433.npz",
+   "physical_20261124_100636.npz",
+   "physical_20261124_100812.npz",
+   "physical_20261124_100951.npz",
+   "physical_20261125_110116.npz",
+   "physical_20261125_111626.npz",
+   "physical_20261125_112502.npz",
+   "physical_20261125_112553.npz",
+   "physical_20261125_113200.npz",
+   "physical_20261125_113308.npz"
+  ],
+  "median": {
+   "if_mcp": 0.066,
+   "if_rot": -0.3881,
+   "if_pip": 1.287,
+   "if_dip": -0.0046,
+   "mf_mcp": 0.0568,
+   "mf_rot": -0.0046,
+   "mf_pip": 1.2763,
+   "mf_dip": -0.0061,
+   "rf_mcp": 0.0491,
+   "rf_rot": 0.3896,
+   "rf_pip": 1.2778,
+   "rf_dip": -0.0061,
+   "th_cmc": 1.4358,
+   "th_axl": 1.4895,
+   "th_mcp": 0.5722,
+   "th_ipl": 1.3576
+  },
+  "iqr": {
+   "if_mcp": [
+    0.0644,
+    0.066
+   ],
+   "if_rot": [
+    -0.4034,
+    -0.3866
+   ],
+   "if_pip": [
+    1.287,
+    1.2916
+   ],
+   "if_dip": [
+    -0.0061,
+    0.0038
+   ],
+   "mf_mcp": [
+    0.0552,
+    0.0583
+   ],
+   "mf_rot": [
+    -0.0061,
+    -0.0046
+   ],
+   "mf_pip": [
+    1.2763,
+    1.2763
+   ],
+   "mf_dip": [
+    -0.0092,
+    -0.0038
+   ],
+   "rf_mcp": [
+    0.046,
+    0.0522
+   ],
+   "rf_rot": [
+    0.3896,
+    0.3912
+   ],
+   "rf_pip": [
+    1.2778,
+    1.2793
+   ],
+   "rf_dip": [
+    -0.0077,
+    0.0015
+   ],
+   "th_cmc": [
+    1.4343,
+    1.4373
+   ],
+   "th_axl": [
+    1.4849,
+    1.491
+   ],
+   "th_mcp": [
+    0.5722,
+    0.5737
+   ],
+   "th_ipl": [
+    1.3545,
+    1.3852
+   ]
+  }
+ },
+ "sim_post_ramp_median": {
+  "if_mcp": -0.031199999153614044,
+  "if_rot": -0.28049999475479126,
+  "if_pip": 1.1328999996185303,
+  "if_dip": -0.004999999888241291,
+  "mf_mcp": -0.035100001841783524,
+  "mf_rot": 0.0019000000320374966,
+  "mf_pip": 1.1895999908447266,
+  "mf_dip": -0.0020000000949949026,
+  "rf_mcp": -0.039400000125169754,
+  "rf_rot": 0.3675000071525574,
+  "rf_pip": 1.1897000074386597,
+  "rf_dip": -0.003599999938160181,
+  "th_cmc": 1.3960000276565552,
+  "th_axl": 1.4407999515533447,
+  "th_mcp": 0.5626000165939331,
+  "th_ipl": 1.2695000171661377
+ },
+ "sim_minus_hw_post_ramp_rad": {
+  "if_mcp": -0.0972,
+  "if_rot": 0.1076,
+  "if_pip": -0.1541,
+  "if_dip": -0.0004,
+  "mf_mcp": -0.0919,
+  "mf_rot": 0.0065,
+  "mf_pip": -0.0866,
+  "mf_dip": 0.0042,
+  "rf_mcp": -0.0884,
+  "rf_rot": -0.0221,
+  "rf_pip": -0.0881,
+  "rf_dip": 0.0026,
+  "th_cmc": -0.0398,
+  "th_axl": -0.0487,
+  "th_mcp": -0.0096,
+  "th_ipl": -0.0881
+ },
+ "sim_minus_hw_abs_median_rad": 0.06768441200256348,
+ "sim_minus_hw_abs_max_rad": 0.15410780906677246,
+ "grasp49_cache_joint_pos": {
+  "if_mcp": -0.09489999711513519,
+  "if_rot": -0.35280001163482666,
+  "if_pip": 1.7559000253677368,
+  "if_dip": 0.3440000116825104,
+  "mf_mcp": -0.011800000444054604,
+  "mf_rot": 0.12430000305175781,
+  "mf_pip": 1.2252000570297241,
+  "mf_dip": 0.2669999897480011,
+  "rf_mcp": 0.049800001084804535,
+  "rf_rot": 0.33709999918937683,
+  "rf_pip": 1.3138999938964844,
+  "rf_dip": 0.21739999949932098,
+  "th_cmc": 1.1160000562667847,
+  "th_axl": 0.992900013923645,
+  "th_mcp": 0.6200000047683716,
+  "th_ipl": 1.6105999946594238
+ },
+ "cache_sha256": "10b198029f50b780f6f58f0cc1d23446350c46c40d8217c731da29192d3620e8"
+}
