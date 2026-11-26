@@ -1,0 +1,15 @@
+{
+ "export": "experiments/c5_hw_v2/deploy/exports/C5HW2_seed1_actor.npz",
+ "export_sha256": "bdebf95197ad79b997f7a064a31f580b0ba392527d91b12fba0f0cdb83c4168f",
+ "checkpoint": "model_3000.pt",
+ "checkpoint_sha256": "ee30cac61798e97cf8a06aba47e2b93b54d02345a3cf2c1d38bf0e00e734ac92",
+ "arrays_equal_checkpoint_bit_exact": true,
+ "normaliser_equal_checkpoint_bit_exact": true,
+ "npz_forward_vs_kit_actor_max_abs_raw": 0.0,
+ "npz_forward_vs_kit_actor_max_abs_tanh": 0.0,
+ "npz_forward_batched_vs_kit_actor_max_abs_raw": 8.392333984375e-05,
+ "n_obs": 4096,
+ "spec_equal_kit_describe": true,
+ "layers": 4,
+ "passed": true
+}

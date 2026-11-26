@@ -1,0 +1,19 @@
+== tracked files outside this milestone vs baseline commit 8bdcbee
+OK: no tracked file outside this milestone's paths differs from 8bdcbee
+== untracked files outside this milestone's paths (new files elsewhere)
+OK: none
+== RSL-RL checkpoints that existed before this milestone
+OK: 1035 checkpoints unchanged
+== checkpoint manifests (A/hwlimit_ac, R1/retention_v1, C5+P0/grasp_rotation_v2, C5-EFFORT/c5_hw_v1)
+OK: hwlimit_ac manifest, 12 files match
+OK: retention_v1 manifest, 2 files match
+OK: grasp_rotation_v2 manifest, 8 files match
+OK: c5_hw_v1 manifest, 4 files match
+== deploy-kit logs, audit outputs and kit policies (hashed before this milestone)
+OK: 217 files unchanged
+   (files now under kit logs/audit/policies: 217; new lab session files are not this milestone's)
+== hand.env
+   sha256 68cc0663e9cb200f... (baseline 68cc0663e9cb200f...)
+OK: hand.env unchanged
+== grasp cache
+OK: grasp cache unchanged

@@ -1,0 +1,38 @@
+{
+ "label": "POST-HOC, DESCRIPTIVE (not pre-registered; single-seed exploratory; does not change the verdict)",
+ "setting": "K (simulated kit starts), effort actuator, nominal, held-out seeds 6201+6202 pooled",
+ "n_environments": 4096,
+ "paired_start_draws_checked": true,
+ "failure30": {
+  "A1": 0.05859375,
+  "A2": 0.136962890625,
+  "A3": 0.045654296875,
+  "R1": 0.034423828125,
+  "C5_1": 0.04345703125,
+  "C5_2": 0.0458984375,
+  "C5_3": 0.048828125,
+  "EFFORT_1": 0.061279296875,
+  "C5HW2_1": 0.04541015625
+ },
+ "environments_by_number_of_baseline_policies_failing": {
+  "0": 3284,
+  "1": 573,
+  "2": 67,
+  "3": 10,
+  "4": 7,
+  "5": 3,
+  "6": 7,
+  "7": 36,
+  "8": 109
+ },
+ "share_failing_for_all_8_baselines": 0.026611328125,
+ "share_failing_for_at_least_6_of_8_baselines": 0.037109375,
+ "C5HW2_1_failures": 186,
+ "C5HW2_1_failures_also_failed_by_all_3_C5_seeds": 0.7526881720430108,
+ "C5HW2_1_failures_also_failed_by_any_C5_seed": 0.8602150537634409,
+ "C5HW2_1_failures_with_at_least_6_of_8_baselines_failing": 0.8172043010752689,
+ "C5HW2_1_failure_rate_on_starts_no_baseline_fails": 0.0054811205846528625,
+ "C5HW2_1_failure_rate_on_starts_all_8_baselines_fail": 1.0,
+ "criterion1_failure_threshold": 0.023030598958333315,
+ "criterion1_threshold_below_all_8_fail_share": true
+}

@@ -1,0 +1,322 @@
+[
+ {
+  "key": "K_A1_default_nominal_s6201",
+  "setting": "K",
+  "policy": "A1",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A1_default_nominal_s6202",
+  "setting": "K",
+  "policy": "A1",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A1_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "A1",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A1_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "A1",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A2_default_nominal_s6201",
+  "setting": "K",
+  "policy": "A2",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A2_default_nominal_s6202",
+  "setting": "K",
+  "policy": "A2",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A2_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "A2",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A2_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "A2",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_default_nominal_s6201",
+  "setting": "K",
+  "policy": "A3",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_default_nominal_s6202",
+  "setting": "K",
+  "policy": "A3",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "A3",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "A3",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_default_nominal_s6201",
+  "setting": "K",
+  "policy": "R1",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_default_nominal_s6202",
+  "setting": "K",
+  "policy": "R1",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "R1",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "R1",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_1_default_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_1_default_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_1_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_1_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_1",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_2_default_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_2_default_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_2_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_2_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_2",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_3_default_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_3_default_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_3_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5_3_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "C5_3",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_default_nominal_s6201",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "default",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_default_nominal_s6202",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "default",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_effort_nominal_s6201",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "effort",
+  "seed": 6201,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_effort_nominal_s6202",
+  "setting": "K",
+  "policy": "EFFORT_1",
+  "actuator": "effort",
+  "seed": 6202,
+  "preset": "nominal",
+  "num_envs": 2048,
+  "steps": 1200
+ }
+]

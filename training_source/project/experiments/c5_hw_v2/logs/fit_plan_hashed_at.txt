@@ -1,0 +1,1 @@
+FIT_PLAN.md hashed 2026-11-26T17:12:30+04:00, before any rollout of steps A/B

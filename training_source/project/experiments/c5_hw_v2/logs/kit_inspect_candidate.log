@@ -1,0 +1,19 @@
+checkpoint        : training_source/project/experiments/c5_hw_v2/deploy/policies/C5HW2_seed1/model_3000.pt
+iteration         : 3000
+config_source     : training_source/project/experiments/c5_hw_v2/deploy/policies/C5HW2_seed1/params/env.yaml
+network           : 320 -> [512, 512, 256] -> 16 (elu)
+obs_normalizer    : True
+obs_terms         : ['joint_pos', 'prev_commanded_joint_pos']
+history_length    : 10
+action_mode       : delta
+action_squash     : tanh
+cube_estimator    : None
+delta_range_rad   : [-0.041666666666666664, 0.041666666666666664]
+policy_hz         : 20.0
+default_joint_pos : [0.1, -0.4, 1.3, 0.0, 0.1, 0.0, 1.3, 0.0, 0.1, 0.4, 1.3, 0.0, 1.45, 1.5, 0.579, 1.37]
+
+[inspect] 600 open-loop steps (30.0 s at 20 Hz)
+[inspect] finite outputs: True
+[inspect] action saturation (|a|>=1): 73% of entries
+[inspect] total joint travel [rad]: if_mcp=0.37, if_rot=12.76, if_pip=17.79, if_dip=20.48, mf_mcp=15.27, mf_rot=21.62, mf_pip=20.72, mf_dip=0.47, rf_mcp=19.21, rf_rot=16.07, rf_pip=15.23, rf_dip=17.51, th_cmc=19.58, th_axl=16.79, th_mcp=16.77, th_ipl=21.06
+[inspect] OK - policy is loadable and produces valid commands

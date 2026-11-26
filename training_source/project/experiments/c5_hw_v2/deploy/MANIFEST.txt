@@ -1,0 +1,8 @@
+# C5-HW-V2 deployment candidate (kit format, offline-verified only; single-seed exploratory); scripts/build_deploy.py
+# status: NOT RECOMMENDED (verdict: FAIL (single-seed exploratory))
+# NOT hardware-approved: any powered test needs a separate supervisor-approved, supervised session
+# folder | file | sha256
+C5HW2_seed1 | model_3000.pt | ee30cac61798e97cf8a06aba47e2b93b54d02345a3cf2c1d38bf0e00e734ac92
+C5HW2_seed1/params | agent.yaml | ed3c0efdfe5635b16141fc2279d95601d65ce5baf1c4b0cff3924e16d93e4dc2
+C5HW2_seed1/params | env.yaml | ff91f5f16f479d04ec760191d73a51d7c672f6a0d85b3d29fe927d69e84d478b
+exports | C5HW2_seed1_actor.npz | bdebf95197ad79b997f7a064a31f580b0ba392527d91b12fba0f0cdb83c4168f

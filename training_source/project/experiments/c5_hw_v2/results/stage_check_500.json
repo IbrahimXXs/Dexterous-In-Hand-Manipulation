@@ -1,0 +1,13 @@
+{
+ "run": "C5HW2_1 (PPO seed 1), Mjlab-Leap-C5HW2 -- single-seed exploratory",
+ "checked": "2026-11-26 19:20 +04, from results/curves/C5HW2_1.json point 500 and the run's TensorBoard scalars (logs/rsl_rl/c5_hw_v2/2026-11-26_18-06-43_c5hw2_seed1)",
+ "validation_500": {"turns30": 1.1790, "yaw_rate_held": 0.2525, "failure30": 0.0449, "survival_s": 28.91, "turns60": 2.382},
+ "validation_starts_note": "validation runs in the run's own task (kit starts), not the grasp cache used for C5's validation; threshold unchanged, as pre-registered in PROTOCOL.md",
+ "C5_validation_500_source": "c5_hw_v1/results/stage_check_500.json (C5 3-seed mean yaw rate 0.264 at 500)",
+ "rule_yaw_rate_ge_50pct_C5": {"threshold": 0.132, "value": 0.2525, "pass": true},
+ "reward_exploit": {"validation_turns_gt_0.1": true, "episode_reward_rotate_at_500": 0.2194, "episode_reward_utilisation_penalty_at_500": -0.0150,
+                    "note": "penalty ~7% of the rotation term; the hand rotates the cube (validation 1.18 turns in 30 s); no exploit seen", "pass": true},
+ "numerical": {"nan_terminations_max": 0.0, "all_logged_scalars_finite": true, "n_scalar_tags": 70, "mean_noise_std_at_500": 1.155,
+               "train_mean_reward": {"0": -0.092, "250": 0.497, "500": 2.327, "900": 4.719}, "pass": true},
+ "decision": "continue to 3001 updates"
+}

@@ -1,0 +1,8 @@
+data/
+results/items/.claims/
+# binaries stay out of git (instruction 2026-11-26: no large binaries); sha256 in checkpoints/MANIFEST.txt and deploy/MANIFEST.txt
+checkpoints/*.pt
+deploy/policies/*/model_*.pt
+deploy/exports/*.npz
+results/curves/.claims/
+results/curves/*.lock
