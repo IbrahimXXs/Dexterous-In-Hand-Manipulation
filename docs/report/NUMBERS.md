@@ -7,7 +7,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | Number as written | Meaning | Source file | Where in that file |
 |---|---|---|---|
 | 58 mm | [Abstract, §2.1] cube edge length (MBZUAI cube) | docs/course_package.md | Intro paragraph ("keeps a 58 mm cube spinning") |
-| six (simulation studies) | [Abstract] number of simulation studies | README.md | First paragraph ("ran six simulation studies") |
+| seven (simulation studies) | [Abstract] number of simulation studies | README.md | First paragraph ("ran seven simulation studies") |
 | five (real-hand sessions) | [Abstract, §1] supervised hardware sessions (17, 18, 20, 24, 25 Nov) | README.md | First paragraph ("five supervised sessions") |
 | Four (bugs) | [Abstract, §1, §3] bugs fixed in the course training environment | README.md; training_source/project/experiments/scratch_state_estimation/README.md | README Research log, 12–13 Nov row ("Fixed 4 bugs"); study §1.1–1.4 |
 | −0.041 turns [−0.150, +0.055] | [Abstract, §5, §10] C − A, held-out nominal turns under the kit joint limits, bootstrap 95% CI | training_source/project/experiments/hwlimit_ac/results/tables.md | "Held-out test, selected checkpoints", row `nominal | turns` |

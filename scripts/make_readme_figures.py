@@ -8,6 +8,7 @@ Every number comes from a file already in the repository:
 * real hand, 24 and 25 Nov: LEAP_Hand_RL_Deploy_Kit/logs/trials_20261124.csv, trials_20261125.csv
 * simulation: training_source/project/experiments/grasp_rotation_v2/results/{c5_seeds,phase4}.json
   and training_source/project/experiments/c5_hw_v1/results/effort_v1_comparison.json
+  and training_source/project/experiments/c5_hw_v2/results/v2_comparison.json
 
 Outcome rules for the real hand (the same as the session reports):
 * a run ended by a safety guard is a "safety stop", even if the cube had already dropped;
@@ -56,7 +57,7 @@ THEMES = {
         good="#0ca30c", serious="#ec835a", critical="#d03b3b",
     ),
 }
-FONT = ["Helvetica Neue", "Helvetica", "Arial", "DejaVu Sans"]
+FONT = ["Helvetica Neue", "Helvetica", "Arial", "Nimbus Sans", "DejaVu Sans"]  # Nimbus Sans: Helvetica metrics on Linux
 
 
 def style(theme: dict) -> None:
@@ -160,9 +161,11 @@ def sim_tables() -> dict:
     A, B = c5["settingA"], c5["settingB"]["nominal_grasp_49"]
     pA, pB = p4["settingA"]["nominal"], p4["settingB"]["nominal_grasp"]
     eA, eB = eff["A/default/nominal"]["EFFORT_1"], eff["B/default/nominal"]["EFFORT_1"]
+    v2 = json.load(open(EXP / "c5_hw_v2" / "results" / "v2_comparison.json"))["table"]
+    hA, hB = v2["A/default/C5HW2_1"], v2["B/default/C5HW2_1"]
 
-    def pol(name, fam, a_vals, b_vals, note=""):
-        return dict(name=name, family=fam, full=a_vals, grasp49=b_vals, note=note)
+    def pol(name, fam, a_vals, b_vals, note="", label=None):
+        return dict(name=name, family=fam, full=a_vals, grasp49=b_vals, note=note, label=label or name)
 
     return dict(
         policies=[
@@ -173,7 +176,12 @@ def sim_tables() -> dict:
             pol("C5", "C5", [A[k]["turns30"] for k in ("C5", "C5s2", "C5s3")],
                 [B[k]["turns30"] for k in ("C5", "C5s2", "C5s3")]),
             pol("C5-EFFORT", "C5", [eA["turns_30s"]], [eB["turns_30s"]],
-                note="2048 envs per eval seed, default actuator (effort_v1_comparison.json)"),
+                note="2048 envs per eval seed, default actuator (effort_v1_comparison.json); 1 training seed",
+                label="C5-EFFORT\n(1 seed)"),
+            pol("C5-HW-V2", "C5", [hA["turns30"]], [hB["turns30"]],
+                note="2048 envs per eval seed, default actuator (c5_hw_v2 v2_comparison.json); 1 training seed; "
+                     "pre-registered verdict FAIL (single-seed exploratory)",
+                label="C5-HW-V2\n(1 seed)"),
         ],
         sim_vs_real=dict(
             turns60={"A3": A["A3"]["turns60"], "R1": A["R1"]["turns60"],
@@ -244,7 +252,7 @@ def fig_real_hand(table: list[dict], th: dict, path: Path) -> None:
 
 def fig_sim_progress(sim: dict, th: dict, path: Path) -> None:
     pols = sim["policies"]
-    fig, axes = plt.subplots(1, 2, figsize=(10, 3.9), sharey=True,
+    fig, axes = plt.subplots(1, 2, figsize=(10.5, 4.1), sharey=True,
                              gridspec_kw=dict(wspace=0.06))
     x = np.arange(len(pols))
     for ax, key, title in ((axes[0], "full", "Random start grasp (239 cached grasps)"),
@@ -260,7 +268,7 @@ def fig_sim_progress(sim: dict, th: dict, path: Path) -> None:
             ax.text(xi, max(m, vals.max()) + 0.07, f"{m:.2f}", ha="center", fontsize=9,
                     color=th["ink"])
         ax.set_xticks(x)
-        ax.set_xticklabels([p["name"] for p in pols])
+        ax.set_xticklabels([p["label"] for p in pols], fontsize=8.5)
         ax.tick_params(axis="x", length=0)
         ax.set_title(title)
         ax.grid(axis="y")
@@ -274,7 +282,7 @@ def fig_sim_progress(sim: dict, th: dict, path: Path) -> None:
     fig.text(0.01, 0.01, "Held-out seeds 6201+6202, under the real hand's joint limits. "
              "Dots = independent training seeds (A, C5: 3 seeds; others: 1). Dashed line = A mean.",
              fontsize=7.5, color=th["muted"])
-    fig.subplots_adjust(left=0.07, right=0.99, top=0.88, bottom=0.16)
+    fig.subplots_adjust(left=0.07, right=0.99, top=0.88, bottom=0.2)
     fig.savefig(path, dpi=170)
     plt.close(fig)
 
@@ -311,7 +319,7 @@ def fig_sim_vs_real(sim: dict, real: list[dict], th: dict, path: Path) -> None:
             ax.spines[sp].set_visible(False)
         ax.set_title(title)
         ax.text(0.5, -0.17, ylab, transform=ax.transAxes, ha="center", fontsize=9, color=th["ink2"])
-    fig.text(0.01, 0.01, "Simulation: held-out, random start grasp, training seed 1 of each policy. "
+    fig.text(0.01, 0.01, "Simulation: held-out, random start grasp; A3 = A training seed 3, R1/P0/C5 = training seed 1. "
              "Real hand: 20 Nov session, same policies; held = 60 s with no drop and no safety stop.",
              fontsize=7.5, color=th["muted"])
     fig.subplots_adjust(left=0.1, right=0.9, top=0.88, bottom=0.17)

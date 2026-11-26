@@ -316,7 +316,8 @@
      1.5487642543014333,
      1.7899581503296587
     ],
-    "note": ""
+    "note": "",
+    "label": "A"
    },
    {
     "name": "R1",
@@ -327,7 +328,8 @@
     "grasp49": [
      1.602826437636213
     ],
-    "note": ""
+    "note": "",
+    "label": "R1"
    },
    {
     "name": "P0",
@@ -338,7 +340,8 @@
     "grasp49": [
      1.6791173110007858
     ],
-    "note": ""
+    "note": "",
+    "label": "P0"
    },
    {
     "name": "C5",
@@ -353,7 +356,8 @@
      2.395356245295665,
      2.222848237006006
     ],
-    "note": ""
+    "note": "",
+    "label": "C5"
    },
    {
     "name": "C5-EFFORT",
@@ -364,7 +368,20 @@
     "grasp49": [
      2.1636892528349083
     ],
-    "note": "2048 envs per eval seed, default actuator (effort_v1_comparison.json)"
+    "note": "2048 envs per eval seed, default actuator (effort_v1_comparison.json); 1 training seed",
+    "label": "C5-EFFORT\n(1 seed)"
+   },
+   {
+    "name": "C5-HW-V2",
+    "family": "C5",
+    "full": [
+     0.9156740566604966
+    ],
+    "grasp49": [
+     1.7529267262233508
+    ],
+    "note": "2048 envs per eval seed, default actuator (c5_hw_v2 v2_comparison.json); 1 training seed; pre-registered verdict FAIL (single-seed exploratory)",
+    "label": "C5-HW-V2\n(1 seed)"
    }
   ],
   "sim_vs_real": {

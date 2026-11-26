@@ -1,6 +1,6 @@
 # Sensorless in-hand cube rotation on the LEAP Hand: from simulation to the real hand
 
-A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its own joint readings**: no camera, no tactile sensors, no cube pose in the policy. The project started from the course's continuous-yaw package (`model_400`). It then fixed the training environment, ran six simulation studies with more than 20 from-scratch PPO runs (the last four pre-registered), and took the resulting policies to the physical hand in five supervised sessions, with every attempt logged.
+A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its own joint readings**: no camera, no tactile sensors, no cube pose in the policy. The project started from the course's continuous-yaw package (`model_400`). It then fixed the training environment, ran seven simulation studies with more than 20 from-scratch PPO runs (the last five pre-registered), and took the resulting policies to the physical hand in five supervised sessions, with every attempt logged. The full write-up is the [project report](docs/report/REPORT.md).
 
 **Headline.** The best policy, **C5**, made **3.48 full revolutions per 60-s trial on the real hand, against 0.50 for the course baseline `model_400`** (20 Nov, operator counts). In simulation it beats the proprioceptive PPO baseline by **+0.59 turns per 30 s [95% CI +0.35, +0.83], p = 0.0025, over three training seeds each**. The work also shows *why* the rest of the gap to simulation exists: it measures each sim-to-real mismatch and traces the hand's safety stops to a single finger.
 
@@ -23,6 +23,7 @@ A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its ow
 | Simulation: same, starting from grasp 49 | A 1.60 | **C5 2.36** | [GRV2](training_source/project/experiments/grasp_rotation_v2/README.md) |
 | Simulation: failure rate, random start grasp vs grasp 49 (no retraining) | 23.6% | **0.7%** | [GRV2 Phase 1](training_source/project/experiments/grasp_rotation_v2/README.md#phase-1-grasp-initialisation-no-ppo-training) |
 | Simulation: index-finger jam rate at the hand's 350 mA limit | C5 14.6% | **C5-EFFORT 0.5%** at 0.91 × C5 speed (1 seed) | [report](training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md) |
+| Simulation: training from simulated kit starts (C5-HW-V2), 350 mA-equivalent actuator | C5: kit-start failure 4.6%; 1.784 turns per 30 s from random grasps | **Failed, 1 seed:** kit-start failure 4.5% (no gain); 0.956 turns from random grasps; pre-registered verdict FAIL | [report](training_source/project/experiments/c5_hw_v2/REPORT.md) |
 | Cube state from joint readings alone (held-out policy) | linear model: 15.2 mm, 39° | **MLP: 10.2 mm, 16.8°** | [state estimation](training_source/project/experiments/scratch_state_estimation/README.md#31-estimator-b-held-out-policy-test-split-stage-2) |
 | Fingertip contact force from joint readings alone (unseen policies) | linear model: 0.30 N | **0.19 N mean error, R² 0.78** | [force estimation](training_source/project/experiments/force_estimation/README.md) |
 
@@ -45,7 +46,7 @@ Simulation numbers are on held-out evaluation seeds that were used once. From th
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/figures/readme/sim_progress_dark.png">
-  <img alt="Bar charts of held-out turns per 30 s under the real joint limits. Random start grasp: A 1.20, R1 1.16, P0 1.27, C5 1.79, C5-EFFORT 1.62. Fixed start grasp 49: A 1.60, R1 1.60, P0 1.68, C5 2.36, C5-EFFORT 2.16." src="docs/figures/readme/sim_progress.png">
+  <img alt="Bar charts of held-out turns per 30 s under the real joint limits. Random start grasp: A 1.20, R1 1.16, P0 1.27, C5 1.79, C5-EFFORT 1.62 (1 seed), C5-HW-V2 0.92 (1 seed). Fixed start grasp 49: A 1.60, R1 1.60, P0 1.68, C5 2.36, C5-EFFORT 2.16, C5-HW-V2 1.75." src="docs/figures/readme/sim_progress.png">
 </picture>
 
 Two separate improvements, each isolated by a pre-registered test:
@@ -63,8 +64,8 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 |---|---|---|---|---|---|
 | Sideways (rot) joint limits | ±1.05 rad | ±0.52 rad | C loses 0.59 turns, A 0.14 (closed-loop rehearsal) | [17 Nov session](docs/hardware_session_2026-11-17.md) | **Fixed:** every later policy trains under the real limits ([hwlimit_ac](training_source/project/experiments/hwlimit_ac/README.md)) |
 | Motor current limit | 550 mA | 350 mA | C5's index MCP/PIP jams at the limit; 6 of 11 attempts ended by a safety guard (5 by the current guard) | [actuator audit](docs/hardware_policy_actuator_audit_2026-11-20.md) | **Addressed in simulation:** C5-EFFORT cuts the jam rate 96.5% (not yet run on the hand) |
-| Actuator response lag | ~280 ms | ~80 ms | The real hand tracks about 3.5× more tightly | same audit, one lag estimator on both | Open: refit specified in [SPEC](training_source/project/experiments/c5_hw_v1/SPEC.md) |
-| Start grasp | settled grasps from a 239-grasp cache | the hand's default closing pose, cube placed by hand | C5 seed 3: 6 of 12 trials drop at 5–7 s; long holds otherwise | [24 Nov session](docs/hardware_session_2026-11-24.md) | Open: placement jig or grasp-49 start pose (needs supervisor approval) |
+| Actuator response lag | ~280 ms | ~80 ms | The real hand tracks about 3.5× more tightly | same audit, one lag estimator on both | Open: the pre-registered refit **failed**; no delay/damping/friction setting came within 150 ms of the hand (best 218 ms vs 79 ms), so the actuator model itself needs changing ([C5-HW-V2 §3](training_source/project/experiments/c5_hw_v2/REPORT.md#3-step-a-response-fit-failed)) |
+| Start grasp | settled grasps from a 239-grasp cache | the hand's default closing pose, cube placed by hand | C5 seed 3: 6 of 12 trials drop at 5–7 s; long holds otherwise | [24 Nov session](docs/hardware_session_2026-11-24.md) | Open: training only from simulated kit starts did not help ([C5-HW-V2](training_source/project/experiments/c5_hw_v2/REPORT.md), 1 seed); placement jig or grasp-49 start pose (needs supervisor approval) |
 | PIP upper limit | 1.825 rad | 1.885 rad | −0.17 ± 0.12 turns for C5 seed 3 in rehearsal | deploy verification | Documented, unchanged |
 | Cube marker layout (vision) | `layout.json` | U/A faces swapped, two markers rotated 180°, markers off-centre | tracker flicker | [layout check](docs/live_vision_digital_twin.md#2-marker-layout-what-the-files-say-and-what-the-real-cube-shows) | **Fixed:** measured layout |
 
@@ -88,6 +89,8 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 | 24 Nov | [Hardware session 4](docs/hardware_session_2026-11-24.md) | C5 seed 1 vs seed 3 | Seed 3 (chosen beforehand by a 350 mA simulation screen): 0 of 13 safety stops vs 9 of 16; retention set by placement |
 | 24 Nov | [C5-HW-EFFORT-V1](training_source/project/experiments/c5_hw_v1/REPORT_EFFORT_V1.md) | Train the jam out | Jam rate 14.6% → 0.5% at 0.91 × C5 speed (single seed, simulation only) |
 | 24–25 Nov | [Cube vision](docs/live_vision_digital_twin.md), [hardware session 5](docs/hardware_session_2026-11-25.md) | Measure the cube on the real hand | Multi-face ArUco + RealSense tracking, recorded per trial; turns while hidden estimated from both sides of each gap; turn counts match the operator within 1 quarter turn in 2 of 3 trials |
+| 26 Nov | [C5-HW-V2](training_source/project/experiments/c5_hw_v2/REPORT.md) | Train under the hand's conditions (350 mA, actuator response, kit start) | Actuator refit **failed** its pre-registered rule; training only from simulated kit starts **failed** all three pre-registered criteria (1 seed, simulation only): no kit-start gain, 0.536 × C5's turns from random grasps |
+| 26 Nov | [Final protocol (draft)](docs/hardware_protocol_final_DRAFT.md), [report](docs/report/REPORT.md) | Plan the final real-hand comparison; write up | Protocol is a DRAFT, not approved; report with every number traced to a file ([NUMBERS.md](docs/report/NUMBERS.md)) |
 
 <img alt="Trial video frame from 25 November: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second." src="docs/figures/trial_video_2026-11-25_estimated.jpg">
 
@@ -104,7 +107,8 @@ These are reported with the same weight as the positive results:
 - **The proprioceptive cube-rotation estimate is not valid on the hand** (Spearman −0.42 against the operator's counts).
 - **The hardware samples are small.** There are 4–13 attempts per policy and session, counted by eye by one operator. The camera pipeline now exists to replace the counts, but has been used in only one session.
 - **Cube placement is not controlled.** It decides retention more than the policy does, and the logs cannot detect it (the start pose is identical to within 0.008 rad in early-drop and long-hold trials).
-- **Single seeds:** R1, P0 and C5-EFFORT were trained once. C5 is the only new recipe confirmed over three seeds.
+- **C5-HW-V2 failed** (1 seed, simulation). Trained only from simulated kit starts, it did not reduce kit-start failures (4.5% vs C5's 4.6%) and from random grasps rotated at 0.536 × C5's speed; its actuator refit also failed. A post-hoc check found its first criterion was set below a failure floor shared by every policy.
+- **Single seeds:** R1, P0, C5-EFFORT and C5-HW-V2 were trained once. C5 is the only new recipe confirmed over three seeds.
 - **Counting unit:** operator counts are quarter turns (90°). The 20 Nov session report was written before this was confirmed. The [audit](docs/hardware_policy_actuator_audit_2026-11-20.md#3-quarter-turns-and-full-revolutions) gives the corrected full revolutions used here.
 
 ## How the work was run
@@ -122,6 +126,8 @@ These are reported with the same weight as the positive results:
 ```text
 README.md                          this overview
 docs/                              hardware session reports, actuator audit, vision guide, course lesson
+  report/                          project report (REPORT.md), number sources (NUMBERS.md), PDF build
+  hardware_protocol_final_DRAFT.md final real-hand protocol, DRAFT / NOT APPROVED
   figures/readme/                  the figures above (light + dark), headline_numbers.json
   course_package.md                the original course README (quick start for model_400)
 training_source/project/
@@ -133,6 +139,7 @@ training_source/project/
     retention_v1/                  retention reward, R1 (19–20 Nov)
     grasp_rotation_v2/             grasp initialisation + C5, P0 (20–24 Nov)
     c5_hw_v1/                      actuator audit follow-up, C5-EFFORT (24 Nov)
+    c5_hw_v2/                      actuator refit, kit-start training, C5-HW-V2 (26 Nov)
   real_world/cube_vision/          ArUco + RealSense cube tracker, gap filling, dashboard
 LEAP_Hand_RL_Deploy_Kit/           guarded hardware runtime, trial scheduler, monitors, logs, audit
 checkpoint/  policy/  simulation/  course model_400 package (viewer, policy, replay)

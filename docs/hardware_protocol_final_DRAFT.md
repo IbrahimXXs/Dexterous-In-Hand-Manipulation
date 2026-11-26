@@ -14,7 +14,7 @@
 | **A3** | `policies/A3` | proprioceptive PPO baseline, real joint limits, seed 3 | run on 20 Nov (n = 4) |
 | **C5s3** | `policies/C5s3` | C5 (grasp-49 reset + yaw clip ±0.5 rad/s), seed 3 | run on 24/25 Nov: 0 guard stops in 18 attempts (13 on 24 Nov, 5 on 25 Nov) |
 | *C5-EFFORT* (optional) | not in `policies/` | 350 mA-effort-trained C5, 1 seed | **only after** supervisor approval to copy it into the kit **and** a passing torque-off shadow run |
-| *C5-HW-V2* (optional) | not in `policies/` | C5-EFFORT + response fit + kit-start resets, 1 seed | same condition as C5-EFFORT, and only if its simulation report passes |
+| ~~*C5-HW-V2*~~ (excluded) | not in `policies/` | C5-EFFORT + kit-start resets (the response fit failed and was not applied), 1 seed | **excluded:** its simulation report is FAIL (single-seed exploratory) on all three criteria, and its deploy candidate is labelled not recommended (`training_source/project/experiments/c5_hw_v2/REPORT.md`) |
 
 **Why C5s3 and not C5 seed 1:** seed 1 tripped a safety guard in 9 of 16 attempts (20 + 24 Nov), seed 3 in 0 of 13 on 24 Nov (Fisher p = 0.001; `docs/hardware_session_2026-11-24.md`). The 25 Nov session added 5 more C5s3 runs, also without a guard stop (`LEAP_Hand_RL_Deploy_Kit/logs/trials_20261125.csv`).
 
@@ -190,5 +190,5 @@ Holm correction over the two contrasts for the primary metric.
 | Placement template design (section 4) | | |
 | Merge the `final3` trial plan into the kit (`kit/trials.py` only) | | |
 | Optional: copy C5-EFFORT into `policies/` + shadow run | | |
-| Optional: copy C5-HW-V2 into `policies/` + shadow run (only if its simulation report passes) | | |
+| ~~Optional: copy C5-HW-V2 into `policies/` + shadow run~~: not applicable, its simulation report failed (26 Nov) | | |
 | Camera-to-palm jig and calibration (section 9) | | |
