@@ -1,5 +1,7 @@
 # Lab readiness: C5-HW-EFFORT-V1 candidate (prepared 2026-11-24)
 
+> **Superseded (note added 2026-11-26).** The next hardware session is planned in `docs/hardware_protocol_final_DRAFT.md` (DRAFT, not approved). Two kit hashes recorded below are **stale**: the lab changed `leap.sh` and `configs/hand.env` on 24/25 Nov (camera integration; commits `b2e0cd7`, `7bcbd59`). At commit `8bdcbee` they are `77dca20769710205…` (`leap.sh`) and `68cc0663e9cb200f…` (`hand.env`). The guard and limit values in `hand.env` did not change. The 24 Nov hardware result for C5 seed 3 (0 safety stops in 13 attempts, `docs/hardware_session_2026-11-24.md`) also postdates this note. The rest of the document is kept as written.
+
 > **This document does not authorise any powered test.** Simulation results are not hardware-safety evidence. Any run with torque enabled needs explicit approval from the lab supervisor and must be supervised. Nothing here was, or will be, started automatically.
 
 ## Recommendation
