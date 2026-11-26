@@ -24,7 +24,7 @@ ROOT = HERE.parents[1]
 
 CSS = """
 @page { size: A4; margin: 14mm 13mm 15mm 13mm; }
-body { font-family: "DejaVu Serif", "Times New Roman", serif; font-size: 8.9pt; line-height: 1.27; color: #111; }
+body { font-family: "DejaVu Serif", "Times New Roman", serif; font-size: 8.7pt; line-height: 1.24; color: #111; }
 .cols { column-count: 2; column-gap: 6mm; column-fill: balance; }
 .head { column-span: all; }
 h1 { font-size: 14pt; text-align: center; margin: 0 0 3pt 0; }
@@ -35,7 +35,7 @@ ul, ol { margin: 1.5pt 0 1.5pt 12pt; padding: 0; }
 table { border-collapse: collapse; margin: 3pt 0; font-size: 7.1pt; width: 100%; table-layout: fixed; break-inside: avoid; }
 td, th { overflow-wrap: anywhere; hyphens: auto; }
 figure.wide { column-span: all; margin: 4pt 0 6pt 0; break-inside: avoid; }
-figure.wide img { max-width: 80%; max-height: 60mm; }
+figure.wide img { max-width: 80%; max-height: 52mm; }
 table.wide { column-span: all; width: 96%; margin: 4pt auto; font-size: 7.4pt; }
 figure.col { margin: 3pt 0 5pt 0; break-inside: avoid; }
 figure.col figcaption, figure.wide figcaption { font-size: 8.2pt; font-style: italic; text-align: justify; margin: 2pt 4% 0 4%; }
@@ -44,6 +44,7 @@ th { background: #eee; }
 img { display: block; margin: 3pt auto 0 auto; max-width: 100%; break-inside: avoid; }
 p:has(> img) { break-inside: avoid; break-after: avoid; }
 code { font-family: "DejaVu Sans Mono", monospace; font-size: 7.4pt; }
+.refs p { text-align: left; hyphens: manual; overflow-wrap: anywhere; }
 blockquote { margin: 3pt 4pt; padding: 2pt 5pt; border-left: 2pt solid #c60; background: #fff7ee; }
 """
 
@@ -74,6 +75,9 @@ def main() -> int:
   # two-column workshop layout: title, byline and abstract span both columns
   cut = body.find("<h2>1.")
   head, rest = (body[:cut], body[cut:]) if cut > 0 else ("", body)
+  # references and software URLs: left-aligned, so long DOIs and URLs do not stretch the line spacing
+  if "<h2>References</h2>" in rest:
+    rest = rest.replace("<h2>References</h2>", "<h2>References</h2><div class='refs'>", 1) + "</div>"
   html = (f"<!doctype html><html><head><meta charset='utf-8'><title>Report</title><style>{CSS}</style></head>"
           f"<body><div class='head'>{head}</div><div class='cols'>{rest}</div></body></html>")
   a.out.parent.mkdir(parents=True, exist_ok=True)
