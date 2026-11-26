@@ -27,6 +27,9 @@ Plans (environment variable LEAP_TRIAL_PLAN; use a separate LEAP_TRIALS_CSV per 
   nov20    (default) the 20 Nov design above
   c5seeds  24 Nov: C5 (seed 1, tested 20 Nov) vs C5s3, blocks C5s3 C5 C5 C5s3 (ABBA), 10 attempts each;
            C5s2 optional extra.  Q5: C5 vs C5s3, Q6: C5 vs C5s2 - safety stops, failures, rotations.
+  final3   DRAFT (docs/hardware_protocol_final_DRAFT.md, not approved): M400 vs A3 vs C5s3, balanced Williams
+           Latin square of six 3-attempt sequences; TRIAL_BLOCKS=12 -> 36 attempts, 12 per arm.
+           Q7: M400 vs C5s3, Q8: A3 vs C5s3.
 """
 
 from __future__ import annotations
@@ -58,12 +61,22 @@ QUESTIONS_C5 = (
     ("Q5", "C5", "C5s3", "does C5 seed 3 trip the guards less, at what speed?", "guard"),
     ("Q6", "C5", "C5s2", "does C5 seed 2 trip the guards less, at what speed?", "guard"),
 )
+QUESTIONS_FINAL = (
+    ("Q7", "M400", "C5s3", "does C5s3 beat the course baseline?", "both"),
+    ("Q8", "A3", "C5s3", "does C5s3 beat the PPO baseline?", "both"),
+)
+# balanced (Williams) Latin square for 3 conditions: every arm equally often in each position and after each other arm
+SQUARE_FINAL3 = (("M400", "A3", "C5s3"), ("A3", "C5s3", "M400"), ("C5s3", "M400", "A3"),
+                 ("M400", "C5s3", "A3"), ("A3", "M400", "C5s3"), ("C5s3", "A3", "M400"))
+PLANS = {
+    "nov20": (POLICIES, SQUARE, QUESTIONS),
+    "c5seeds": (("C5", "C5s3"), (("C5s3", "C5", "C5", "C5s3"),), QUESTIONS_C5),
+    "final3": (("M400", "A3", "C5s3"), SQUARE_FINAL3, QUESTIONS_FINAL),
+}
 PLAN = os.environ.get("LEAP_TRIAL_PLAN", "nov20")
-if PLAN not in ("nov20", "c5seeds"):
-    sys.exit(f"unknown LEAP_TRIAL_PLAN {PLAN!r} (nov20, c5seeds)")
-PLAN_POLICIES = POLICIES if PLAN == "nov20" else ("C5", "C5s3")
-PLAN_BLOCKS = SQUARE if PLAN == "nov20" else (("C5s3", "C5", "C5", "C5s3"),)
-PLAN_QUESTIONS = QUESTIONS if PLAN == "nov20" else QUESTIONS_C5
+if PLAN not in PLANS:
+    sys.exit(f"unknown LEAP_TRIAL_PLAN {PLAN!r} ({', '.join(PLANS)})")
+PLAN_POLICIES, PLAN_BLOCKS, PLAN_QUESTIONS = PLANS[PLAN]
 # Simulation reference (held-out, 30 s, full grasp distribution; READMEs of hwlimit_ac / grasp_rotation_v2).
 # Sim "failure" includes the tilt/drift termination rule, not only real drops.
 SIM_REF = {"A3": (1.329, 0.240), "R1": (1.158, 0.190), "P0": (1.273, 0.115), "C5": (1.869, 0.199),
@@ -93,7 +106,7 @@ def cmd_plan(a) -> None:
     done = scheduled_done()
     for i, p in enumerate(schedule(a.blocks)):
         mark = "done" if i < done else ("NEXT" if i == done else "")
-        print(f"{i + 1:3d}  block {i // 4 + 1}  {p}  {mark}")
+        print(f"{i + 1:3d}  block {i // len(PLAN_BLOCKS[0]) + 1}  {p}  {mark}")
 
 
 def cmd_next(a) -> None:
