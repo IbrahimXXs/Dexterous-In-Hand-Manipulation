@@ -1,0 +1,290 @@
+[
+ {
+  "key": "K_M400_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "M400",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_M400_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "M400",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "A3",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_A3_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "A3",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "R1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_R1_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "R1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_P0_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "P0",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_P0_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "P0",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s1_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5s1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s1_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5s1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5s3",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5s3",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "EFFORT_1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_EFFORT_1_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "EFFORT_1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5HW2_1_effort_s9101",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5HW2_1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5HW2_1_effort_s9102",
+  "setting": "K",
+  "actuator": "effort",
+  "policy": "C5HW2_1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_M400_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "M400",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_M400_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "M400",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_A3_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "A3",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_A3_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "A3",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_R1_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "R1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_R1_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "R1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_P0_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "P0",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_P0_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "P0",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5s1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5s1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5s3",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5s3",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_EFFORT_1_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "EFFORT_1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_EFFORT_1_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "EFFORT_1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5HW2_1_default_s9101",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5HW2_1",
+  "seed": 9101,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5HW2_1_default_s9102",
+  "setting": "A",
+  "actuator": "default",
+  "policy": "C5HW2_1",
+  "seed": 9102,
+  "num_envs": 256,
+  "steps": 1200
+ }
+]
