@@ -1,0 +1,402 @@
+{
+ "plan": "PLAN.md section 3",
+ "label": "PRE-REGISTERED simulation evaluation; S-TF, S-TF-noaux, S-MLP and the teacher are ONE training seed each; C5 rows are three training seeds",
+ "policies": [
+  "C5s1",
+  "C5s2",
+  "C5s3"
+ ],
+ "cells": {
+  "K/C5s1": {
+   "n_envs": 512,
+   "survival_30s": 0.94140625,
+   "survival_60s": 0.939453125,
+   "turns_per_30s": 2.1504033589243465,
+   "jam_proxy": 0.1015625,
+   "n_gait_envs": 482,
+   "qturns_per_cycle": 1.0343120586560985,
+   "rhythm_hz_median": 0.3369140574795893,
+   "cmd_change_rad_per_step": 0.025269538293077216,
+   "turns_per_30s_ci95": [
+    2.103860979730844,
+    2.1929941098172976
+   ],
+   "survival_30s_ci95": [
+    0.919921875,
+    0.9609375
+   ],
+   "survival_60s_ci95": [
+    0.91796875,
+    0.958984375
+   ]
+  },
+  "K/C5s2": {
+   "n_envs": 512,
+   "survival_30s": 0.9375,
+   "survival_60s": 0.935546875,
+   "turns_per_30s": 2.0743108166135813,
+   "jam_proxy": 0.044921875,
+   "n_gait_envs": 480,
+   "qturns_per_cycle": 1.009782177025745,
+   "rhythm_hz_median": 0.32714843262510845,
+   "cmd_change_rad_per_step": 0.025320306314946556,
+   "turns_per_30s_ci95": [
+    2.0255051106621473,
+    2.1200839789957815
+   ],
+   "survival_30s_ci95": [
+    0.916015625,
+    0.95703125
+   ],
+   "survival_60s_ci95": [
+    0.9140625,
+    0.955078125
+   ]
+  },
+  "K/C5s3": {
+   "n_envs": 512,
+   "survival_30s": 0.931640625,
+   "survival_60s": 0.931640625,
+   "turns_per_30s": 1.9965618445979667,
+   "jam_proxy": 0.01953125,
+   "n_gait_envs": 478,
+   "qturns_per_cycle": 1.0023892264196952,
+   "rhythm_hz_median": 0.30273437048890633,
+   "cmd_change_rad_per_step": 0.02783616979826571,
+   "turns_per_30s_ci95": [
+    1.9462476565639992,
+    2.044564243200614
+   ],
+   "survival_30s_ci95": [
+    0.91015625,
+    0.953125
+   ],
+   "survival_60s_ci95": [
+    0.91015625,
+    0.953125
+   ]
+  },
+  "A/C5s1": {
+   "n_envs": 512,
+   "survival_30s": 0.798828125,
+   "survival_60s": 0.787109375,
+   "turns_per_30s": 1.8425861906742735,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 416,
+   "qturns_per_cycle": 1.0257998492300795,
+   "rhythm_hz_median": 0.3369140574795893,
+   "cmd_change_rad_per_step": 0.02548082214811959,
+   "turns_per_30s_ci95": [
+    1.7711217569373954,
+    1.911481585328357
+   ],
+   "survival_30s_ci95": [
+    0.763671875,
+    0.8320800781249993
+   ],
+   "survival_60s_ci95": [
+    0.751953125,
+    0.822265625
+   ]
+  },
+  "A/C5s2": {
+   "n_envs": 512,
+   "survival_30s": 0.8359375,
+   "survival_60s": 0.822265625,
+   "turns_per_30s": 1.7982473137053492,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 433,
+   "qturns_per_cycle": 0.9956006812369211,
+   "rhythm_hz_median": 0.32714843262510845,
+   "cmd_change_rad_per_step": 0.02438145163580002,
+   "turns_per_30s_ci95": [
+    1.7293678568756798,
+    1.8665504292588733
+   ],
+   "survival_30s_ci95": [
+    0.802734375,
+    0.8671875
+   ],
+   "survival_60s_ci95": [
+    0.7890625,
+    0.853515625
+   ]
+  },
+  "A/C5s3": {
+   "n_envs": 512,
+   "survival_30s": 0.8046875,
+   "survival_60s": 0.794921875,
+   "turns_per_30s": 1.7053186328969483,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 416,
+   "qturns_per_cycle": 0.9823025760648424,
+   "rhythm_hz_median": 0.30273437048890633,
+   "cmd_change_rad_per_step": 0.02758394684646606,
+   "turns_per_30s_ci95": [
+    1.6366959460834942,
+    1.7728764958149756
+   ],
+   "survival_30s_ci95": [
+    0.76953125,
+    0.83984375
+   ],
+   "survival_60s_ci95": [
+    0.759765625,
+    0.828125
+   ]
+  },
+  "heavy_slippery/C5s1": {
+   "n_envs": 512,
+   "survival_30s": 0.8046875,
+   "survival_60s": 0.80078125,
+   "turns_per_30s": 1.8162089041105691,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 417,
+   "qturns_per_cycle": 1.0056293008989334,
+   "rhythm_hz_median": 0.3417968699068297,
+   "cmd_change_rad_per_step": 0.02572429587732398,
+   "turns_per_30s_ci95": [
+    1.741761948780628,
+    1.88919701194376
+   ],
+   "survival_30s_ci95": [
+    0.76953125,
+    0.837890625
+   ],
+   "survival_60s_ci95": [
+    0.765625,
+    0.8359375
+   ]
+  },
+  "heavy_slippery/C5s2": {
+   "n_envs": 512,
+   "survival_30s": 0.828125,
+   "survival_60s": 0.818359375,
+   "turns_per_30s": 1.7417142647649848,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 428,
+   "qturns_per_cycle": 0.9701976260972001,
+   "rhythm_hz_median": 0.3369140574795893,
+   "cmd_change_rad_per_step": 0.023999364342444224,
+   "turns_per_30s_ci95": [
+    1.6669694140959705,
+    1.813542228316247
+   ],
+   "survival_30s_ci95": [
+    0.794921875,
+    0.859375
+   ],
+   "survival_60s_ci95": [
+    0.78515625,
+    0.8515625
+   ]
+  },
+  "heavy_slippery/C5s3": {
+   "n_envs": 512,
+   "survival_30s": 0.80859375,
+   "survival_60s": 0.80078125,
+   "turns_per_30s": 1.5349741223312858,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 421,
+   "qturns_per_cycle": 0.8334279202892544,
+   "rhythm_hz_median": 0.2978515580616659,
+   "cmd_change_rad_per_step": 0.027527684059812235,
+   "turns_per_30s_ci95": [
+    1.470382057231465,
+    1.599029060884098
+   ],
+   "survival_30s_ci95": [
+    0.7734375,
+    0.841796875
+   ],
+   "survival_60s_ci95": [
+    0.765625,
+    0.8359375
+   ]
+  },
+  "high_delay/C5s1": {
+   "n_envs": 512,
+   "survival_30s": 0.75390625,
+   "survival_60s": 0.744140625,
+   "turns_per_30s": 1.6758989007533773,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 397,
+   "qturns_per_cycle": 1.0236005023945405,
+   "rhythm_hz_median": 0.32714843262510845,
+   "cmd_change_rad_per_step": 0.025282870272145028,
+   "turns_per_30s_ci95": [
+    1.6005807020065137,
+    1.7505730563669017
+   ],
+   "survival_30s_ci95": [
+    0.71484375,
+    0.7890625
+   ],
+   "survival_60s_ci95": [
+    0.705078125,
+    0.78125
+   ]
+  },
+  "high_delay/C5s2": {
+   "n_envs": 512,
+   "survival_30s": 0.7734375,
+   "survival_60s": 0.767578125,
+   "turns_per_30s": 1.6252023109711629,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 403,
+   "qturns_per_cycle": 0.9822922090476985,
+   "rhythm_hz_median": 0.32226562019786803,
+   "cmd_change_rad_per_step": 0.02418731114349832,
+   "turns_per_30s_ci95": [
+    1.5490013229943884,
+    1.7008606409192877
+   ],
+   "survival_30s_ci95": [
+    0.736328125,
+    0.80859375
+   ],
+   "survival_60s_ci95": [
+    0.730419921875,
+    0.8046875
+   ]
+  },
+  "high_delay/C5s3": {
+   "n_envs": 512,
+   "survival_30s": 0.76171875,
+   "survival_60s": 0.75390625,
+   "turns_per_30s": 1.5382830583936362,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 391,
+   "qturns_per_cycle": 0.9586507181253854,
+   "rhythm_hz_median": 0.2929687456344255,
+   "cmd_change_rad_per_step": 0.027265711669507246,
+   "turns_per_30s_ci95": [
+    1.4657310130939405,
+    1.6079366042560377
+   ],
+   "survival_30s_ci95": [
+    0.724609375,
+    0.798828125
+   ],
+   "survival_60s_ci95": [
+    0.716796875,
+    0.791015625
+   ]
+  },
+  "obs_noise_x3/C5s1": {
+   "n_envs": 512,
+   "survival_30s": 0.8046875,
+   "survival_60s": 0.796875,
+   "turns_per_30s": 1.8527447329703457,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 417,
+   "qturns_per_cycle": 1.024974885687578,
+   "rhythm_hz_median": 0.3369140574795893,
+   "cmd_change_rad_per_step": 0.025485965432858203,
+   "turns_per_30s_ci95": [
+    1.7833768707552018,
+    1.9197119231031963
+   ],
+   "survival_30s_ci95": [
+    0.76953125,
+    0.837890625
+   ],
+   "survival_60s_ci95": [
+    0.76171875,
+    0.8301269531249993
+   ]
+  },
+  "obs_noise_x3/C5s2": {
+   "n_envs": 512,
+   "survival_30s": 0.845703125,
+   "survival_60s": 0.833984375,
+   "turns_per_30s": 1.816358319005805,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 437,
+   "qturns_per_cycle": 0.976343167393249,
+   "rhythm_hz_median": 0.32714843262510845,
+   "cmd_change_rad_per_step": 0.02443268277686706,
+   "turns_per_30s_ci95": [
+    1.7464332242656682,
+    1.8828434275210528
+   ],
+   "survival_30s_ci95": [
+    0.814453125,
+    0.876953125
+   ],
+   "survival_60s_ci95": [
+    0.80078125,
+    0.865234375
+   ]
+  },
+  "obs_noise_x3/C5s3": {
+   "n_envs": 512,
+   "survival_30s": 0.796875,
+   "survival_60s": 0.79296875,
+   "turns_per_30s": 1.681365240001906,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 411,
+   "qturns_per_cycle": 0.9772211571354357,
+   "rhythm_hz_median": 0.30273437048890633,
+   "cmd_change_rad_per_step": 0.027628159020274174,
+   "turns_per_30s_ci95": [
+    1.611818284802433,
+    1.7489573687914826
+   ],
+   "survival_30s_ci95": [
+    0.76171875,
+    0.83203125
+   ],
+   "survival_60s_ci95": [
+    0.7578125,
+    0.828125
+   ]
+  },
+  "K/C5mean": {
+   "survival_30s": 0.9368489583333334,
+   "survival_60s": 0.935546875,
+   "turns_per_30s": 2.0737586733786313,
+   "jam_proxy": 0.055338541666666664,
+   "cmd_change_rad_per_step": 0.026142004802096497,
+   "qturns_per_cycle": 1.0154944873671796,
+   "rhythm_hz_median": 0.32226562019786803
+  },
+  "A/C5mean": {
+   "survival_30s": 0.8131510416666666,
+   "survival_60s": 0.8014322916666666,
+   "turns_per_30s": 1.7820507124255236,
+   "jam_proxy": 0.0,
+   "cmd_change_rad_per_step": 0.025815406876795222,
+   "qturns_per_cycle": 1.0012343688439478,
+   "rhythm_hz_median": 0.32226562019786803
+  },
+  "heavy_slippery/C5mean": {
+   "survival_30s": 0.8138020833333334,
+   "survival_60s": 0.806640625,
+   "turns_per_30s": 1.6976324304022798,
+   "jam_proxy": 0.0,
+   "cmd_change_rad_per_step": 0.02575044809319348,
+   "qturns_per_cycle": 0.9364182824284626,
+   "rhythm_hz_median": 0.325520828482695
+  },
+  "high_delay/C5mean": {
+   "survival_30s": 0.7630208333333334,
+   "survival_60s": 0.7552083333333334,
+   "turns_per_30s": 1.6131280900393923,
+   "jam_proxy": 0.0,
+   "cmd_change_rad_per_step": 0.025578631028383533,
+   "qturns_per_cycle": 0.9881811431892081,
+   "rhythm_hz_median": 0.31412759948580066
+  },
+  "obs_noise_x3/C5mean": {
+   "survival_30s": 0.8157552083333334,
+   "survival_60s": 0.8079427083333334,
+   "turns_per_30s": 1.7834894306593523,
+   "jam_proxy": 0.0,
+   "cmd_change_rad_per_step": 0.025848935743333145,
+   "qturns_per_cycle": 0.9928464034054209,
+   "rhythm_hz_median": 0.32226562019786803
+  }
+ },
+ "criteria": {}
+}

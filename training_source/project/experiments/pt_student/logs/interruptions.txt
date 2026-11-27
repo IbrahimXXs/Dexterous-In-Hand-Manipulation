@@ -1,0 +1,1 @@
+2026-11-27T23:02:51+04:00 teacher job 338614 (ws-l2-001) ended without an exit line or Python error after ~990 of 3001 updates (last checkpoint model_950.pt, 21:05; log stops at 'Time elapsed 02:12:54'). Killed externally. Per the project rule, retrained from scratch (never resumed); the interrupted run directory is renamed *_INTERRUPTED and not used.
