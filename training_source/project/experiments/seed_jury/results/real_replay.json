@@ -1,0 +1,1225 @@
+{
+ "plan": "PLAN.md (sha256 in logs/plan.sha256)",
+ "label": "PRE-REGISTERED analysis of already-collected hardware logs; small n",
+ "seeds": {
+  "C5s1": {
+   "sha256": "2a932dfe37a5540d74a07081a8de62658b56341eca2efcb5af38a9790ef58492",
+   "checkpoint": "LEAP_Hand_RL_Deploy_Kit/policies/C5/model_2400.pt"
+  },
+  "C5s2": {
+   "sha256": "49579bdf1f598d8c8c637817589d2993ba10639c065a9d5d4596a77249d75102",
+   "checkpoint": "LEAP_Hand_RL_Deploy_Kit/policies/C5s2/model_1500.pt"
+  },
+  "C5s3": {
+   "sha256": "c221af89199cdeab2559cbdf7f3db0abc78fd41702f35615f838ae50aca2b4bc",
+   "checkpoint": "LEAP_Hand_RL_Deploy_Kit/policies/C5s3/model_3000.pt"
+  }
+ },
+ "limits_margin_rad": 0.01,
+ "gate": {
+  "tolerance": 0.0001,
+  "raw_max_err": 5.7220458984375e-06,
+  "cmd_max_err_rad": 1.4901161193847656e-07,
+  "n_runs": 27,
+  "n_steps": 18515,
+  "per_run": {
+   "20 Nov t2": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "20 Nov t5": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "20 Nov t12": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "20 Nov t15": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "20 Nov t18": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t1": [
+    4.76837158203125e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t2": [
+    3.337860107421875e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t3": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t4": [
+    5.7220458984375e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t5": [
+    4.291534423828125e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t6": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t7": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t9": [
+    5.7220458984375e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t10": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t11": [
+    5.7220458984375e-06,
+    1.4901161193847656e-07
+   ],
+   "24 Nov t12": [
+    5.7220458984375e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t13": [
+    4.76837158203125e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t14": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t15": [
+    4.76837158203125e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t16": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t17": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "24 Nov t18": [
+    4.76837158203125e-06,
+    1.1920928955078125e-07
+   ],
+   "25 Nov t1": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "25 Nov t2": [
+    3.814697265625e-06,
+    1.4901161193847656e-07
+   ],
+   "25 Nov t3": [
+    4.291534423828125e-06,
+    1.1920928955078125e-07
+   ],
+   "25 Nov t4": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ],
+   "25 Nov t5": [
+    3.814697265625e-06,
+    1.1920928955078125e-07
+   ]
+  },
+  "reset_joints_taken_from_q_hw0": 0,
+  "passed": true
+ },
+ "sets": {
+  "P": [
+   "20 Nov t12 (C5s1)",
+   "24 Nov t1 (C5s3)",
+   "24 Nov t7 (C5s1)",
+   "24 Nov t11 (C5s3)",
+   "24 Nov t13 (C5s3)",
+   "24 Nov t15 (C5s3)",
+   "24 Nov t17 (C5s3)",
+   "25 Nov t5 (C5s3)"
+  ],
+  "Early": [
+   "24 Nov t2 (C5s1)",
+   "24 Nov t3 (C5s1)",
+   "24 Nov t5 (C5s3)",
+   "24 Nov t6 (C5s1)",
+   "24 Nov t9 (C5s3)",
+   "24 Nov t12 (C5s3)",
+   "24 Nov t14 (C5s3)",
+   "24 Nov t16 (C5s3)",
+   "24 Nov t18 (C5s3)",
+   "25 Nov t2 (C5s3)",
+   "25 Nov t3 (C5s3)",
+   "25 Nov t4 (C5s3)"
+  ],
+  "Held": [
+   "20 Nov t2 (C5s1)",
+   "20 Nov t5 (C5s1)",
+   "20 Nov t15 (C5s1)",
+   "20 Nov t18 (C5s1)",
+   "24 Nov t4 (C5s3)",
+   "24 Nov t10 (C5s1)",
+   "25 Nov t1 (C5s3)"
+  ]
+ },
+ "primary": {
+  "window_before_drop_s": [
+   3.0,
+   1.0
+  ],
+  "per_run": [
+   {
+    "run": "20 Nov t12",
+    "seed": "C5s1",
+    "t_drop": 45.0,
+    "pre": 0.13084916910873012,
+    "n_control": 18,
+    "control_median": 0.12983149249106646,
+    "ratio": 1.0078384419537787
+   },
+   {
+    "run": "24 Nov t1",
+    "seed": "C5s3",
+    "t_drop": 15.0,
+    "pre": 0.13577256868593396,
+    "n_control": 3,
+    "control_median": 0.12766270729713142,
+    "ratio": 1.0635256885938276
+   },
+   {
+    "run": "24 Nov t7",
+    "seed": "C5s1",
+    "t_drop": 30.0,
+    "pre": 0.13459795612841846,
+    "n_control": 11,
+    "control_median": 0.14761077703908088,
+    "ratio": 0.9118436934505318
+   },
+   {
+    "run": "24 Nov t11",
+    "seed": "C5s3",
+    "t_drop": 45.0,
+    "pre": 0.08567767185159028,
+    "n_control": 18,
+    "control_median": 0.1061407213238999,
+    "ratio": 0.807208305944479
+   },
+   {
+    "run": "24 Nov t13",
+    "seed": "C5s3",
+    "t_drop": 20.0,
+    "pre": 0.0803882237141713,
+    "n_control": 6,
+    "control_median": 0.11907729782164098,
+    "ratio": 0.6750927774207657
+   },
+   {
+    "run": "24 Nov t15",
+    "seed": "C5s3",
+    "t_drop": 50.0,
+    "pre": 0.1103108699247241,
+    "n_control": 21,
+    "control_median": 0.10903784440830351,
+    "ratio": 1.011675079632477
+   },
+   {
+    "run": "24 Nov t17",
+    "seed": "C5s3",
+    "t_drop": 50.0,
+    "pre": 0.09432421631179749,
+    "n_control": 21,
+    "control_median": 0.10574845366944104,
+    "ratio": 0.8919678069869981
+   },
+   {
+    "run": "25 Nov t5",
+    "seed": "C5s3",
+    "t_drop": 30.0,
+    "pre": 0.1369358458579518,
+    "n_control": 11,
+    "control_median": 0.10482348876121717,
+    "ratio": 1.306346959791474
+   }
+  ],
+  "H1": {
+   "median_ratio": 0.9598410677021553,
+   "ci95": [
+    0.807208305944479,
+    1.0635256885938276
+   ],
+   "n_runs": 8,
+   "n_ratio_gt_1": 4,
+   "per_seed_median": {
+    "C5s1": 0.9598410677021553,
+    "C5s3": 0.9518214433097375
+   },
+   "supported": false
+  },
+  "H2": {
+   "auc": 0.5194954128440367,
+   "ci95": [
+    0.3136792452830189,
+    0.7187571674311926
+   ],
+   "n_pos": 8,
+   "n_neg": 109,
+   "supported": false,
+   "secondary_with_held": {
+    "auc": 0.4057377049180328,
+    "ci95": [
+     0.20931208053691275,
+     0.6083048293806613
+    ],
+    "n_neg": 305
+   }
+  }
+ },
+ "sensitivity": {
+  "window_before_drop_s": [
+   2.0,
+   0.5
+  ],
+  "per_run": [
+   {
+    "run": "20 Nov t12",
+    "seed": "C5s1",
+    "t_drop": 45.0,
+    "pre": 0.10115834322447578,
+    "n_control": 18,
+    "control_median": 0.12983149249106646,
+    "ratio": 0.7791510463567717
+   },
+   {
+    "run": "24 Nov t1",
+    "seed": "C5s3",
+    "t_drop": 15.0,
+    "pre": 0.11567541795472301,
+    "n_control": 3,
+    "control_median": 0.12766270729713142,
+    "ratio": 0.9061018711242875
+   },
+   {
+    "run": "24 Nov t7",
+    "seed": "C5s1",
+    "t_drop": 30.0,
+    "pre": 0.13702552447031285,
+    "n_control": 11,
+    "control_median": 0.14761077703908088,
+    "ratio": 0.9282894326478242
+   },
+   {
+    "run": "24 Nov t11",
+    "seed": "C5s3",
+    "t_drop": 45.0,
+    "pre": 0.08744051708529392,
+    "n_control": 18,
+    "control_median": 0.1061407213238999,
+    "ratio": 0.8238168724938256
+   },
+   {
+    "run": "24 Nov t13",
+    "seed": "C5s3",
+    "t_drop": 20.0,
+    "pre": 0.0940102590372165,
+    "n_control": 6,
+    "control_median": 0.11907729782164098,
+    "ratio": 0.7894893548729083
+   },
+   {
+    "run": "24 Nov t15",
+    "seed": "C5s3",
+    "t_drop": 50.0,
+    "pre": 0.09877580600480237,
+    "n_control": 21,
+    "control_median": 0.10903784440830351,
+    "ratio": 0.9058855348875582
+   },
+   {
+    "run": "24 Nov t17",
+    "seed": "C5s3",
+    "t_drop": 50.0,
+    "pre": 0.10504534062126586,
+    "n_control": 21,
+    "control_median": 0.10574845366944104,
+    "ratio": 0.9933510796254947
+   },
+   {
+    "run": "25 Nov t5",
+    "seed": "C5s3",
+    "t_drop": 30.0,
+    "pre": 0.10003687321208418,
+    "n_control": 11,
+    "control_median": 0.10482348876121717,
+    "ratio": 0.9543364220586412
+   }
+  ],
+  "H1": {
+   "median_ratio": 0.9059937030059229,
+   "ci95": [
+    0.7894893548729083,
+    0.9543364220586412
+   ],
+   "n_runs": 8,
+   "n_ratio_gt_1": 0,
+   "per_seed_median": {
+    "C5s1": 0.8537202395022979,
+    "C5s3": 0.9059937030059229
+   },
+   "supported": false
+  },
+  "H2": {
+   "auc": 0.3486238532110092,
+   "ci95": [
+    0.19318181818181818,
+    0.4705056179775281
+   ],
+   "n_pos": 8,
+   "n_neg": 109,
+   "supported": false,
+   "secondary_with_held": {
+    "auc": 0.2483606557377049,
+    "ci95": [
+     0.11684266386943308,
+     0.40244415454971855
+    ],
+    "n_neg": 305
+   }
+  }
+ },
+ "per_finger_H1": {
+  "index": {
+   "median_ratio": 0.8956429849537529,
+   "ci95": [
+    0.44632784636534045,
+    1.211875130530085
+   ],
+   "ratios": [
+    1.211875130530085,
+    1.6181357025754188,
+    0.8766554635587059,
+    0.44632784636534045,
+    0.16231462774383715,
+    0.9146305063487999,
+    0.6856214934699962,
+    1.1985087347495877
+   ]
+  },
+  "middle": {
+   "median_ratio": 1.0296077753857875,
+   "ci95": [
+    0.6686419235586042,
+    1.075379011617285
+   ],
+   "ratios": [
+    0.6686419235586042,
+    0.5824851697644569,
+    1.055794383883615,
+    1.0791380957198276,
+    0.7047490233117113,
+    1.0143250096810021,
+    1.0947708658072377,
+    1.0448905410905729
+   ]
+  },
+  "ring": {
+   "median_ratio": 0.9160611697155726,
+   "ci95": [
+    0.4851059417265033,
+    1.2205510058914468
+   ],
+   "ratios": [
+    1.2205510058914468,
+    0.9864822974352063,
+    0.7760186531793065,
+    0.33186756423060604,
+    1.0040567786404313,
+    0.8456400419959389,
+    0.4851059417265033,
+    2.409450579131825
+   ]
+  },
+  "thumb": {
+   "median_ratio": 1.3399451559229127,
+   "ci95": [
+    0.8671447169684241,
+    2.5373813210205363
+   ],
+   "ratios": [
+    0.928164133990908,
+    2.6314067584429703,
+    0.8671447169684241,
+    1.2527968038572592,
+    0.47110699040067744,
+    1.7030812381372407,
+    1.4270935079885663,
+    2.5373813210205363
+   ]
+  }
+ },
+ "early_drops": {
+  "per_run": [
+   {
+    "run": "24 Nov t2",
+    "seed": "C5s1",
+    "t_drop": 8.0,
+    "window": [
+     5.0,
+     7.0
+    ],
+    "score": 0.13492027449421584,
+    "time_matched_held": [
+     0.14700368789955975,
+     0.15719042368233205,
+     0.1281348964013159,
+     0.1545037061521193,
+     0.15814805457368494
+    ],
+    "time_matched_percentile": 20.0,
+    "ratio_time_matched_median": 0.8732494375337362,
+    "ratio_pooled_control_median": 0.9871073196393646,
+    "notes": "Stopped by it's own, maybe a joint limit or current idk"
+   },
+   {
+    "run": "24 Nov t3",
+    "seed": "C5s1",
+    "t_drop": 8.0,
+    "window": [
+     5.0,
+     7.0
+    ],
+    "score": 0.12168598184600857,
+    "time_matched_held": [
+     0.14700368789955975,
+     0.15719042368233205,
+     0.1281348964013159,
+     0.1545037061521193,
+     0.15814805457368494
+    ],
+    "time_matched_percentile": 0.0,
+    "ratio_time_matched_median": 0.7875926401804273,
+    "ratio_pooled_control_median": 0.8902822339191685,
+    "notes": "Dropped because of limit"
+   },
+   {
+    "run": "24 Nov t5",
+    "seed": "C5s3",
+    "t_drop": 7.0,
+    "window": [
+     4.0,
+     6.0
+    ],
+    "score": 0.10899411253631115,
+    "time_matched_held": [
+     0.11481893816246434,
+     0.09974674874916674
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 1.0159510041435507,
+    "ratio_pooled_control_median": 1.032804783757857,
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t6",
+    "seed": "C5s1",
+    "t_drop": 3.0,
+    "window": [
+     0.5,
+     2.0
+    ],
+    "score": 0.12880201627810794,
+    "time_matched_held": [
+     0.11709273832539717,
+     0.10901953924447298,
+     0.11452640928328038,
+     0.11591313719749449,
+     0.11703332155942918
+    ],
+    "time_matched_percentile": 100.0,
+    "ratio_time_matched_median": 1.1111942907614794,
+    "ratio_pooled_control_median": 0.9423447552938354,
+    "notes": "Limit hit"
+   },
+   {
+    "run": "24 Nov t9",
+    "seed": "C5s3",
+    "t_drop": 7.0,
+    "window": [
+     4.0,
+     6.0
+    ],
+    "score": 0.11360133343376218,
+    "time_matched_held": [
+     0.11481893816246434,
+     0.09974674874916674
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 1.0588956237028608,
+    "ratio_pooled_control_median": 1.0764618187296435,
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t12",
+    "seed": "C5s3",
+    "t_drop": 7.0,
+    "window": [
+     4.0,
+     6.0
+    ],
+    "score": 0.1072526109032333,
+    "time_matched_held": [
+     0.11481893816246434,
+     0.09974674874916674
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 0.9997181976949121,
+    "ratio_pooled_control_median": 1.0163026885922515,
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t14",
+    "seed": "C5s3",
+    "t_drop": 5.0,
+    "window": [
+     2.0,
+     4.0
+    ],
+    "score": 0.11432864748872817,
+    "time_matched_held": [
+     0.11155138697284155,
+     0.11989625472575427
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 0.9879439397149994,
+    "ratio_pooled_control_median": 1.0833536903893441,
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t16",
+    "seed": "C5s3",
+    "t_drop": 5.0,
+    "window": [
+     2.0,
+     4.0
+    ],
+    "score": 0.11933248622342943,
+    "time_matched_held": [
+     0.11155138697284155,
+     0.11989625472575427
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 1.0311834274710903,
+    "ratio_pooled_control_median": 1.1307689907399077,
+    "notes": "IT LOOKS LIKE THE INITIAL PLACEMENT IS BIT OFF"
+   },
+   {
+    "run": "24 Nov t18",
+    "seed": "C5s3",
+    "t_drop": 5.0,
+    "window": [
+     2.0,
+     4.0
+    ],
+    "score": 0.12976752534508704,
+    "time_matched_held": [
+     0.11155138697284155,
+     0.11989625472575427
+    ],
+    "time_matched_percentile": 100.0,
+    "ratio_time_matched_median": 1.1213553475224225,
+    "ratio_pooled_control_median": 1.2296491786028796,
+    "notes": "OUT"
+   },
+   {
+    "run": "25 Nov t2",
+    "seed": "C5s3",
+    "t_drop": 7.0,
+    "window": [
+     4.0,
+     6.0
+    ],
+    "score": 0.1081585668027401,
+    "time_matched_held": [
+     0.11481893816246434,
+     0.09974674874916674
+    ],
+    "time_matched_percentile": 50.0,
+    "ratio_time_matched_median": 1.0081627529501977,
+    "ratio_pooled_control_median": 1.0248873319744576,
+    "notes": ""
+   },
+   {
+    "run": "25 Nov t3",
+    "seed": "C5s3",
+    "t_drop": 5.0,
+    "window": [
+     2.0,
+     4.0
+    ],
+    "score": 0.13098905684474185,
+    "time_matched_held": [
+     0.11155138697284155,
+     0.11989625472575427
+    ],
+    "time_matched_percentile": 100.0,
+    "ratio_time_matched_median": 1.1319109227764195,
+    "ratio_pooled_control_median": 1.2412241485438855,
+    "notes": "initial pose problem most probably"
+   },
+   {
+    "run": "25 Nov t4",
+    "seed": "C5s3",
+    "t_drop": 5.0,
+    "window": [
+     2.0,
+     4.0
+    ],
+    "score": 0.12213516938500106,
+    "time_matched_held": [
+     0.11155138697284155,
+     0.11989625472575427
+    ],
+    "time_matched_percentile": 100.0,
+    "ratio_time_matched_median": 1.0554021504704063,
+    "ratio_pooled_control_median": 1.1573266139845984,
+    "notes": "Initial placement issue"
+   }
+  ],
+  "summary": {
+   "n": 12,
+   "median_ratio_time_matched": 1.0235672158073204,
+   "median_ratio_pooled_control": 1.0546333012437503,
+   "n_above_all_time_matched": 4
+  }
+ },
+ "outlier_moves": {
+  "p99_control_per_finger": {
+   "C5s1": {
+    "Df": [
+     0.1226283460855484,
+     0.14062805473804474,
+     0.11670742183923721,
+     0.11856626719236374
+    ],
+    "cmd_step": [
+     0.07562950105075689,
+     0.08333309715697752,
+     0.08152746743674721,
+     0.08332639109619012
+    ]
+   },
+   "C5s3": {
+    "Df": [
+     0.14017455279827118,
+     0.12329278141260147,
+     0.11796274036169052,
+     0.10412976145744324
+    ],
+    "cmd_step": [
+     0.07776659471943122,
+     0.08327267581894873,
+     0.08333019169536487,
+     0.08333244831317654
+    ]
+   }
+  },
+  "per_window": [
+   {
+    "run": "20 Nov t12",
+    "seed": "C5s1",
+    "set": "P",
+    "t_drop": 45.0,
+    "disagreement": {
+     "finger": "index",
+     "t": 42.601961295004,
+     "value": 0.11719750612974167,
+     "p99_control": 0.1226283460855484,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "thumb",
+     "t": 43.15423212799942,
+     "value": 0.08332184841356327,
+     "p99_control": 0.08332639109619012,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t1",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 15.0,
+    "disagreement": {
+     "finger": "thumb",
+     "t": 12.208303001000104,
+     "value": 0.13864250481128693,
+     "p99_control": 0.10412976145744324,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 13.96731634899993,
+     "value": 0.08332256180744721,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t7",
+    "seed": "C5s1",
+    "set": "P",
+    "t_drop": 30.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 28.63472276099992,
+     "value": 0.11774850636720657,
+     "p99_control": 0.14062805473804474,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "middle",
+     "t": 28.948219094999786,
+     "value": 0.08328931905875478,
+     "p99_control": 0.08333309715697752,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t11",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 45.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 42.1170175379998,
+     "value": 0.09223698079586029,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 42.50600718499982,
+     "value": 0.0833332799375526,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t13",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 20.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 18.938189736999902,
+     "value": 0.09032975137233734,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 17.280161547999796,
+     "value": 0.08327899363145123,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t15",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 50.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 48.34390565900003,
+     "value": 0.10223644226789474,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 48.34390565900003,
+     "value": 0.08333048229798129,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "OUT AT 50S, BUT MISTAKE SAID NO [corrected 24 Nov per this note: dropped=True, drop_time_s=50]"
+   },
+   {
+    "run": "24 Nov t17",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 50.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 48.69991754400007,
+     "value": 0.09638621658086777,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 47.431128989999706,
+     "value": 0.08333064436786207,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": ""
+   },
+   {
+    "run": "25 Nov t5",
+    "seed": "C5s3",
+    "set": "P",
+    "t_drop": 30.0,
+    "disagreement": {
+     "finger": "ring",
+     "t": 27.431930573000045,
+     "value": 0.12899640202522278,
+     "p99_control": 0.11796274036169052,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "middle",
+     "t": 28.386773145000006,
+     "value": 0.08333288133450668,
+     "p99_control": 0.08327267581894873,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "still initial placement issue"
+   },
+   {
+    "run": "24 Nov t2",
+    "seed": "C5s1",
+    "set": "Early",
+    "t_drop": 8.0,
+    "disagreement": {
+     "finger": "thumb",
+     "t": 5.742937752999978,
+     "value": 0.12539087235927582,
+     "p99_control": 0.11856626719236374,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "thumb",
+     "t": 5.091926750000084,
+     "value": 0.0828492154808766,
+     "p99_control": 0.08332639109619012,
+     "exceeds_p99": false,
+     "at_action_bound": false
+    },
+    "notes": "Stopped by it's own, maybe a joint limit or current idk"
+   },
+   {
+    "run": "24 Nov t3",
+    "seed": "C5s1",
+    "set": "Early",
+    "t_drop": 8.0,
+    "disagreement": {
+     "finger": "ring",
+     "t": 6.93085609700006,
+     "value": 0.12183010578155518,
+     "p99_control": 0.11670742183923721,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 6.327970241000003,
+     "value": 0.08217670313921659,
+     "p99_control": 0.08152746743674721,
+     "exceeds_p99": true,
+     "at_action_bound": false
+    },
+    "notes": "Dropped because of limit"
+   },
+   {
+    "run": "24 Nov t5",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 7.0,
+    "disagreement": {
+     "finger": "ring",
+     "t": 5.526036063999982,
+     "value": 0.11767616122961044,
+     "p99_control": 0.11796274036169052,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 5.9779073780000545,
+     "value": 0.077876708785285,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": false
+    },
+    "notes": ""
+   },
+   {
+    "run": "24 Nov t6",
+    "seed": "C5s1",
+    "set": "Early",
+    "t_drop": 3.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 1.4550380709997626,
+     "value": 0.13407982885837555,
+     "p99_control": 0.14062805473804474,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "index",
+     "t": 1.5049133329998767,
+     "value": 0.08288504614195588,
+     "p99_control": 0.07562950105075689,
+     "exceeds_p99": true,
+     "at_action_bound": false
+    },
+    "notes": "Limit hit"
+   },
+   {
+    "run": "24 Nov t9",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 7.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 5.273185053000361,
+     "value": 0.12959933280944824,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "thumb",
+     "t": 4.268182011000135,
+     "value": 0.08318412035243648,
+     "p99_control": 0.08333244831317654,
+     "exceeds_p99": false,
+     "at_action_bound": false
+    },
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t12",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 7.0,
+    "disagreement": {
+     "finger": "ring",
+     "t": 5.525830187999873,
+     "value": 0.11746509373188019,
+     "p99_control": 0.11796274036169052,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 5.97798056099964,
+     "value": 0.08160559818818126,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": false
+    },
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t14",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 5.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 3.2634275149998757,
+     "value": 0.12974072992801666,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 3.2634275149998757,
+     "value": 0.08333335816860332,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "OUT"
+   },
+   {
+    "run": "24 Nov t16",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 5.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 3.2649469460002365,
+     "value": 0.13104365766048431,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 3.1640603350001584,
+     "value": 0.08333332091573198,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "IT LOOKS LIKE THE INITIAL PLACEMENT IS BIT OFF"
+   },
+   {
+    "run": "24 Nov t18",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 5.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 3.4149347420002414,
+     "value": 0.13828125596046448,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 3.213929673000166,
+     "value": 0.08333028868145465,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "OUT"
+   },
+   {
+    "run": "25 Nov t2",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 7.0,
+    "disagreement": {
+     "finger": "ring",
+     "t": 5.713392965999901,
+     "value": 0.11780484765768051,
+     "p99_control": 0.11796274036169052,
+     "exceeds_p99": false
+    },
+    "cmd_step": {
+     "finger": "thumb",
+     "t": 4.419802063000134,
+     "value": 0.07951628079255976,
+     "p99_control": 0.08333244831317654,
+     "exceeds_p99": false,
+     "at_action_bound": false
+    },
+    "notes": ""
+   },
+   {
+    "run": "25 Nov t3",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 5.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 3.365351120000014,
+     "value": 0.14308775961399078,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 3.5166955970003073,
+     "value": 0.08330695766854655,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "initial pose problem most probably"
+   },
+   {
+    "run": "25 Nov t4",
+    "seed": "C5s3",
+    "set": "Early",
+    "t_drop": 5.0,
+    "disagreement": {
+     "finger": "middle",
+     "t": 3.216593286999796,
+     "value": 0.13569340109825134,
+     "p99_control": 0.12329278141260147,
+     "exceeds_p99": true
+    },
+    "cmd_step": {
+     "finger": "ring",
+     "t": 3.165454504000081,
+     "value": 0.08333335071802506,
+     "p99_control": 0.08333019169536487,
+     "exceeds_p99": false,
+     "at_action_bound": true
+    },
+    "notes": "Initial placement issue"
+   }
+  ],
+  "tie_tol_rad": 0.0001,
+  "step_bound_rad": 0.08333333333333333,
+  "summary": {
+   "P": {
+    "n": 8,
+    "disagreement_exceeds_p99": 2,
+    "cmd_step_exceeds_p99": 0,
+    "cmd_step_at_bound": 8,
+    "disagreement_finger_counts": {
+     "index": 1,
+     "middle": 5,
+     "ring": 1,
+     "thumb": 1
+    }
+   },
+   "Early": {
+    "n": 12,
+    "disagreement_exceeds_p99": 8,
+    "cmd_step_exceeds_p99": 2,
+    "cmd_step_at_bound": 5,
+    "disagreement_finger_counts": {
+     "index": 0,
+     "middle": 7,
+     "ring": 4,
+     "thumb": 1
+    }
+   }
+  }
+ },
+ "camera_check_25nov": {
+  "trial5": {
+   "operator_drop_s": 30.0,
+   "camera_drop_s": 24.971,
+   "ratio_camera": 0.8986862715775459,
+   "H1_median_ratio_with_camera": 0.9052649825140389,
+   "ratio_operator": 1.306346959791474
+  },
+  "trial4": {
+   "operator_drop_s": 5.0,
+   "camera_drop_s": 2.234,
+   "score": 0.13950887858867647,
+   "ratio_time_matched_median": 0.9932605634410174
+  }
+ },
+ "real_C5s3_control_Dbar": {
+  "n_steps": 5404,
+  "mean": 0.10580930269058232,
+  "median": 0.10113370642066002,
+  "p95": 0.15862515889108175
+ }
+}
