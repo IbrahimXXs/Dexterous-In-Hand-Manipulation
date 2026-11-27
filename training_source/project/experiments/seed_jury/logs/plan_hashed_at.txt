@@ -1,0 +1,2 @@
+2026-11-27T18:45:16+04:00
+sha256 of PLAN.md written before any disagreement value was computed; base commit 7b0e554 (branch seed-jury).
