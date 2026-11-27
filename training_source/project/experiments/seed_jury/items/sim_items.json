@@ -1,0 +1,551 @@
+[
+ {
+  "key": "calib_K_C5s3_s9411",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9411,
+  "calibration": true,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-median_s9401",
+  "policy": "J-median",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-median_s9402",
+  "policy": "J-median",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-mean_s9401",
+  "policy": "J-mean",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-mean_s9402",
+  "policy": "J-mean",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-veto_s9401",
+  "policy": "J-veto",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_J-veto_s9402",
+  "policy": "J-veto",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s1_s9401",
+  "policy": "C5s1",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s1_s9402",
+  "policy": "C5s1",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s2_s9401",
+  "policy": "C5s2",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s2_s9402",
+  "policy": "C5s2",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_s9401",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_s9402",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-median_s9401",
+  "policy": "J-median",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-median_s9402",
+  "policy": "J-median",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-mean_s9401",
+  "policy": "J-mean",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-mean_s9402",
+  "policy": "J-mean",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-veto_s9401",
+  "policy": "J-veto",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_J-veto_s9402",
+  "policy": "J-veto",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_s9401",
+  "policy": "C5s1",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_s9402",
+  "policy": "C5s1",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s2_s9401",
+  "policy": "C5s2",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s2_s9402",
+  "policy": "C5s2",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_s9401",
+  "policy": "C5s3",
+  "condition": "A",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_s9402",
+  "policy": "C5s3",
+  "condition": "A",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-median_s9401",
+  "policy": "J-median",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-median_s9402",
+  "policy": "J-median",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-mean_s9401",
+  "policy": "J-mean",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-mean_s9402",
+  "policy": "J-mean",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-veto_s9401",
+  "policy": "J-veto",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_J-veto_s9402",
+  "policy": "J-veto",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s1_s9401",
+  "policy": "C5s1",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s1_s9402",
+  "policy": "C5s1",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s2_s9401",
+  "policy": "C5s2",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s2_s9402",
+  "policy": "C5s2",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s3_s9401",
+  "policy": "C5s3",
+  "condition": "heavy_slippery",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s3_s9402",
+  "policy": "C5s3",
+  "condition": "heavy_slippery",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-median_s9401",
+  "policy": "J-median",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-median_s9402",
+  "policy": "J-median",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-mean_s9401",
+  "policy": "J-mean",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-mean_s9402",
+  "policy": "J-mean",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-veto_s9401",
+  "policy": "J-veto",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_J-veto_s9402",
+  "policy": "J-veto",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s1_s9401",
+  "policy": "C5s1",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s1_s9402",
+  "policy": "C5s1",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s2_s9401",
+  "policy": "C5s2",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s2_s9402",
+  "policy": "C5s2",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s3_s9401",
+  "policy": "C5s3",
+  "condition": "high_delay",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s3_s9402",
+  "policy": "C5s3",
+  "condition": "high_delay",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-median_s9401",
+  "policy": "J-median",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-median_s9402",
+  "policy": "J-median",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-mean_s9401",
+  "policy": "J-mean",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-mean_s9402",
+  "policy": "J-mean",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-veto_s9401",
+  "policy": "J-veto",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_J-veto_s9402",
+  "policy": "J-veto",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s1_s9401",
+  "policy": "C5s1",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s1_s9402",
+  "policy": "C5s1",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s2_s9401",
+  "policy": "C5s2",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s2_s9402",
+  "policy": "C5s2",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s3_s9401",
+  "policy": "C5s3",
+  "condition": "obs_noise_x3",
+  "seed": 9401,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s3_s9402",
+  "policy": "C5s3",
+  "condition": "obs_noise_x3",
+  "seed": 9402,
+  "calibration": false,
+  "num_envs": 256,
+  "steps": 1200
+ }
+]
