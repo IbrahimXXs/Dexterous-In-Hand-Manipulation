@@ -100,6 +100,7 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 | 26 Nov | [C5-HW-V2](training_source/project/experiments/c5_hw_v2/REPORT.md) | Train under the hand's conditions (350 mA, actuator response, kit start) | Actuator refit **failed** its pre-registered rule; training only from simulated kit starts **failed** all three pre-registered criteria (1 seed, simulation only): no kit-start gain, 0.536 × C5's turns from random grasps |
 | 26 Nov | [Final protocol (draft)](docs/hardware_protocol_final_DRAFT.md), [report](docs/report/REPORT.md) | Plan the final real-hand comparison; write up | Protocol is a DRAFT, not approved; report with every number traced to a file ([NUMBERS.md](docs/report/NUMBERS.md)) |
 | 27 Nov | [Gait efficiency](training_source/project/experiments/gait_efficiency/README.md) | Where did the speed go on the real hand? | Finger rhythm transferred (both C5 seeds within 2%); quarter turns per finger cycle did not (C5 seed 1 0.703×, A3 0.058× of simulation), except for C5 seed 3. Simulation half pre-registered, hardware half post hoc |
+| 27 Nov | [Seed jury](training_source/project/experiments/seed_jury/README.md) | Do the three C5 seeds disagree before a real drop, and does a jury of them hold the cube better? | **No and no** (pre-registered): before drops, disagreement 0.96× the run's normal level [0.81, 1.06] (8 drops, replayed with the kit's code); every jury lost to C5s3 alone in simulation (stress survival −0.06 to −0.14, CIs below 0) |
 
 <img alt="Trial video frame from 25 November: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second." src="docs/figures/trial_video_2026-11-25_estimated.jpg">
 
@@ -151,6 +152,7 @@ training_source/project/
     c5_hw_v2/                      actuator refit, kit-start training, C5-HW-V2 (26 Nov)
     gait_efficiency/               finger rhythm vs turns per finger cycle, sim vs real hand (27 Nov)
     final_session_forecast/        hashed pre-session forecast for the final real-hand comparison (27 Nov)
+    seed_jury/                     do the C5 seeds disagree before drops; jury of three seeds (27 Nov; null)
   real_world/cube_vision/          ArUco + RealSense cube tracker, gap filling, dashboard
 LEAP_Hand_RL_Deploy_Kit/           guarded hardware runtime, trial scheduler, monitors, logs, audit
 checkpoint/  policy/  simulation/  course model_400 package (viewer, policy, replay)

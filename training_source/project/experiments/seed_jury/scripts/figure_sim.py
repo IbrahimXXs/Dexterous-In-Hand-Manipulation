@@ -38,7 +38,7 @@ POL = {"J-median": ("A", "o", True), "J-mean": ("RET", "s", True), "J-veto": ("i
 
 def mk(ax, th, p, x, y, s=60, z=3):
   col, m, filled = POL[p]
-  ax.scatter([x], [y], s=s * (2.2 if m == "*" else 1), marker=m, color=th[col] if filled else th["surface"],
+  ax.scatter([x], [y], s=s * (3.2 if m == "*" else 1), marker=m, color=th[col] if filled else th["surface"],
              edgecolor=th[col] if not filled else th["surface"], linewidth=1.6 if not filled else 1.2, zorder=z)
 
 

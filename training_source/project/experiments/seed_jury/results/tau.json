@@ -1,0 +1,49 @@
+{
+ "rule": "tau_j = 95th percentile of |delta(a_C5s3,j) - delta(a_median,j)| over alive first-episode env-steps",
+ "item": {
+  "key": "calib_K_C5s3_s9411",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9411,
+  "calibration": true,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ "n_samples": 286246,
+ "tau_rad_per_joint": [
+  0.0787293016910553,
+  0.08333112113177776,
+  0.08331360667943954,
+  0.0803210511803627,
+  0.0814080685377121,
+  0.08239499852061272,
+  0.08316683769226074,
+  0.08097346313297749,
+  0.0763458851724863,
+  0.083321213722229,
+  0.08262166008353233,
+  0.0795613694936037,
+  0.04913340508937836,
+  0.08327854797244072,
+  0.03819100931286812,
+  0.08332463353872299
+ ],
+ "joint_names": [
+  "if_mcp",
+  "if_rot",
+  "if_pip",
+  "if_dip",
+  "mf_mcp",
+  "mf_rot",
+  "mf_pip",
+  "mf_dip",
+  "rf_mcp",
+  "rf_rot",
+  "rf_pip",
+  "rf_dip",
+  "th_cmc",
+  "th_axl",
+  "th_mcp",
+  "th_ipl"
+ ]
+}

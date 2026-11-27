@@ -1,0 +1,4628 @@
+Fri Nov 27 19:08:01 +04 2026 job 338486 host ws-l1-019 gpu 0: experiments/seed_jury/scripts/sim_jury.py --items experiments/seed_jury/items/sim_items.json
+Setting seed: 9401
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation" (31 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/ibrahim.alsarraj/.cache/warp/1.13.0
+Module mujoco_warp._src.smooth 976a5d7 load on device 'cuda:0' took 3.26 ms  (cached)
+Module mujoco_warp._src.collision_driver fbb0ee0 load on device 'cuda:0' took 1.60 ms  (cached)
+Module _nxn_broadphase__locals__kernel_f0d52073 f0d5207 load on device 'cuda:0' took 1.55 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_6e17b813 6e17b81 load on device 'cuda:0' took 2.71 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_e4012e76 e4012e7 load on device 'cuda:0' took 2.45 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_c6be8452 c6be845 load on device 'cuda:0' took 2.54 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_2e1ffd01 2e1ffd0 load on device 'cuda:0' took 1.99 ms  (cached)
+Module mujoco_warp._src.constraint eb0e24d load on device 'cuda:0' took 2.33 ms  (cached)
+Module _efc_contact_init__locals__kernel_318b5c61 318b5c6 load on device 'cuda:0' took 1.78 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_80736b5f 416564c load on device 'cuda:0' took 1.85 ms  (cached)
+Module _efc_contact_update__locals__kernel_9b1e9723 9b1e972 load on device 'cuda:0' took 1.51 ms  (cached)
+Module mujoco_warp._src.sensor bee2d80 load on device 'cuda:0' took 2.90 ms  (cached)
+Module mujoco_warp._src.forward a76b6a3 load on device 'cuda:0' took 2.11 ms  (cached)
+Module mujoco_warp._src.passive 616927b load on device 'cuda:0' took 1.67 ms  (cached)
+Module mujoco_warp._src.forward 398750d load on device 'cuda:0' took 2.25 ms  (cached)
+Module mujoco_warp._src.support f32a4f8 load on device 'cuda:0' took 1.99 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_e0539067 63ff5df load on device 'cuda:0' took 28.37 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_2f60cdde 11a4bf6 load on device 'cuda:0' took 28.48 ms  (cached)
+Module mujoco_warp._src.solver 7df28c9 load on device 'cuda:0' took 2.62 ms  (cached)
+Module solve_init_jaref__locals__kernel_25ff1b7c 25ff1b7 load on device 'cuda:0' took 1.48 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_7ed132ec 7ed132e load on device 'cuda:0' took 1.56 ms  (cached)
+Module update_constraint_efc__locals__kernel_0760efd0 0760efd load on device 'cuda:0' took 1.56 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_9e13f241 9e13f24 load on device 'cuda:0' took 1.57 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_cea82d7a 9efb876 load on device 'cuda:0' took 1.87 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_ea20c59c 4a0130a load on device 'cuda:0' took 28.70 ms  (cached)
+Module linesearch_jv_fused__locals__kernel_b4aea1d9 b4aea1d load on device 'cuda:0' took 30.95 ms  (cached)
+Module linesearch_prepare_gauss__locals__kernel_710d51d7 710d51d load on device 'cuda:0' took 39.16 ms  (cached)
+Module _contact_sort__locals__contact_sort_5db6d00c a3dbca1 load on device 'cuda:0' took 55.58 ms  (cached)
+Module mujoco_warp._src.derivative f06cf21 load on device 'cuda:0' took 16.47 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_710d4b78 710d4b7 load on device 'cuda:0' took 18.44 ms  (cached)
+Module reset_data__locals__reset_qM_6daef3df 6daef3d load on device 'cuda:0' took 35.75 ms  (cached)
+Module reset_data__locals__reset_mocap_d10cb5d9 d10cb5d load on device 'cuda:0' took 26.29 ms  (cached)
+Module reset_data__locals__reset_contact_d9b9dbe6 d9b9dbe load on device 'cuda:0' took 27.05 ms  (cached)
+Module reset_data__locals__reset_nworld_f10c11a2 f10c11a load on device 'cuda:0' took 32.34 ms  (cached)
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9401   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+Module repeat_array_kernel_6bf8ef65 b2fc6f5 load on device 'cuda:0' took 32.86 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 192d60e load on device 'cuda:0' took 32.61 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 3cd9fa4 load on device 'cuda:0' took 21.56 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 c24051e load on device 'cuda:0' took 38.51 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 dc82881 load on device 'cuda:0' took 24.18 ms  (cached)
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 9 active terms.
++------------------------------------------------+
+|              Active Reward Terms               |
++-------+------------------------------+---------+
+| Index | Name                         |  Weight |
++-------+------------------------------+---------+
+|   0   | rotate_finite_diff           |    1.25 |
+|   1   | object_linvel_penalty        |  -0.095 |
+|   2   | pose_diff_penalty            | -0.0317 |
+|   3   | torque_penalty               |  -0.317 |
+|   4   | work_penalty                 | -0.0317 |
+|   5   | object_fallen                |   -10.0 |
+|   6   | retention_penalty            |   -0.05 |
+|   7   | grasp_loss                   |   -10.0 |
+|   8   | actuator_utilisation_penalty | -0.2201 |
++-------+------------------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v2/cache/kit_start_cache.npz' with 4035 entries
+/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/sim/sim_data.py:71: UserWarning: Use of index_put_ on expanded tensors is deprecated. Please clone() the tensor before performing this operation. This also applies to advanced indexing e.g. tensor[indices] = tensor (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:967.)
+  self._tensor[idx] = value
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[K_J-median_s9401] surv60 0.891 turns30 1.163 jam 0.0195 (98s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 9 active terms.
++------------------------------------------------+
+|              Active Reward Terms               |
++-------+------------------------------+---------+
+| Index | Name                         |  Weight |
++-------+------------------------------+---------+
+|   0   | rotate_finite_diff           |    1.25 |
+|   1   | object_linvel_penalty        |  -0.095 |
+|   2   | pose_diff_penalty            | -0.0317 |
+|   3   | torque_penalty               |  -0.317 |
+|   4   | work_penalty                 | -0.0317 |
+|   5   | object_fallen                |   -10.0 |
+|   6   | retention_penalty            |   -0.05 |
+|   7   | grasp_loss                   |   -10.0 |
+|   8   | actuator_utilisation_penalty | -0.2201 |
++-------+------------------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v2/cache/kit_start_cache.npz' with 4035 entries
+/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/lib/python3.10/site-packages/mjlab/sim/sim_data.py:71: UserWarning: Use of index_put_ on expanded tensors is deprecated. Please clone() the tensor before performing this operation. This also applies to advanced indexing e.g. tensor[indices] = tensor (Triggered internally at /pytorch/aten/src/ATen/native/TensorAdvancedIndexing.cpp:967.)
+  self._tensor[idx] = value
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[K_J-mean_s9402] surv60 0.898 turns30 0.788 jam 0.0547 (87s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 9 active terms.
++------------------------------------------------+
+|              Active Reward Terms               |
++-------+------------------------------+---------+
+| Index | Name                         |  Weight |
++-------+------------------------------+---------+
+|   0   | rotate_finite_diff           |    1.25 |
+|   1   | object_linvel_penalty        |  -0.095 |
+|   2   | pose_diff_penalty            | -0.0317 |
+|   3   | torque_penalty               |  -0.317 |
+|   4   | work_penalty                 | -0.0317 |
+|   5   | object_fallen                |   -10.0 |
+|   6   | retention_penalty            |   -0.05 |
+|   7   | grasp_loss                   |   -10.0 |
+|   8   | actuator_utilisation_penalty | -0.2201 |
++-------+------------------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v2/cache/kit_start_cache.npz' with 4035 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[K_C5s1_s9402] surv60 0.945 turns30 2.160 jam 0.0742 (87s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 9 active terms.
++------------------------------------------------+
+|              Active Reward Terms               |
++-------+------------------------------+---------+
+| Index | Name                         |  Weight |
++-------+------------------------------+---------+
+|   0   | rotate_finite_diff           |    1.25 |
+|   1   | object_linvel_penalty        |  -0.095 |
+|   2   | pose_diff_penalty            | -0.0317 |
+|   3   | torque_penalty               |  -0.317 |
+|   4   | work_penalty                 | -0.0317 |
+|   5   | object_fallen                |   -10.0 |
+|   6   | retention_penalty            |   -0.05 |
+|   7   | grasp_loss                   |   -10.0 |
+|   8   | actuator_utilisation_penalty | -0.2201 |
++-------+------------------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/c5_hw_v2/cache/kit_start_cache.npz' with 4035 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[K_C5s3_s9402] surv60 0.941 turns30 1.993 jam 0.0312 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[A_J-median_s9402] surv60 0.664 turns30 0.910 jam 0.0000 (87s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[A_J-veto_s9402] surv60 0.645 turns30 1.129 jam 0.0000 (87s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[A_C5s2_s9402] surv60 0.840 turns30 1.879 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[heavy_slippery_J-median_s9402] surv60 0.688 turns30 0.977 jam 0.0000 (87s)
+Setting seed: 9401
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9401   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[heavy_slippery_J-veto_s9401] surv60 0.723 turns30 1.224 jam 0.0000 (87s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[heavy_slippery_C5s1_s9402] surv60 0.820 turns30 1.878 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[heavy_slippery_C5s3_s9402] surv60 0.797 turns30 1.564 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[high_delay_J-mean_s9402] surv60 0.711 turns30 0.519 jam 0.0000 (86s)
+Setting seed: 9401
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9401   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[high_delay_C5s1_s9401] surv60 0.770 turns30 1.673 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[high_delay_C5s2_s9402] surv60 0.781 turns30 1.706 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[obs_noise_x3_J-median_s9402] surv60 0.680 turns30 0.938 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[obs_noise_x3_J-veto_s9402] surv60 0.613 turns30 1.031 jam 0.0000 (86s)
+Setting seed: 9401
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9401   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[obs_noise_x3_C5s2_s9401] surv60 0.832 turns30 1.817 jam 0.0000 (86s)
+Setting seed: 9402
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 256    |
+| Environment device     | cuda:0 |
+| Environment seed       | 9402   |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | body_ipos             |
+|   1   | geom_friction         |
+|   2   | body_mass             |
+|   3   | dof_frictionloss      |
+|   4   | dof_damping           |
+|   5   | dof_armature          |
+|   6   | actuator_gainprm      |
+|   7   | actuator_biasprm      |
+|   8   | actuator_forcerange   |
+|   9   | actuator_forcelimited |
++-------+-----------------------+
+
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++-----------------------------------------+
+|           Active Reward Terms           |
++-------+-----------------------+---------+
+| Index | Name                  |  Weight |
++-------+-----------------------+---------+
+|   0   | rotate_finite_diff    |    1.25 |
+|   1   | object_linvel_penalty |  -0.095 |
+|   2   | pose_diff_penalty     | -0.0317 |
+|   3   | torque_penalty        |  -0.317 |
+|   4   | work_penalty          | -0.0317 |
+|   5   | object_fallen         |   -10.0 |
+|   6   | retention_penalty     |   -0.05 |
+|   7   | grasp_loss            |   -10.0 |
++-------+-----------------------+---------+
+
+[INFO] <NullCurriculumManager> (inactive)
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor',)
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=320, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+[obs_noise_x3_C5s3_s9402] surv60 0.801 turns30 1.736 jam 0.0000 (86s)
+Fri Nov 27 19:34:10 +04 2026 exit 0
