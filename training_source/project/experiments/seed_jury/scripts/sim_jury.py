@@ -136,7 +136,8 @@ def recording(store: dict):
     store["squash"] = getattr(term.cfg, "squash", None)
     robot = raw.scene["robot"]
     store["joint_names"] = list(robot.joint_names)
-    q, tgt = store["q"] = [], store["target"] = []
+    q, tgt = [], []
+    store["q"], store["target"] = q, tgt
     step = env.step
 
     def recorded_step(actions):
