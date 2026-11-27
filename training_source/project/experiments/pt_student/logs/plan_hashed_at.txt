@@ -1,0 +1,2 @@
+2026-11-27T19:47:25+04:00
+sha256 of PLAN.md written before any training; base commit bfa3b90 (branch pt-student).
