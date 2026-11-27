@@ -1,0 +1,2 @@
+2026-11-27T09:25:52+04:00
+sha256 of the 1-hour addendum (incl. the camera placement check rule), its wrapper script, the unchanged forecast.py and the 6-attempt results; written before the final real-hand session. Base commit: ad7c745.

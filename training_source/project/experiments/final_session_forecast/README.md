@@ -9,3 +9,5 @@ The forecast itself is in [docs/forecast_final_session.md](../../../../docs/fore
   - Check with `sha256sum -c` from the repository root.
 
 The forecast is not edited after hashing; it is scored against the session results (forecast section 5).
+
+**1-hour addendum (27 Nov, before the session):** [docs/forecast_final_session_addendum_1h.md](../../../../docs/forecast_final_session_addendum_1h.md). 18 attempts (6 per arm, `TRIAL_BLOCKS=6`) and the same forecast re-run for 6 attempts per arm (`scripts/forecast_6.py` → `addendum_1h/results/`). Hash: `logs/addendum_1h.sha256`.
