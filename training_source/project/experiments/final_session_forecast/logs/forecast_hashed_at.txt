@@ -1,0 +1,2 @@
+2026-11-27T04:31:36+04:00
+sha256 of the forecast, its script and results, and the protocol draft at forecast time; written before the final real-hand session. Base commit: 2174024 (branch friction-probe).

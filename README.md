@@ -150,6 +150,7 @@ training_source/project/
     c5_hw_v1/                      actuator audit follow-up, C5-EFFORT (24 Nov)
     c5_hw_v2/                      actuator refit, kit-start training, C5-HW-V2 (26 Nov)
     gait_efficiency/               finger rhythm vs turns per finger cycle, sim vs real hand (27 Nov)
+    final_session_forecast/        hashed pre-session forecast for the final real-hand comparison (27 Nov)
   real_world/cube_vision/          ArUco + RealSense cube tracker, gap filling, dashboard
 LEAP_Hand_RL_Deploy_Kit/           guarded hardware runtime, trial scheduler, monitors, logs, audit
 checkpoint/  policy/  simulation/  course model_400 package (viewer, policy, replay)

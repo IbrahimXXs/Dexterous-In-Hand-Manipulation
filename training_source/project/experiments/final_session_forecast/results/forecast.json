@@ -1,0 +1,635 @@
+{
+ "label": "FORECAST, written before the final session from existing data only; do not edit after hashing",
+ "m_new_attempts_per_arm": 12,
+ "B": 20000,
+ "interval": "90% (5th-95th percentile)",
+ "rng_seed": 20261127,
+ "crosscheck_rows_equal_real_hand_json": 18,
+ "dispersion_inputs": {
+  "s_run": {
+   "rate": 0.3674320325372426,
+   "tpc": 0.2410095704214386,
+   "rhythm": 0.30803019638443385
+  },
+  "session": {
+   "rate": {
+    "log_ratios": [
+     -0.11684639427792518,
+     -0.08367857557389773
+    ],
+    "s_sess": 0.07185955723811005
+   },
+   "tpc": {
+    "log_ratios": [
+     -0.08488225496380351,
+     -0.19208186479408446
+    ],
+    "s_sess": 0.10500052379692339
+   },
+   "rhythm": {
+    "log_ratios": [
+     9.247422382589603e-05,
+     0.056523276207002975
+    ],
+    "s_sess": 0.02826167592631062
+   }
+  },
+  "groups": {
+   "A3 20 Nov": {
+    "rate": 0.9151756129887342,
+    "tpc": 0.06022701427061959,
+    "rhythm": 0.5309109016204284,
+    "n_rate": 3,
+    "n_gait": 2
+   },
+   "C5s1 20 Nov": {
+    "rate": 3.642494219493302,
+    "tpc": 0.7412379600936299,
+    "rhythm": 0.3409265101097029,
+    "n_rate": 5,
+    "n_gait": 5
+   },
+   "C5s1 24 Nov": {
+    "rate": 3.2408066920655956,
+    "tpc": 0.6809163418100989,
+    "rhythm": 0.34095803848186534,
+    "n_rate": 2,
+    "n_gait": 2
+   },
+   "C5s3 24 Nov": {
+    "rate": 4.336147902869757,
+    "tpc": 1.1388722931797135,
+    "rhythm": 0.29226544243853975,
+    "n_rate": 6,
+    "n_gait": 5
+   },
+   "C5s3 25 Nov": {
+    "rate": 3.988071570576541,
+    "tpc": 0.939842182759903,
+    "rhythm": 0.30926104157082857,
+    "n_rate": 2,
+    "n_gait": 2
+   },
+   "M400 20 Nov": {
+    "rate": 2.65,
+    "tpc": 0.2882980866938691,
+    "rhythm": 0.25328693813913306,
+    "n_rate": 3,
+    "n_gait": 1
+   },
+   "P0 20 Nov": {
+    "rate": 0.0,
+    "tpc": 0.0,
+    "rhythm": 0.20455561016571686,
+    "n_rate": 2,
+    "n_gait": 1
+   },
+   "R1 20 Nov": {
+    "rate": 4.125,
+    "tpc": null,
+    "rhythm": null,
+    "n_rate": 2,
+    "n_gait": 0
+   }
+  }
+ },
+ "camera_inputs": {
+  "rate": {
+   "ratios": {
+    "trial1": 1.010625,
+    "trial5": 0.86875
+   },
+   "mu_log": -0.06506546537695039,
+   "sd_log": 0.10696321791634893
+  },
+  "tpc": {
+   "ratios": {
+    "trial1": 0.966168598722768,
+    "trial5": 0.763028586077658
+   },
+   "mu_log": -0.1524383550942161,
+   "sd_log": 0.16690750403605747
+  }
+ },
+ "arms": {
+  "M400": {
+   "prior": {
+    "attempts": [
+     {
+      "session": "20 Nov",
+      "trial": 21,
+      "held_s": 12.0,
+      "qturns": 3.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 3.75,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "20 Nov",
+      "trial": 22,
+      "held_s": 7.0,
+      "qturns": 1.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 2.142857142857143,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "20 Nov",
+      "trial": 23,
+      "held_s": 25.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": false,
+      "rate": 1.2,
+      "cycles": 6.937264214742123,
+      "rhythm": 0.25328693813913306
+     },
+     {
+      "session": "20 Nov",
+      "trial": 24,
+      "held_s": 10.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 3.0,
+      "cycles": null,
+      "rhythm": null
+     }
+    ],
+    "n_attempts": 4,
+    "n_rate_eligible": 3,
+    "n_gait_eligible_counted": 1,
+    "n_rhythm_eligible": 1,
+    "rate_operator_mean": 2.65,
+    "tpc_operator": 0.2882980866938691,
+    "rhythm_median": 0.25328693813913306
+   },
+   "forecast": {
+    "rate": {
+     "h": 0.29495296363968204,
+     "point_median": 2.627397206575986,
+     "interval90": [
+      1.4160885421622342,
+      3.7902539406347184
+     ],
+     "p_undefined": 0.0021999999999999797
+    },
+    "tpc": {
+     "h": 0.2410095704214386,
+     "point_median": 0.25486882090791824,
+     "interval90": [
+      0.17659495721409568,
+      0.3630151854924634
+     ],
+     "p_undefined": 0.19935000000000003
+    },
+    "rhythm": {
+     "h": 0.30803019638443385,
+     "point_median": 0.25509708831201383,
+     "interval90": [
+      0.17981614868997792,
+      0.3613912799088282
+     ],
+     "p_undefined": 0.20289999999999997
+    },
+    "held60": {
+     "prior_k": 0,
+     "prior_n": 4,
+     "point_of_12": 0,
+     "interval90_of_12": [
+      0,
+      5
+     ],
+     "point_share": 0.0,
+     "interval90_share": [
+      0.0,
+      0.4166666666666667
+     ]
+    }
+   }
+  },
+  "A3": {
+   "prior": {
+    "attempts": [
+     {
+      "session": "20 Nov",
+      "trial": 1,
+      "held_s": 60.32,
+      "qturns": null,
+      "dropped": false,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": true,
+      "rate": null,
+      "cycles": 36.06672852607606,
+      "rhythm": 0.6964866650609655
+     },
+     {
+      "session": "20 Nov",
+      "trial": 7,
+      "held_s": 15.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": false,
+      "rate": 2.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "20 Nov",
+      "trial": 10,
+      "held_s": 60.37,
+      "qturns": 0.0,
+      "dropped": false,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": true,
+      "rate": 0.0,
+      "cycles": 20.836944597960187,
+      "rhythm": 0.17535368515064484
+     },
+     {
+      "session": "20 Nov",
+      "trial": 16,
+      "held_s": 7.0,
+      "qturns": 3.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.428571428571429,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "20 Nov",
+      "trial": 17,
+      "held_s": 60.36,
+      "qturns": 3.0,
+      "dropped": false,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": true,
+      "rate": 0.7455268389662028,
+      "cycles": 28.97458991577186,
+      "rhythm": 0.5309109016204284
+     }
+    ],
+    "n_attempts": 5,
+    "n_rate_eligible": 3,
+    "n_gait_eligible_counted": 2,
+    "n_rhythm_eligible": 3,
+    "rate_operator_mean": 0.9151756129887342,
+    "tpc_operator": 0.06022701427061959,
+    "rhythm_median": 0.5309109016204284
+   },
+   "forecast": {
+    "rate": {
+     "h": 0.29495296363968204,
+     "point_median": 0.8391428488744788,
+     "interval90": [
+      0.1223323396672327,
+      1.8034153074955377
+     ],
+     "p_undefined": 0.0020999999999999908
+    },
+    "tpc": {
+     "h": 0.2098110172901403,
+     "point_median": 0.05254070491436564,
+     "interval90": [
+      0.0,
+      0.10395398620721763
+     ],
+     "p_undefined": 0.028699999999999948
+    },
+    "rhythm": {
+     "h": 0.247268640914951,
+     "point_median": 0.5003924695336015,
+     "interval90": [
+      0.17303606938921692,
+      0.7294395728580801
+     ],
+     "p_undefined": 0.006850000000000023
+    },
+    "held60": {
+     "prior_k": 3,
+     "prior_n": 5,
+     "point_of_12": 7,
+     "interval90_of_12": [
+      2,
+      11
+     ],
+     "point_share": 0.5833333333333334,
+     "interval90_share": [
+      0.16666666666666666,
+      0.9166666666666666
+     ]
+    }
+   }
+  },
+  "C5s3": {
+   "prior": {
+    "attempts": [
+     {
+      "session": "24 Nov",
+      "trial": 1,
+      "held_s": 15.0,
+      "qturns": 4.0,
+      "dropped": true,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 4,
+      "held_s": 60.4,
+      "qturns": 20.0,
+      "dropped": false,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": true,
+      "rate": 4.966887417218543,
+      "cycles": 16.940022731016963,
+      "rhythm": 0.29713320731466814
+     },
+     {
+      "session": "24 Nov",
+      "trial": 5,
+      "held_s": 7.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.285714285714286,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 8,
+      "held_s": 7.36,
+      "qturns": 1.0,
+      "dropped": false,
+      "stop_reason": "interrupted",
+      "intervened": true,
+      "held60": false,
+      "rate": null,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 9,
+      "held_s": 7.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.285714285714286,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 11,
+      "held_s": 45.0,
+      "qturns": 12.0,
+      "dropped": true,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.0,
+      "cycles": 11.00432224935497,
+      "rhythm": 0.29226544243853975
+     },
+     {
+      "session": "24 Nov",
+      "trial": 12,
+      "held_s": 7.0,
+      "qturns": 3.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.428571428571429,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 13,
+      "held_s": 20.0,
+      "qturns": 7.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 5.25,
+      "cycles": 3.0891988740201475,
+      "rhythm": 0.21916267010030374
+     },
+     {
+      "session": "24 Nov",
+      "trial": 14,
+      "held_s": 5.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 15,
+      "held_s": 50.0,
+      "qturns": 14.0,
+      "dropped": true,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.2,
+      "cycles": 13.006539592722108,
+      "rhythm": 0.28250972183978657
+     },
+     {
+      "session": "24 Nov",
+      "trial": 16,
+      "held_s": 5.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "24 Nov",
+      "trial": 17,
+      "held_s": 50.0,
+      "qturns": 12.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 3.5999999999999996,
+      "cycles": 13.03391895795006,
+      "rhythm": 0.29715036489915664
+     },
+     {
+      "session": "24 Nov",
+      "trial": 18,
+      "held_s": 5.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "25 Nov",
+      "trial": 1,
+      "held_s": 60.36,
+      "qturns": 16.0,
+      "dropped": false,
+      "stop_reason": "max_steps",
+      "intervened": false,
+      "held60": true,
+      "rate": 3.9761431411530817,
+      "cycles": 17.51346519665381,
+      "rhythm": 0.3019470119346123
+     },
+     {
+      "session": "25 Nov",
+      "trial": 2,
+      "held_s": 7.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.285714285714286,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "25 Nov",
+      "trial": 3,
+      "held_s": 5.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "25 Nov",
+      "trial": 4,
+      "held_s": 5.0,
+      "qturns": 2.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 6.0,
+      "cycles": null,
+      "rhythm": null
+     },
+     {
+      "session": "25 Nov",
+      "trial": 5,
+      "held_s": 30.0,
+      "qturns": 8.0,
+      "dropped": true,
+      "stop_reason": "interrupted",
+      "intervened": false,
+      "held60": false,
+      "rate": 4.0,
+      "cycles": 8.022736987336863,
+      "rhythm": 0.3165750712070448
+     }
+    ],
+    "n_attempts": 18,
+    "n_rate_eligible": 8,
+    "n_gait_eligible_counted": 7,
+    "n_rhythm_eligible": 7,
+    "rate_operator_mean": 4.249128819796454,
+    "tpc_operator": 1.077348742116439,
+    "rhythm_median": 0.29713320731466814
+   },
+   "forecast": {
+    "rate": {
+     "h": 0.24241473680212752,
+     "point_median": 4.085237439127992,
+     "interval90": [
+      3.1461425537992533,
+      5.300271716773965
+     ],
+     "p_undefined": 0.004349999999999965
+    },
+    "tpc": {
+     "h": 0.16331071515152856,
+     "point_median": 0.9494989560268481,
+     "interval90": [
+      0.6993913824736135,
+      1.3519022620568577
+     ],
+     "p_undefined": 0.009399999999999964
+    },
+    "rhythm": {
+     "h": 0.20872462272698575,
+     "point_median": 0.2874814134244047,
+     "interval90": [
+      0.2249545064321058,
+      0.3572397396556805
+     ],
+     "p_undefined": 0.010700000000000043
+    },
+    "held60": {
+     "prior_k": 2,
+     "prior_n": 18,
+     "point_of_12": 1,
+     "interval90_of_12": [
+      0,
+      4
+     ],
+     "point_share": 0.08333333333333333,
+     "interval90_share": [
+      0.0,
+      0.3333333333333333
+     ]
+    }
+   }
+  }
+ }
+}

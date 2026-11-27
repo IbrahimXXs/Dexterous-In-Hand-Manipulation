@@ -2,6 +2,7 @@
 
 > **Status: DRAFT. NOT APPROVED. Do not run until the supervisor has signed section 10.**
 > Written 26 Nov 2026 by the project (not by the lab). Nothing here changes the kit's guards, limits, `configs/hand.env` or policies.
+> Amended 27 Nov 2026, before the session: secondary metrics 5 and 6 (finger rhythm, quarter turns per finger cycle) and a pre-session forecast, `docs/forecast_final_session.md` (sha256 and timestamp in `training_source/project/experiments/final_session_forecast/logs/`).
 > All hardware steps are for people at the bench. Steps that need a person at the hand are marked **[BENCH]**.
 
 ## 1. Question and arms
@@ -109,6 +110,11 @@
 2. **Safety-stop rate:** stops by any kit guard ÷ attempts.
 3. **Operator quarter turns per attempt.** The 20/24 Nov metric: comparable with earlier sessions.
 4. **60-s completion:** held and no stop.
+5. **Finger rhythm (Hz), every attempt.** Frequency of the largest FFT peak of the first principal component of the 16 joint positions (`q_hw` in the run log, 20 Hz), window 3 s → operator drop time (or end of run). Computed with `count_cycles` in `training_source/project/experiments/gait_efficiency/scripts/gait.py`, **unchanged** (sha256 `9133a493…`, as hashed in `gait_efficiency/logs/analysis_plan.sha256`).
+6. **Quarter turns per finger cycle, every attempt.** Camera quarter turns inside the same window (cumulative camera quarter turns at the drop minus at 3 s, from the per-trial camera series of `scripts/vision_trials.py --series`, same session axis and sign as the primary metric) ÷ encoder finger cycles in that window (the same `count_cycles` call).
+   - Also reported: the operator-count version (operator quarter turns over the whole hold ÷ the same cycles), as in `gait_efficiency`, so the values compare with 20/24/25 Nov.
+   - Attempts dropped before 5 s have a window under 2 s (40 samples, the counter's minimum) and are listed as "window too short".
+   - **Per-arm summaries** of 5 and 6 use attempts held ≥ 20 s: rhythm median, turns per cycle as a ratio of sums, bootstrap CI over attempts. Shorter windows undercount cycles (24 Nov trial 13, held 20 s, gave an implausible 2.27; `gait_efficiency/results/session_sensitivity.md`). Descriptive only, no test.
 
 ## 7. Analysis plan
 
@@ -125,6 +131,8 @@ Holm correction over the two contrasts for the primary metric.
 | Safety stops, 60-s completion | Fisher exact, two-sided | k/n per arm, p |
 | Operator quarter turns | Bootstrap CI of the difference (as above) | Per arm |
 | Camera vs operator | Per-attempt difference and Spearman correlation | Agreement table (validates the camera count) |
+| Finger rhythm, quarter turns per finger cycle (secondary 5, 6) | Descriptive: per-arm median rhythm; ratio of sums with a 95% bootstrap CI over attempts held ≥ 20 s (10,000 resamples) | Per-attempt table; per arm; compared with `gait_efficiency` (20/24/25 Nov, simulation) |
+| Forecast score | Each forecast value (`docs/forecast_final_session.md`) inside or outside its 90% interval | Table of forecast vs result. The forecast is not edited after its hash |
 
 **Sensitivity of 12 vs 12 (Fisher, two-sided, α = 0.05):** the smallest differences that can reach significance are 0/12 vs 5/12, 1/12 vs 7/12, and 2/12 vs 8/12. Smaller differences in stop or completion rates will not be resolvable in this session. That is a limitation to state, not a reason to add attempts after looking at the data.
 
