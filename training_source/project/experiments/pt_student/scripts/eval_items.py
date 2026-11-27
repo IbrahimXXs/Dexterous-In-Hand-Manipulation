@@ -234,6 +234,9 @@ def analyse() -> None:
         "qturns_per_cycle": float(sum(x["qturns"] for x in gs) / sum(x["cycles"] for x in gs)) if gs else None,
         "rhythm_hz_median": float(np.median([x["rhythm_hz"] for x in gs])) if gs else None,
         "cmd_change_rad_per_step": float(sum(x["dcmd_sum"] for x in parts) / sum(x["dcmd_n"] for x in parts))}
+    for k, key in (("turns_per_30s", "turns30"), ("survival_30s", "surv30"), ("survival_60s", "surv60")):
+      bs = np.mean([np.asarray(x[key])[rng.integers(0, len(x[key]), (NBOOT, len(x[key])))].mean(1) for x in parts], axis=0)
+      out["cells"][f"{c}/{p}"][f"{k}_ci95"] = [float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))]
   C = out["cells"]
   c5 = ("C5s1", "C5s2", "C5s3")
   for c in CONDITIONS:

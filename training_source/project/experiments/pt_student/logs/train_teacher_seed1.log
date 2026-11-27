@@ -7162,3 +7162,2359 @@ Episode_Termination/cube_pose_deviation: 1.0312
                            Time elapsed: 00:07:06
                                     ETA: 03:47:26
 
+################################################################################
+[1m                           Learning iteration 91/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12058624 
+                       Steps per second: 27338 
+                        Collection time: 4.588s 
+                          Learning time: 0.206s 
+                        Mean value loss: 0.0023
+                    Mean surrogate loss: -0.0120
+                      Mean entropy loss: 18.7623
+          Mean raw_action_abs_mean loss: 0.6802
+            Mean raw_mean_abs_mean loss: 0.2623
+              Mean exec_saturation loss: 0.0021
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9417
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7815
+                    Mean approx_kl loss: 0.0172
+              Mean grad_norm_actor loss: 0.5590
+             Mean grad_norm_critic loss: 0.0162
+                            Mean reward: -0.30
+                    Mean episode length: 378.62
+                  Mean action noise std: 0.78
+      Episode_Reward/rotate_finite_diff: 0.0221
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0074
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0237
+              Episode_Reward/grasp_loss: -0.0023
+      Episode_Metrics/rotation_progress: 0.0286
+           Episode_Metrics/linear_speed: 0.0084
+         Episode_Metrics/position_error: 0.0159
+             Episode_Metrics/tilt_error: 0.2833
+Episode_Metrics/fingertip_contact_count: 0.7279
+Episode_Metrics/fingertip_contact_fraction: 0.1820
+   Episode_Metrics/fingertip_found_mean: 0.1910
+    Episode_Metrics/fingertip_found_max: 0.6395
+             Episode_Metrics/if_contact: 0.2602
+             Episode_Metrics/mf_contact: 0.0896
+             Episode_Metrics/rf_contact: 0.0159
+             Episode_Metrics/th_contact: 0.3622
+       Episode_Metrics/genuine_yaw_rate: 0.0346
+ Episode_Metrics/exec_action_saturation: 0.0021
+Curriculum/object_linvel_penalty_weight/metric: 0.0288
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0011
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0009
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0303
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0288
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0011
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0009
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0288
+Curriculum/torque_penalty_weight/progress_raw: 0.0011
+Curriculum/torque_penalty_weight/progress_ema: 0.0009
+Curriculum/torque_penalty_weight/target_weight: -0.1009
+Curriculum/torque_penalty_weight/weight: -0.1008
+  Curriculum/work_penalty_weight/metric: 0.0288
+Curriculum/work_penalty_weight/progress_raw: 0.0011
+Curriculum/work_penalty_weight/progress_ema: 0.0009
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 10.2500
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0938
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.79s
+                           Time elapsed: 00:07:11
+                                    ETA: 03:47:25
+
+################################################################################
+[1m                           Learning iteration 92/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12189696 
+                       Steps per second: 27209 
+                        Collection time: 4.610s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0023
+                    Mean surrogate loss: -0.0118
+                      Mean entropy loss: 18.7830
+          Mean raw_action_abs_mean loss: 0.6829
+            Mean raw_mean_abs_mean loss: 0.2656
+              Mean exec_saturation loss: 0.0022
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9413
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7826
+                    Mean approx_kl loss: 0.0157
+              Mean grad_norm_actor loss: 0.5594
+             Mean grad_norm_critic loss: 0.0190
+                            Mean reward: -0.29
+                    Mean episode length: 372.82
+                  Mean action noise std: 0.78
+      Episode_Reward/rotate_finite_diff: 0.0228
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0069
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0211
+              Episode_Reward/grasp_loss: -0.0028
+      Episode_Metrics/rotation_progress: 0.0296
+           Episode_Metrics/linear_speed: 0.0080
+         Episode_Metrics/position_error: 0.0164
+             Episode_Metrics/tilt_error: 0.2877
+Episode_Metrics/fingertip_contact_count: 0.7610
+Episode_Metrics/fingertip_contact_fraction: 0.1903
+   Episode_Metrics/fingertip_found_mean: 0.2018
+    Episode_Metrics/fingertip_found_max: 0.6641
+             Episode_Metrics/if_contact: 0.2570
+             Episode_Metrics/mf_contact: 0.1003
+             Episode_Metrics/rf_contact: 0.0175
+             Episode_Metrics/th_contact: 0.3861
+       Episode_Metrics/genuine_yaw_rate: 0.0412
+ Episode_Metrics/exec_action_saturation: 0.0021
+Curriculum/object_linvel_penalty_weight/metric: 0.0295
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0008
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0006
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0295
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0008
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0006
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0295
+Curriculum/torque_penalty_weight/progress_raw: 0.0008
+Curriculum/torque_penalty_weight/progress_ema: 0.0006
+Curriculum/torque_penalty_weight/target_weight: -0.1005
+Curriculum/torque_penalty_weight/weight: -0.1005
+  Curriculum/work_penalty_weight/metric: 0.0295
+Curriculum/work_penalty_weight/progress_raw: 0.0008
+Curriculum/work_penalty_weight/progress_ema: 0.0006
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 11.1250
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.3125
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.82s
+                           Time elapsed: 00:07:16
+                                    ETA: 03:47:24
+
+################################################################################
+[1m                           Learning iteration 93/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12320768 
+                       Steps per second: 26866 
+                        Collection time: 4.671s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0023
+                    Mean surrogate loss: -0.0119
+                      Mean entropy loss: 18.8034
+          Mean raw_action_abs_mean loss: 0.6837
+            Mean raw_mean_abs_mean loss: 0.2662
+              Mean exec_saturation loss: 0.0022
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9416
+    Mean effective_exploration_001 loss: 0.9885
+              Mean action_std_mean loss: 0.7834
+                    Mean approx_kl loss: 0.0194
+              Mean grad_norm_actor loss: 0.5693
+             Mean grad_norm_critic loss: 0.0148
+                            Mean reward: -0.22
+                    Mean episode length: 360.84
+                  Mean action noise std: 0.78
+      Episode_Reward/rotate_finite_diff: 0.0235
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0069
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0188
+              Episode_Reward/grasp_loss: -0.0028
+      Episode_Metrics/rotation_progress: 0.0314
+           Episode_Metrics/linear_speed: 0.0093
+         Episode_Metrics/position_error: 0.0164
+             Episode_Metrics/tilt_error: 0.2754
+Episode_Metrics/fingertip_contact_count: 0.7646
+Episode_Metrics/fingertip_contact_fraction: 0.1911
+   Episode_Metrics/fingertip_found_mean: 0.2012
+    Episode_Metrics/fingertip_found_max: 0.6677
+             Episode_Metrics/if_contact: 0.2408
+             Episode_Metrics/mf_contact: 0.1101
+             Episode_Metrics/rf_contact: 0.0155
+             Episode_Metrics/th_contact: 0.3982
+       Episode_Metrics/genuine_yaw_rate: 0.0339
+ Episode_Metrics/exec_action_saturation: 0.0023
+Curriculum/object_linvel_penalty_weight/metric: 0.0311
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0011
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0009
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0303
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0311
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0011
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0009
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0311
+Curriculum/torque_penalty_weight/progress_raw: 0.0011
+Curriculum/torque_penalty_weight/progress_ema: 0.0009
+Curriculum/torque_penalty_weight/target_weight: -0.1008
+Curriculum/torque_penalty_weight/weight: -0.1008
+  Curriculum/work_penalty_weight/metric: 0.0311
+Curriculum/work_penalty_weight/progress_raw: 0.0011
+Curriculum/work_penalty_weight/progress_ema: 0.0009
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 10.8125
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.3438
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.88s
+                           Time elapsed: 00:07:21
+                                    ETA: 03:47:25
+
+################################################################################
+[1m                           Learning iteration 94/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12451840 
+                       Steps per second: 27355 
+                        Collection time: 4.583s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0023
+                    Mean surrogate loss: -0.0111
+                      Mean entropy loss: 18.8346
+          Mean raw_action_abs_mean loss: 0.6846
+            Mean raw_mean_abs_mean loss: 0.2663
+              Mean exec_saturation loss: 0.0022
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9418
+    Mean effective_exploration_001 loss: 0.9884
+              Mean action_std_mean loss: 0.7850
+                    Mean approx_kl loss: 0.0167
+              Mean grad_norm_actor loss: 0.5687
+             Mean grad_norm_critic loss: 0.1189
+                            Mean reward: -0.24
+                    Mean episode length: 378.62
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0242
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0074
+          Episode_Reward/torque_penalty: -0.0056
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0183
+              Episode_Reward/grasp_loss: -0.0025
+      Episode_Metrics/rotation_progress: 0.0291
+           Episode_Metrics/linear_speed: 0.0068
+         Episode_Metrics/position_error: 0.0166
+             Episode_Metrics/tilt_error: 0.2626
+Episode_Metrics/fingertip_contact_count: 0.7626
+Episode_Metrics/fingertip_contact_fraction: 0.1906
+   Episode_Metrics/fingertip_found_mean: 0.2008
+    Episode_Metrics/fingertip_found_max: 0.6632
+             Episode_Metrics/if_contact: 0.2351
+             Episode_Metrics/mf_contact: 0.1211
+             Episode_Metrics/rf_contact: 0.0139
+             Episode_Metrics/th_contact: 0.3925
+       Episode_Metrics/genuine_yaw_rate: 0.0326
+ Episode_Metrics/exec_action_saturation: 0.0021
+Curriculum/object_linvel_penalty_weight/metric: 0.0291
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0003
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0007
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0291
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0003
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0007
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0291
+Curriculum/torque_penalty_weight/progress_raw: 0.0003
+Curriculum/torque_penalty_weight/progress_ema: 0.0007
+Curriculum/torque_penalty_weight/target_weight: -0.1007
+Curriculum/torque_penalty_weight/weight: -0.1008
+  Curriculum/work_penalty_weight/metric: 0.0291
+Curriculum/work_penalty_weight/progress_raw: 0.0003
+Curriculum/work_penalty_weight/progress_ema: 0.0007
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.6562
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0312
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.79s
+                           Time elapsed: 00:07:26
+                                    ETA: 03:47:24
+
+################################################################################
+[1m                           Learning iteration 95/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12582912 
+                       Steps per second: 27275 
+                        Collection time: 4.597s 
+                          Learning time: 0.209s 
+                        Mean value loss: 0.0022
+                    Mean surrogate loss: -0.0115
+                      Mean entropy loss: 18.8424
+          Mean raw_action_abs_mean loss: 0.6866
+            Mean raw_mean_abs_mean loss: 0.2698
+              Mean exec_saturation loss: 0.0023
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9416
+    Mean effective_exploration_001 loss: 0.9884
+              Mean action_std_mean loss: 0.7858
+                    Mean approx_kl loss: 0.0177
+              Mean grad_norm_actor loss: 0.5387
+             Mean grad_norm_critic loss: 0.0697
+                            Mean reward: -0.28
+                    Mean episode length: 382.67
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0225
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0070
+          Episode_Reward/torque_penalty: -0.0056
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0171
+              Episode_Reward/grasp_loss: -0.0015
+      Episode_Metrics/rotation_progress: 0.0281
+           Episode_Metrics/linear_speed: 0.0088
+         Episode_Metrics/position_error: 0.0163
+             Episode_Metrics/tilt_error: 0.2705
+Episode_Metrics/fingertip_contact_count: 0.7540
+Episode_Metrics/fingertip_contact_fraction: 0.1885
+   Episode_Metrics/fingertip_found_mean: 0.1991
+    Episode_Metrics/fingertip_found_max: 0.6597
+             Episode_Metrics/if_contact: 0.2510
+             Episode_Metrics/mf_contact: 0.1016
+             Episode_Metrics/rf_contact: 0.0233
+             Episode_Metrics/th_contact: 0.3781
+       Episode_Metrics/genuine_yaw_rate: 0.0423
+ Episode_Metrics/exec_action_saturation: 0.0024
+Curriculum/object_linvel_penalty_weight/metric: 0.0284
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0026
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0006
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0284
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0026
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0006
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0284
+Curriculum/torque_penalty_weight/progress_raw: 0.0026
+Curriculum/torque_penalty_weight/progress_ema: 0.0006
+Curriculum/torque_penalty_weight/target_weight: -0.1006
+Curriculum/torque_penalty_weight/weight: -0.1004
+  Curriculum/work_penalty_weight/metric: 0.0284
+Curriculum/work_penalty_weight/progress_raw: 0.0026
+Curriculum/work_penalty_weight/progress_ema: 0.0006
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 10.1562
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 0.6875
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.81s
+                           Time elapsed: 00:07:30
+                                    ETA: 03:47:22
+
+################################################################################
+[1m                           Learning iteration 96/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12713984 
+                       Steps per second: 27307 
+                        Collection time: 4.592s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0022
+                    Mean surrogate loss: -0.0122
+                      Mean entropy loss: 18.8558
+          Mean raw_action_abs_mean loss: 0.6882
+            Mean raw_mean_abs_mean loss: 0.2722
+              Mean exec_saturation loss: 0.0024
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9416
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7866
+                    Mean approx_kl loss: 0.0182
+              Mean grad_norm_actor loss: 0.5807
+             Mean grad_norm_critic loss: 0.0681
+                            Mean reward: -0.06
+                    Mean episode length: 378.81
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0246
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0075
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0162
+              Episode_Reward/grasp_loss: -0.0024
+      Episode_Metrics/rotation_progress: 0.0301
+           Episode_Metrics/linear_speed: 0.0071
+         Episode_Metrics/position_error: 0.0163
+             Episode_Metrics/tilt_error: 0.2653
+Episode_Metrics/fingertip_contact_count: 0.7904
+Episode_Metrics/fingertip_contact_fraction: 0.1976
+   Episode_Metrics/fingertip_found_mean: 0.2103
+    Episode_Metrics/fingertip_found_max: 0.6844
+             Episode_Metrics/if_contact: 0.2621
+             Episode_Metrics/mf_contact: 0.0943
+             Episode_Metrics/rf_contact: 0.0183
+             Episode_Metrics/th_contact: 0.4156
+       Episode_Metrics/genuine_yaw_rate: 0.0355
+ Episode_Metrics/exec_action_saturation: 0.0022
+Curriculum/object_linvel_penalty_weight/metric: 0.0302
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0007
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0021
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0306
+Curriculum/object_linvel_penalty_weight/weight: -0.0306
+Curriculum/pose_diff_penalty_weight/metric: 0.0302
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0007
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0021
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0102
+Curriculum/pose_diff_penalty_weight/weight: -0.0102
+Curriculum/torque_penalty_weight/metric: 0.0302
+Curriculum/torque_penalty_weight/progress_raw: 0.0007
+Curriculum/torque_penalty_weight/progress_ema: 0.0021
+Curriculum/torque_penalty_weight/target_weight: -0.1019
+Curriculum/torque_penalty_weight/weight: -0.1019
+  Curriculum/work_penalty_weight/metric: 0.0302
+Curriculum/work_penalty_weight/progress_raw: 0.0007
+Curriculum/work_penalty_weight/progress_ema: 0.0021
+Curriculum/work_penalty_weight/target_weight: -0.0102
+  Curriculum/work_penalty_weight/weight: -0.0102
+           Episode_Termination/time_out: 10.0312
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0312
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.80s
+                           Time elapsed: 00:07:35
+                                    ETA: 03:47:21
+
+################################################################################
+[1m                           Learning iteration 97/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12845056 
+                       Steps per second: 26854 
+                        Collection time: 4.673s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0022
+                    Mean surrogate loss: -0.0124
+                      Mean entropy loss: 18.8724
+          Mean raw_action_abs_mean loss: 0.6889
+            Mean raw_mean_abs_mean loss: 0.2732
+              Mean exec_saturation loss: 0.0024
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9412
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.7870
+                    Mean approx_kl loss: 0.0168
+              Mean grad_norm_actor loss: 0.5672
+             Mean grad_norm_critic loss: 0.0213
+                            Mean reward: -0.19
+                    Mean episode length: 375.06
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0235
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0069
+          Episode_Reward/torque_penalty: -0.0052
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0159
+              Episode_Reward/grasp_loss: -0.0026
+      Episode_Metrics/rotation_progress: 0.0318
+           Episode_Metrics/linear_speed: 0.0077
+         Episode_Metrics/position_error: 0.0157
+             Episode_Metrics/tilt_error: 0.2572
+Episode_Metrics/fingertip_contact_count: 0.7650
+Episode_Metrics/fingertip_contact_fraction: 0.1913
+   Episode_Metrics/fingertip_found_mean: 0.2000
+    Episode_Metrics/fingertip_found_max: 0.6566
+             Episode_Metrics/if_contact: 0.2577
+             Episode_Metrics/mf_contact: 0.0982
+             Episode_Metrics/rf_contact: 0.0238
+             Episode_Metrics/th_contact: 0.3853
+       Episode_Metrics/genuine_yaw_rate: 0.0245
+ Episode_Metrics/exec_action_saturation: 0.0023
+Curriculum/object_linvel_penalty_weight/metric: 0.0319
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0035
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0032
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0309
+Curriculum/object_linvel_penalty_weight/weight: -0.0308
+Curriculum/pose_diff_penalty_weight/metric: 0.0319
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0035
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0032
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0103
+Curriculum/pose_diff_penalty_weight/weight: -0.0103
+Curriculum/torque_penalty_weight/metric: 0.0319
+Curriculum/torque_penalty_weight/progress_raw: 0.0035
+Curriculum/torque_penalty_weight/progress_ema: 0.0032
+Curriculum/torque_penalty_weight/target_weight: -0.1029
+Curriculum/torque_penalty_weight/weight: -0.1025
+  Curriculum/work_penalty_weight/metric: 0.0319
+Curriculum/work_penalty_weight/progress_raw: 0.0035
+Curriculum/work_penalty_weight/progress_ema: 0.0032
+Curriculum/work_penalty_weight/target_weight: -0.0103
+  Curriculum/work_penalty_weight/weight: -0.0103
+           Episode_Termination/time_out: 9.3125
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0625
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.88s
+                           Time elapsed: 00:07:40
+                                    ETA: 03:47:21
+
+################################################################################
+[1m                           Learning iteration 98/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 12976128 
+                       Steps per second: 27298 
+                        Collection time: 4.594s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0019
+                    Mean surrogate loss: -0.0126
+                      Mean entropy loss: 18.8980
+          Mean raw_action_abs_mean loss: 0.6895
+            Mean raw_mean_abs_mean loss: 0.2721
+              Mean exec_saturation loss: 0.0024
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9416
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7882
+                    Mean approx_kl loss: 0.0205
+              Mean grad_norm_actor loss: 0.5700
+             Mean grad_norm_critic loss: 0.0167
+                            Mean reward: -0.05
+                    Mean episode length: 386.55
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0269
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0074
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0151
+              Episode_Reward/grasp_loss: -0.0018
+      Episode_Metrics/rotation_progress: 0.0301
+           Episode_Metrics/linear_speed: 0.0069
+         Episode_Metrics/position_error: 0.0160
+             Episode_Metrics/tilt_error: 0.2706
+Episode_Metrics/fingertip_contact_count: 0.7721
+Episode_Metrics/fingertip_contact_fraction: 0.1930
+   Episode_Metrics/fingertip_found_mean: 0.2040
+    Episode_Metrics/fingertip_found_max: 0.6724
+             Episode_Metrics/if_contact: 0.2466
+             Episode_Metrics/mf_contact: 0.1041
+             Episode_Metrics/rf_contact: 0.0292
+             Episode_Metrics/th_contact: 0.3922
+       Episode_Metrics/genuine_yaw_rate: 0.0321
+ Episode_Metrics/exec_action_saturation: 0.0022
+Curriculum/object_linvel_penalty_weight/metric: 0.0301
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0009
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0304
+Curriculum/pose_diff_penalty_weight/metric: 0.0301
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0009
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0301
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0009
+Curriculum/torque_penalty_weight/target_weight: -0.1008
+Curriculum/torque_penalty_weight/weight: -0.1014
+  Curriculum/work_penalty_weight/metric: 0.0301
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0009
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 8.6875
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 0.5625
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.80s
+                           Time elapsed: 00:07:45
+                                    ETA: 03:47:20
+
+################################################################################
+[1m                           Learning iteration 99/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13107200 
+                       Steps per second: 27425 
+                        Collection time: 4.572s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0115
+                      Mean entropy loss: 18.9210
+          Mean raw_action_abs_mean loss: 0.6906
+            Mean raw_mean_abs_mean loss: 0.2731
+              Mean exec_saturation loss: 0.0024
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9419
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7895
+                    Mean approx_kl loss: 0.0154
+              Mean grad_norm_actor loss: 0.5493
+             Mean grad_norm_critic loss: 0.1446
+                            Mean reward: -0.24
+                    Mean episode length: 364.99
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0219
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0064
+          Episode_Reward/torque_penalty: -0.0055
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0225
+              Episode_Reward/grasp_loss: -0.0034
+      Episode_Metrics/rotation_progress: 0.0302
+           Episode_Metrics/linear_speed: 0.0079
+         Episode_Metrics/position_error: 0.0169
+             Episode_Metrics/tilt_error: 0.2811
+Episode_Metrics/fingertip_contact_count: 0.7250
+Episode_Metrics/fingertip_contact_fraction: 0.1813
+   Episode_Metrics/fingertip_found_mean: 0.1915
+    Episode_Metrics/fingertip_found_max: 0.6351
+             Episode_Metrics/if_contact: 0.2178
+             Episode_Metrics/mf_contact: 0.0992
+             Episode_Metrics/rf_contact: 0.0285
+             Episode_Metrics/th_contact: 0.3796
+       Episode_Metrics/genuine_yaw_rate: 0.0363
+ Episode_Metrics/exec_action_saturation: 0.0023
+Curriculum/object_linvel_penalty_weight/metric: 0.0304
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0001
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0300
+Curriculum/object_linvel_penalty_weight/weight: -0.0300
+Curriculum/pose_diff_penalty_weight/metric: 0.0304
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0001
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0304
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0001
+Curriculum/torque_penalty_weight/target_weight: -0.1001
+Curriculum/torque_penalty_weight/weight: -0.1001
+  Curriculum/work_penalty_weight/metric: 0.0304
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0001
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 10.0625
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.5000
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.78s
+                           Time elapsed: 00:07:50
+                                    ETA: 03:47:17
+
+################################################################################
+[1m                          Learning iteration 100/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13238272 
+                       Steps per second: 27362 
+                        Collection time: 4.582s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0021
+                    Mean surrogate loss: -0.0123
+                      Mean entropy loss: 18.9315
+          Mean raw_action_abs_mean loss: 0.6919
+            Mean raw_mean_abs_mean loss: 0.2749
+              Mean exec_saturation loss: 0.0026
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9417
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7905
+                    Mean approx_kl loss: 0.0180
+              Mean grad_norm_actor loss: 0.5793
+             Mean grad_norm_critic loss: 0.0429
+                            Mean reward: -0.10
+                    Mean episode length: 379.36
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0256
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0060
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0169
+              Episode_Reward/grasp_loss: -0.0022
+      Episode_Metrics/rotation_progress: 0.0300
+           Episode_Metrics/linear_speed: 0.0085
+         Episode_Metrics/position_error: 0.0166
+             Episode_Metrics/tilt_error: 0.2540
+Episode_Metrics/fingertip_contact_count: 0.7543
+Episode_Metrics/fingertip_contact_fraction: 0.1886
+   Episode_Metrics/fingertip_found_mean: 0.1990
+    Episode_Metrics/fingertip_found_max: 0.6542
+             Episode_Metrics/if_contact: 0.2706
+             Episode_Metrics/mf_contact: 0.0991
+             Episode_Metrics/rf_contact: 0.0318
+             Episode_Metrics/th_contact: 0.3528
+       Episode_Metrics/genuine_yaw_rate: 0.0495
+ Episode_Metrics/exec_action_saturation: 0.0023
+Curriculum/object_linvel_penalty_weight/metric: 0.0301
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0001
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0001
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0300
+Curriculum/object_linvel_penalty_weight/weight: -0.0300
+Curriculum/pose_diff_penalty_weight/metric: 0.0301
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0001
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0001
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0301
+Curriculum/torque_penalty_weight/progress_raw: 0.0001
+Curriculum/torque_penalty_weight/progress_ema: 0.0001
+Curriculum/torque_penalty_weight/target_weight: -0.1001
+Curriculum/torque_penalty_weight/weight: -0.1001
+  Curriculum/work_penalty_weight/metric: 0.0301
+Curriculum/work_penalty_weight/progress_raw: 0.0001
+Curriculum/work_penalty_weight/progress_ema: 0.0001
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 10.0625
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0312
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.79s
+                           Time elapsed: 00:07:54
+                                    ETA: 03:47:15
+
+################################################################################
+[1m                          Learning iteration 101/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13369344 
+                       Steps per second: 27165 
+                        Collection time: 4.617s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0021
+                    Mean surrogate loss: -0.0113
+                      Mean entropy loss: 18.9335
+          Mean raw_action_abs_mean loss: 0.6928
+            Mean raw_mean_abs_mean loss: 0.2761
+              Mean exec_saturation loss: 0.0026
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9415
+    Mean effective_exploration_001 loss: 0.9885
+              Mean action_std_mean loss: 0.7905
+                    Mean approx_kl loss: 0.0147
+              Mean grad_norm_actor loss: 0.5749
+             Mean grad_norm_critic loss: 0.0519
+                            Mean reward: -0.12
+                    Mean episode length: 375.78
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0254
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0067
+          Episode_Reward/torque_penalty: -0.0050
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0187
+              Episode_Reward/grasp_loss: -0.0031
+      Episode_Metrics/rotation_progress: 0.0307
+           Episode_Metrics/linear_speed: 0.0088
+         Episode_Metrics/position_error: 0.0165
+             Episode_Metrics/tilt_error: 0.2727
+Episode_Metrics/fingertip_contact_count: 0.7304
+Episode_Metrics/fingertip_contact_fraction: 0.1826
+   Episode_Metrics/fingertip_found_mean: 0.1921
+    Episode_Metrics/fingertip_found_max: 0.6326
+             Episode_Metrics/if_contact: 0.2592
+             Episode_Metrics/mf_contact: 0.0841
+             Episode_Metrics/rf_contact: 0.0293
+             Episode_Metrics/th_contact: 0.3579
+       Episode_Metrics/genuine_yaw_rate: 0.0298
+ Episode_Metrics/exec_action_saturation: 0.0026
+Curriculum/object_linvel_penalty_weight/metric: 0.0309
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0000
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0300
+Curriculum/object_linvel_penalty_weight/weight: -0.0300
+Curriculum/pose_diff_penalty_weight/metric: 0.0309
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0000
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0309
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0000
+Curriculum/torque_penalty_weight/target_weight: -0.1000
+Curriculum/torque_penalty_weight/weight: -0.1000
+  Curriculum/work_penalty_weight/metric: 0.0309
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0000
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 8.8750
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.3125
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.82s
+                           Time elapsed: 00:07:59
+                                    ETA: 03:47:14
+
+################################################################################
+[1m                          Learning iteration 102/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13500416 
+                       Steps per second: 26956 
+                        Collection time: 4.652s 
+                          Learning time: 0.211s 
+                        Mean value loss: 0.0021
+                    Mean surrogate loss: -0.0128
+                      Mean entropy loss: 18.9600
+          Mean raw_action_abs_mean loss: 0.6928
+            Mean raw_mean_abs_mean loss: 0.2752
+              Mean exec_saturation loss: 0.0026
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9412
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7910
+                    Mean approx_kl loss: 0.0152
+              Mean grad_norm_actor loss: 0.5678
+             Mean grad_norm_critic loss: 0.0421
+                            Mean reward: 0.02
+                    Mean episode length: 385.04
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0272
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0066
+          Episode_Reward/torque_penalty: -0.0050
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0148
+              Episode_Reward/grasp_loss: -0.0028
+      Episode_Metrics/rotation_progress: 0.0322
+           Episode_Metrics/linear_speed: 0.0111
+         Episode_Metrics/position_error: 0.0159
+             Episode_Metrics/tilt_error: 0.2692
+Episode_Metrics/fingertip_contact_count: 0.7655
+Episode_Metrics/fingertip_contact_fraction: 0.1914
+   Episode_Metrics/fingertip_found_mean: 0.2015
+    Episode_Metrics/fingertip_found_max: 0.6602
+             Episode_Metrics/if_contact: 0.2545
+             Episode_Metrics/mf_contact: 0.1067
+             Episode_Metrics/rf_contact: 0.0208
+             Episode_Metrics/th_contact: 0.3835
+       Episode_Metrics/genuine_yaw_rate: 0.0480
+ Episode_Metrics/exec_action_saturation: 0.0025
+Curriculum/object_linvel_penalty_weight/metric: 0.0322
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0013
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0007
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0322
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0013
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0007
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0322
+Curriculum/torque_penalty_weight/progress_raw: 0.0013
+Curriculum/torque_penalty_weight/progress_ema: 0.0007
+Curriculum/torque_penalty_weight/target_weight: -0.1007
+Curriculum/torque_penalty_weight/weight: -0.1004
+  Curriculum/work_penalty_weight/metric: 0.0322
+Curriculum/work_penalty_weight/progress_raw: 0.0013
+Curriculum/work_penalty_weight/progress_ema: 0.0007
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 9.3750
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0938
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.86s
+                           Time elapsed: 00:08:04
+                                    ETA: 03:47:14
+
+################################################################################
+[1m                          Learning iteration 103/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13631488 
+                       Steps per second: 27084 
+                        Collection time: 4.631s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0024
+                    Mean surrogate loss: -0.0125
+                      Mean entropy loss: 18.9757
+          Mean raw_action_abs_mean loss: 0.6937
+            Mean raw_mean_abs_mean loss: 0.2746
+              Mean exec_saturation loss: 0.0025
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9416
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7924
+                    Mean approx_kl loss: 0.0200
+              Mean grad_norm_actor loss: 0.5634
+             Mean grad_norm_critic loss: 0.0435
+                            Mean reward: -0.19
+                    Mean episode length: 373.37
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0258
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0070
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0171
+              Episode_Reward/grasp_loss: -0.0027
+      Episode_Metrics/rotation_progress: 0.0291
+           Episode_Metrics/linear_speed: 0.0066
+         Episode_Metrics/position_error: 0.0169
+             Episode_Metrics/tilt_error: 0.2913
+Episode_Metrics/fingertip_contact_count: 0.7618
+Episode_Metrics/fingertip_contact_fraction: 0.1904
+   Episode_Metrics/fingertip_found_mean: 0.1988
+    Episode_Metrics/fingertip_found_max: 0.6436
+             Episode_Metrics/if_contact: 0.2336
+             Episode_Metrics/mf_contact: 0.1103
+             Episode_Metrics/rf_contact: 0.0221
+             Episode_Metrics/th_contact: 0.3958
+       Episode_Metrics/genuine_yaw_rate: 0.0392
+ Episode_Metrics/exec_action_saturation: 0.0025
+Curriculum/object_linvel_penalty_weight/metric: 0.0291
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0005
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0291
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0005
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0291
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0005
+Curriculum/torque_penalty_weight/target_weight: -0.1005
+Curriculum/torque_penalty_weight/weight: -0.1007
+  Curriculum/work_penalty_weight/metric: 0.0291
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0005
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.5625
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.2500
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.84s
+                           Time elapsed: 00:08:09
+                                    ETA: 03:47:13
+
+################################################################################
+[1m                          Learning iteration 104/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13762560 
+                       Steps per second: 27136 
+                        Collection time: 4.623s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0024
+                    Mean surrogate loss: -0.0100
+                      Mean entropy loss: 19.0042
+          Mean raw_action_abs_mean loss: 0.6959
+            Mean raw_mean_abs_mean loss: 0.2774
+              Mean exec_saturation loss: 0.0027
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9414
+    Mean effective_exploration_001 loss: 0.9884
+              Mean action_std_mean loss: 0.7935
+                    Mean approx_kl loss: 0.0119
+              Mean grad_norm_actor loss: 0.5506
+             Mean grad_norm_critic loss: 0.0390
+                            Mean reward: -0.15
+                    Mean episode length: 379.22
+                  Mean action noise std: 0.79
+      Episode_Reward/rotate_finite_diff: 0.0260
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0065
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0204
+              Episode_Reward/grasp_loss: -0.0019
+      Episode_Metrics/rotation_progress: 0.0289
+           Episode_Metrics/linear_speed: 0.0065
+         Episode_Metrics/position_error: 0.0162
+             Episode_Metrics/tilt_error: 0.2744
+Episode_Metrics/fingertip_contact_count: 0.7678
+Episode_Metrics/fingertip_contact_fraction: 0.1920
+   Episode_Metrics/fingertip_found_mean: 0.2004
+    Episode_Metrics/fingertip_found_max: 0.6482
+             Episode_Metrics/if_contact: 0.2848
+             Episode_Metrics/mf_contact: 0.0977
+             Episode_Metrics/rf_contact: 0.0228
+             Episode_Metrics/th_contact: 0.3626
+       Episode_Metrics/genuine_yaw_rate: 0.0375
+ Episode_Metrics/exec_action_saturation: 0.0024
+Curriculum/object_linvel_penalty_weight/metric: 0.0289
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0004
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0002
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0300
+Curriculum/pose_diff_penalty_weight/metric: 0.0289
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0004
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0002
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0289
+Curriculum/torque_penalty_weight/progress_raw: 0.0004
+Curriculum/torque_penalty_weight/progress_ema: 0.0002
+Curriculum/torque_penalty_weight/target_weight: -0.1002
+Curriculum/torque_penalty_weight/weight: -0.1001
+  Curriculum/work_penalty_weight/metric: 0.0289
+Curriculum/work_penalty_weight/progress_raw: 0.0004
+Curriculum/work_penalty_weight/progress_ema: 0.0002
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 10.2500
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 0.8750
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.83s
+                           Time elapsed: 00:08:14
+                                    ETA: 03:47:11
+
+################################################################################
+[1m                          Learning iteration 105/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 13893632 
+                       Steps per second: 27102 
+                        Collection time: 4.629s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0130
+                      Mean entropy loss: 19.0221
+          Mean raw_action_abs_mean loss: 0.6975
+            Mean raw_mean_abs_mean loss: 0.2805
+              Mean exec_saturation loss: 0.0028
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9409
+    Mean effective_exploration_001 loss: 0.9881
+              Mean action_std_mean loss: 0.7946
+                    Mean approx_kl loss: 0.0183
+              Mean grad_norm_actor loss: 0.5499
+             Mean grad_norm_critic loss: 0.0211
+                            Mean reward: -0.03
+                    Mean episode length: 369.16
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0258
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0062
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0184
+              Episode_Reward/grasp_loss: -0.0029
+      Episode_Metrics/rotation_progress: 0.0329
+           Episode_Metrics/linear_speed: 0.0081
+         Episode_Metrics/position_error: 0.0165
+             Episode_Metrics/tilt_error: 0.2800
+Episode_Metrics/fingertip_contact_count: 0.7957
+Episode_Metrics/fingertip_contact_fraction: 0.1989
+   Episode_Metrics/fingertip_found_mean: 0.2086
+    Episode_Metrics/fingertip_found_max: 0.6779
+             Episode_Metrics/if_contact: 0.2632
+             Episode_Metrics/mf_contact: 0.1131
+             Episode_Metrics/rf_contact: 0.0268
+             Episode_Metrics/th_contact: 0.3926
+       Episode_Metrics/genuine_yaw_rate: 0.0386
+ Episode_Metrics/exec_action_saturation: 0.0026
+Curriculum/object_linvel_penalty_weight/metric: 0.0330
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0002
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0330
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0002
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0330
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0002
+Curriculum/torque_penalty_weight/target_weight: -0.1002
+Curriculum/torque_penalty_weight/weight: -0.1003
+  Curriculum/work_penalty_weight/metric: 0.0330
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0002
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 11.4062
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.4688
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.84s
+                           Time elapsed: 00:08:19
+                                    ETA: 03:47:10
+
+################################################################################
+[1m                          Learning iteration 106/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14024704 
+                       Steps per second: 27107 
+                        Collection time: 4.627s 
+                          Learning time: 0.209s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0117
+                      Mean entropy loss: 19.0548
+          Mean raw_action_abs_mean loss: 0.7005
+            Mean raw_mean_abs_mean loss: 0.2848
+              Mean exec_saturation loss: 0.0029
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9409
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.7958
+                    Mean approx_kl loss: 0.0160
+              Mean grad_norm_actor loss: 0.6067
+             Mean grad_norm_critic loss: 0.1372
+                            Mean reward: -0.05
+                    Mean episode length: 373.68
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0261
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0065
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0165
+              Episode_Reward/grasp_loss: -0.0029
+      Episode_Metrics/rotation_progress: 0.0330
+           Episode_Metrics/linear_speed: 0.0109
+         Episode_Metrics/position_error: 0.0165
+             Episode_Metrics/tilt_error: 0.2734
+Episode_Metrics/fingertip_contact_count: 0.7773
+Episode_Metrics/fingertip_contact_fraction: 0.1943
+   Episode_Metrics/fingertip_found_mean: 0.2038
+    Episode_Metrics/fingertip_found_max: 0.6593
+             Episode_Metrics/if_contact: 0.2396
+             Episode_Metrics/mf_contact: 0.1137
+             Episode_Metrics/rf_contact: 0.0322
+             Episode_Metrics/th_contact: 0.3918
+       Episode_Metrics/genuine_yaw_rate: 0.0464
+ Episode_Metrics/exec_action_saturation: 0.0027
+Curriculum/object_linvel_penalty_weight/metric: 0.0333
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0005
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0004
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0333
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0005
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0004
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0333
+Curriculum/torque_penalty_weight/progress_raw: 0.0005
+Curriculum/torque_penalty_weight/progress_ema: 0.0004
+Curriculum/torque_penalty_weight/target_weight: -0.1004
+Curriculum/torque_penalty_weight/weight: -0.1003
+  Curriculum/work_penalty_weight/metric: 0.0333
+Curriculum/work_penalty_weight/progress_raw: 0.0005
+Curriculum/work_penalty_weight/progress_ema: 0.0004
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 10.6875
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.3438
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.84s
+                           Time elapsed: 00:08:23
+                                    ETA: 03:47:09
+
+################################################################################
+[1m                          Learning iteration 107/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14155776 
+                       Steps per second: 27171 
+                        Collection time: 4.616s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0025
+                    Mean surrogate loss: -0.0133
+                      Mean entropy loss: 19.0638
+          Mean raw_action_abs_mean loss: 0.7019
+            Mean raw_mean_abs_mean loss: 0.2862
+              Mean exec_saturation loss: 0.0029
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9409
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.7971
+                    Mean approx_kl loss: 0.0205
+              Mean grad_norm_actor loss: 0.5876
+             Mean grad_norm_critic loss: 0.0777
+                            Mean reward: -0.03
+                    Mean episode length: 367.27
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0250
+   Episode_Reward/object_linvel_penalty: -0.0002
+       Episode_Reward/pose_diff_penalty: -0.0060
+          Episode_Reward/torque_penalty: -0.0052
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0166
+              Episode_Reward/grasp_loss: -0.0030
+      Episode_Metrics/rotation_progress: 0.0322
+           Episode_Metrics/linear_speed: 0.0112
+         Episode_Metrics/position_error: 0.0159
+             Episode_Metrics/tilt_error: 0.2687
+Episode_Metrics/fingertip_contact_count: 0.7827
+Episode_Metrics/fingertip_contact_fraction: 0.1957
+   Episode_Metrics/fingertip_found_mean: 0.2058
+    Episode_Metrics/fingertip_found_max: 0.6614
+             Episode_Metrics/if_contact: 0.2750
+             Episode_Metrics/mf_contact: 0.0956
+             Episode_Metrics/rf_contact: 0.0242
+             Episode_Metrics/th_contact: 0.3880
+       Episode_Metrics/genuine_yaw_rate: 0.0637
+ Episode_Metrics/exec_action_saturation: 0.0027
+Curriculum/object_linvel_penalty_weight/metric: 0.0321
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0015
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0005
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0321
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0015
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0005
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0321
+Curriculum/torque_penalty_weight/progress_raw: 0.0015
+Curriculum/torque_penalty_weight/progress_ema: 0.0005
+Curriculum/torque_penalty_weight/target_weight: -0.1005
+Curriculum/torque_penalty_weight/weight: -0.1004
+  Curriculum/work_penalty_weight/metric: 0.0321
+Curriculum/work_penalty_weight/progress_raw: 0.0015
+Curriculum/work_penalty_weight/progress_ema: 0.0005
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 9.5312
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.2188
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.82s
+                           Time elapsed: 00:08:28
+                                    ETA: 03:47:07
+
+################################################################################
+[1m                          Learning iteration 108/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14286848 
+                       Steps per second: 26819 
+                        Collection time: 4.679s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0022
+                    Mean surrogate loss: -0.0121
+                      Mean entropy loss: 19.0717
+          Mean raw_action_abs_mean loss: 0.7017
+            Mean raw_mean_abs_mean loss: 0.2866
+              Mean exec_saturation loss: 0.0029
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9415
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7972
+                    Mean approx_kl loss: 0.0149
+              Mean grad_norm_actor loss: 0.6348
+             Mean grad_norm_critic loss: 0.0513
+                            Mean reward: -0.13
+                    Mean episode length: 389.20
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0228
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0062
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0175
+              Episode_Reward/grasp_loss: -0.0016
+      Episode_Metrics/rotation_progress: 0.0274
+           Episode_Metrics/linear_speed: 0.0062
+         Episode_Metrics/position_error: 0.0167
+             Episode_Metrics/tilt_error: 0.2731
+Episode_Metrics/fingertip_contact_count: 0.7974
+Episode_Metrics/fingertip_contact_fraction: 0.1993
+   Episode_Metrics/fingertip_found_mean: 0.2095
+    Episode_Metrics/fingertip_found_max: 0.6906
+             Episode_Metrics/if_contact: 0.2774
+             Episode_Metrics/mf_contact: 0.1023
+             Episode_Metrics/rf_contact: 0.0293
+             Episode_Metrics/th_contact: 0.3885
+       Episode_Metrics/genuine_yaw_rate: 0.0309
+ Episode_Metrics/exec_action_saturation: 0.0025
+Curriculum/object_linvel_penalty_weight/metric: 0.0274
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0010
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0303
+Curriculum/object_linvel_penalty_weight/weight: -0.0303
+Curriculum/pose_diff_penalty_weight/metric: 0.0274
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0010
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0274
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0010
+Curriculum/torque_penalty_weight/target_weight: -0.1009
+Curriculum/torque_penalty_weight/weight: -0.1010
+  Curriculum/work_penalty_weight/metric: 0.0274
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0010
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.8125
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 0.6562
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.89s
+                           Time elapsed: 00:08:33
+                                    ETA: 03:47:07
+
+################################################################################
+[1m                          Learning iteration 109/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14417920 
+                       Steps per second: 27111 
+                        Collection time: 4.626s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0022
+                    Mean surrogate loss: -0.0137
+                      Mean entropy loss: 19.0745
+          Mean raw_action_abs_mean loss: 0.7022
+            Mean raw_mean_abs_mean loss: 0.2864
+              Mean exec_saturation loss: 0.0029
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9414
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.7976
+                    Mean approx_kl loss: 0.0199
+              Mean grad_norm_actor loss: 0.5684
+             Mean grad_norm_critic loss: 0.0233
+                            Mean reward: -0.16
+                    Mean episode length: 366.90
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0269
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0058
+          Episode_Reward/torque_penalty: -0.0052
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0189
+              Episode_Reward/grasp_loss: -0.0032
+      Episode_Metrics/rotation_progress: 0.0329
+           Episode_Metrics/linear_speed: 0.0099
+         Episode_Metrics/position_error: 0.0166
+             Episode_Metrics/tilt_error: 0.2817
+Episode_Metrics/fingertip_contact_count: 0.8088
+Episode_Metrics/fingertip_contact_fraction: 0.2022
+   Episode_Metrics/fingertip_found_mean: 0.2133
+    Episode_Metrics/fingertip_found_max: 0.6948
+             Episode_Metrics/if_contact: 0.2751
+             Episode_Metrics/mf_contact: 0.1118
+             Episode_Metrics/rf_contact: 0.0232
+             Episode_Metrics/th_contact: 0.3986
+       Episode_Metrics/genuine_yaw_rate: 0.0423
+ Episode_Metrics/exec_action_saturation: 0.0028
+Curriculum/object_linvel_penalty_weight/metric: 0.0326
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0024
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0022
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0306
+Curriculum/object_linvel_penalty_weight/weight: -0.0306
+Curriculum/pose_diff_penalty_weight/metric: 0.0326
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0024
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0022
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0102
+Curriculum/pose_diff_penalty_weight/weight: -0.0102
+Curriculum/torque_penalty_weight/metric: 0.0326
+Curriculum/torque_penalty_weight/progress_raw: 0.0024
+Curriculum/torque_penalty_weight/progress_ema: 0.0022
+Curriculum/torque_penalty_weight/target_weight: -0.1020
+Curriculum/torque_penalty_weight/weight: -0.1019
+  Curriculum/work_penalty_weight/metric: 0.0326
+Curriculum/work_penalty_weight/progress_raw: 0.0024
+Curriculum/work_penalty_weight/progress_ema: 0.0022
+Curriculum/work_penalty_weight/target_weight: -0.0102
+  Curriculum/work_penalty_weight/weight: -0.0102
+           Episode_Termination/time_out: 9.7188
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.4688
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.83s
+                           Time elapsed: 00:08:38
+                                    ETA: 03:47:06
+
+################################################################################
+[1m                          Learning iteration 110/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14548992 
+                       Steps per second: 27154 
+                        Collection time: 4.618s 
+                          Learning time: 0.209s 
+                        Mean value loss: 0.0025
+                    Mean surrogate loss: -0.0116
+                      Mean entropy loss: 19.0870
+          Mean raw_action_abs_mean loss: 0.7030
+            Mean raw_mean_abs_mean loss: 0.2888
+              Mean exec_saturation loss: 0.0030
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9412
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.7979
+                    Mean approx_kl loss: 0.0156
+              Mean grad_norm_actor loss: 0.6048
+             Mean grad_norm_critic loss: 0.0666
+                            Mean reward: -0.18
+                    Mean episode length: 368.01
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0264
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0062
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0186
+              Episode_Reward/grasp_loss: -0.0031
+      Episode_Metrics/rotation_progress: 0.0318
+           Episode_Metrics/linear_speed: 0.0121
+         Episode_Metrics/position_error: 0.0164
+             Episode_Metrics/tilt_error: 0.2778
+Episode_Metrics/fingertip_contact_count: 0.7707
+Episode_Metrics/fingertip_contact_fraction: 0.1927
+   Episode_Metrics/fingertip_found_mean: 0.2022
+    Episode_Metrics/fingertip_found_max: 0.6518
+             Episode_Metrics/if_contact: 0.2489
+             Episode_Metrics/mf_contact: 0.1141
+             Episode_Metrics/rf_contact: 0.0324
+             Episode_Metrics/th_contact: 0.3753
+       Episode_Metrics/genuine_yaw_rate: 0.0659
+ Episode_Metrics/exec_action_saturation: 0.0030
+Curriculum/object_linvel_penalty_weight/metric: 0.0315
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0006
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0005
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0315
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0006
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0005
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0315
+Curriculum/torque_penalty_weight/progress_raw: 0.0006
+Curriculum/torque_penalty_weight/progress_ema: 0.0005
+Curriculum/torque_penalty_weight/target_weight: -0.1005
+Curriculum/torque_penalty_weight/weight: -0.1005
+  Curriculum/work_penalty_weight/metric: 0.0315
+Curriculum/work_penalty_weight/progress_raw: 0.0006
+Curriculum/work_penalty_weight/progress_ema: 0.0005
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 8.6250
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.2812
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.83s
+                           Time elapsed: 00:08:43
+                                    ETA: 03:47:04
+
+################################################################################
+[1m                          Learning iteration 111/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14680064 
+                       Steps per second: 27216 
+                        Collection time: 4.608s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0023
+                    Mean surrogate loss: -0.0131
+                      Mean entropy loss: 19.1166
+          Mean raw_action_abs_mean loss: 0.7045
+            Mean raw_mean_abs_mean loss: 0.2893
+              Mean exec_saturation loss: 0.0030
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9409
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.7990
+                    Mean approx_kl loss: 0.0197
+              Mean grad_norm_actor loss: 0.5999
+             Mean grad_norm_critic loss: 0.0230
+                            Mean reward: -0.31
+                    Mean episode length: 352.17
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0246
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0063
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0182
+              Episode_Reward/grasp_loss: -0.0023
+      Episode_Metrics/rotation_progress: 0.0317
+           Episode_Metrics/linear_speed: 0.0075
+         Episode_Metrics/position_error: 0.0164
+             Episode_Metrics/tilt_error: 0.2770
+Episode_Metrics/fingertip_contact_count: 0.7950
+Episode_Metrics/fingertip_contact_fraction: 0.1988
+   Episode_Metrics/fingertip_found_mean: 0.2094
+    Episode_Metrics/fingertip_found_max: 0.6709
+             Episode_Metrics/if_contact: 0.2698
+             Episode_Metrics/mf_contact: 0.1167
+             Episode_Metrics/rf_contact: 0.0329
+             Episode_Metrics/th_contact: 0.3757
+       Episode_Metrics/genuine_yaw_rate: 0.0433
+ Episode_Metrics/exec_action_saturation: 0.0028
+Curriculum/object_linvel_penalty_weight/metric: 0.0317
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0032
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0029
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0308
+Curriculum/object_linvel_penalty_weight/weight: -0.0307
+Curriculum/pose_diff_penalty_weight/metric: 0.0317
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0032
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0029
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0103
+Curriculum/pose_diff_penalty_weight/weight: -0.0102
+Curriculum/torque_penalty_weight/metric: 0.0317
+Curriculum/torque_penalty_weight/progress_raw: 0.0032
+Curriculum/torque_penalty_weight/progress_ema: 0.0029
+Curriculum/torque_penalty_weight/target_weight: -0.1026
+Curriculum/torque_penalty_weight/weight: -0.1023
+  Curriculum/work_penalty_weight/metric: 0.0317
+Curriculum/work_penalty_weight/progress_raw: 0.0032
+Curriculum/work_penalty_weight/progress_ema: 0.0029
+Curriculum/work_penalty_weight/target_weight: -0.0103
+  Curriculum/work_penalty_weight/weight: -0.0102
+           Episode_Termination/time_out: 9.6250
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.0000
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.82s
+                           Time elapsed: 00:08:48
+                                    ETA: 03:47:02
+
+################################################################################
+[1m                          Learning iteration 112/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14811136 
+                       Steps per second: 26916 
+                        Collection time: 4.659s 
+                          Learning time: 0.211s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0122
+                      Mean entropy loss: 19.1320
+          Mean raw_action_abs_mean loss: 0.7079
+            Mean raw_mean_abs_mean loss: 0.2933
+              Mean exec_saturation loss: 0.0031
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9409
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.8004
+                    Mean approx_kl loss: 0.0146
+              Mean grad_norm_actor loss: 0.5998
+             Mean grad_norm_critic loss: 0.0681
+                            Mean reward: -0.14
+                    Mean episode length: 370.37
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0265
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0063
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0182
+              Episode_Reward/grasp_loss: -0.0028
+      Episode_Metrics/rotation_progress: 0.0329
+           Episode_Metrics/linear_speed: 0.0100
+         Episode_Metrics/position_error: 0.0166
+             Episode_Metrics/tilt_error: 0.2652
+Episode_Metrics/fingertip_contact_count: 0.7912
+Episode_Metrics/fingertip_contact_fraction: 0.1978
+   Episode_Metrics/fingertip_found_mean: 0.2072
+    Episode_Metrics/fingertip_found_max: 0.6663
+             Episode_Metrics/if_contact: 0.2580
+             Episode_Metrics/mf_contact: 0.1067
+             Episode_Metrics/rf_contact: 0.0317
+             Episode_Metrics/th_contact: 0.3947
+       Episode_Metrics/genuine_yaw_rate: 0.0511
+ Episode_Metrics/exec_action_saturation: 0.0031
+Curriculum/object_linvel_penalty_weight/metric: 0.0330
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0010
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0013
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0303
+Curriculum/object_linvel_penalty_weight/weight: -0.0304
+Curriculum/pose_diff_penalty_weight/metric: 0.0330
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0010
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0013
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0330
+Curriculum/torque_penalty_weight/progress_raw: 0.0010
+Curriculum/torque_penalty_weight/progress_ema: 0.0013
+Curriculum/torque_penalty_weight/target_weight: -0.1011
+Curriculum/torque_penalty_weight/weight: -0.1014
+  Curriculum/work_penalty_weight/metric: 0.0330
+Curriculum/work_penalty_weight/progress_raw: 0.0010
+Curriculum/work_penalty_weight/progress_ema: 0.0013
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 10.0312
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.1562
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.87s
+                           Time elapsed: 00:08:52
+                                    ETA: 03:47:01
+
+################################################################################
+[1m                          Learning iteration 113/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 14942208 
+                       Steps per second: 27243 
+                        Collection time: 4.603s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0030
+                    Mean surrogate loss: -0.0121
+                      Mean entropy loss: 19.1511
+          Mean raw_action_abs_mean loss: 0.7080
+            Mean raw_mean_abs_mean loss: 0.2945
+              Mean exec_saturation loss: 0.0031
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9410
+    Mean effective_exploration_001 loss: 0.9880
+              Mean action_std_mean loss: 0.8008
+                    Mean approx_kl loss: 0.0144
+              Mean grad_norm_actor loss: 0.5480
+             Mean grad_norm_critic loss: 0.0538
+                            Mean reward: -0.15
+                    Mean episode length: 362.75
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0263
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0061
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0171
+              Episode_Reward/grasp_loss: -0.0032
+      Episode_Metrics/rotation_progress: 0.0312
+           Episode_Metrics/linear_speed: 0.0104
+         Episode_Metrics/position_error: 0.0169
+             Episode_Metrics/tilt_error: 0.2844
+Episode_Metrics/fingertip_contact_count: 0.7908
+Episode_Metrics/fingertip_contact_fraction: 0.1977
+   Episode_Metrics/fingertip_found_mean: 0.2081
+    Episode_Metrics/fingertip_found_max: 0.6656
+             Episode_Metrics/if_contact: 0.2452
+             Episode_Metrics/mf_contact: 0.1187
+             Episode_Metrics/rf_contact: 0.0215
+             Episode_Metrics/th_contact: 0.4054
+       Episode_Metrics/genuine_yaw_rate: 0.0558
+ Episode_Metrics/exec_action_saturation: 0.0030
+Curriculum/object_linvel_penalty_weight/metric: 0.0313
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0011
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0004
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0313
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0011
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0004
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0313
+Curriculum/torque_penalty_weight/progress_raw: 0.0011
+Curriculum/torque_penalty_weight/progress_ema: 0.0004
+Curriculum/torque_penalty_weight/target_weight: -0.1003
+Curriculum/torque_penalty_weight/weight: -0.1004
+  Curriculum/work_penalty_weight/metric: 0.0313
+Curriculum/work_penalty_weight/progress_raw: 0.0011
+Curriculum/work_penalty_weight/progress_ema: 0.0004
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 9.5000
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.4375
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.81s
+                           Time elapsed: 00:08:57
+                                    ETA: 03:46:59
+
+################################################################################
+[1m                          Learning iteration 114/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15073280 
+                       Steps per second: 27285 
+                        Collection time: 4.595s 
+                          Learning time: 0.209s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0132
+                      Mean entropy loss: 19.1796
+          Mean raw_action_abs_mean loss: 0.7103
+            Mean raw_mean_abs_mean loss: 0.2972
+              Mean exec_saturation loss: 0.0032
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9408
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.8021
+                    Mean approx_kl loss: 0.0155
+              Mean grad_norm_actor loss: 0.5939
+             Mean grad_norm_critic loss: 0.0263
+                            Mean reward: -0.10
+                    Mean episode length: 382.05
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0262
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0057
+          Episode_Reward/torque_penalty: -0.0052
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0176
+              Episode_Reward/grasp_loss: -0.0037
+      Episode_Metrics/rotation_progress: 0.0331
+           Episode_Metrics/linear_speed: 0.0090
+         Episode_Metrics/position_error: 0.0172
+             Episode_Metrics/tilt_error: 0.2773
+Episode_Metrics/fingertip_contact_count: 0.8143
+Episode_Metrics/fingertip_contact_fraction: 0.2036
+   Episode_Metrics/fingertip_found_mean: 0.2145
+    Episode_Metrics/fingertip_found_max: 0.6871
+             Episode_Metrics/if_contact: 0.2446
+             Episode_Metrics/mf_contact: 0.1159
+             Episode_Metrics/rf_contact: 0.0271
+             Episode_Metrics/th_contact: 0.4267
+       Episode_Metrics/genuine_yaw_rate: 0.0446
+ Episode_Metrics/exec_action_saturation: 0.0033
+Curriculum/object_linvel_penalty_weight/metric: 0.0331
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0016
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0022
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0306
+Curriculum/object_linvel_penalty_weight/weight: -0.0305
+Curriculum/pose_diff_penalty_weight/metric: 0.0331
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0016
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0022
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0102
+Curriculum/pose_diff_penalty_weight/weight: -0.0102
+Curriculum/torque_penalty_weight/metric: 0.0331
+Curriculum/torque_penalty_weight/progress_raw: 0.0016
+Curriculum/torque_penalty_weight/progress_ema: 0.0022
+Curriculum/torque_penalty_weight/target_weight: -0.1019
+Curriculum/torque_penalty_weight/weight: -0.1018
+  Curriculum/work_penalty_weight/metric: 0.0331
+Curriculum/work_penalty_weight/progress_raw: 0.0016
+Curriculum/work_penalty_weight/progress_ema: 0.0022
+Curriculum/work_penalty_weight/target_weight: -0.0102
+  Curriculum/work_penalty_weight/weight: -0.0102
+           Episode_Termination/time_out: 8.8750
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.6562
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.80s
+                           Time elapsed: 00:09:02
+                                    ETA: 03:46:56
+
+################################################################################
+[1m                          Learning iteration 115/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15204352 
+                       Steps per second: 27337 
+                        Collection time: 4.586s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0025
+                    Mean surrogate loss: -0.0130
+                      Mean entropy loss: 19.2014
+          Mean raw_action_abs_mean loss: 0.7118
+            Mean raw_mean_abs_mean loss: 0.2992
+              Mean exec_saturation loss: 0.0033
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9407
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.8037
+                    Mean approx_kl loss: 0.0143
+              Mean grad_norm_actor loss: 0.5766
+             Mean grad_norm_critic loss: 0.0267
+                            Mean reward: -0.13
+                    Mean episode length: 379.57
+                  Mean action noise std: 0.80
+      Episode_Reward/rotate_finite_diff: 0.0268
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0061
+          Episode_Reward/torque_penalty: -0.0055
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0189
+              Episode_Reward/grasp_loss: -0.0026
+      Episode_Metrics/rotation_progress: 0.0317
+           Episode_Metrics/linear_speed: 0.0080
+         Episode_Metrics/position_error: 0.0163
+             Episode_Metrics/tilt_error: 0.2753
+Episode_Metrics/fingertip_contact_count: 0.8108
+Episode_Metrics/fingertip_contact_fraction: 0.2027
+   Episode_Metrics/fingertip_found_mean: 0.2121
+    Episode_Metrics/fingertip_found_max: 0.6765
+             Episode_Metrics/if_contact: 0.2597
+             Episode_Metrics/mf_contact: 0.1079
+             Episode_Metrics/rf_contact: 0.0179
+             Episode_Metrics/th_contact: 0.4252
+       Episode_Metrics/genuine_yaw_rate: 0.0333
+ Episode_Metrics/exec_action_saturation: 0.0032
+Curriculum/object_linvel_penalty_weight/metric: 0.0318
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0005
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0009
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0303
+Curriculum/pose_diff_penalty_weight/metric: 0.0318
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0005
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0009
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0318
+Curriculum/torque_penalty_weight/progress_raw: 0.0005
+Curriculum/torque_penalty_weight/progress_ema: 0.0009
+Curriculum/torque_penalty_weight/target_weight: -0.1008
+Curriculum/torque_penalty_weight/weight: -0.1010
+  Curriculum/work_penalty_weight/metric: 0.0318
+Curriculum/work_penalty_weight/progress_raw: 0.0005
+Curriculum/work_penalty_weight/progress_ema: 0.0009
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.3750
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.1875
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.79s
+                           Time elapsed: 00:09:07
+                                    ETA: 03:46:53
+
+################################################################################
+[1m                          Learning iteration 116/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15335424 
+                       Steps per second: 27408 
+                        Collection time: 4.574s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0135
+                      Mean entropy loss: 19.2176
+          Mean raw_action_abs_mean loss: 0.7132
+            Mean raw_mean_abs_mean loss: 0.3003
+              Mean exec_saturation loss: 0.0034
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9406
+    Mean effective_exploration_001 loss: 0.9883
+              Mean action_std_mean loss: 0.8042
+                    Mean approx_kl loss: 0.0166
+              Mean grad_norm_actor loss: 0.5961
+             Mean grad_norm_critic loss: 0.0336
+                            Mean reward: -0.33
+                    Mean episode length: 372.23
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0260
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0057
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0187
+              Episode_Reward/grasp_loss: -0.0031
+      Episode_Metrics/rotation_progress: 0.0336
+           Episode_Metrics/linear_speed: 0.0083
+         Episode_Metrics/position_error: 0.0172
+             Episode_Metrics/tilt_error: 0.2852
+Episode_Metrics/fingertip_contact_count: 0.7883
+Episode_Metrics/fingertip_contact_fraction: 0.1971
+   Episode_Metrics/fingertip_found_mean: 0.2076
+    Episode_Metrics/fingertip_found_max: 0.6602
+             Episode_Metrics/if_contact: 0.2362
+             Episode_Metrics/mf_contact: 0.1207
+             Episode_Metrics/rf_contact: 0.0294
+             Episode_Metrics/th_contact: 0.4020
+       Episode_Metrics/genuine_yaw_rate: 0.0498
+ Episode_Metrics/exec_action_saturation: 0.0034
+Curriculum/object_linvel_penalty_weight/metric: 0.0335
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0065
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0052
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0314
+Curriculum/object_linvel_penalty_weight/weight: -0.0312
+Curriculum/pose_diff_penalty_weight/metric: 0.0335
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0065
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0052
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0105
+Curriculum/pose_diff_penalty_weight/weight: -0.0104
+Curriculum/torque_penalty_weight/metric: 0.0335
+Curriculum/torque_penalty_weight/progress_raw: 0.0065
+Curriculum/torque_penalty_weight/progress_ema: 0.0052
+Curriculum/torque_penalty_weight/target_weight: -0.1047
+Curriculum/torque_penalty_weight/weight: -0.1039
+  Curriculum/work_penalty_weight/metric: 0.0335
+Curriculum/work_penalty_weight/progress_raw: 0.0065
+Curriculum/work_penalty_weight/progress_ema: 0.0052
+Curriculum/work_penalty_weight/target_weight: -0.0105
+  Curriculum/work_penalty_weight/weight: -0.0104
+           Episode_Termination/time_out: 9.8438
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.2500
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.78s
+                           Time elapsed: 00:09:12
+                                    ETA: 03:46:50
+
+################################################################################
+[1m                          Learning iteration 117/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15466496 
+                       Steps per second: 27214 
+                        Collection time: 4.605s 
+                          Learning time: 0.211s 
+                        Mean value loss: 0.0027
+                    Mean surrogate loss: -0.0133
+                      Mean entropy loss: 19.2447
+          Mean raw_action_abs_mean loss: 0.7163
+            Mean raw_mean_abs_mean loss: 0.3054
+              Mean exec_saturation loss: 0.0035
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9405
+    Mean effective_exploration_001 loss: 0.9882
+              Mean action_std_mean loss: 0.8056
+                    Mean approx_kl loss: 0.0151
+              Mean grad_norm_actor loss: 0.5976
+             Mean grad_norm_critic loss: 0.0273
+                            Mean reward: -0.25
+                    Mean episode length: 371.23
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0268
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0059
+          Episode_Reward/torque_penalty: -0.0053
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0169
+              Episode_Reward/grasp_loss: -0.0033
+      Episode_Metrics/rotation_progress: 0.0360
+           Episode_Metrics/linear_speed: 0.0090
+         Episode_Metrics/position_error: 0.0164
+             Episode_Metrics/tilt_error: 0.2778
+Episode_Metrics/fingertip_contact_count: 0.7531
+Episode_Metrics/fingertip_contact_fraction: 0.1883
+   Episode_Metrics/fingertip_found_mean: 0.1985
+    Episode_Metrics/fingertip_found_max: 0.6453
+             Episode_Metrics/if_contact: 0.2175
+             Episode_Metrics/mf_contact: 0.1067
+             Episode_Metrics/rf_contact: 0.0201
+             Episode_Metrics/th_contact: 0.4088
+       Episode_Metrics/genuine_yaw_rate: 0.0486
+ Episode_Metrics/exec_action_saturation: 0.0033
+Curriculum/object_linvel_penalty_weight/metric: 0.0361
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0026
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0035
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0309
+Curriculum/object_linvel_penalty_weight/weight: -0.0311
+Curriculum/pose_diff_penalty_weight/metric: 0.0361
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0026
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0035
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0103
+Curriculum/pose_diff_penalty_weight/weight: -0.0104
+Curriculum/torque_penalty_weight/metric: 0.0361
+Curriculum/torque_penalty_weight/progress_raw: 0.0026
+Curriculum/torque_penalty_weight/progress_ema: 0.0035
+Curriculum/torque_penalty_weight/target_weight: -0.1031
+Curriculum/torque_penalty_weight/weight: -0.1036
+  Curriculum/work_penalty_weight/metric: 0.0361
+Curriculum/work_penalty_weight/progress_raw: 0.0026
+Curriculum/work_penalty_weight/progress_ema: 0.0035
+Curriculum/work_penalty_weight/target_weight: -0.0103
+  Curriculum/work_penalty_weight/weight: -0.0104
+           Episode_Termination/time_out: 11.0938
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.6250
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.82s
+                           Time elapsed: 00:09:16
+                                    ETA: 03:46:48
+
+################################################################################
+[1m                          Learning iteration 118/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15597568 
+                       Steps per second: 27007 
+                        Collection time: 4.646s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0026
+                    Mean surrogate loss: -0.0132
+                      Mean entropy loss: 19.2601
+          Mean raw_action_abs_mean loss: 0.7185
+            Mean raw_mean_abs_mean loss: 0.3088
+              Mean exec_saturation loss: 0.0037
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9400
+    Mean effective_exploration_001 loss: 0.9881
+              Mean action_std_mean loss: 0.8068
+                    Mean approx_kl loss: 0.0181
+              Mean grad_norm_actor loss: 0.6154
+             Mean grad_norm_critic loss: 0.0232
+                            Mean reward: -0.08
+                    Mean episode length: 375.13
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0272
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0060
+          Episode_Reward/torque_penalty: -0.0055
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0213
+              Episode_Reward/grasp_loss: -0.0025
+      Episode_Metrics/rotation_progress: 0.0330
+           Episode_Metrics/linear_speed: 0.0083
+         Episode_Metrics/position_error: 0.0165
+             Episode_Metrics/tilt_error: 0.2715
+Episode_Metrics/fingertip_contact_count: 0.7312
+Episode_Metrics/fingertip_contact_fraction: 0.1828
+   Episode_Metrics/fingertip_found_mean: 0.1918
+    Episode_Metrics/fingertip_found_max: 0.6213
+             Episode_Metrics/if_contact: 0.2237
+             Episode_Metrics/mf_contact: 0.0950
+             Episode_Metrics/rf_contact: 0.0179
+             Episode_Metrics/th_contact: 0.3946
+       Episode_Metrics/genuine_yaw_rate: 0.0410
+ Episode_Metrics/exec_action_saturation: 0.0033
+Curriculum/object_linvel_penalty_weight/metric: 0.0328
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0017
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0015
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0304
+Curriculum/object_linvel_penalty_weight/weight: -0.0304
+Curriculum/pose_diff_penalty_weight/metric: 0.0328
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0017
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0015
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0328
+Curriculum/torque_penalty_weight/progress_raw: 0.0017
+Curriculum/torque_penalty_weight/progress_ema: 0.0015
+Curriculum/torque_penalty_weight/target_weight: -0.1013
+Curriculum/torque_penalty_weight/weight: -0.1013
+  Curriculum/work_penalty_weight/metric: 0.0328
+Curriculum/work_penalty_weight/progress_raw: 0.0017
+Curriculum/work_penalty_weight/progress_ema: 0.0015
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 11.1250
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.1875
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.85s
+                           Time elapsed: 00:09:21
+                                    ETA: 03:46:46
+
+################################################################################
+[1m                          Learning iteration 119/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15728640 
+                       Steps per second: 27272 
+                        Collection time: 4.598s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0025
+                    Mean surrogate loss: -0.0134
+                      Mean entropy loss: 19.2749
+          Mean raw_action_abs_mean loss: 0.7185
+            Mean raw_mean_abs_mean loss: 0.3098
+              Mean exec_saturation loss: 0.0037
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9403
+    Mean effective_exploration_001 loss: 0.9880
+              Mean action_std_mean loss: 0.8073
+                    Mean approx_kl loss: 0.0167
+              Mean grad_norm_actor loss: 0.6204
+             Mean grad_norm_critic loss: 0.0269
+                            Mean reward: 0.04
+                    Mean episode length: 379.64
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0284
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0053
+          Episode_Reward/torque_penalty: -0.0054
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0138
+              Episode_Reward/grasp_loss: -0.0029
+      Episode_Metrics/rotation_progress: 0.0338
+           Episode_Metrics/linear_speed: 0.0089
+         Episode_Metrics/position_error: 0.0163
+             Episode_Metrics/tilt_error: 0.2738
+Episode_Metrics/fingertip_contact_count: 0.7701
+Episode_Metrics/fingertip_contact_fraction: 0.1925
+   Episode_Metrics/fingertip_found_mean: 0.2013
+    Episode_Metrics/fingertip_found_max: 0.6529
+             Episode_Metrics/if_contact: 0.2297
+             Episode_Metrics/mf_contact: 0.1010
+             Episode_Metrics/rf_contact: 0.0250
+             Episode_Metrics/th_contact: 0.4143
+       Episode_Metrics/genuine_yaw_rate: 0.0489
+ Episode_Metrics/exec_action_saturation: 0.0033
+Curriculum/object_linvel_penalty_weight/metric: 0.0336
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0000
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0007
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0303
+Curriculum/pose_diff_penalty_weight/metric: 0.0336
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0000
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0007
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0336
+Curriculum/torque_penalty_weight/progress_raw: 0.0000
+Curriculum/torque_penalty_weight/progress_ema: 0.0007
+Curriculum/torque_penalty_weight/target_weight: -0.1006
+Curriculum/torque_penalty_weight/weight: -0.1009
+  Curriculum/work_penalty_weight/metric: 0.0336
+Curriculum/work_penalty_weight/progress_raw: 0.0000
+Curriculum/work_penalty_weight/progress_ema: 0.0007
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.4375
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.1875
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.81s
+                           Time elapsed: 00:09:26
+                                    ETA: 03:46:44
+
+################################################################################
+[1m                          Learning iteration 120/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15859712 
+                       Steps per second: 27369 
+                        Collection time: 4.581s 
+                          Learning time: 0.208s 
+                        Mean value loss: 0.0027
+                    Mean surrogate loss: -0.0129
+                      Mean entropy loss: 19.2977
+          Mean raw_action_abs_mean loss: 0.7207
+            Mean raw_mean_abs_mean loss: 0.3112
+              Mean exec_saturation loss: 0.0037
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9400
+    Mean effective_exploration_001 loss: 0.9881
+              Mean action_std_mean loss: 0.8083
+                    Mean approx_kl loss: 0.0184
+              Mean grad_norm_actor loss: 0.5973
+             Mean grad_norm_critic loss: 0.0261
+                            Mean reward: -0.08
+                    Mean episode length: 382.30
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0246
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0052
+          Episode_Reward/torque_penalty: -0.0055
+            Episode_Reward/work_penalty: -0.0005
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0207
+              Episode_Reward/grasp_loss: -0.0034
+      Episode_Metrics/rotation_progress: 0.0294
+           Episode_Metrics/linear_speed: 0.0087
+         Episode_Metrics/position_error: 0.0170
+             Episode_Metrics/tilt_error: 0.2809
+Episode_Metrics/fingertip_contact_count: 0.7673
+Episode_Metrics/fingertip_contact_fraction: 0.1918
+   Episode_Metrics/fingertip_found_mean: 0.2017
+    Episode_Metrics/fingertip_found_max: 0.6526
+             Episode_Metrics/if_contact: 0.2531
+             Episode_Metrics/mf_contact: 0.0922
+             Episode_Metrics/rf_contact: 0.0219
+             Episode_Metrics/th_contact: 0.4001
+       Episode_Metrics/genuine_yaw_rate: 0.0423
+ Episode_Metrics/exec_action_saturation: 0.0037
+Curriculum/object_linvel_penalty_weight/metric: 0.0296
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0005
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0004
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0301
+Curriculum/object_linvel_penalty_weight/weight: -0.0301
+Curriculum/pose_diff_penalty_weight/metric: 0.0296
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0005
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0004
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0100
+Curriculum/pose_diff_penalty_weight/weight: -0.0100
+Curriculum/torque_penalty_weight/metric: 0.0296
+Curriculum/torque_penalty_weight/progress_raw: 0.0005
+Curriculum/torque_penalty_weight/progress_ema: 0.0004
+Curriculum/torque_penalty_weight/target_weight: -0.1004
+Curriculum/torque_penalty_weight/weight: -0.1003
+  Curriculum/work_penalty_weight/metric: 0.0296
+Curriculum/work_penalty_weight/progress_raw: 0.0005
+Curriculum/work_penalty_weight/progress_ema: 0.0004
+Curriculum/work_penalty_weight/target_weight: -0.0100
+  Curriculum/work_penalty_weight/weight: -0.0100
+           Episode_Termination/time_out: 9.2812
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.5000
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.79s
+                           Time elapsed: 00:09:31
+                                    ETA: 03:46:41
+
+################################################################################
+[1m                          Learning iteration 121/3001                           [0m 
+
+                               Run name: pt_teacher_seed1
+                            Total steps: 15990784 
+                       Steps per second: 27427 
+                        Collection time: 4.572s 
+                          Learning time: 0.207s 
+                        Mean value loss: 0.0027
+                    Mean surrogate loss: -0.0132
+                      Mean entropy loss: 19.3102
+          Mean raw_action_abs_mean loss: 0.7216
+            Mean raw_mean_abs_mean loss: 0.3111
+              Mean exec_saturation loss: 0.0038
+         Mean exec_mean_saturation loss: 0.0000
+        Mean effective_exploration loss: 0.9401
+    Mean effective_exploration_001 loss: 0.9880
+              Mean action_std_mean loss: 0.8094
+                    Mean approx_kl loss: 0.0182
+              Mean grad_norm_actor loss: 0.5909
+             Mean grad_norm_critic loss: 0.0264
+                            Mean reward: -0.07
+                    Mean episode length: 358.77
+                  Mean action noise std: 0.81
+      Episode_Reward/rotate_finite_diff: 0.0291
+   Episode_Reward/object_linvel_penalty: -0.0003
+       Episode_Reward/pose_diff_penalty: -0.0055
+          Episode_Reward/torque_penalty: -0.0055
+            Episode_Reward/work_penalty: -0.0006
+           Episode_Reward/object_fallen: 0.0000
+       Episode_Reward/retention_penalty: -0.0186
+              Episode_Reward/grasp_loss: -0.0033
+      Episode_Metrics/rotation_progress: 0.0330
+           Episode_Metrics/linear_speed: 0.0115
+         Episode_Metrics/position_error: 0.0162
+             Episode_Metrics/tilt_error: 0.2892
+Episode_Metrics/fingertip_contact_count: 0.7893
+Episode_Metrics/fingertip_contact_fraction: 0.1973
+   Episode_Metrics/fingertip_found_mean: 0.2075
+    Episode_Metrics/fingertip_found_max: 0.6737
+             Episode_Metrics/if_contact: 0.2721
+             Episode_Metrics/mf_contact: 0.0957
+             Episode_Metrics/rf_contact: 0.0207
+             Episode_Metrics/th_contact: 0.4008
+       Episode_Metrics/genuine_yaw_rate: 0.0436
+ Episode_Metrics/exec_action_saturation: 0.0040
+Curriculum/object_linvel_penalty_weight/metric: 0.0331
+Curriculum/object_linvel_penalty_weight/progress_raw: 0.0012
+Curriculum/object_linvel_penalty_weight/progress_ema: 0.0007
+Curriculum/object_linvel_penalty_weight/target_weight: -0.0302
+Curriculum/object_linvel_penalty_weight/weight: -0.0302
+Curriculum/pose_diff_penalty_weight/metric: 0.0331
+Curriculum/pose_diff_penalty_weight/progress_raw: 0.0012
+Curriculum/pose_diff_penalty_weight/progress_ema: 0.0007
+Curriculum/pose_diff_penalty_weight/target_weight: -0.0101
+Curriculum/pose_diff_penalty_weight/weight: -0.0101
+Curriculum/torque_penalty_weight/metric: 0.0331
+Curriculum/torque_penalty_weight/progress_raw: 0.0012
+Curriculum/torque_penalty_weight/progress_ema: 0.0007
+Curriculum/torque_penalty_weight/target_weight: -0.1007
+Curriculum/torque_penalty_weight/weight: -0.1005
+  Curriculum/work_penalty_weight/metric: 0.0331
+Curriculum/work_penalty_weight/progress_raw: 0.0012
+Curriculum/work_penalty_weight/progress_ema: 0.0007
+Curriculum/work_penalty_weight/target_weight: -0.0101
+  Curriculum/work_penalty_weight/weight: -0.0101
+           Episode_Termination/time_out: 9.6250
+          Episode_Termination/cube_fell: 0.0000
+      Episode_Termination/cube_too_fast: 0.0000
+Episode_Termination/cube_pose_deviation: 1.4062
+                Episode_Termination/nan: 0.0000
+--------------------------------------------------------------------------------
+                         Iteration time: 4.78s
+                           Time elapsed: 00:09:36
+                                    ETA: 03:46:37
+
