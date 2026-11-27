@@ -1,0 +1,402 @@
+[
+ {
+  "key": "K_C5s1_s9501",
+  "policy": "C5s1",
+  "condition": "K",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s1_s9502",
+  "policy": "C5s1",
+  "condition": "K",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_s9501",
+  "policy": "C5s1",
+  "condition": "A",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s1_s9502",
+  "policy": "C5s1",
+  "condition": "A",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s1_s9501",
+  "policy": "C5s1",
+  "condition": "heavy_slippery",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s1_s9502",
+  "policy": "C5s1",
+  "condition": "heavy_slippery",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s1_s9501",
+  "policy": "C5s1",
+  "condition": "high_delay",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s1_s9502",
+  "policy": "C5s1",
+  "condition": "high_delay",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s1_s9501",
+  "policy": "C5s1",
+  "condition": "obs_noise_x3",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s1_s9502",
+  "policy": "C5s1",
+  "condition": "obs_noise_x3",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s2_s9501",
+  "policy": "C5s2",
+  "condition": "K",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s2_s9502",
+  "policy": "C5s2",
+  "condition": "K",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s2_s9501",
+  "policy": "C5s2",
+  "condition": "A",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s2_s9502",
+  "policy": "C5s2",
+  "condition": "A",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s2_s9501",
+  "policy": "C5s2",
+  "condition": "heavy_slippery",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s2_s9502",
+  "policy": "C5s2",
+  "condition": "heavy_slippery",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s2_s9501",
+  "policy": "C5s2",
+  "condition": "high_delay",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s2_s9502",
+  "policy": "C5s2",
+  "condition": "high_delay",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s2_s9501",
+  "policy": "C5s2",
+  "condition": "obs_noise_x3",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s2_s9502",
+  "policy": "C5s2",
+  "condition": "obs_noise_x3",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_s9501",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_C5s3_s9502",
+  "policy": "C5s3",
+  "condition": "K",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_s9501",
+  "policy": "C5s3",
+  "condition": "A",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_C5s3_s9502",
+  "policy": "C5s3",
+  "condition": "A",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s3_s9501",
+  "policy": "C5s3",
+  "condition": "heavy_slippery",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_C5s3_s9502",
+  "policy": "C5s3",
+  "condition": "heavy_slippery",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s3_s9501",
+  "policy": "C5s3",
+  "condition": "high_delay",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_C5s3_s9502",
+  "policy": "C5s3",
+  "condition": "high_delay",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s3_s9501",
+  "policy": "C5s3",
+  "condition": "obs_noise_x3",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_C5s3_s9502",
+  "policy": "C5s3",
+  "condition": "obs_noise_x3",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_T_s9501",
+  "policy": "T",
+  "condition": "K",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_T_s9502",
+  "policy": "T",
+  "condition": "K",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_T_s9501",
+  "policy": "T",
+  "condition": "A",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_T_s9502",
+  "policy": "T",
+  "condition": "A",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_T_s9501",
+  "policy": "T",
+  "condition": "heavy_slippery",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_T_s9502",
+  "policy": "T",
+  "condition": "heavy_slippery",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_T_s9501",
+  "policy": "T",
+  "condition": "high_delay",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_T_s9502",
+  "policy": "T",
+  "condition": "high_delay",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_T_s9501",
+  "policy": "T",
+  "condition": "obs_noise_x3",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_T_s9502",
+  "policy": "T",
+  "condition": "obs_noise_x3",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_S-TF_s9501",
+  "policy": "S-TF",
+  "condition": "K",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "K_S-TF_s9502",
+  "policy": "S-TF",
+  "condition": "K",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_S-TF_s9501",
+  "policy": "S-TF",
+  "condition": "A",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "A_S-TF_s9502",
+  "policy": "S-TF",
+  "condition": "A",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_S-TF_s9501",
+  "policy": "S-TF",
+  "condition": "heavy_slippery",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "heavy_slippery_S-TF_s9502",
+  "policy": "S-TF",
+  "condition": "heavy_slippery",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_S-TF_s9501",
+  "policy": "S-TF",
+  "condition": "high_delay",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "high_delay_S-TF_s9502",
+  "policy": "S-TF",
+  "condition": "high_delay",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_S-TF_s9501",
+  "policy": "S-TF",
+  "condition": "obs_noise_x3",
+  "seed": 9501,
+  "num_envs": 256,
+  "steps": 1200
+ },
+ {
+  "key": "obs_noise_x3_S-TF_s9502",
+  "policy": "S-TF",
+  "condition": "obs_noise_x3",
+  "seed": 9502,
+  "num_envs": 256,
+  "steps": 1200
+ }
+]
