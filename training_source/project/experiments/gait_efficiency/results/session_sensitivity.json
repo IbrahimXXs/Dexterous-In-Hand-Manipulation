@@ -1,0 +1,310 @@
+{
+ "label": "EXPLORATORY, POST HOC sensitivity; held window (3 s -> drop), runs held >= 20 s; counter unchanged",
+ "source_check": "every recomputed row equals results/real_hand.json variants.held.per_run",
+ "per_run_c5": [
+  {
+   "session": "20 Nov",
+   "trial": 2,
+   "policy": "C5s1",
+   "held_s": 60.37,
+   "window_s": 57.32584402800421,
+   "qturns": 17.0,
+   "cycles": 18.925402807597695,
+   "qturns_per_cycle": 0.8982635758312773,
+   "rhythm_hz": 0.3360837340034132
+  },
+  {
+   "session": "20 Nov",
+   "trial": 5,
+   "policy": "C5s1",
+   "held_s": 60.36,
+   "window_s": 57.29981697098992,
+   "qturns": 13.0,
+   "cycles": 20.077290239338385,
+   "qturns_per_cycle": 0.6474977372458602,
+   "rhythm_hz": 0.35072121799607014
+  },
+  {
+   "session": "20 Nov",
+   "trial": 12,
+   "policy": "C5s1",
+   "held_s": 45.0,
+   "window_s": 41.94806708399847,
+   "qturns": 11.0,
+   "cycles": 14.912526853192592,
+   "qturns_per_cycle": 0.737634882960498,
+   "rhythm_hz": 0.3409265101097029
+  },
+  {
+   "session": "20 Nov",
+   "trial": 15,
+   "policy": "C5s1",
+   "held_s": 60.37,
+   "window_s": 57.35257873201044,
+   "qturns": 13.5,
+   "cycles": 19.92456125005577,
+   "qturns_per_cycle": 0.6775556977427653,
+   "rhythm_hz": 0.3360410950053265
+  },
+  {
+   "session": "20 Nov",
+   "trial": 18,
+   "policy": "C5s1",
+   "held_s": 60.21,
+   "window_s": 57.179490929993335,
+   "qturns": 15.0,
+   "cycles": 19.9222814285063,
+   "qturns_per_cycle": 0.7529258159427902,
+   "rhythm_hz": 0.3506520320362969
+  },
+  {
+   "session": "24 Nov",
+   "trial": 4,
+   "policy": "C5s3",
+   "held_s": 60.4,
+   "window_s": 57.33850539000014,
+   "qturns": 20.0,
+   "cycles": 16.940022731016963,
+   "qturns_per_cycle": 1.1806359600321112,
+   "rhythm_hz": 0.29713320731466814
+  },
+  {
+   "session": "24 Nov",
+   "trial": 7,
+   "policy": "C5s1",
+   "held_s": 30.0,
+   "window_s": 26.909595006000018,
+   "qturns": 7.0,
+   "cycles": 8.943799572264732,
+   "qturns_per_cycle": 0.7826651238593748,
+   "rhythm_hz": 0.34094663591810676
+  },
+  {
+   "session": "24 Nov",
+   "trial": 10,
+   "policy": "C5s1",
+   "held_s": 60.37,
+   "window_s": 57.275395081999704,
+   "qturns": 12.0,
+   "cycles": 18.959775115767822,
+   "qturns_per_cycle": 0.6329188994451863,
+   "rhythm_hz": 0.34096944104562393
+  },
+  {
+   "session": "24 Nov",
+   "trial": 11,
+   "policy": "C5s3",
+   "held_s": 45.0,
+   "window_s": 41.96690149999995,
+   "qturns": 12.0,
+   "cycles": 11.00432224935497,
+   "qturns_per_cycle": 1.090480606445653,
+   "rhythm_hz": 0.29226544243853975
+  },
+  {
+   "session": "24 Nov",
+   "trial": 13,
+   "policy": "C5s3",
+   "held_s": 20.0,
+   "window_s": 16.978266560000066,
+   "qturns": 7.0,
+   "cycles": 3.0891988740201475,
+   "qturns_per_cycle": 2.2659596502087638,
+   "rhythm_hz": 0.21916267010030374
+  },
+  {
+   "session": "24 Nov",
+   "trial": 15,
+   "policy": "C5s3",
+   "held_s": 50.0,
+   "window_s": 46.937605819000055,
+   "qturns": 14.0,
+   "cycles": 13.006539592722108,
+   "qturns_per_cycle": 1.0763816078977524,
+   "rhythm_hz": 0.28250972183978657
+  },
+  {
+   "session": "24 Nov",
+   "trial": 17,
+   "policy": "C5s3",
+   "held_s": 50.0,
+   "window_s": 46.940892793999865,
+   "qturns": 12.0,
+   "cycles": 13.03391895795006,
+   "qturns_per_cycle": 0.9206747440055687,
+   "rhythm_hz": 0.29715036489915664
+  },
+  {
+   "session": "25 Nov",
+   "trial": 1,
+   "policy": "C5s3",
+   "held_s": 60.36,
+   "window_s": 57.346286179000344,
+   "qturns": 16.0,
+   "cycles": 17.51346519665381,
+   "qturns_per_cycle": 0.9135827673359023,
+   "rhythm_hz": 0.3019470119346123
+  },
+  {
+   "session": "25 Nov",
+   "trial": 5,
+   "policy": "C5s3",
+   "held_s": 30.0,
+   "window_s": 26.981750630999613,
+   "qturns": 8.0,
+   "cycles": 8.022736987336863,
+   "qturns_per_cycle": 0.9971659313557516,
+   "rhythm_hz": 0.3165750712070448
+  }
+ ],
+ "pooled": {
+  "C5s1_all": {
+   "n_runs": 7,
+   "runs": [
+    "20 Nov t2",
+    "20 Nov t5",
+    "20 Nov t12",
+    "20 Nov t15",
+    "20 Nov t18",
+    "24 Nov t7",
+    "24 Nov t10"
+   ],
+   "qturns_total": 88.5,
+   "cycles_total": 121.66563726672331,
+   "qturns_per_cycle": 0.7274034147043882,
+   "qturns_per_cycle_ci95": [
+    0.6691991158292862,
+    0.803055813887412
+   ]
+  },
+  "C5s1_20Nov": {
+   "n_runs": 5,
+   "runs": [
+    "20 Nov t2",
+    "20 Nov t5",
+    "20 Nov t12",
+    "20 Nov t15",
+    "20 Nov t18"
+   ],
+   "qturns_total": 69.5,
+   "cycles_total": 93.76206257869075,
+   "qturns_per_cycle": 0.7412379600936299,
+   "qturns_per_cycle_ci95": [
+    0.6742787836526136,
+    0.8227850300091073
+   ]
+  },
+  "C5s1_24Nov": {
+   "n_runs": 2,
+   "runs": [
+    "24 Nov t7",
+    "24 Nov t10"
+   ],
+   "qturns_total": 19.0,
+   "cycles_total": 27.903574688032556,
+   "qturns_per_cycle": 0.6809163418100989,
+   "qturns_per_cycle_ci95": [
+    0.6329188994451863,
+    0.7826651238593748
+   ]
+  },
+  "C5s3_all": {
+   "n_runs": 7,
+   "runs": [
+    "24 Nov t4",
+    "24 Nov t11",
+    "24 Nov t13",
+    "24 Nov t15",
+    "24 Nov t17",
+    "25 Nov t1",
+    "25 Nov t5"
+   ],
+   "qturns_total": 89.0,
+   "cycles_total": 82.61020458905492,
+   "qturns_per_cycle": 1.0773487421164392,
+   "qturns_per_cycle_ci95": [
+    0.969681629154253,
+    1.2443833742007673
+   ]
+  },
+  "C5s3_24Nov": {
+   "n_runs": 5,
+   "runs": [
+    "24 Nov t4",
+    "24 Nov t11",
+    "24 Nov t13",
+    "24 Nov t15",
+    "24 Nov t17"
+   ],
+   "qturns_total": 65.0,
+   "cycles_total": 57.07400240506425,
+   "qturns_per_cycle": 1.1388722931797135,
+   "qturns_per_cycle_ci95": [
+    1.014014327689966,
+    1.4123250345459804
+   ]
+  },
+  "C5s3_25Nov": {
+   "n_runs": 2,
+   "runs": [
+    "25 Nov t1",
+    "25 Nov t5"
+   ],
+   "qturns_total": 24.0,
+   "cycles_total": 25.536202183990675,
+   "qturns_per_cycle": 0.939842182759903,
+   "qturns_per_cycle_ci95": [
+    0.9135827673359023,
+    0.9971659313557516
+   ]
+  },
+  "C5s3_all_without_24Nov_t13": {
+   "n_runs": 6,
+   "runs": [
+    "24 Nov t4",
+    "24 Nov t11",
+    "24 Nov t15",
+    "24 Nov t17",
+    "25 Nov t1",
+    "25 Nov t5"
+   ],
+   "qturns_total": 82.0,
+   "cycles_total": 79.52100571503479,
+   "qturns_per_cycle": 1.0311740811459142,
+   "qturns_per_cycle_ci95": [
+    0.9460526195274372,
+    1.11807427923071
+   ]
+  },
+  "C5s3_24Nov_without_t13": {
+   "n_runs": 4,
+   "runs": [
+    "24 Nov t4",
+    "24 Nov t11",
+    "24 Nov t15",
+    "24 Nov t17"
+   ],
+   "qturns_total": 58.0,
+   "cycles_total": 53.98480353104411,
+   "qturns_per_cycle": 1.0743764208875364,
+   "qturns_per_cycle_ci95": [
+    0.9595400999546247,
+    1.1593910841756292
+   ]
+  }
+ },
+ "sim_K_effort_qturns_per_cycle": {
+  "C5s1": 1.0343007205108354,
+  "C5s3": 0.9891310774890615
+ },
+ "ratio_real_over_sim": {
+  "C5s1_all": 0.7032803905861418,
+  "C5s1_20Nov": 0.7166561381950276,
+  "C5s1_24Nov": 0.6583349777362604,
+  "C5s3_all": 1.0891870315624101,
+  "C5s3_24Nov": 1.151386625189024,
+  "C5s3_25Nov": 0.9501695014433479,
+  "C5s3_all_without_24Nov_t13": 1.042504987067619,
+  "C5s3_24Nov_without_t13": 1.0861820494154049
+ }
+}

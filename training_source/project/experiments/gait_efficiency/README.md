@@ -54,6 +54,7 @@ The joint encoders give the finger cycles with no cube sensor, and dividing rota
 - **Robustness of the policy ranking:**
   - It holds with each finger's joints alone, with the 0.1–1.5 Hz band, and with runs ≥ 10 s.
   - With per-run medians, A3 and R1 swap places.
+- **Seed or session? (sensitivity, `scripts/session_sensitivity.py` → `results/session_sensitivity.{json,md}`)** Most C5 seed 1 runs are from 20 Nov and most seed 3 runs from 24–25 Nov. On 24 Nov both seeds ran: seed 1 0.78 and 0.63 quarter turns per cycle (trials 7, 10), seed 3 0.92–1.18 (trials 4, 11, 15, 17). 24 Nov trial 13 (seed 3, held exactly 20 s) gives an implausible 2.27 because the counter undercounts the short window; without it, seed 3 pools to 1.03 instead of 1.08. The primary analysis keeps it.
 - **The window matters for droppers.** After a drop the fingers keep cycling with no cube, so the `run` window lowers turns per cycle for policies that drop early. C5 seed 3: 0.87 with the `run` window, 1.08 with `held`. R1's low `run` value is mostly this effect.
 
 ## Limits
@@ -74,8 +75,9 @@ The joint encoders give the finger cycles with no cube sensor, and dividing rota
   - `real_hand.py`;
   - `sim_gait.py`: items, Slurm worker, analysis; reuses `c5_hw_v1` `rollout` and `c5_hw_v2` setting K unchanged;
   - `decompose.py`;
+  - `session_sensitivity.py`: seed vs session and the 24 Nov trial 13 check;
   - `figure.py`: README figure style.
-- Results (`results/`): `real_hand.{json,md}`, `sim.json`, `items/*.json`, `decomposition.{json,md}`.
+- Results (`results/`): `real_hand.{json,md}`, `sim.json`, `items/*.json`, `decomposition.{json,md}`, `session_sensitivity.{json,md}`.
 - Figures: `figures/gait_efficiency.png`, `figures/gait_efficiency_dark.png`.
 - Raw rollouts: `data/*.npz`, 32 files, git-ignored.
 - Tests: `training_source/project/tests/test_gait_efficiency.py`.
