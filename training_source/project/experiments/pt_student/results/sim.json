@@ -6,7 +6,8 @@
   "T",
   "C5s1",
   "C5s2",
-  "C5s3"
+  "C5s3",
+  "S-MLP"
  ],
  "cells": {
   "K/S-TF": {
@@ -124,6 +125,29 @@
     0.953125
    ]
   },
+  "K/S-MLP": {
+   "n_envs": 512,
+   "survival_30s": 0.87890625,
+   "survival_60s": 0.865234375,
+   "turns_per_30s": 1.691122705844609,
+   "jam_proxy": 0.693359375,
+   "n_gait_envs": 454,
+   "qturns_per_cycle": 0.9721907456078638,
+   "rhythm_hz_median": 0.3320312450523489,
+   "cmd_change_rad_per_step": 0.014889739334517519,
+   "turns_per_30s_ci95": [
+    1.6308666800932443,
+    1.7493704240338552
+   ],
+   "survival_30s_ci95": [
+    0.849609375,
+    0.90625
+   ],
+   "survival_60s_ci95": [
+    0.833984375,
+    0.89453125
+   ]
+  },
   "A/S-TF": {
    "n_envs": 512,
    "survival_30s": 0.78125,
@@ -237,6 +261,29 @@
    "survival_60s_ci95": [
     0.759765625,
     0.830078125
+   ]
+  },
+  "A/S-MLP": {
+   "n_envs": 512,
+   "survival_30s": 0.810546875,
+   "survival_60s": 0.73828125,
+   "turns_per_30s": 1.6257633617985867,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 431,
+   "qturns_per_cycle": 0.9482742197084936,
+   "rhythm_hz_median": 0.3320312450523489,
+   "cmd_change_rad_per_step": 0.014719091630453785,
+   "turns_per_30s_ci95": [
+    1.5578016950110423,
+    1.6919816823147318
+   ],
+   "survival_30s_ci95": [
+    0.77734375,
+    0.84375
+   ],
+   "survival_60s_ci95": [
+    0.69921875,
+    0.775390625
    ]
   },
   "heavy_slippery/S-TF": {
@@ -354,6 +401,29 @@
     0.8359375
    ]
   },
+  "heavy_slippery/S-MLP": {
+   "n_envs": 512,
+   "survival_30s": 0.8125,
+   "survival_60s": 0.77734375,
+   "turns_per_30s": 1.61614456557718,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 428,
+   "qturns_per_cycle": 0.9283836454316642,
+   "rhythm_hz_median": 0.3369140574795893,
+   "cmd_change_rad_per_step": 0.014968075795300293,
+   "turns_per_30s_ci95": [
+    1.5471932658214473,
+    1.6837709728052583
+   ],
+   "survival_30s_ci95": [
+    0.77734375,
+    0.845703125
+   ],
+   "survival_60s_ci95": [
+    0.740234375,
+    0.8125
+   ]
+  },
   "high_delay/S-TF": {
    "n_envs": 512,
    "survival_30s": 0.755859375,
@@ -469,6 +539,29 @@
     0.791015625
    ]
   },
+  "high_delay/S-MLP": {
+   "n_envs": 512,
+   "survival_30s": 0.763671875,
+   "survival_60s": 0.677734375,
+   "turns_per_30s": 1.4230187995389136,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 410,
+   "qturns_per_cycle": 0.9222731760405469,
+   "rhythm_hz_median": 0.32226562019786803,
+   "cmd_change_rad_per_step": 0.014321989393649075,
+   "turns_per_30s_ci95": [
+    1.3519951338986829,
+    1.493573190754954
+   ],
+   "survival_30s_ci95": [
+    0.7265625,
+    0.80078125
+   ],
+   "survival_60s_ci95": [
+    0.63671875,
+    0.71875
+   ]
+  },
   "obs_noise_x3/S-TF": {
    "n_envs": 512,
    "survival_30s": 0.8046875,
@@ -582,6 +675,29 @@
    "survival_60s_ci95": [
     0.7578125,
     0.828125
+   ]
+  },
+  "obs_noise_x3/S-MLP": {
+   "n_envs": 512,
+   "survival_30s": 0.818359375,
+   "survival_60s": 0.7734375,
+   "turns_per_30s": 1.6435910145154948,
+   "jam_proxy": 0.0,
+   "n_gait_envs": 436,
+   "qturns_per_cycle": 0.9444413419482197,
+   "rhythm_hz_median": 0.3320312450523489,
+   "cmd_change_rad_per_step": 0.015407040756069062,
+   "turns_per_30s_ci95": [
+    1.577994024307363,
+    1.7066460788184843
+   ],
+   "survival_30s_ci95": [
+    0.78515625,
+    0.849609375
+   ],
+   "survival_60s_ci95": [
+    0.736328125,
+    0.80859375
    ]
   },
   "K/C5mean": {
@@ -709,6 +825,48 @@
      "ci95": [
       0.9156746250724016,
       0.9782892517088916
+     ],
+     "beats": false
+    }
+   },
+   "beats_every_seed": false
+  },
+  "S-MLP": {
+   "turns_ratio": 0.8154867427700158,
+   "turns_ratio_ci95": [
+    0.7853968291329857,
+    0.8459406672380773
+   ],
+   "survival_30s": 0.87890625,
+   "survival_30s_ref": 0.9368489583333334,
+   "stress_survival_60s": 0.7428385416666666,
+   "stress_survival_60s_ref": 0.7899305555555557,
+   "c1_turns": false,
+   "c2_survival30": false,
+   "c3_stress": false,
+   "PASS": false,
+   "vs_each_seed": {
+    "C5s1": {
+     "ratio": 0.7864211608609678,
+     "ci95": [
+      0.7548165273376346,
+      0.8178472653248459
+     ],
+     "beats": false
+    },
+    "C5s2": {
+     "ratio": 0.8152696752579507,
+     "ci95": [
+      0.7821546694963643,
+      0.8492746751057297
+     ],
+     "beats": false
+    },
+    "C5s3": {
+     "ratio": 0.8470174417187354,
+     "ci95": [
+      0.8108623891307071,
+      0.8844022874318992
      ],
      "beats": false
     }
