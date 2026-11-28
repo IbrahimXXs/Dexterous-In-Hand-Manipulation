@@ -213,7 +213,15 @@ def analyse() -> None:
   V2 = _load("c5_hw_v2_eval_items", PROJECT / "experiments" / "c5_hw_v2" / "scripts" / "eval_items.py")
   V1 = V2.V1
   G = _load("gait", PROJECT / "experiments" / "gait_efficiency" / "scripts" / "gait.py")
-  rng = np.random.default_rng(20261130)
+  def rng_for(*key) -> np.random.Generator:
+    """One bootstrap stream per (cell, purpose), base seed 20261130, so that adding policies (the controls) never moves another
+    policy's CI.  (Until 28 Nov 09:15 a single shared stream was used; changes were in the third decimal.)"""
+    return np.random.default_rng([20261130, *(int.from_bytes(hashlib.sha256(str(k).encode()).digest()[:4], "little") for k in key)])
+
+  def boot_mean(parts, key, rng):
+    """NBOOT resamples of environments within each evaluation seed; mean over the seeds."""
+    return np.mean([np.asarray(x[key])[rng.integers(0, len(x[key]), (NBOOT, len(x[key])))].mean(1) for x in parts], axis=0)
+
   pols = [p for p in ("S-TF", "T", "C5s1", "C5s2", "C5s3", "S-TF-noaux", "S-MLP")
           if all((E / "data" / f"{c}_{p}_s{s}.npz").exists() for c in CONDITIONS for s in EVAL_SEEDS)]
   cells = {}
@@ -235,7 +243,7 @@ def analyse() -> None:
         "rhythm_hz_median": float(np.median([x["rhythm_hz"] for x in gs])) if gs else None,
         "cmd_change_rad_per_step": float(sum(x["dcmd_sum"] for x in parts) / sum(x["dcmd_n"] for x in parts))}
     for k, key in (("turns_per_30s", "turns30"), ("survival_30s", "surv30"), ("survival_60s", "surv60")):
-      bs = np.mean([np.asarray(x[key])[rng.integers(0, len(x[key]), (NBOOT, len(x[key])))].mean(1) for x in parts], axis=0)
+      bs = boot_mean(parts, key, rng_for(c, p, k))
       out["cells"][f"{c}/{p}"][f"{k}_ci95"] = [float(np.percentile(bs, 2.5)), float(np.percentile(bs, 97.5))]
   C = out["cells"]
   c5 = ("C5s1", "C5s2", "C5s3")
@@ -245,12 +253,9 @@ def analyse() -> None:
     for k in ("qturns_per_cycle", "rhythm_hz_median"):
       C[f"{c}/C5mean"][k] = float(np.mean([C[f"{c}/{p}"][k] for p in c5]))
 
-  def boot_mean(parts, key):
-    return np.mean([np.asarray(x[key])[rng.integers(0, len(x[key]), (NBOOT, len(x[key])))].mean(1) for x in parts], axis=0)
-
   def criteria(p: str) -> dict:
-    tb = boot_mean(cells[("K", p)], "turns30")
-    c5b = {s: boot_mean(cells[("K", s)], "turns30") for s in c5}
+    tb = boot_mean(cells[("K", p)], "turns30", rng_for("K", p, "criteria"))
+    c5b = {s: boot_mean(cells[("K", s)], "turns30", rng_for("K", s, "criteria")) for s in c5}
     ratio = tb / np.mean([c5b[s] for s in c5], axis=0)
     k, ref = C[f"K/{p}"], C["K/C5mean"]
     stress = float(np.mean([C[f"{c}/{p}"]["survival_60s"] for c in STRESS]))

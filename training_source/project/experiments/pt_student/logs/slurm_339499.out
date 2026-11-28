@@ -1,0 +1,411 @@
+Sat Nov 28 03:14:51 +04 2026 start S-TF teacher logs/rsl_rl/pt_student_teacher/2026-11-27_23-04-29_pt_teacher_seed1/model_3000.pt host ws-l1-016 gpu 0 job 339499
+Setting seed: 1
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 12.8
+   Devices:
+     "cpu"      : "x86_64"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation" (31 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     /home/ibrahim.alsarraj/.cache/warp/1.13.0
+Module mujoco_warp._src.smooth 976a5d7 load on device 'cuda:0' took 1.68 ms  (cached)
+Module mujoco_warp._src.collision_driver fbb0ee0 load on device 'cuda:0' took 1.02 ms  (cached)
+Module _nxn_broadphase__locals__kernel_f0d52073 f0d5207 load on device 'cuda:0' took 0.99 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_6e17b813 6e17b81 load on device 'cuda:0' took 1.39 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_e4012e76 e4012e7 load on device 'cuda:0' took 1.23 ms  (cached)
+Module ccd_kernel_builder__locals__ccd_kernel_c6be8452 c6be845 load on device 'cuda:0' took 1.46 ms  (cached)
+Module _primitive_narrowphase__locals__primitive_narrowphase_2e1ffd01 2e1ffd0 load on device 'cuda:0' took 1.44 ms  (cached)
+Module mujoco_warp._src.constraint eb0e24d load on device 'cuda:0' took 1.20 ms  (cached)
+Module _efc_contact_init__locals__kernel_318b5c61 318b5c6 load on device 'cuda:0' took 1.22 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_80736b5f 416564c load on device 'cuda:0' took 1.00 ms  (cached)
+Module _efc_contact_update__locals__kernel_9b1e9723 9b1e972 load on device 'cuda:0' took 1.01 ms  (cached)
+Module mujoco_warp._src.sensor bee2d80 load on device 'cuda:0' took 1.25 ms  (cached)
+Module mujoco_warp._src.forward a76b6a3 load on device 'cuda:0' took 1.18 ms  (cached)
+Module mujoco_warp._src.passive 616927b load on device 'cuda:0' took 1.06 ms  (cached)
+Module mujoco_warp._src.forward 398750d load on device 'cuda:0' took 1.11 ms  (cached)
+Module mujoco_warp._src.support f32a4f8 load on device 'cuda:0' took 1.03 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_e0539067 63ff5df load on device 'cuda:0' took 17.81 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_2f60cdde 11a4bf6 load on device 'cuda:0' took 19.36 ms  (cached)
+Module mujoco_warp._src.solver 7df28c9 load on device 'cuda:0' took 1.23 ms  (cached)
+Module solve_init_jaref__locals__kernel_25ff1b7c 25ff1b7 load on device 'cuda:0' took 0.95 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_7ed132ec 7ed132e load on device 'cuda:0' took 0.97 ms  (cached)
+Module update_constraint_efc__locals__kernel_0760efd0 0760efd load on device 'cuda:0' took 1.07 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_9e13f241 9e13f24 load on device 'cuda:0' took 0.97 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_cea82d7a 9efb876 load on device 'cuda:0' took 1.19 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_ea20c59c 4a0130a load on device 'cuda:0' took 24.27 ms  (cached)
+Module linesearch_jv_fused__locals__kernel_b4aea1d9 b4aea1d load on device 'cuda:0' took 1.08 ms  (cached)
+Module linesearch_prepare_gauss__locals__kernel_710d51d7 710d51d load on device 'cuda:0' took 1.05 ms  (cached)
+Module _contact_sort__locals__contact_sort_5db6d00c a3dbca1 load on device 'cuda:0' took 1.07 ms  (cached)
+Module mujoco_warp._src.derivative f06cf21 load on device 'cuda:0' took 1.04 ms  (cached)
+Module reset_data__locals__reset_xfrc_applied_710d4b78 710d4b7 load on device 'cuda:0' took 1.42 ms  (cached)
+Module reset_data__locals__reset_qM_6daef3df 6daef3d load on device 'cuda:0' took 0.99 ms  (cached)
+Module reset_data__locals__reset_mocap_d10cb5d9 d10cb5d load on device 'cuda:0' took 0.96 ms  (cached)
+Module reset_data__locals__reset_contact_d9b9dbe6 d9b9dbe load on device 'cuda:0' took 0.97 ms  (cached)
+Module reset_data__locals__reset_nworld_f10c11a2 f10c11a load on device 'cuda:0' took 1.00 ms  (cached)
+
++---------------------------------+
+|         Base Environment        |
++------------------------+--------+
+| Property               | Value  |
++------------------------+--------+
+| Number of environments | 4096   |
+| Environment device     | cuda:0 |
+| Environment seed       | 1      |
+| Physics step-size      | 0.005  |
+| Environment step-size  | 0.05   |
++------------------------+--------+
+
+[INFO] <EventManager> contains 2 active terms.
++-------------------------------------+
+| Active Event Terms in Mode: 'reset' |
++-------+-----------------------------+
+| Index | Name                        |
++-------+-----------------------------+
+|   0   | reset_base                  |
+|   1   | reset_robot_joints          |
+|   2   | reset_cube_pose             |
+|   3   | reset_from_grasp_cache      |
+|   4   | dr_cube_com                 |
+|   5   | dr_shared_contact_friction  |
+|   6   | dr_cube_mass                |
+|   7   | dr_robot_link_masses        |
+|   8   | dr_motor_friction           |
+|   9   | dr_motor_damping            |
+|   10  | dr_action_delay             |
+|   11  | dr_effort_limits            |
++-------+-----------------------------+
++---------------------------------------+
+| Active Event Terms in Mode: 'startup' |
++--------+------------------------------+
+| Index  | Name                         |
++--------+------------------------------+
+|   0    | dr_reflected_inertia         |
+|   1    | dr_robot_pd_gains            |
++--------+------------------------------+
++-------------------------------+
+|  Domain Randomization Fields  |
++-------+-----------------------+
+| Index | Field Name            |
++-------+-----------------------+
+|   0   | geom_size             |
+|   1   | body_ipos             |
+|   2   | geom_friction         |
+|   3   | body_mass             |
+|   4   | dof_frictionloss      |
+|   5   | dof_damping           |
+|   6   | dof_armature          |
+|   7   | actuator_gainprm      |
+|   8   | actuator_biasprm      |
+|   9   | actuator_forcerange   |
+|   10  | actuator_forcelimited |
++-------+-----------------------+
+
+Module repeat_array_kernel_6bf8ef65 b2fc6f5 load on device 'cuda:0' took 1.04 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 192d60e load on device 'cuda:0' took 1.00 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 3cd9fa4 load on device 'cuda:0' took 1.05 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 c24051e load on device 'cuda:0' took 1.03 ms  (cached)
+Module repeat_array_kernel_6bf8ef65 dc82881 load on device 'cuda:0' took 1.05 ms  (cached)
+[INFO] <CommandManager> contains 1 active terms.
++---------------------------------------------+
+|             Active Command Terms            |
++-------+-----------+-------------------------+
+| Index | Name      |           Type          |
++-------+-----------+-------------------------+
+|   0   | frame_viz | HandCubeFrameVizCommand |
++-------+-----------+-------------------------+
+
+[INFO] <ActionManager> contains 1 active terms.
++---------------------------------+
+| Active Action Terms (shape: 16) |
++-------+-----------+-------------+
+| Index | Name      |   Dimension |
++-------+-----------+-------------+
+|   0   | joint_pos |          16 |
++-------+-----------+-------------+
+
+[INFO] <ObservationManager> contains 3 groups.
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'actor' (shape: (320,)) |
++-------+----------------------------+-----------------------+
+| Index | Name                       |         Shape         |
++-------+----------------------------+-----------------------+
+|   0   | joint_pos                  |   (160,)  ← 10×(16,)  |
+|   1   | prev_commanded_joint_pos   |   (160,)  ← 10×(16,)  |
++-------+----------------------------+-----------------------+
++------------------------------------------------------------+
+| Active Observation Terms in Group: 'critic' (shape: (83,)) |
++-------+-----------------------------+----------------------+
+| Index | Name                        |        Shape         |
++-------+-----------------------------+----------------------+
+|   0   | joint_pos                   |   (16,)  ← 1×(16,)   |
+|   1   | joint_vel                   |   (16,)  ← 1×(16,)   |
+|   2   | joint_pos_error             |   (16,)  ← 1×(16,)   |
+|   3   | prev_commanded_joint_pos    |   (16,)  ← 1×(16,)   |
+|   4   | cube_pose_palm              |    (7,)  ← 1×(7,)    |
+|   5   | cube_lin_vel_palm           |    (3,)  ← 1×(3,)    |
+|   6   | cube_ang_vel_palm           |    (3,)  ← 1×(3,)    |
+|   7   | cube_size                   |    (1,)  ← 1×(1,)    |
+|   8   | cube_mass                   |    (1,)  ← 1×(1,)    |
+|   9   | cube_com_offset_b           |    (3,)  ← 1×(3,)    |
+|   10  | cube_friction               |    (1,)  ← 1×(1,)    |
++-------+-----------------------------+----------------------+
++----------------------------------------------------------------+
+| Active Observation Terms in Group: 'cube_state' (shape: (17,)) |
++---------+-----------------------------+------------------------+
+|  Index  | Name                        |         Shape          |
++---------+-----------------------------+------------------------+
+|    0    | cube_pose_palm              |     (7,)  ← 1×(7,)     |
+|    1    | cube_lin_vel_palm           |     (3,)  ← 1×(3,)     |
+|    2    | cube_ang_vel_palm           |     (3,)  ← 1×(3,)     |
+|    3    | fingertip_contacts          |     (4,)  ← 1×(4,)     |
++---------+-----------------------------+------------------------+
+
+[INFO] <TerminationManager> contains 5 active terms.
++----------------------------------------+
+|        Active Termination Terms        |
++-------+---------------------+----------+
+| Index | Name                | Time Out |
++-------+---------------------+----------+
+|   0   | time_out            |   True   |
+|   1   | cube_fell           |  False   |
+|   2   | cube_too_fast       |  False   |
+|   3   | cube_pose_deviation |  False   |
+|   4   | nan                 |  False   |
++-------+---------------------+----------+
+
+[INFO] <RewardManager> contains 8 active terms.
++----------------------------------------+
+|          Active Reward Terms           |
++-------+-----------------------+--------+
+| Index | Name                  | Weight |
++-------+-----------------------+--------+
+|   0   | rotate_finite_diff    |   1.25 |
+|   1   | object_linvel_penalty |   -0.3 |
+|   2   | pose_diff_penalty     |   -0.1 |
+|   3   | torque_penalty        |   -0.1 |
+|   4   | work_penalty          |  -0.05 |
+|   5   | object_fallen         |  -10.0 |
+|   6   | retention_penalty     |  -0.05 |
+|   7   | grasp_loss            |  -10.0 |
++-------+-----------------------+--------+
+
+[INFO] <CurriculumManager> contains 4 active terms.
++--------------------------------------+
+|       Active Curriculum Terms        |
++-------+------------------------------+
+| Index | Name                         |
++-------+------------------------------+
+|   0   | object_linvel_penalty_weight |
+|   1   | pose_diff_penalty_weight     |
+|   2   | torque_penalty_weight        |
+|   3   | work_penalty_weight          |
++-------+------------------------------+
+
+[INFO] <MetricsManager> contains 14 active terms.
++------------------------------------+
+|        Active Metrics Terms        |
++-------+----------------------------+
+| Index | Name                       |
++-------+----------------------------+
+|   0   | rotation_progress          |
+|   1   | linear_speed               |
+|   2   | position_error             |
+|   3   | tilt_error                 |
+|   4   | fingertip_contact_count    |
+|   5   | fingertip_contact_fraction |
+|   6   | fingertip_found_mean       |
+|   7   | fingertip_found_max        |
+|   8   | if_contact                 |
+|   9   | mf_contact                 |
+|   10  | rf_contact                 |
+|   11  | th_contact                 |
+|   12  | genuine_yaw_rate           |
+|   13  | exec_action_saturation     |
++-------+----------------------------+
+
+[hand_cube] loaded grasp cache '/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/hwlimit_ac/cache/hwlimit_grasp_cache.npz' with 239 entries
+--------------------------------------------------------------------------------
+Resolved observation sets: 
+	 actor :  ('actor', 'critic')
+	 critic :  ('critic',)
+--------------------------------------------------------------------------------
+Actor Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=403, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=16, bias=True)
+  )
+)
+Critic Model: MLPModel(
+  (obs_normalizer): EmpiricalNormalization()
+  (mlp): MLP(
+    (0): Linear(in_features=83, out_features=512, bias=True)
+    (1): ELU(alpha=1.0)
+    (2): Linear(in_features=512, out_features=512, bias=True)
+    (3): ELU(alpha=1.0)
+    (4): Linear(in_features=512, out_features=256, bias=True)
+    (5): ELU(alpha=1.0)
+    (6): Linear(in_features=256, out_features=1, bias=True)
+  )
+)
+{"student": "S-TF", "kind": "transformer", "aux": true, "aux_weights": {"pos": 0.5, "ori": 0.3, "joint": 0.2}, "teacher": "logs/rsl_rl/pt_student_teacher/2026-11-27_23-04-29_pt_teacher_seed1/model_3000.pt", "teacher_sha256": "9aeb7ae7d4c22cf4817903113cf728b7a0c20b2db788024b6fb6e4743d61e724", "updates": 1500, "num_envs": 4096, "seed": 1, "n_params": 2391335, "buffer_rollouts": 4, "minibatch": 16384, "lr": 0.0003}
+/home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/pt_student/scripts/distill.py:153: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  L[k] += float(lt[k])
+[S-TF] update 0 beta 1.000 loss 2.0257 act 0.7784 pos 1.915 ori 0.585 joint 0.5710 done/step 0.0005 (8.49s)
+[S-TF] update 10 beta 0.967 loss 0.5839 act 0.4957 pos 0.127 ori 0.075 joint 0.0123 done/step 0.0002 (13.89s)
+[S-TF] update 20 beta 0.933 loss 0.5109 act 0.4247 pos 0.123 ori 0.075 joint 0.0103 done/step 0.0007 (14.03s)
+[S-TF] update 30 beta 0.900 loss 0.4747 act 0.3942 pos 0.112 ori 0.076 joint 0.0093 done/step 0.0012 (14.02s)
+[S-TF] update 40 beta 0.867 loss 0.4228 act 0.3532 pos 0.094 ori 0.069 joint 0.0092 done/step 0.0012 (13.97s)
+[S-TF] update 50 beta 0.833 loss 0.3724 act 0.3235 pos 0.067 ori 0.047 joint 0.0065 done/step 0.0015 (13.89s)
+[S-TF] update 60 beta 0.800 loss 0.3419 act 0.2999 pos 0.057 ori 0.042 joint 0.0047 done/step 0.0012 (13.97s)
+[S-TF] update 70 beta 0.767 loss 0.3337 act 0.2891 pos 0.062 ori 0.043 joint 0.0044 done/step 0.0015 (13.98s)
+[S-TF] update 80 beta 0.733 loss 0.3307 act 0.2847 pos 0.063 ori 0.046 joint 0.0042 done/step 0.0021 (14.04s)
+[S-TF] update 90 beta 0.700 loss 0.3160 act 0.2717 pos 0.061 ori 0.044 joint 0.0041 done/step 0.0019 (13.98s)
+[S-TF] update 100 beta 0.667 loss 0.3006 act 0.2627 pos 0.052 ori 0.037 joint 0.0034 done/step 0.0021 (14.03s)
+[S-TF] update 110 beta 0.633 loss 0.3005 act 0.2642 pos 0.050 ori 0.035 joint 0.0030 done/step 0.0017 (13.98s)
+[S-TF] update 120 beta 0.600 loss 0.3025 act 0.2635 pos 0.054 ori 0.038 joint 0.0030 done/step 0.0021 (14.03s)
+[S-TF] update 130 beta 0.567 loss 0.3017 act 0.2627 pos 0.054 ori 0.038 joint 0.0029 done/step 0.0027 (14.0s)
+[S-TF] update 140 beta 0.533 loss 0.2943 act 0.2556 pos 0.054 ori 0.038 joint 0.0029 done/step 0.0024 (13.99s)
+[S-TF] update 150 beta 0.500 loss 0.2889 act 0.2528 pos 0.051 ori 0.034 joint 0.0026 done/step 0.0023 (14.05s)
+[S-TF] update 160 beta 0.467 loss 0.2914 act 0.2563 pos 0.050 ori 0.032 joint 0.0025 done/step 0.0023 (14.0s)
+[S-TF] update 170 beta 0.433 loss 0.2922 act 0.2557 pos 0.052 ori 0.034 joint 0.0025 done/step 0.0022 (14.02s)
+[S-TF] update 180 beta 0.400 loss 0.2943 act 0.2556 pos 0.055 ori 0.036 joint 0.0025 done/step 0.0026 (14.0s)
+[S-TF] update 190 beta 0.367 loss 0.2936 act 0.2554 pos 0.055 ori 0.035 joint 0.0025 done/step 0.0027 (13.98s)
+[S-TF] update 200 beta 0.333 loss 0.2955 act 0.2580 pos 0.054 ori 0.033 joint 0.0024 done/step 0.0024 (13.97s)
+[S-TF] update 210 beta 0.300 loss 0.2982 act 0.2602 pos 0.055 ori 0.034 joint 0.0023 done/step 0.0024 (14.02s)
+[S-TF] update 220 beta 0.267 loss 0.3072 act 0.2661 pos 0.060 ori 0.036 joint 0.0024 done/step 0.0025 (14.08s)
+[S-TF] update 230 beta 0.233 loss 0.3121 act 0.2688 pos 0.063 ori 0.037 joint 0.0024 done/step 0.0026 (13.98s)
+[S-TF] update 240 beta 0.200 loss 0.3192 act 0.2744 pos 0.066 ori 0.037 joint 0.0025 done/step 0.0029 (14.01s)
+[S-TF] update 250 beta 0.167 loss 0.3224 act 0.2778 pos 0.066 ori 0.037 joint 0.0025 done/step 0.0025 (13.97s)
+[S-TF] update 260 beta 0.133 loss 0.3380 act 0.2895 pos 0.073 ori 0.038 joint 0.0025 done/step 0.0026 (13.99s)
+[S-TF] update 270 beta 0.100 loss 0.3449 act 0.2961 pos 0.073 ori 0.039 joint 0.0026 done/step 0.0028 (14.07s)
+[S-TF] update 280 beta 0.067 loss 0.3575 act 0.3086 pos 0.074 ori 0.038 joint 0.0026 done/step 0.0026 (13.99s)
+[S-TF] update 290 beta 0.033 loss 0.3686 act 0.3194 pos 0.074 ori 0.039 joint 0.0027 done/step 0.0029 (13.99s)
+[S-TF] update 300 beta 0.000 loss 0.3807 act 0.3327 pos 0.072 ori 0.038 joint 0.0026 done/step 0.0026 (13.99s)
+[S-TF] update 310 beta 0.000 loss 0.3769 act 0.3299 pos 0.070 ori 0.037 joint 0.0026 done/step 0.0026 (14.03s)
+[S-TF] update 320 beta 0.000 loss 0.3724 act 0.3265 pos 0.068 ori 0.037 joint 0.0027 done/step 0.0030 (14.09s)
+[S-TF] update 330 beta 0.000 loss 0.3716 act 0.3264 pos 0.067 ori 0.037 joint 0.0026 done/step 0.0026 (14.0s)
+[S-TF] update 340 beta 0.000 loss 0.3608 act 0.3168 pos 0.065 ori 0.036 joint 0.0027 done/step 0.0026 (14.0s)
+[S-TF] update 350 beta 0.000 loss 0.3631 act 0.3191 pos 0.066 ori 0.035 joint 0.0027 done/step 0.0026 (14.0s)
+[S-TF] update 360 beta 0.000 loss 0.3577 act 0.3149 pos 0.064 ori 0.035 joint 0.0027 done/step 0.0028 (14.01s)
+[S-TF] update 370 beta 0.000 loss 0.3586 act 0.3167 pos 0.062 ori 0.034 joint 0.0026 done/step 0.0030 (14.07s)
+[S-TF] update 380 beta 0.000 loss 0.3561 act 0.3132 pos 0.064 ori 0.034 joint 0.0027 done/step 0.0026 (14.03s)
+[S-TF] update 390 beta 0.000 loss 0.3549 act 0.3147 pos 0.060 ori 0.033 joint 0.0026 done/step 0.0027 (14.04s)
+[S-TF] update 400 beta 0.000 loss 0.3562 act 0.3141 pos 0.063 ori 0.034 joint 0.0026 done/step 0.0025 (14.09s)
+[S-TF] update 410 beta 0.000 loss 0.3546 act 0.3131 pos 0.062 ori 0.034 joint 0.0026 done/step 0.0025 (14.02s)
+[S-TF] update 420 beta 0.000 loss 0.3465 act 0.3067 pos 0.059 ori 0.033 joint 0.0026 done/step 0.0028 (14.07s)
+[S-TF] update 430 beta 0.000 loss 0.3483 act 0.3079 pos 0.060 ori 0.033 joint 0.0026 done/step 0.0028 (13.99s)
+[S-TF] update 440 beta 0.000 loss 0.3473 act 0.3070 pos 0.060 ori 0.033 joint 0.0025 done/step 0.0026 (14.01s)
+[S-TF] update 450 beta 0.000 loss 0.3450 act 0.3045 pos 0.060 ori 0.034 joint 0.0026 done/step 0.0026 (13.99s)
+[S-TF] update 460 beta 0.000 loss 0.3474 act 0.3064 pos 0.060 ori 0.034 joint 0.0026 done/step 0.0027 (14.0s)
+[S-TF] update 470 beta 0.000 loss 0.3436 act 0.3039 pos 0.059 ori 0.032 joint 0.0026 done/step 0.0026 (14.07s)
+[S-TF] update 480 beta 0.000 loss 0.3429 act 0.3037 pos 0.058 ori 0.033 joint 0.0025 done/step 0.0027 (14.0s)
+[S-TF] update 490 beta 0.000 loss 0.3355 act 0.2973 pos 0.057 ori 0.031 joint 0.0025 done/step 0.0028 (13.99s)
+[S-TF] update 500 beta 0.000 loss 0.3395 act 0.3010 pos 0.057 ori 0.032 joint 0.0025 done/step 0.0028 (14.02s)
+[S-TF] update 510 beta 0.000 loss 0.3387 act 0.2999 pos 0.058 ori 0.031 joint 0.0025 done/step 0.0025 (13.98s)
+[S-TF] update 520 beta 0.000 loss 0.3348 act 0.2981 pos 0.054 ori 0.030 joint 0.0024 done/step 0.0028 (14.07s)
+[S-TF] update 530 beta 0.000 loss 0.3352 act 0.2966 pos 0.057 ori 0.032 joint 0.0025 done/step 0.0027 (13.99s)
+[S-TF] update 540 beta 0.000 loss 0.3369 act 0.2979 pos 0.058 ori 0.032 joint 0.0025 done/step 0.0028 (14.08s)
+[S-TF] update 550 beta 0.000 loss 0.3333 act 0.2961 pos 0.055 ori 0.030 joint 0.0025 done/step 0.0026 (13.98s)
+[S-TF] update 560 beta 0.000 loss 0.3344 act 0.2962 pos 0.057 ori 0.031 joint 0.0025 done/step 0.0026 (13.99s)
+[S-TF] update 570 beta 0.000 loss 0.3308 act 0.2940 pos 0.054 ori 0.030 joint 0.0025 done/step 0.0028 (14.01s)
+[S-TF] update 580 beta 0.000 loss 0.3310 act 0.2939 pos 0.055 ori 0.031 joint 0.0025 done/step 0.0028 (14.01s)
+[S-TF] update 590 beta 0.000 loss 0.3332 act 0.2947 pos 0.057 ori 0.032 joint 0.0025 done/step 0.0027 (14.01s)
+[S-TF] update 600 beta 0.000 loss 0.3296 act 0.2925 pos 0.055 ori 0.031 joint 0.0024 done/step 0.0024 (14.02s)
+[S-TF] update 610 beta 0.000 loss 0.3280 act 0.2906 pos 0.055 ori 0.031 joint 0.0025 done/step 0.0027 (14.02s)
+[S-TF] update 620 beta 0.000 loss 0.3299 act 0.2917 pos 0.057 ori 0.031 joint 0.0025 done/step 0.0027 (14.0s)
+[S-TF] update 630 beta 0.000 loss 0.3289 act 0.2920 pos 0.054 ori 0.031 joint 0.0024 done/step 0.0029 (14.01s)
+[S-TF] update 640 beta 0.000 loss 0.3270 act 0.2902 pos 0.054 ori 0.030 joint 0.0024 done/step 0.0027 (14.08s)
+[S-TF] update 650 beta 0.000 loss 0.3288 act 0.2919 pos 0.054 ori 0.031 joint 0.0025 done/step 0.0025 (14.01s)
+[S-TF] update 660 beta 0.000 loss 0.3217 act 0.2856 pos 0.053 ori 0.030 joint 0.0024 done/step 0.0026 (14.01s)
+[S-TF] update 670 beta 0.000 loss 0.3231 act 0.2883 pos 0.051 ori 0.029 joint 0.0024 done/step 0.0029 (14.02s)
+[S-TF] update 680 beta 0.000 loss 0.3244 act 0.2887 pos 0.053 ori 0.029 joint 0.0024 done/step 0.0029 (14.01s)
+[S-TF] update 690 beta 0.000 loss 0.3237 act 0.2882 pos 0.053 ori 0.029 joint 0.0023 done/step 0.0027 (14.1s)
+[S-TF] update 700 beta 0.000 loss 0.3247 act 0.2884 pos 0.054 ori 0.030 joint 0.0024 done/step 0.0025 (14.02s)
+[S-TF] update 710 beta 0.000 loss 0.3242 act 0.2882 pos 0.053 ori 0.030 joint 0.0024 done/step 0.0029 (14.07s)
+[S-TF] update 720 beta 0.000 loss 0.3232 act 0.2869 pos 0.054 ori 0.030 joint 0.0024 done/step 0.0028 (14.01s)
+[S-TF] update 730 beta 0.000 loss 0.3199 act 0.2844 pos 0.052 ori 0.029 joint 0.0024 done/step 0.0027 (14.02s)
+[S-TF] update 740 beta 0.000 loss 0.3252 act 0.2883 pos 0.055 ori 0.030 joint 0.0024 done/step 0.0026 (14.07s)
+[S-TF] update 750 beta 0.000 loss 0.3217 act 0.2856 pos 0.053 ori 0.030 joint 0.0024 done/step 0.0024 (14.02s)
+[S-TF] update 760 beta 0.000 loss 0.3157 act 0.2801 pos 0.053 ori 0.029 joint 0.0024 done/step 0.0028 (14.03s)
+[S-TF] update 770 beta 0.000 loss 0.3175 act 0.2824 pos 0.052 ori 0.029 joint 0.0024 done/step 0.0026 (13.98s)
+[S-TF] update 780 beta 0.000 loss 0.3161 act 0.2808 pos 0.052 ori 0.029 joint 0.0023 done/step 0.0029 (14.0s)
+[S-TF] update 790 beta 0.000 loss 0.3192 act 0.2838 pos 0.052 ori 0.030 joint 0.0024 done/step 0.0025 (14.07s)
+[S-TF] update 800 beta 0.000 loss 0.3171 act 0.2825 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0026 (14.02s)
+[S-TF] update 810 beta 0.000 loss 0.3159 act 0.2815 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0028 (14.0s)
+[S-TF] update 820 beta 0.000 loss 0.3149 act 0.2810 pos 0.050 ori 0.028 joint 0.0023 done/step 0.0027 (14.0s)
+[S-TF] update 830 beta 0.000 loss 0.3163 act 0.2817 pos 0.051 ori 0.029 joint 0.0023 done/step 0.0025 (14.01s)
+[S-TF] update 840 beta 0.000 loss 0.3168 act 0.2813 pos 0.053 ori 0.029 joint 0.0024 done/step 0.0025 (14.08s)
+[S-TF] update 850 beta 0.000 loss 0.3164 act 0.2815 pos 0.052 ori 0.029 joint 0.0023 done/step 0.0027 (14.03s)
+[S-TF] update 860 beta 0.000 loss 0.3179 act 0.2823 pos 0.053 ori 0.029 joint 0.0023 done/step 0.0030 (14.0s)
+[S-TF] update 870 beta 0.000 loss 0.3154 act 0.2809 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0026 (14.0s)
+[S-TF] update 880 beta 0.000 loss 0.3156 act 0.2807 pos 0.052 ori 0.029 joint 0.0023 done/step 0.0026 (14.0s)
+[S-TF] update 890 beta 0.000 loss 0.3151 act 0.2804 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0025 (14.06s)
+[S-TF] update 900 beta 0.000 loss 0.3102 act 0.2766 pos 0.049 ori 0.028 joint 0.0023 done/step 0.0028 (14.01s)
+[S-TF] update 910 beta 0.000 loss 0.3106 act 0.2771 pos 0.049 ori 0.028 joint 0.0023 done/step 0.0027 (14.07s)
+[S-TF] update 920 beta 0.000 loss 0.3151 act 0.2804 pos 0.051 ori 0.029 joint 0.0023 done/step 0.0027 (14.0s)
+[S-TF] update 930 beta 0.000 loss 0.3148 act 0.2796 pos 0.052 ori 0.029 joint 0.0023 done/step 0.0027 (14.01s)
+[S-TF] update 940 beta 0.000 loss 0.3156 act 0.2812 pos 0.051 ori 0.029 joint 0.0023 done/step 0.0024 (14.01s)
+[S-TF] update 950 beta 0.000 loss 0.3115 act 0.2776 pos 0.050 ori 0.029 joint 0.0023 done/step 0.0027 (14.05s)
+[S-TF] update 960 beta 0.000 loss 0.3125 act 0.2776 pos 0.051 ori 0.030 joint 0.0023 done/step 0.0026 (14.05s)
+[S-TF] update 970 beta 0.000 loss 0.3106 act 0.2761 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0026 (14.01s)
+[S-TF] update 980 beta 0.000 loss 0.3103 act 0.2771 pos 0.049 ori 0.028 joint 0.0023 done/step 0.0026 (14.01s)
+[S-TF] update 990 beta 0.000 loss 0.3124 act 0.2775 pos 0.052 ori 0.028 joint 0.0023 done/step 0.0025 (14.01s)
+[S-TF] update 1000 beta 0.000 loss 0.3137 act 0.2794 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0028 (13.99s)
+[S-TF] update 1010 beta 0.000 loss 0.3120 act 0.2766 pos 0.053 ori 0.029 joint 0.0023 done/step 0.0029 (14.06s)
+[S-TF] update 1020 beta 0.000 loss 0.3127 act 0.2789 pos 0.050 ori 0.028 joint 0.0023 done/step 0.0024 (14.02s)
+[S-TF] update 1030 beta 0.000 loss 0.3103 act 0.2763 pos 0.050 ori 0.028 joint 0.0022 done/step 0.0029 (14.0s)
+[S-TF] update 1040 beta 0.000 loss 0.3093 act 0.2753 pos 0.050 ori 0.028 joint 0.0023 done/step 0.0026 (14.02s)
+[S-TF] update 1050 beta 0.000 loss 0.3082 act 0.2738 pos 0.051 ori 0.028 joint 0.0023 done/step 0.0029 (14.0s)
+[S-TF] update 1060 beta 0.000 loss 0.3112 act 0.2769 pos 0.051 ori 0.029 joint 0.0023 done/step 0.0028 (13.98s)
+[S-TF] update 1070 beta 0.000 loss 0.3099 act 0.2761 pos 0.050 ori 0.028 joint 0.0022 done/step 0.0025 (14.0s)
+[S-TF] update 1080 beta 0.000 loss 0.3052 act 0.2735 pos 0.047 ori 0.026 joint 0.0022 done/step 0.0026 (14.09s)
+[S-TF] update 1090 beta 0.000 loss 0.3089 act 0.2759 pos 0.049 ori 0.027 joint 0.0022 done/step 0.0028 (14.01s)
+[S-TF] update 1100 beta 0.000 loss 0.3077 act 0.2752 pos 0.048 ori 0.026 joint 0.0022 done/step 0.0029 (13.99s)
+[S-TF] update 1110 beta 0.000 loss 0.3081 act 0.2753 pos 0.048 ori 0.027 joint 0.0023 done/step 0.0028 (14.02s)
+[S-TF] update 1120 beta 0.000 loss 0.3045 act 0.2716 pos 0.048 ori 0.028 joint 0.0022 done/step 0.0028 (14.01s)
+[S-TF] update 1130 beta 0.000 loss 0.3092 act 0.2765 pos 0.049 ori 0.027 joint 0.0022 done/step 0.0027 (14.04s)
+[S-TF] update 1140 beta 0.000 loss 0.3098 act 0.2760 pos 0.050 ori 0.027 joint 0.0022 done/step 0.0028 (14.0s)
+[S-TF] update 1150 beta 0.000 loss 0.3062 act 0.2727 pos 0.049 ori 0.028 joint 0.0022 done/step 0.0027 (14.0s)
+[S-TF] update 1160 beta 0.000 loss 0.3053 act 0.2726 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0027 (14.08s)
+[S-TF] update 1170 beta 0.000 loss 0.3034 act 0.2707 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0025 (14.04s)
+[S-TF] update 1180 beta 0.000 loss 0.3046 act 0.2728 pos 0.047 ori 0.026 joint 0.0022 done/step 0.0028 (14.09s)
+[S-TF] update 1190 beta 0.000 loss 0.3072 act 0.2742 pos 0.049 ori 0.026 joint 0.0022 done/step 0.0027 (14.03s)
+[S-TF] update 1200 beta 0.000 loss 0.3027 act 0.2702 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0026 (14.01s)
+[S-TF] update 1210 beta 0.000 loss 0.3053 act 0.2735 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0028 (14.09s)
+[S-TF] update 1220 beta 0.000 loss 0.3039 act 0.2714 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0027 (14.03s)
+[S-TF] update 1230 beta 0.000 loss 0.3052 act 0.2721 pos 0.049 ori 0.027 joint 0.0022 done/step 0.0028 (14.08s)
+[S-TF] update 1240 beta 0.000 loss 0.3045 act 0.2717 pos 0.049 ori 0.027 joint 0.0022 done/step 0.0029 (14.04s)
+[S-TF] update 1250 beta 0.000 loss 0.3041 act 0.2721 pos 0.047 ori 0.026 joint 0.0022 done/step 0.0028 (14.03s)
+[S-TF] update 1260 beta 0.000 loss 0.3034 act 0.2711 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0029 (14.05s)
+[S-TF] update 1270 beta 0.000 loss 0.3034 act 0.2715 pos 0.047 ori 0.026 joint 0.0022 done/step 0.0027 (14.04s)
+[S-TF] update 1280 beta 0.000 loss 0.3014 act 0.2696 pos 0.047 ori 0.027 joint 0.0022 done/step 0.0028 (14.04s)
+[S-TF] update 1290 beta 0.000 loss 0.3007 act 0.2683 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0026 (14.02s)
+[S-TF] update 1300 beta 0.000 loss 0.3030 act 0.2707 pos 0.048 ori 0.027 joint 0.0022 done/step 0.0029 (14.03s)
+[S-TF] update 1310 beta 0.000 loss 0.3017 act 0.2689 pos 0.049 ori 0.027 joint 0.0022 done/step 0.0027 (14.1s)
+[S-TF] update 1320 beta 0.000 loss 0.3025 act 0.2703 pos 0.048 ori 0.026 joint 0.0022 done/step 0.0027 (14.03s)
+[S-TF] update 1330 beta 0.000 loss 0.2994 act 0.2678 pos 0.047 ori 0.026 joint 0.0022 done/step 0.0027 (14.05s)
+[S-TF] update 1340 beta 0.000 loss 0.3034 act 0.2705 pos 0.049 ori 0.026 joint 0.0021 done/step 0.0025 (14.03s)
+[S-TF] update 1350 beta 0.000 loss 0.2994 act 0.2672 pos 0.048 ori 0.025 joint 0.0022 done/step 0.0028 (14.03s)
+[S-TF] update 1360 beta 0.000 loss 0.3008 act 0.2693 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0028 (14.04s)
+[S-TF] update 1370 beta 0.000 loss 0.3046 act 0.2725 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0027 (14.02s)
+[S-TF] update 1380 beta 0.000 loss 0.3022 act 0.2702 pos 0.048 ori 0.026 joint 0.0021 done/step 0.0027 (14.06s)
+[S-TF] update 1390 beta 0.000 loss 0.3026 act 0.2703 pos 0.048 ori 0.026 joint 0.0021 done/step 0.0027 (14.02s)
+[S-TF] update 1400 beta 0.000 loss 0.2971 act 0.2653 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0027 (14.02s)
+[S-TF] update 1410 beta 0.000 loss 0.3020 act 0.2697 pos 0.048 ori 0.027 joint 0.0021 done/step 0.0028 (14.07s)
+[S-TF] update 1420 beta 0.000 loss 0.3027 act 0.2700 pos 0.049 ori 0.026 joint 0.0021 done/step 0.0026 (14.01s)
+[S-TF] update 1430 beta 0.000 loss 0.2969 act 0.2658 pos 0.046 ori 0.026 joint 0.0021 done/step 0.0026 (14.0s)
+[S-TF] update 1440 beta 0.000 loss 0.2964 act 0.2652 pos 0.046 ori 0.026 joint 0.0021 done/step 0.0027 (14.03s)
+[S-TF] update 1450 beta 0.000 loss 0.2982 act 0.2663 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0027 (14.02s)
+[S-TF] update 1460 beta 0.000 loss 0.2992 act 0.2668 pos 0.048 ori 0.026 joint 0.0021 done/step 0.0028 (14.01s)
+[S-TF] update 1470 beta 0.000 loss 0.3004 act 0.2685 pos 0.047 ori 0.026 joint 0.0021 done/step 0.0024 (14.02s)
+[S-TF] update 1480 beta 0.000 loss 0.3017 act 0.2696 pos 0.047 ori 0.027 joint 0.0021 done/step 0.0027 (14.05s)
+[S-TF] update 1490 beta 0.000 loss 0.2970 act 0.2651 pos 0.047 ori 0.027 joint 0.0022 done/step 0.0029 (14.01s)
+[S-TF] update 1499 beta 0.000 loss 0.2986 act 0.2666 pos 0.048 ori 0.026 joint 0.0021 done/step 0.0025 (14.01s)
+done 1500 updates in 5.84 h; final /home/ibrahim.alsarraj/Documents/Dexterous-In-Hand-Manipulation/training_source/project/experiments/pt_student/runs/S-TF/final.pt
+Sat Nov 28 09:05:21 +04 2026 exit 0
