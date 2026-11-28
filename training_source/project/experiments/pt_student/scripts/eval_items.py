@@ -7,6 +7,7 @@ groups) and the step is wrapped to record joint positions and the command target
 
     python experiments/pt_student/scripts/eval_items.py --make-items main      # S-TF, teacher, C5 seeds 1-3
     python experiments/pt_student/scripts/eval_items.py --make-items controls  # S-TF-noaux, S-MLP
+    python experiments/pt_student/scripts/eval_items.py --make-items action_rate  # optional variant: T-AR, S-TF-AR
     python experiments/pt_student/scripts/eval_items.py --items experiments/pt_student/items/main.json   # worker(s)
     python experiments/pt_student/scripts/eval_items.py --analyse
 """
@@ -31,9 +32,11 @@ E = PROJECT / "experiments" / "pt_student"
 DEPLOY = PROJECT / "experiments" / "grasp_rotation_v2" / "deploy" / "policies"
 C5 = {"C5s1": ("C5_seed1/model_2400.pt", "2a932dfe37a5540d"), "C5s2": ("C5_seed2/model_1500.pt", "49579bdf1f598d8c"),
       "C5s3": ("C5_seed3/model_3000.pt", "c221af89199cdeab")}
-STUDENTS = ("S-TF", "S-TF-noaux", "S-MLP")
+STUDENTS = ("S-TF", "S-TF-noaux", "S-MLP", "S-TF-AR")
 MAIN = ("S-TF", "T", "C5s1", "C5s2", "C5s3")
 CONTROLS = ("S-TF-noaux", "S-MLP")
+ACTION_RATE = ("T-AR", "S-TF-AR")  # optional variant (PLAN 4.3)
+TEACHER_TASKS = {"T": "Mjlab-Leap-PT-Teacher", "T-AR": "Mjlab-Leap-PT-Teacher-AR"}
 CONDITIONS = {"K": ("K", "effort", "nominal"), "A": ("A", "default", "nominal"),
               "heavy_slippery": ("A", "default", "heavy_slippery"), "high_delay": ("A", "default", "high_delay"),
               "obs_noise_x3": ("A", "default", "obs_noise_x3")}
@@ -52,8 +55,8 @@ def _load(name: str, path: Path):
   return mod
 
 
-def teacher_ck() -> str:
-  c = sorted(glob.glob(str(PROJECT / "logs" / "rsl_rl" / "pt_student_teacher" / "*_pt_teacher_seed1" / "model_3000.pt")))
+def teacher_ck(variant: str = "") -> str:
+  c = sorted(glob.glob(str(PROJECT / "logs" / "rsl_rl" / f"pt_student_teacher{variant}" / f"*_pt_teacher{variant}_seed1" / "model_3000.pt")))
   assert len(c) == 1, c
   return c[0]
 
@@ -63,14 +66,16 @@ def checkpoint(pol: str) -> str:
     return str(DEPLOY / C5[pol][0])
   if pol == "T":
     return teacher_ck()
+  if pol == "T-AR":
+    return teacher_ck("_ar")
   if pol in STUDENTS:
     return str(E / "runs" / pol / "final.pt")
   raise KeyError(pol)
 
 
 def make_items(which: str) -> list[dict]:
-  pols = MAIN if which == "main" else CONTROLS
-  order = ("C5s1", "C5s2", "C5s3", "T", "S-TF", "S-TF-noaux", "S-MLP")
+  pols = {"main": MAIN, "controls": CONTROLS, "action_rate": ACTION_RATE}[which]
+  order = ("C5s1", "C5s2", "C5s3", "T", "S-TF", "S-TF-noaux", "S-MLP", "T-AR", "S-TF-AR")
   return [{"key": f"{c}_{p}_s{s}", "policy": p, "condition": c, "seed": s, "num_envs": NUM_ENVS, "steps": STEPS}
           for p in order if p in pols for c in CONDITIONS for s in EVAL_SEEDS]
 
@@ -86,10 +91,10 @@ def policy_loader(pol: str):
   def load(env, agent_cfg, ck, device):
     if pol in C5:
       return orig(env, agent_cfg, ck, device)
-    if pol == "T":
+    if pol in TEACHER_TASKS:
       from mjlab.tasks.registry import load_rl_cfg
 
-      return orig(env, load_rl_cfg("Mjlab-Leap-PT-Teacher"), ck, device)
+      return orig(env, load_rl_cfg(TEACHER_TASKS[pol]), ck, device)
     M = _load("pt_models", Path(__file__).resolve().parent / "models.py")
     m = M.load(ck, device)
 
@@ -222,7 +227,7 @@ def analyse() -> None:
     """NBOOT resamples of environments within each evaluation seed; mean over the seeds."""
     return np.mean([np.asarray(x[key])[rng.integers(0, len(x[key]), (NBOOT, len(x[key])))].mean(1) for x in parts], axis=0)
 
-  pols = [p for p in ("S-TF", "T", "C5s1", "C5s2", "C5s3", "S-TF-noaux", "S-MLP")
+  pols = [p for p in ("S-TF", "T", "C5s1", "C5s2", "C5s3", "S-TF-noaux", "S-MLP", "T-AR", "S-TF-AR")
           if all((E / "data" / f"{c}_{p}_s{s}.npz").exists() for c in CONDITIONS for s in EVAL_SEEDS)]
   cells = {}
   for c in CONDITIONS:
@@ -231,7 +236,7 @@ def analyse() -> None:
       for s in EVAL_SEEDS:
         d = np.load(E / "data" / f"{c}_{p}_s{s}.npz")
         cells[(c, p)].append(per_env({k: d[k] for k in d.files}, V1, G))
-  out = {"plan": "PLAN.md section 3", "label": "PRE-REGISTERED simulation evaluation; S-TF, S-TF-noaux, S-MLP and the teacher are ONE training seed each; C5 rows are three training seeds",
+  out = {"plan": "PLAN.md section 3", "label": "PRE-REGISTERED simulation evaluation (criteria for S-TF; controls S-TF-noaux and S-MLP descriptive; T-AR and S-TF-AR = optional action-rate variant, PLAN 4.3); every teacher and student is ONE training seed; C5 rows are three training seeds",
          "policies": pols, "cells": {}}
   for (c, p), parts in cells.items():
     cat = lambda k: np.concatenate([x[k] for x in parts])  # noqa: E731
@@ -304,12 +309,13 @@ def write_md(o: dict) -> None:
              f"{f(r['survival_30s'])} vs {f(r['survival_30s_ref'] - 0.01)} {'✓' if r['c2_survival30'] else '✗'} | "
              f"{f(r['stress_survival_60s'])} vs {f(r['stress_survival_60s_ref'] - 0.02)} {'✓' if r['c3_stress'] else '✗'} | "
              f"**{'PASS' if r['PASS'] else 'FAIL'}** | {'yes' if r['beats_every_seed'] else 'no'} ({each}) |")
+  L += ["", "The criteria are pre-registered for S-TF only; the other rows apply the same bars for reference (descriptive)."]
   (E / "results" / "sim.md").write_text("\n".join(L) + "\n")
 
 
 def main() -> None:
   ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-  ap.add_argument("--make-items", choices=("main", "controls"))
+  ap.add_argument("--make-items", choices=("main", "controls", "action_rate"))
   ap.add_argument("--items")
   ap.add_argument("--analyse", action="store_true")
   ap.add_argument("--device", default="cuda:0")

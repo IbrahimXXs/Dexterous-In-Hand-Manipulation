@@ -1,6 +1,6 @@
 {
  "plan": "PLAN.md section 3",
- "label": "PRE-REGISTERED simulation evaluation; S-TF, S-TF-noaux, S-MLP and the teacher are ONE training seed each; C5 rows are three training seeds",
+ "label": "PRE-REGISTERED simulation evaluation (criteria for S-TF; controls S-TF-noaux and S-MLP descriptive; T-AR and S-TF-AR = optional action-rate variant, PLAN 4.3); every teacher and student is ONE training seed; C5 rows are three training seeds",
  "policies": [
   "S-TF",
   "T",

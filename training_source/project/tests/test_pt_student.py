@@ -94,3 +94,33 @@ def test_teacher_task_differs_from_c5_only_in_what_the_actor_sees():
   assert diff == {"experiment_name", "obs_groups"}, diff
   assert tuple(t["obs_groups"]["actor"]) == ("actor", "critic") and tuple(t["obs_groups"]["critic"]) == ("critic",)
   assert t["max_iterations"] == 3001
+
+
+def test_action_rate_teacher_adds_only_the_squashed_action_rate_term():
+  pytest.importorskip("mjlab")
+  from mjlab.tasks.registry import load_env_cfg, load_rl_cfg
+
+  from in_hand_rotation_mjlab.estimation.sim import _import_tasks
+
+  _import_tasks()
+  ar, c5 = load_env_cfg("Mjlab-Leap-PT-Teacher-AR"), load_env_cfg("Mjlab-Leap-GRV2-C5")
+  extra = ar.rewards.pop("action_rate_squashed")
+  assert extra.weight == -0.075 and extra.func.__name__ == "squashed_action_rate_l2"
+  assert repr(ar) == repr(c5)  # nothing else differs
+  t, c = asdict(load_rl_cfg("Mjlab-Leap-PT-Teacher-AR")), asdict(load_rl_cfg("Mjlab-Leap-PT-Teacher"))
+  assert {k for k in t if t[k] != c[k]} == {"experiment_name"} and t["experiment_name"] == "pt_student_teacher_ar"
+  assert "action_rate_squashed" not in load_env_cfg("Mjlab-Leap-PT-Teacher").rewards
+
+
+def test_squashed_action_rate_is_the_change_in_the_executed_action():
+  pytest.importorskip("in_hand_rotation_mjlab")
+  from types import SimpleNamespace
+
+  from in_hand_rotation_mjlab.tasks.hand_cube.config.leap_right_pt_student.rewards import squashed_action_rate_l2
+
+  u, p = torch.tensor([[0.5, -2.0, 0.0]]), torch.tensor([[0.5, 1.0, 3.0]])
+  env = SimpleNamespace(action_manager=SimpleNamespace(action=u, prev_action=p))
+  want = (torch.tanh(u) - torch.tanh(p)).square().sum(-1)
+  assert torch.allclose(squashed_action_rate_l2(env), want)
+  env.action_manager.prev_action = u.clone()
+  assert float(squashed_action_rate_l2(env)) == 0.0

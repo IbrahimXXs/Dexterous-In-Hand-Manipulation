@@ -13,10 +13,15 @@ export MUJOCO_GL=egl PYTHONUNBUFFERED=1
 cd "${SLURM_SUBMIT_DIR:-$(dirname "$0")/../../..}"
 PY=${PY:-/home/ibrahim.alsarraj/miniconda3/envs/leap-estimator/bin/python}
 E=experiments/pt_student
-STUDENT=${STUDENT:?STUDENT=S-TF|S-TF-noaux|S-MLP}
+STUDENT=${STUDENT:?STUDENT=S-TF|S-TF-noaux|S-MLP|S-TF-AR}
 (cd $E && sha256sum --quiet -c logs/plan.sha256) || { echo "PLAN.md changed"; exit 2; }
 [[ ! -e $E/runs/$STUDENT/final.pt ]] || { echo "run exists: $E/runs/$STUDENT (never resumed)"; exit 2; }
-TEACHER=$(ls logs/rsl_rl/pt_student_teacher/*_pt_teacher_seed1/model_3000.pt)
+if [[ $STUDENT == S-TF-AR ]]; then  # optional action-rate variant (PLAN 4.3)
+  TEACHER=$(ls logs/rsl_rl/pt_student_teacher_ar/*_pt_teacher_ar_seed1/model_3000.pt)
+else
+  TEACHER=$(ls logs/rsl_rl/pt_student_teacher/*_pt_teacher_seed1/model_3000.pt)
+fi
+[[ -f $TEACHER ]] || { echo "teacher checkpoint missing"; exit 2; }
 echo "$(date) start $STUDENT teacher $TEACHER host $(hostname) gpu ${CUDA_VISIBLE_DEVICES:-?} job ${SLURM_JOB_ID:-none}"
 $PY $E/scripts/distill.py --student "$STUDENT" --teacher "$TEACHER" --updates 1500
 echo "$(date) exit $?"

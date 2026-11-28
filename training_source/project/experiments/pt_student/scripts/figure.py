@@ -35,7 +35,8 @@ CONDS = (("K", "Kit starts, 350 mA (primary)"), ("A", "Default starts"), ("heavy
 POL = {"S-TF": ("A", "o", True, "S-TF (student, 1 seed)"), "T": ("RET", "s", True, "Teacher (privileged, 1 seed)"),
        "S-TF-noaux": ("ink", "D", True, "S-TF without aux loss"), "S-MLP": ("ink", "P", False, "S-MLP (C5 architecture)"),
        "C5s1": ("C5", "v", True, "C5 seed 1"), "C5s2": ("C5", "^", True, "C5 seed 2"), "C5s3": ("C5", "*", True, "C5 seed 3"),
-       "C5mean": ("C5", "o", False, "C5 three-seed mean")}
+       "C5mean": ("C5", "o", False, "C5 three-seed mean"),
+       "T-AR": ("RET", "s", False, "Teacher + action-rate term (variant)"), "S-TF-AR": ("A", "o", False, "S-TF from that teacher (variant)")}
 
 
 def main() -> None:
@@ -63,14 +64,15 @@ def main() -> None:
     axes[0].set_ylabel("turns per 30 s", fontsize=9)
     hs = [plt.Line2D([], [], ls="", marker=POL[p][1], markersize=11 if POL[p][1] == "*" else 7,
                      markerfacecolor=th[POL[p][0]] if POL[p][2] else th["surface"], markeredgecolor=th[POL[p][0]]) for p in pols]
-    fig.legend(hs, [POL[p][3] for p in pols], loc="upper center", ncol=len(pols), fontsize=8.5, bbox_to_anchor=(0.5, 1.0),
+    ncol = len(pols) if len(pols) <= 6 else -(-len(pols) // 2)  # two legend rows when it would not fit in one
+    fig.legend(hs, [POL[p][3] for p in pols], loc="upper center", ncol=ncol, fontsize=8.5, bbox_to_anchor=(0.5, 1.0),
                handletextpad=0.3, columnspacing=1.0)
     k = o["criteria"].get("S-TF")
     verdict = ("" if k is None else f"S-TF vs C5 mean at kit starts: turns ratio {k['turns_ratio']:.2f} [{k['turns_ratio_ci95'][0]:.2f}, "
                f"{k['turns_ratio_ci95'][1]:.2f}] (needed ≥ 1.15 with CI > 1): {'PASS' if k['PASS'] else 'FAIL'}. ")
     fig.text(0.01, 0.015, verdict + "Pre-registered (PLAN.md). Seeds 9501+9502, 512 environments per point; bars = bootstrap 95% CIs. "
              "Students and teacher: one training seed.", fontsize=7.5, color=th["muted"])
-    fig.subplots_adjust(left=0.05, right=0.99, top=0.82, bottom=0.17)
+    fig.subplots_adjust(left=0.05, right=0.99, top=0.82 if ncol == len(pols) else 0.77, bottom=0.17)
     suffix = "" if name == "light" else "_dark"
     (E / "figures").mkdir(exist_ok=True)
     fig.savefig(E / "figures" / f"sim{suffix}.png", dpi=150)

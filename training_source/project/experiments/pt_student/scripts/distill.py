@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """PT-student distillation by DAgger (PLAN.md section 2).  Training seed 1, environment = the teacher's training
-environment (= C5's: Mjlab-Leap-GRV2-C5 env, 4096 envs, domain randomisation, resets, noise, curriculum).
+environment (= C5's: Mjlab-Leap-GRV2-C5 env, 4096 envs, domain randomisation, resets, noise, curriculum;
+for the optional S-TF-AR, the action-rate teacher's environment, which differs only by that reward term).
 
 Each update: 32-step rollout; per environment and step the executed action is the teacher's with probability beta,
 else the student's; the teacher labels every visited state; the rollout joins a FIFO buffer of the last 4 rollouts;
@@ -27,7 +28,9 @@ import torch
 PROJECT = Path(__file__).resolve().parents[3]
 E = PROJECT / "experiments" / "pt_student"
 TEACHER_TASK = "Mjlab-Leap-PT-Teacher"
-STUDENTS = {"S-TF": ("transformer", True), "S-TF-noaux": ("transformer", False), "S-MLP": ("mlp", True)}
+TEACHER_TASK_AR = "Mjlab-Leap-PT-Teacher-AR"  # optional action-rate variant (PLAN 4.3)
+STUDENTS = {"S-TF": ("transformer", True), "S-TF-noaux": ("transformer", False), "S-MLP": ("mlp", True), "S-TF-AR": ("transformer", True)}
+TEACHER_TASK_OF = {s: (TEACHER_TASK_AR if s == "S-TF-AR" else TEACHER_TASK) for s in STUDENTS}
 N_ENVS, STEPS, BUF, MB = 4096, 32, 4, 16384
 LR, WD, WARMUP, CLIP = 3e-4, 0.01, 50, 1.0
 
@@ -57,11 +60,11 @@ def make_train_env(task: str, n: int, seed: int, device: str):
   return RslRlVecEnvWrapper(raw, clip_actions=agent_cfg.clip_actions), raw, agent_cfg
 
 
-def load_teacher(env, ck: str, device: str):
+def load_teacher(env, ck: str, device: str, task: str = TEACHER_TASK):
   from in_hand_rotation_mjlab.scratch_study.evaluation import load_study_policy
   from mjlab.tasks.registry import load_rl_cfg
 
-  return load_study_policy(env, load_rl_cfg(TEACHER_TASK), ck, device)
+  return load_study_policy(env, load_rl_cfg(task), ck, device)
 
 
 def main() -> None:
@@ -84,12 +87,13 @@ def main() -> None:
   logf = (E / "logs" / f"distill_{a.student}.jsonl") if a.out is None else out / "distill.jsonl"
   w_aux = M.AUX_WEIGHTS if aux else {k: 0.0 for k in M.AUX_WEIGHTS}
 
-  env, raw, _ = make_train_env(TEACHER_TASK, a.num_envs, a.seed, dev)
-  teacher = load_teacher(env, a.teacher, dev)
+  task = TEACHER_TASK_OF[a.student]  # the teacher's own training environment
+  env, raw, _ = make_train_env(task, a.num_envs, a.seed, dev)
+  teacher = load_teacher(env, a.teacher, dev, task)
   student = (M.TransformerStudent() if kind == "transformer" else M.MLPStudent()).to(dev)
   opt = torch.optim.AdamW(student.parameters(), lr=LR, weight_decay=WD)
   sched = torch.optim.lr_scheduler.LambdaLR(opt, lambda u: min(1.0, (u + 1) / WARMUP))
-  meta = {"student": a.student, "kind": kind, "aux": aux, "aux_weights": w_aux, "teacher": a.teacher,
+  meta = {"student": a.student, "teacher_task": task, "kind": kind, "aux": aux, "aux_weights": w_aux, "teacher": a.teacher,
           "teacher_sha256": hashlib.sha256(Path(a.teacher).read_bytes()).hexdigest(), "updates": a.updates, "num_envs": a.num_envs,
           "seed": a.seed, "n_params": M.n_params(student), "buffer_rollouts": BUF, "minibatch": a.minibatch, "lr": LR}
   print(json.dumps(meta), flush=True)
