@@ -1,6 +1,6 @@
 # Sensorless in-hand cube rotation on the LEAP Hand: from simulation to the real hand
 
-A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its own joint readings**: no camera, no tactile sensors, no cube pose in the policy. The project started from the course's continuous-yaw package (`model_400`). It then fixed the training environment, ran seven simulation studies with more than 20 from-scratch PPO runs (the last five pre-registered), and took the resulting policies to the physical hand in five supervised sessions, with every attempt logged. The full write-up is the [project report](docs/report/REPORT.md).
+A right LEAP Hand spins a 58 mm cube about the vertical axis using **only its own joint readings**: no camera, no tactile sensors, no cube pose in the policy. The project started from the course's continuous-yaw package (`model_400`). It then fixed the training environment, ran eight simulation studies with more than 20 from-scratch PPO runs (the last five pre-registered), and took the resulting policies to the physical hand in five supervised sessions, with every attempt logged. The full write-up is the [project report](docs/report/REPORT.md).
 
 **Headline.** The best policy, **C5**, made **3.48 full revolutions per 60-s trial on the real hand, against 0.50 for the course baseline `model_400`** (20 Nov, operator counts). In simulation it beats the proprioceptive PPO baseline by **+0.59 turns per 30 s [95% CI +0.35, +0.83], p = 0.0025, over three training seeds each**. The work also shows *why* the rest of the gap to simulation exists: it measures each sim-to-real mismatch and traces the hand's safety stops to a single finger.
 
@@ -101,6 +101,7 @@ Together, C5 from grasp 49 reaches 2.36 turns per 30 s, about twice the baseline
 | 26 Nov | [Final protocol (draft)](docs/hardware_protocol_final_DRAFT.md), [report](docs/report/REPORT.md) | Plan the final real-hand comparison; write up | Protocol is a DRAFT, not approved; report with every number traced to a file ([NUMBERS.md](docs/report/NUMBERS.md)) |
 | 27 Nov | [Gait efficiency](training_source/project/experiments/gait_efficiency/README.md) | Where did the speed go on the real hand? | Finger rhythm transferred (both C5 seeds within 2%); quarter turns per finger cycle did not (C5 seed 1 0.703×, A3 0.058× of simulation), except for C5 seed 3. Simulation half pre-registered, hardware half post hoc |
 | 27 Nov | [Seed jury](training_source/project/experiments/seed_jury/README.md) | Do the three C5 seeds disagree before a real drop, and does a jury of them hold the cube better? | **No and no** (pre-registered): before drops, disagreement 0.96× the run's normal level [0.81, 1.06] (8 drops, replayed with the kit's code); every jury lost to C5s3 alone in simulation (stress survival −0.06 to −0.14, CIs below 0) |
+| 27–28 Nov | [PT-student](training_source/project/experiments/pt_student/README.md) | Does a privileged PPO teacher distilled into a transformer student (Yao et al. 2026 recipe) beat C5? | **No** (pre-registered, simulation only, 1 training seed): S-TF turned 0.828 × C5 [0.801, 0.855] at kit starts and failed all three criteria. The privileged teacher itself was below C5 (0.911 ×). S-MLP (C5's architecture) turned at 0.815 ×; S-TF-noaux pending |
 
 <img alt="Trial video frame from 25 November: the real hand rotating the cube while the fingers hide its markers; the tracker draws an estimated cube as an orange dashed box with 2.0 quarter turns at 50 degrees per second." src="docs/figures/trial_video_2026-11-25_estimated.jpg">
 
@@ -153,6 +154,7 @@ training_source/project/
     gait_efficiency/               finger rhythm vs turns per finger cycle, sim vs real hand (27 Nov)
     final_session_forecast/        hashed pre-session forecast for the final real-hand comparison (27 Nov)
     seed_jury/                     do the C5 seeds disagree before drops; jury of three seeds (27 Nov; null)
+    pt_student/                    privileged teacher → transformer student by DAgger vs C5 (27–28 Nov; null)
   real_world/cube_vision/          ArUco + RealSense cube tracker, gap filling, dashboard
 LEAP_Hand_RL_Deploy_Kit/           guarded hardware runtime, trial scheduler, monitors, logs, audit
 checkpoint/  policy/  simulation/  course model_400 package (viewer, policy, replay)

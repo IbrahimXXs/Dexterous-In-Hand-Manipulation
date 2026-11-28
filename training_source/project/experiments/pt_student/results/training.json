@@ -1,0 +1,103 @@
+{
+ "label": "training logs (descriptive); every teacher and student is ONE training seed",
+ "teacher_vs_c5": {
+  "T": {
+   "updates": [
+    2800,
+    3000
+   ],
+   "n": 201,
+   "mean_reward": 2.662437810945274,
+   "genuine_yaw_rate": 0.3267835820895522
+  },
+  "C5s1": {
+   "updates": [
+    2800,
+    3000
+   ],
+   "n": 201,
+   "mean_reward": 2.958258706467662,
+   "genuine_yaw_rate": 0.3604746268656716
+  },
+  "C5s2": {
+   "updates": [
+    2800,
+    3000
+   ],
+   "n": 201,
+   "mean_reward": 2.8654726368159205,
+   "genuine_yaw_rate": 0.3406726368159204
+  },
+  "C5s3": {
+   "updates": [
+    2800,
+    3000
+   ],
+   "n": 201,
+   "mean_reward": 2.95910447761194,
+   "genuine_yaw_rate": 0.3443865671641791
+  }
+ },
+ "students": {
+  "S-TF": {
+   "updates": 1500,
+   "n_params": 2391335,
+   "teacher_sha256": "9aeb7ae7d4c22cf4",
+   "loss_action": 0.2673992014210671,
+   "loss_pos": 0.046947066596476364,
+   "loss_ori": 0.025969540227670222,
+   "loss_joint": 0.002122079240871244,
+   "done_rate_per_step": 0.00272003173828125,
+   "seconds_per_update": 14.011746666666665
+  },
+  "S-MLP": {
+   "updates": 1500,
+   "n_params": 568359,
+   "teacher_sha256": "9aeb7ae7d4c22cf4",
+   "loss_action": 0.3708855971135199,
+   "loss_pos": 0.10668294527567923,
+   "loss_ori": 0.05053448993479833,
+   "loss_joint": 0.0014113477380669791,
+   "done_rate_per_step": 0.0027108001708984375,
+   "seconds_per_update": 4.917286666666667
+  }
+ },
+ "gpu_hours": {
+  "338614 teacher (killed externally at ~990 updates; not used)": {
+   "hours": 2.2150000000000003,
+   "source": "last 'Time elapsed' in train_teacher_seed1_INTERRUPTED_job338614.log",
+   "finished": false
+  },
+  "339167 teacher": {
+   "hours": 4.186944444444444,
+   "source": "start/exit lines",
+   "finished": true
+  },
+  "339499 S-TF": {
+   "hours": 5.841666666666667,
+   "source": "start/exit lines",
+   "finished": true
+  },
+  "339962 S-TF-noaux": {
+   "hours": null,
+   "source": "running",
+   "finished": false
+  },
+  "339963 S-MLP": {
+   "hours": 2.0522222222222224,
+   "source": "start/exit lines",
+   "finished": true
+  },
+  "339968 teacher + action-rate (variant)": {
+   "hours": null,
+   "source": "running",
+   "finished": false
+  },
+  "evaluation (sum of item seconds)": {
+   "hours": 1.8880555555555556,
+   "source": "results/items/*.json",
+   "finished": true
+  }
+ },
+ "gpu_hours_total": 16.18388888888889
+}

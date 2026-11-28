@@ -4,7 +4,7 @@
 
 ## Abstract
 
-A right LEAP Hand rotates a 58 mm cube about the vertical axis using only its joint readings and its own previous commands: no camera, tactile sensor or cube pose enters the policy. Starting from a course baseline (`model_400`), this report covers seven simulation studies with PPO in MJLab on MuJoCo Warp and five supervised real-hand sessions. Four bugs in the course training environment were fixed first. Cube state estimated from proprioception gave a gain under the course's wide joint limits that was not statistically established (+0.150 turns [−0.006, +0.339]), and none under the hand's real limits (C − A = −0.041 [−0.150, +0.055]). Raising the clip on the yaw reward (policy C5) gave +0.593 turns per 30 s over the baseline [+0.354, +0.833] across three training seeds. On the hand, C5 made 3.48 full revolutions per 60-s trial against 0.50 for `model_400` (operator counts, n = 5 and 4). Rotation speed transferred. A retention reward and the proprioceptive cube-yaw estimate did not. An offline actuator audit traced C5's safety stops to index-finger jams at the hand's 350 mA current limit, which training (550 mA) never saw. Splitting real-hand speed into finger rhythm and quarter turns per finger cycle shows that the policies that lost speed kept or raised their finger rhythm but turned the cube less per cycle (exploratory). A single-seed retraining from simulated kit starts (C5-HW-V2) failed all three of its pre-registered criteria.
+A right LEAP Hand rotates a 58 mm cube about the vertical axis using only its joint readings and its own previous commands: no camera, tactile sensor or cube pose enters the policy. Starting from a course baseline (`model_400`), this report covers eight simulation studies with PPO in MJLab on MuJoCo Warp and five supervised real-hand sessions. Four bugs in the course training environment were fixed first. Cube state estimated from proprioception gave a gain under the course's wide joint limits that was not statistically established (+0.150 turns [−0.006, +0.339]), and none under the hand's real limits (C − A = −0.041 [−0.150, +0.055]). Raising the clip on the yaw reward (policy C5) gave +0.593 turns per 30 s over the baseline [+0.354, +0.833] across three training seeds. On the hand, C5 made 3.48 full revolutions per 60-s trial against 0.50 for `model_400` (operator counts, n = 5 and 4). Rotation speed transferred. A retention reward and the proprioceptive cube-yaw estimate did not. An offline actuator audit traced C5's safety stops to index-finger jams at the hand's 350 mA current limit, which training (550 mA) never saw. Splitting real-hand speed into finger rhythm and quarter turns per finger cycle shows that the policies that lost speed kept or raised their finger rhythm but turned the cube less per cycle (exploratory). A single-seed retraining from simulated kit starts (C5-HW-V2) failed all three of its pre-registered criteria, and so did a privileged teacher distilled into a transformer student (single seed, simulation).
 
 ## 1. Introduction and contributions
 
@@ -13,7 +13,7 @@ In-hand rotation without object sensing suits low-cost hands: the policy needs o
 Contributions:
 
 1. **Four bugs in the course training environment**, fixed and unit-tested (Section 3).
-2. **A controlled test of proprioceptive cube-state estimation for PPO** (conditions A/B/C/D, three seeds each): a gain that was not statistically established under the course's joint limits and disappeared under the hand's real limits (Sections 4–5), plus a sensorless fingertip-force estimator (Section 4.3).
+2. **A controlled test of proprioceptive cube-state estimation for PPO** (conditions A/B/C/D, three seeds each): a gain that was not statistically established under the course's joint limits and disappeared under the hand's real limits (Sections 4–5), plus a sensorless fingertip-force estimator (Section 4.3) and a privileged-teacher transformer student that failed its pre-registered criteria (Section 4.4).
 3. **Two separable simulation improvements**: a fixed start grasp (cache index 49) and a higher yaw-reward clip (C5), the latter confirmed over three training seeds (Section 6).
 4. **A real-hand evaluation with every attempt logged**, safety stops included, and a split of real-hand speed into finger rhythm and turns per finger cycle (Section 7).
 5. **An offline actuator audit** that explains C5's safety stops and measures the actuator lag, followed by an effort-matched retraining, C5-EFFORT, and a combined retraining from simulated kit starts, C5-HW-V2, that failed its pre-registered criteria (both single-seed exploratory; Section 8).
@@ -106,6 +106,21 @@ C uses its features: replacing them with zeros, their mean or another environmen
 ### 4.3 Sensorless fingertip force
 
 A second estimator predicts the normal force on each fingertip from the same 320-D input (labels from a passive MuJoCo contact sensor; B's trunk with a contact-probability × magnitude head; trained and tested on disjoint policies). On unseen policies it reaches MAE 0.187 N and R² 0.78, against 0.301 N for ridge regression; contact AUROC is 0.94–0.98. The main generalisation gap is the policy, not the physics: MAE rises 61% from seen to unseen policies, while the five robustness presets add only 0–12%. Forces above about 2 N are underestimated. On the hand, which has no force sensor, the estimated thumb force correlated with the thumb's summed motor current (18 Nov: r +0.23 to +0.44 in all 5 runs) and the index estimate did not (r −0.18 to +0.17). This supports contact information, not newton values.
+
+### 4.4 Privileged teacher and transformer student (PT-student)
+
+Yao et al. [12] report their largest real-hand gain from distilling a PPO teacher that sees the true object state into a small transformer student, with an auxiliary state loss. We tested the recipe in simulation, pre-registered, with one training seed:
+- **Teacher:** C5's environment, reward, network and 3001 updates; its actor also sees the critic's 83 privileged inputs.
+- **Student (S-TF):** a 3-layer transformer over C5's 320-D input, trained by DAgger for 1500 updates, with cube-pose and clean-joint auxiliary heads.
+
+S-TF failed all three criteria at kit starts:
+- turns 0.828 × the C5 three-seed mean [0.801, 0.855], where ≥ 1.15 was needed;
+- survival at 30 s 0.908, where ≥ 0.927 was needed;
+- stress survival 0.706, where ≥ 0.770 was needed.
+
+It is below every C5 seed. The shortfall starts at the teacher, which was itself below C5 (0.911 ×). The student then turned less than the teacher: 1.72 against 1.89 turns per 30 s. An MLP student with C5's architecture turned at 0.815 ×.
+
+On the 25 Nov camera trials (exploratory; C5 drove the runs), S-TF's orientation head counted 12.0 and 7.5 quarter turns against the camera's 16.2 and 6.9. That is closer than estimator B (4.7 and 3.9), but S-TF did not rank runs by rotation rate (Spearman −0.04).
 
 ## 5. Hardware constraints: joint limits and A vs C
 
@@ -317,6 +332,7 @@ These carry the same weight as the positive results.
 - C5 seed 1 tripped a guard in 9 of 16 attempts over two sessions; seed 3 removed the stops but dropped the cube in 11 of 12 valid trials, 6 of them at 5–7 s.
 - Estimated cube state gave no gain under the real joint limits (−0.041 [−0.150, +0.055]), and the earlier gain had a CI including zero; on the new gaits the estimator's errors grew 1.36–1.53×. The proprioceptive cube-yaw estimate is not valid on the hand (Spearman −0.42; wrong sign for C5).
 - Retention-V1 and P0 missed their pre-registered rotation targets; the C5-HW-V2 response fit failed its rule, and C5-HW-V2 failed all three of its criteria (Section 8.3).
+- A privileged teacher distilled into a transformer student failed all three of its criteria (0.828 × C5's turns; Section 4.4). Its privileged teacher was already below C5.
 
 **Limitations.**
 
@@ -356,5 +372,7 @@ Most of the remaining gap traces to mismatches the hand's own logs could measure
 [10] N. Rudin, D. Hoeller, P. Reist, M. Hutter. "Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning." CoRL 2021 (PMLR 164).
 
 [11] K. Zakka, Q. Liao, B. Yi, L. Le Lay, K. Sreenath, P. Abbeel. "mjlab: A Lightweight Framework for GPU-Accelerated Robot Learning." arXiv:2601.22074, 2026.
+
+[12] S. Yao, C. Yang, J. Kim, A. Sympetheros, R. K. Katzschmann. "Learning Robust Dexterous In-Hand Manipulation from Joint Sensors with Proprioceptive Transformer." arXiv:2605.21330, 2026 (preprint).
 
 **Software.** MuJoCo Warp 3.8.1 (github.com/google-deepmind/mujoco_warp); rsl_rl, rsl-rl-lib 4.0.1 (github.com/leggedrobotics/rsl_rl).

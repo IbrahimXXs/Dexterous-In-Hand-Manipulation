@@ -7,7 +7,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | Number as written | Meaning | Source file | Where in that file |
 |---|---|---|---|
 | 58 mm | [Abstract, §2.1] cube edge length (MBZUAI cube) | docs/course_package.md | Intro paragraph ("keeps a 58 mm cube spinning") |
-| seven (simulation studies) | [Abstract] number of simulation studies | README.md | First paragraph ("ran seven simulation studies") |
+| eight (simulation studies) | [Abstract] number of simulation studies (the eighth is PT-student, §4.4) | README.md | First paragraph ("ran eight simulation studies") |
 | five (real-hand sessions) | [Abstract, §1] supervised hardware sessions (17, 18, 20, 24, 25 Nov) | README.md | First paragraph ("five supervised sessions") |
 | Four (bugs) | [Abstract, §1, §3] bugs fixed in the course training environment | README.md; training_source/project/experiments/scratch_state_estimation/README.md | README Research log, 12–13 Nov row ("Fixed 4 bugs"); study §1.1–1.4 |
 | −0.041 turns [−0.150, +0.055] | [Abstract, §5, §10] C − A, held-out nominal turns under the kit joint limits, bootstrap 95% CI | training_source/project/experiments/hwlimit_ac/results/tables.md | "Held-out test, selected checkpoints", row `nominal | turns` |
@@ -27,7 +27,7 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | 60 °C | [§2.1] temperature limit | docs/hardware_policy_actuator_audit_2026-11-20.md | §1 "Guards" row |
 | 0.05 rad | [§2.1] command-step abort | docs/hardware_policy_actuator_audit_2026-11-20.md | §1 "Guards" row |
 | six faces, 15.55 mm, `DICT_4X4_50` | [§2.1] cube markers | docs/live_vision_digital_twin.md | §1 table, "Cube geometry" row |
-| 320 | [§2.1, §4] actor observation dimension | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 Conditions table, row A |
+| 320 | [§2.1, §4, §4.4] actor observation dimension | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 Conditions table, row A |
 | 10 frames, 16 joint positions, 16 previous commands | [§2.1] observation history layout | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 Conditions table, row A |
 | ±0.01 rad, 0–1 step delay | [§2.1] simulated joint-position noise and delay | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 Conditions table, row A |
 | 16-D | [§2.1] action dimension | training_source/project/experiments/scratch_state_estimation/README.md | §1.4 Mechanism |
@@ -46,9 +46,9 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | 4096 | [§2.2] parallel environments | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "PPO" bullet |
 | 32, 5 epochs × 4 minibatches, γ 0.99, λ 0.95, clip 0.2, 0.003, 1e-3, KL 0.01 | [§2.2] PPO hyperparameters | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "PPO" bullet |
 | 512-512-256 | [§2.2, §4.1] actor/critic (and estimator) hidden layers | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "Critic" bullet; §2.4 Model |
-| 83-D | [§2.2] privileged critic input | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "Critic" bullet |
+| 83-D | [§2.2, §4.4] privileged critic input (in §4.4, also seen by the PT-student teacher's actor) | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "Critic" bullet |
 | 1001 updates (131.2M environment steps) | [§2.2, §4.2] budget of the first study | training_source/project/experiments/scratch_state_estimation/README.md | §2.1 "Budget" |
-| 3001 updates (393 M environment steps) | [§2.2, §5] budget from the hwlimit study on | training_source/project/experiments/hwlimit_ac/README.md | §4 Training setup table, "Budget" row |
+| 3001 updates (393 M environment steps) | [§2.2, §5, §4.4] budget from the hwlimit study on (PT-student teacher: the same) | training_source/project/experiments/hwlimit_ac/README.md | §4 Training setup table, "Budget" row |
 | RTX 5000 Ada | [§2.2] GPU model | training_source/project/experiments/scratch_state_estimation/README.md | §5 Compute, "Hardware" |
 | 30-s window | [§2.3] evaluation horizon | training_source/project/experiments/scratch_state_estimation/README.md | §2.5 "600 control steps (30 s)" |
 | 60-s turns, P(held 60 s) | [§2.3] secondary metrics | training_source/project/experiments/grasp_rotation_v2/README.md | Phase 4 Setting A table columns |
@@ -95,6 +95,16 @@ One row per number used in [REPORT.md](REPORT.md). The report section where it a
 | about 2 N | [§4.3] underestimation threshold | training_source/project/experiments/force_estimation/README.md | §8.3 "By force magnitude" |
 | all 5 runs, r +0.23 to +0.44 | [§4.3] thumb force vs current, 18 Nov | docs/hardware_session_2026-11-18.md | §2 Reading, "Thumb" |
 | r −0.18 to +0.17 | [§4.3] index force vs current, 18 Nov | docs/hardware_session_2026-11-18.md | §2 Reading, "Index" |
+| 3-layer (transformer); 1500 updates (DAgger) | [§4.4] PT-student student design and distillation budget | training_source/project/experiments/pt_student/PLAN.md | §2 "Transformer encoder: 3 layers"; "Budget: 1500 updates" |
+| 0.828 × … [0.801, 0.855]; 1.15 | [§4.4, §10] S-TF turns per 30 s / C5 three-seed mean at kit starts (K), bootstrap 95% CI; required ratio | training_source/project/experiments/pt_student/results/sim.md | Pre-registered criteria table, row S-TF, first column |
+| 0.908; 0.927 | [§4.4] S-TF survival at 30 s at K; required (C5 mean − 0.01) | training_source/project/experiments/pt_student/results/sim.md | Pre-registered criteria table, row S-TF, second column |
+| 0.706; 0.770 | [§4.4] S-TF mean survival at 60 s over the three stress presets; required (C5 mean − 0.02) | training_source/project/experiments/pt_student/results/sim.md | Pre-registered criteria table, row S-TF, third column |
+| 0.911 × | [§4.4] privileged teacher turns per 30 s / C5 mean at K | training_source/project/experiments/pt_student/results/sim.md | Pre-registered criteria table, row T |
+| 1.72 against 1.89 | [§4.4] turns per 30 s at K, S-TF and teacher | training_source/project/experiments/pt_student/results/sim.md | First table, column K, rows S-TF and T |
+| 0.815 × | [§4.4] S-MLP (C5 architecture) turns per 30 s / C5 mean at K | training_source/project/experiments/pt_student/results/sim.md | Pre-registered criteria table, row S-MLP |
+| 12.0 and 7.5; 16.2 and 6.9 | [§4.4] quarter turns, 25 Nov trials 1 and 5: S-TF orientation head; camera | training_source/project/experiments/pt_student/results/real_log.md | 25 Nov camera trials table, trial1 and trial5 rows |
+| 4.7 and 3.9 | [§4.4] estimator B quarter turns, same trials | training_source/project/experiments/pt_student/results/real_log.md | Same table, "Estimator B quarter turns" column |
+| Spearman −0.04 | [§4.4] S-TF predicted vs operator quarter turns per held minute, runs held ≥ 10 s (exploratory) | training_source/project/experiments/pt_student/results/real_log.md | "All C5 runs vs the operator's count" |
 | A seed 2, C seed 2 | [§5] policies run on 17 Nov | docs/hardware_session_2026-11-17.md | Status line |
 | ≤ 390 mA | [§5] max current, 17 Nov | docs/hardware_session_2026-11-17.md | Summary, "Hardware runs completed" |
 | ±0.52 rad; ±1.05 rad | [§5] kit vs training rot-joint range | docs/hardware_session_2026-11-17.md | Summary, "Main finding" |
@@ -301,4 +311,4 @@ Uncertainties:
 - **C5-HW-V2** (§8.3) sources are in `training_source/project/experiments/c5_hw_v2/`, committed on branch `task2-c5-hw-v2`. They are not in this worktree until that branch is merged; every §8.3 number was checked against those files.
 - **Related work** descriptions are one-line characterisations based on the citation details supplied; check that the descriptions of [3], [4] and [6] match the papers.
 - **Software URLs and versions** are taken from the installed packages' metadata (`importlib.metadata`, project URLs of mujoco-warp 3.8.1 and rsl-rl-lib 4.0.1 in the training environment).
-- **Word count** of the body (abstract to conclusion, excluding tables, figure captions and references) is about 5,600 words; the PDF (`docs/report/build_pdf.py`, 8.5 pt body, 7.6 pt references) is 8 pages.
+- **Word count** of the body (abstract to conclusion, excluding tables, figure captions and references) is about 5,900 words (about 5,700 before §4.4 was added); the PDF (`docs/report/build_pdf.py`, 8.5 pt body, 7.6 pt references) is 9 pages, as it already was before §4.4 (28 Nov build).
